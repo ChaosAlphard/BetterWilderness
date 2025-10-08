@@ -1,0 +1,39 @@
+# override variables
+@b1_biomass = 100
+@b2_biomass = 200
+@b3_biomass = 400
+@b4_biomass = 400
+
+# new variables
+@buildtime_1 = 180
+@buildtime_2 = 240
+@buildtime_3 = 360
+@buildtime_4 = 480
+@buildtime_5 = 600
+@buildtime_6 = 720
+
+@wa_b1_biomass = 50
+@wa_b2_biomass = 100
+@wa_b3_biomass = 200
+@wa_b4_biomass = 400
+
+@wa_b1_minerals = 100
+@wa_b2_minerals = 200
+@wa_b3_minerals = 300
+@wa_b4_minerals = 400
+# @wa_b5_minerals = 1000
+# @wa_b6_minerals = 1500
+
+@wa_b1_foods = 150
+@wa_b2_foods = 300
+@wa_b3_foods = 450
+@wa_b4_foods = 600
+# @wa_b5_foods = 2000
+# @wa_b6_foods = 3000
+
+# @b0_minerals = 200
+# @b1_minerals = 400
+# @b2_minerals = 600
+# @b3_minerals = 800
+# @b4_minerals = 2000
+# @b5_minerals = 3000

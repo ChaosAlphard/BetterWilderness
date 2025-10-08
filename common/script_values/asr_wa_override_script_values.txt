@@ -1,0 +1,9 @@
+wilderness_planet_size_mod = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger = planet_size
+    mode = add
+  }
+  mult = 10
+  min = 0
+}

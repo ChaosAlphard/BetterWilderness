@@ -1,0 +1,7 @@
+on_game_start_country = {
+  events = { wa_asr_wilderness.1 }
+}
+
+on_system_gained = {
+  events = { wa_asr_wilderness.1 }
+}

@@ -1,0 +1,77 @@
+asr_wa_num_districts = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger_scope = planet
+    trigger = num_districts
+    parameters = { type = any }
+    mode = add
+  }
+  min = 0
+}
+
+asr_wa_num_buildings = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger_scope = planet
+    trigger = num_buildings
+    parameters = {
+      disabled = no
+      type = any
+      owner_type = normal
+    }
+    mode = add
+  }
+  min = 0
+}
+
+asr_wa_num_buildings_and_districts = {
+  base = 0
+  add = value:asr_wa_num_buildings
+  add = value:asr_wa_num_districts
+}
+
+asr_wa_num_wilderness_pops = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger_scope = planet
+    trigger = count_owned_pop_amount
+    parameters = {
+      limit = { has_trait = trait_wilderness }
+    }
+    mode = add
+  }
+  min = 0
+}
+
+asr_wa_amenities_by_pops = {
+  base = 0
+  add = value:asr_wa_num_wilderness_pops
+  mult = $RATIO$
+  min = 0
+  floor = yes
+}
+
+# 0人口 return 200, 2000人口 return 0
+asr_wa_bonus_growth_by_pops = {
+  base = 0
+  set = 2000
+  subtract = value:asr_wa_num_wilderness_pops
+  min = 0
+  divide = 10
+  floor = yes
+}
+
+# asr_wa_num_workforce_maintenance_drone = {
+#   base = 0
+#   complex_trigger_modifier = {
+#     trigger_scope = planet
+#     trigger = count_owned_workforce
+#     parameters = {
+#       limit = {
+#         has_job_type = wilderness_maintenance_drone
+#       }
+#     }
+#     mode = add
+#   }
+#   min = 0
+# }

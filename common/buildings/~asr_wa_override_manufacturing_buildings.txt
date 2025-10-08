@@ -1,0 +1,367 @@
+# Alloys
+building_natural_furnace_0 = {
+  icon = "natural_furnace_1"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_1
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b1_minerals
+      biomass = @b1_biomass
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+  }
+
+  upgrades = {
+    building_natural_furnace_1
+  }
+
+  inline_script = {
+    script = jobs/foundry_add
+    AMOUNT = @building_static_jobs_low
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_natural_furnace_1 = { # substitute for 'building_foundry_1'
+  icon = "natural_furnace_2"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_2
+  category = manufacturing
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+  allow = {
+    has_major_upgraded_capital = yes
+  }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+
+  prerequisites = {
+    tech_basic_industry
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b2_minerals
+      biomass = @b2_biomass
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+  }
+
+  upgrades = {
+    building_natural_furnace_2
+  }
+
+  inline_script = {
+    script = jobs/foundry_add
+    AMOUNT = @building_static_jobs
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_natural_furnace_2 = { # substitute for 'building_foundry_2'
+  icon = "natural_furnace_3"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_3
+  category = manufacturing
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_major_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b3_minerals
+      biomass = @b3_biomass
+      volatile_motes = @b2_rare_cost
+    }
+    upkeep = {
+      energy = @b3_upkeep
+      volatile_motes = @b2_rare_upkeep
+    }
+  }
+
+  upgrades = {
+    building_natural_furnace_3
+  }
+
+  prerequisites = {
+    tech_alloys_1
+  }
+
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  planet_modifier = {
+    planet_metallurgists_alloys_produces_add = 2
+    planet_metallurgists_minerals_upkeep_add = 4
+  }
+
+  inline_script = {
+    script = jobs/foundry_add
+    AMOUNT = @building_static_jobs_high
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_natural_furnace_3 = { # substitute for 'building_foundry_3'
+  icon = "natural_furnace_4"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_fully_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    OR = {
+      has_modifier = resort_colony
+      has_modifier = slave_colony
+      owner = { is_wilderness_empire = no }
+    }
+  }
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b4_minerals
+      biomass = @b4_biomass
+      volatile_motes = @b3_rare_cost
+    }
+    upkeep = {
+      energy = @b4_upkeep
+      volatile_motes = @b3_rare_upkeep
+    }
+  }
+
+  prerequisites = {
+    tech_alloys_2
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  planet_modifier = {
+    pop_foundry_bonus_workforce_mult = 0.15
+    planet_metallurgists_alloys_produces_add = 2
+    planet_metallurgists_minerals_upkeep_add = 4
+  }
+
+  inline_script = {
+    script = jobs/foundry_add
+    AMOUNT = @building_static_jobs_high
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+# Volatile Motes
+building_mote_aggravator = { # substitute for 'building_chemical_plant'
+  icon = "mote_aggravator"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+  prerequisites = {
+    "tech_volatile_motes"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b2_minerals
+      biomass = @b3_biomass
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+  }
+  planet_modifier = {
+    job_chemist_drone_add = @building_static_jobs
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+# Exotic Gas
+building_churning_stomach = { # substitute for 'building_refinery'
+  icon = "churning_stomach"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+  prerequisites = {
+    "tech_exotic_gases"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b2_minerals
+      biomass = @b3_biomass
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+  }
+  planet_modifier = {
+    job_gas_refiner_drone_add = @building_static_jobs
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+# Rare Crystals
+building_crystal_growth = { # substitute for 'building_crystal_plant'
+  icon = "crystal_growth"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    foundry
+  }
+
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+  prerequisites = {
+    "tech_rare_crystals"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b2_minerals
+      biomass = @b3_biomass
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+  }
+
+  planet_modifier = {
+    job_translucer_drone_add = @building_static_jobs
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}

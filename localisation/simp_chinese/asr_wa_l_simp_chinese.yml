@@ -1,0 +1,2 @@
+﻿l_simp_chinese:
+  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n—$ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:$tech_terrestrial_sculpting$']\n—$GUARANTEED_RESEARCH_OPTION_STRING$£society_research£['technology:$tech_ecological_adaptation$']"

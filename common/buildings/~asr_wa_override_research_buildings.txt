@@ -1,0 +1,242 @@
+# Research
+building_brain_node_1 = {
+  icon = "brain_node_1"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_2
+  category = research
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    research
+  }
+
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+
+  resources = {
+    category = planet_research_buildings
+    cost = {
+      minerals = @b1_minerals
+      biomass = @b1_biomass
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+    upkeep = {
+      trigger = { has_planet_flag = has_science_ministry }
+      energy = 1
+    }
+  }
+
+  upgrades = {
+    building_brain_node_2
+  }
+
+  inline_script = {
+    script = jobs/researchers_add
+    AMOUNT = @building_static_jobs_low_3
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_brain_node_2 = {
+  icon = "brain_node_2"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_3
+  category = research
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    research
+  }
+  allow = {
+    has_upgraded_capital = yes
+  }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
+  }
+
+  resources = {
+    category = planet_research_buildings
+    cost = {
+      minerals = @b2_minerals
+      biomass = @b2_biomass
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+    upkeep = {
+      trigger = { has_planet_flag = has_science_ministry }
+      energy = 1
+    }
+  }
+
+  upgrades = {
+    building_brain_node_3
+  }
+
+  inline_script = {
+    script = jobs/researchers_add
+    AMOUNT = @building_static_jobs_3
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_brain_node_3 = {
+  icon = "brain_node_3"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = research
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    research
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_major_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+
+  resources = {
+    category = planet_research_buildings
+    cost = {
+      minerals = @b3_minerals
+      biomass = @b3_biomass
+      exotic_gases = @b2_rare_cost
+    }
+    upkeep = {
+      energy = @b3_upkeep
+      exotic_gases = @b2_rare_upkeep
+    }
+    upkeep = {
+      trigger = { has_planet_flag = has_science_ministry }
+      energy = 2
+    }
+  }
+
+  prerequisites = {
+    "tech_basic_science_lab_2"
+  }
+
+  upgrades = {
+    building_brain_node_4
+  }
+
+  planet_modifier = {
+    planet_physicists_physics_research_produces_add = 1
+    planet_biologists_society_research_produces_add = 1
+    planet_engineers_engineering_research_produces_add = 1
+  }
+
+  inline_script = {
+    script = jobs/researchers_add
+    AMOUNT = @building_static_jobs_high_3
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+}
+
+building_brain_node_4 = {
+  icon = "brain_node_4"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_5
+  category = research
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    research
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_fully_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+
+  resources = {
+    category = planet_research_buildings
+    cost = {
+      minerals = @b4_minerals
+      biomass = @b4_biomass
+      exotic_gases = @b3_rare_cost
+    }
+    upkeep = {
+      energy = @b4_upkeep
+      exotic_gases = @b3_rare_upkeep
+    }
+    upkeep = {
+      trigger = { has_planet_flag = has_science_ministry }
+      energy = 3
+      food = 1
+    }
+  }
+  prerequisites = {
+    "tech_basic_science_lab_3"
+  }
+  planet_modifier = {
+    planet_physicists_physics_research_produces_add = 1
+    planet_biologists_society_research_produces_add = 1
+    planet_engineers_engineering_research_produces_add = 1
+    pop_calculator_physicist_bonus_workforce_mult = 0.15
+    pop_calculator_biologist_bonus_workforce_mult = 0.15
+    pop_calculator_engineer_bonus_workforce_mult = 0.15
+  }
+
+  inline_script = {
+    script = jobs/researchers_add
+    AMOUNT = @building_static_jobs_high_3
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+}

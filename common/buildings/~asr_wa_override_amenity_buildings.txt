@@ -1,0 +1,293 @@
+@wa_t1_houseing = 600
+@wa_t1_amenities = 600
+@wa_t2_houseing = 1200
+@wa_t2_amenities = 1200
+@wa_t3_houseing = 2000
+@wa_t3_amenities = 2000
+@wa_t4_houseing = 3200
+@wa_t4_amenities = 3200
+
+@wa_t2_extra_houseing = 2000
+@wa_t2_extra_amenities = 2000
+
+# override common variables
+@wa_b1_biomass = 50
+@wa_b2_biomass = 50
+@wa_b3_biomass = 100
+@wa_b4_biomass = 200
+
+# Amenities
+building_avatar_chamber_1 = {
+  icon = "avatar_chamber_1"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_1
+  category = amenity
+  can_build = yes
+  can_demolish = yes
+
+  building_sets = {
+    government
+    unity
+  }
+
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+  convert_to = {
+    building_drone_storage
+    building_hive_warren
+    building_communal_housing
+    building_luxury_residence
+  }
+
+  prerequisites = {
+    tech_wilderness_node
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      food = @b1_minerals
+      biomass = @wa_b1_biomass
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+
+  upgrades = {
+    building_avatar_chamber_2
+  }
+
+  planet_modifier = {
+    planet_housing_add = @wa_t1_houseing
+    planet_amenities_no_happiness_add = @wa_t1_amenities
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
+  icon = "avatar_chamber_2"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_3
+  category = amenity
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    unity
+  }
+
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+  convert_to = {
+    building_organic_paradise
+    building_drone_megastorage
+    building_expanded_warren
+    building_communal_housing_large
+    building_paradise_dome
+  }
+
+  prerequisites = {
+    tech_wilderness_node
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      food = @b2_minerals
+      biomass = @wa_b2_biomass
+      rare_crystals = @b2_rare_cost
+    }
+    upkeep = {
+      food = @b2_upkeep
+      rare_crystals = @b2_rare_upkeep
+    }
+    produces = {
+      trigger = { exists = owner }
+      unity = 1
+      multiplier = owner.trigger:num_ascension_perks
+    }
+  }
+
+  upgrades = {
+    building_avatar_chamber_3
+  }
+
+  planet_modifier = {
+    planet_housing_add = 300
+    planet_amenities_no_happiness_add = 600
+    planet_bureaucrats_produces_mult = 0.20
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
+  icon = "avatar_chamber_3"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = amenity
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    unity
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_major_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    OR = {
+      has_modifier = slave_colony
+      owner = { is_wilderness_empire = no }
+    }
+  }
+  convert_to = {  }
+  prerequisites = {
+    tech_wilderness_cluster
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b3_minerals
+      biomass = @b3_biomass
+      volatile_motes = @b2_rare_cost
+    }
+    upkeep = {
+      food = @b3_upkeep
+      volatile_motes = @b2_rare_upkeep
+    }
+    produces = {
+      trigger = { exists = owner }
+      unity = 2
+      multiplier = owner.trigger:num_ascension_perks
+    }
+  }
+  upgrades = {
+    building_avatar_chamber_4
+  }
+
+  planet_modifier = {
+    planet_housing_add = 300
+    planet_amenities_no_happiness_add = 800
+    planet_bureaucrats_produces_mult = 0.20
+  }
+
+  triggered_desc = {
+    text = building_avatar_chamber_3_effect
+  }
+
+  triggered_desc = {
+    text = building_heritage_site_effect
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}
+
+building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
+  icon = "avatar_chamber_4"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_5
+  category = amenity
+  can_build = no
+  can_demolish = yes
+
+  building_sets = {
+    government
+    unity
+  }
+
+  planet_limit = 1
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    has_fully_upgraded_capital = yes
+  }
+  destroy_trigger = {
+    exists = owner
+    OR = {
+      has_modifier = slave_colony
+      owner = { is_wilderness_empire = no }
+    }
+  }
+  convert_to = {  }
+  prerequisites = {
+    tech_wilderness_confluence
+  }
+  resources = {
+    category = planet_buildings
+    cost = {
+      minerals = @b4_minerals
+      biomass = @b4_biomass
+      volatile_motes = @b3_rare_cost
+    }
+    upkeep = {
+      food = @b4_upkeep
+      volatile_motes = @b3_rare_upkeep
+    }
+    produces = {
+      trigger = { exists = owner }
+      unity = 3
+      multiplier = owner.trigger:num_ascension_perks
+    }
+  }
+
+  planet_modifier = {
+    planet_housing_add = 300
+    planet_amenities_no_happiness_add = 1200
+    planet_bureaucrats_produces_mult = 0.20
+  }
+
+  triggered_desc = {
+    text = building_avatar_chamber_4_effect
+  }
+  triggered_desc = {
+    text = building_hypercomms_forum_effect
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  ai_estimate_without_unemployment = yes
+}

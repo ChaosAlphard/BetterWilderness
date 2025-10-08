@@ -1,0 +1,8 @@
+custom_tooltip_with_modifiers = tr_purity_imperfection_remediation_wilderness_tt
+
+modifier = {
+  pop_environment_tolerance = 0.2
+  empire_size_districts_mult = -0.75
+  empire_size_colonies_mult = -0.75
+  empire_size_pops_mult = -0.10
+}
