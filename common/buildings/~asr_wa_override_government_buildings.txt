@@ -6,7 +6,7 @@
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
   category = government
-  base_buildtime = @b1_time
+  base_buildtime = @buildtime_3
   can_build = yes
   can_demolish = yes
   can_be_ruined = yes
@@ -33,14 +33,14 @@ building_cradle_of_rebirth = {
     category = planet_buildings
     cost = {
       food = @b2_minerals
-      biomass = @b3_biomass
+      biomass = @wa_b2_biomass
     }
     upkeep = {
-      food = @b1_upkeep
+      food = @b2_upkeep
     }
   }
 
-  # 岗位
+  # 孵育体岗位
   inline_script = {
     script = jobs/spawning_drone_add
     AMOUNT = @building_static_jobs_low
@@ -78,7 +78,7 @@ building_cradle_of_rebirth = {
       job_patrol_drone_per_pop = 0.02
     }
   }
-  # 额外有机人口增长系数, 反比于行星人口数量, +200% - +0%
+  # 额外有机人口增长系数, 反比于行星人口数量, +1000% - +0%
   triggered_planet_modifier = {
     potential = {
       exists = owner
@@ -88,12 +88,11 @@ building_cradle_of_rebirth = {
         count <= 2000
       }
     }
-    bonus_pop_growth_mult = 0.01
+    bonus_pop_growth_mult = 0.5
     mult = value:asr_wa_bonus_growth_by_pops
   }
 
-  # 基因重塑: 宜居性
-  # 纯净传统完成: 岗位、岗位效率
+  # 纯净传统完成: 给予孵育体岗位和岗位效率
   triggered_planet_modifier = {
     potential = {
       exists = owner
@@ -104,7 +103,7 @@ building_cradle_of_rebirth = {
     }
     modifier = {
       job_spawning_drone_add = @building_static_jobs_low
-      organic_pop_bonus_workforce_mult = 0.30
+      pop_bonus_workforce_mult = 0.30
     }
   }
 
@@ -127,10 +126,35 @@ building_cradle_of_rebirth = {
     mult = value:asr_wa_amenities_by_pops|RATIO|0.3|
   }
 
+  # 掌控自然修正给予-10%行星基础设施花费
+  triggered_planet_modifier = {
+    potential = {
+      has_modifier = mastery_of_nature
+    }
+    modifier = {
+      planet_structures_cost_mult = -0.15
+    }
+  }
+
+  # 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
   triggered_planet_modifier = {
     potential = {
       exists = owner
       owner = {
+        is_wilderness_empire = yes
+        has_tradition = tr_purity_finish
+      }
+    }
+    planet_building_build_speed_mult = 0.02
+    planet_decision_enact_speed_mult = 0.02
+    mult = value:asr_wa_num_buildings_and_districts
+  }
+  triggered_planet_modifier = {
+    potential = {
+      is_planet_class = pc_gaia
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
         has_tradition = tr_purity_finish
       }
     }
@@ -141,6 +165,25 @@ building_cradle_of_rebirth = {
 
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = asr_wa_b_cor_tt
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = asr_wa_b_cor_bonus_pop_growth_tt
+  }
+  triggered_desc = {
+    trigger = {
+      count_owned_pop_amount = {
+        limit = { has_trait = trait_wilderness }
+        count <= 2000
+      }
+    }
+    text = asr_wa_b_cor_bonus_pop_growth_func
   }
 
   ai_estimate_without_unemployment = yes
