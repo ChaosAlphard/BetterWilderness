@@ -52,7 +52,7 @@ building_avatar_chamber_1 = {
   resources = {
     category = planet_buildings
     cost = {
-      food = @b1_minerals
+      food = @wa_b1_foods
       biomass = @wa_b1_biomass
     }
     upkeep = {
@@ -115,18 +115,13 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
   resources = {
     category = planet_buildings
     cost = {
-      food = @b2_minerals
+      food = @wa_b2_foods
       biomass = @wa_b2_biomass
       rare_crystals = @b2_rare_cost
     }
     upkeep = {
       food = @b2_upkeep
       rare_crystals = @b2_rare_upkeep
-    }
-    produces = {
-      trigger = { exists = owner }
-      unity = 1
-      multiplier = owner.trigger:num_ascension_perks
     }
   }
 
@@ -135,9 +130,16 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
   }
 
   planet_modifier = {
-    planet_housing_add = 300
-    planet_amenities_no_happiness_add = 600
-    planet_bureaucrats_produces_mult = 0.20
+    planet_housing_add = @wa_t2_houseing
+    planet_amenities_no_happiness_add = @wa_t2_amenities
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      has_active_building = building_avatar_chamber_4
+    }
+    planet_housing_add = @wa_t2_extra_houseing
+    planet_amenities_no_happiness_add = @wa_t2_extra_amenities
   }
 
   inline_script = {
@@ -167,6 +169,7 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   }
   allow = {
     has_major_upgraded_capital = yes
+    NOT = { has_modifier = slave_colony }
   }
   destroy_trigger = {
     exists = owner
@@ -183,17 +186,17 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @b3_minerals
-      biomass = @b3_biomass
-      volatile_motes = @b2_rare_cost
+      minerals = @wa_b3_foods
+      biomass = @wa_b3_biomass
+      rare_crystals = @b3_rare_cost
     }
     upkeep = {
       food = @b3_upkeep
-      volatile_motes = @b2_rare_upkeep
+      rare_crystals = @b3_rare_upkeep
     }
     produces = {
       trigger = { exists = owner }
-      unity = 2
+      unity = 3
       multiplier = owner.trigger:num_ascension_perks
     }
   }
@@ -202,17 +205,12 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   }
 
   planet_modifier = {
-    planet_housing_add = 300
-    planet_amenities_no_happiness_add = 800
-    planet_bureaucrats_produces_mult = 0.20
+    planet_housing_add = @wa_t3_houseing
+    planet_amenities_no_happiness_add = @wa_t3_amenities
   }
 
   triggered_desc = {
-    text = building_avatar_chamber_3_effect
-  }
-
-  triggered_desc = {
-    text = building_heritage_site_effect
+    text = building_hypercomms_forum_effect
   }
 
   inline_script = {
@@ -242,6 +240,7 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
   allow = {
     has_fully_upgraded_capital = yes
+    NOT = { has_modifier = slave_colony }
   }
   destroy_trigger = {
     exists = owner
@@ -257,13 +256,13 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @b4_minerals
-      biomass = @b4_biomass
-      volatile_motes = @b3_rare_cost
+      minerals = @wa_b4_foods
+      biomass = @wa_b4_biomass
+      rare_crystals = @b3_rare_cost
     }
     upkeep = {
       food = @b4_upkeep
-      volatile_motes = @b3_rare_upkeep
+      rare_crystals = @b3_rare_upkeep
     }
     produces = {
       trigger = { exists = owner }
@@ -273,13 +272,16 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
 
   planet_modifier = {
-    planet_housing_add = 300
-    planet_amenities_no_happiness_add = 1200
-    planet_bureaucrats_produces_mult = 0.20
+    planet_housing_add = @wa_t4_houseing
+    planet_amenities_no_happiness_add = @wa_t4_amenities
+    planet_amenities_no_happiness_mult = 0.20
   }
 
   triggered_desc = {
-    text = building_avatar_chamber_4_effect
+    text = building_avatar_chamber_4_cor_wa
+  }
+  triggered_desc = {
+    text = building_avatar_chamber_4_effect_wa
   }
   triggered_desc = {
     text = building_hypercomms_forum_effect
