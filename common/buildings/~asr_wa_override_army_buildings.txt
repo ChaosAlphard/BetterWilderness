@@ -25,15 +25,8 @@ building_planetary_carapace = { # substitute for 'building_stronghold'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b2_biomass
-    }
-    upkeep = {
-      minerals = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t1
   }
 
   inline_script = {
@@ -79,17 +72,9 @@ building_planetary_carapace_2 = { # substitute for 'building_fortress'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b3_minerals
-      biomass = @b3_biomass
-      volatile_motes = @b2_rare_cost
-    }
-    upkeep = {
-      minerals = @b3_upkeep
-      volatile_motes = @b2_rare_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t2
+    RARE = volatile_motes
   }
 
   inline_script = {
@@ -156,15 +141,8 @@ building_ozone_thickener = {
     script = cosmic_storms/PlanetaryShieldOnBuiltDestroy
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b2_biomass
-    }
-    upkeep = {
-      energy = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t1
   }
 
   inline_script = {
@@ -179,7 +157,7 @@ building_ozone_thickener = {
         exists = owner
         solar_system = {
           exists = owner
-          owner = { num_cosmic_storms_encountered >=2 }
+          owner = { num_cosmic_storms_encountered >= 2 }
         }
       }
     }
