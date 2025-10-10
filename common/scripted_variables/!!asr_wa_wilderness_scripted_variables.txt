@@ -12,28 +12,30 @@
 @buildtime_5 = 600
 @buildtime_6 = 720
 
-@wa_b1_biomass = 50
-@wa_b2_biomass = 100
-@wa_b3_biomass = 200
+@wa_b1_biomass = 100
+@wa_b2_biomass = 200
+@wa_b3_biomass = 400
 @wa_b4_biomass = 400
 
-@wa_b1_minerals = 100
-@wa_b2_minerals = 200
-@wa_b3_minerals = 300
-@wa_b4_minerals = 400
-# @wa_b5_minerals = 1000
-# @wa_b6_minerals = 1500
+@wa_b1_minerals = 200
+@wa_b2_minerals = 300
+@wa_b3_minerals = 400
+@wa_b4_minerals = 500
+@wa_b5_minerals = 1000
 
-@wa_b1_foods = 150
-@wa_b2_foods = 300
-@wa_b3_foods = 450
-@wa_b4_foods = 600
-# @wa_b5_foods = 2000
-# @wa_b6_foods = 3000
+@wa_b1_foods = 500
+@wa_b2_foods = 750
+@wa_b3_foods = 1000
+@wa_b4_foods = 1250
+@wa_b5_foods = 2500
 
-# @b0_minerals = 200
-# @b1_minerals = 400
-# @b2_minerals = 600
-# @b3_minerals = 800
-# @b4_minerals = 2000
-# @b5_minerals = 3000
+# @wa_f_b0_foods = 200
+# @wa_f_b1_foods = 400
+# @wa_f_b2_foods = 600
+# @wa_f_b3_foods = 800
+# @wa_f_b4_foods = 2000
+# @wa_f_b5_foods = 3000
+
+# 人口增长
+@wa_bonus_growth_max_pops = 2100
+@wa_bonus_growth_calc_max = 2000

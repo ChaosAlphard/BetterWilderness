@@ -1,0 +1,56 @@
+# 孵育体岗位
+inline_script = {
+  script = jobs/spawning_drone_add
+  AMOUNT = @building_static_jobs_low
+}
+
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_technology = tech_genome_mapping
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_technology = tech_gene_tailoring
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+
+# 每50人口 +1免疫体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  modifier = {
+    job_patrol_drone_per_pop = 0.02
+  }
+}
+
+# 额外有机人口增长系数, 反比于行星人口数量, +500% - +0%
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+    count_owned_pop_amount = {
+      limit = { has_trait = trait_wilderness }
+      count <= @wa_bonus_growth_max_pops
+    }
+  }
+  bonus_pop_growth_mult = 0.01
+  mult = value:asr_wa_bonus_growth_by_pops
+}

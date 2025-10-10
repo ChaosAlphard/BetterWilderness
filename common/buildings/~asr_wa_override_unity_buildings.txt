@@ -18,6 +18,14 @@ building_commensal_clearing_1 = {
 
   inline_script = {
     script = asr_wa/building_resource_t1
+    BASE = food
+  }
+
+  convert_to = {
+    building_bureaucratic_1
+    building_temple
+    building_hive_node
+    building_uplink_node
   }
 
   upgrades = {
@@ -55,15 +63,17 @@ building_commensal_clearing_2 = { # substitute for 'building_hive_node'
   allow = {
     has_upgraded_capital = yes
   }
+
   convert_to = {
-    building_bureaucratic_1
-    building_temple
-    building_hive_node
-    building_uplink_node
+    building_bureaucratic_2
+    building_holotemple
+    building_hive_cluster
+    building_network_junction
   }
 
   inline_script = {
     script = asr_wa/building_resource_t2
+    BASE = food
     RARE = rare_crystals
   }
 
@@ -112,6 +122,7 @@ building_commensal_clearing_3 = { # substitute for 'building_hive_cluster'
   allow = {
     has_major_upgraded_capital = yes
   }
+
   convert_to = {
     building_bureaucratic_2
     building_holotemple
@@ -121,6 +132,7 @@ building_commensal_clearing_3 = { # substitute for 'building_hive_cluster'
 
   inline_script = {
     script = asr_wa/building_resource_t3
+    BASE = food
     RARE = rare_crystals
   }
 
@@ -131,14 +143,9 @@ building_commensal_clearing_3 = { # substitute for 'building_hive_cluster'
     tech_wilderness_cluster
   }
 
-  convert_to = {
-    building_bureaucratic_2
-    building_holotemple
-    building_hive_cluster
-  }
-
   planet_modifier = {
-    planet_bureaucrats_unity_produces_add = 2
+    planet_bureaucrats_unity_produces_add = 1
+    planet_bureaucrats_produces_mult = 0.20
   }
 
   inline_script = {
@@ -167,12 +174,11 @@ building_commensal_clearing_4 = { # equivalent to 'building_hive_confluence'
     unity
   }
 
-
   inline_script = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
+    has_fully_upgraded_capital = yes
   }
 
   convert_to = {
@@ -184,6 +190,7 @@ building_commensal_clearing_4 = { # equivalent to 'building_hive_confluence'
 
   inline_script = {
     script = asr_wa/building_resource_t4
+    BASE = food
     RARE = rare_crystals
   }
 
@@ -191,15 +198,16 @@ building_commensal_clearing_4 = { # equivalent to 'building_hive_confluence'
     tech_wilderness_confluence
   }
 
+  planet_modifier = {
+    planet_bureaucrats_unity_produces_add = 2
+    planet_bureaucrats_produces_mult = 0.20
+    planet_bureaucrats_upkeep_mult = -0.20
+    pop_coordinator_bonus_workforce_mult = 0.20
+  }
+
   inline_script = {
     script = jobs/unity_jobs_add
     AMOUNT = @building_static_jobs_very_high
-  }
-
-  planet_modifier = {
-    planet_bureaucrats_unity_produces_add = 2
-    pop_bureaucrat_bonus_workforce_mult = 0.20
-    planet_bureaucrats_upkeep_mult = 0.20
   }
 
   triggered_desc = {

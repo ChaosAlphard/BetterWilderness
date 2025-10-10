@@ -1,0 +1,51 @@
+# 催化林地
+building_asr_wa_organic_processing = {
+  icon = "building_hydroponics_farm"
+  category = government
+  base_buildtime = @buildtime_1
+  can_build = yes
+  can_demolish = yes
+  can_be_ruined = yes
+  planet_limit = 1
+
+  building_sets = {
+    urban
+    government
+    research
+    foundry
+    factory
+  }
+
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = no
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      food = @b1_minerals
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+
+  triggered_planet_modifier = {
+    potential = { always = yes }
+  }
+
+  ai_estimate_without_unemployment = yes
+
+  ai_weight = {
+    factor = 0
+  }
+}

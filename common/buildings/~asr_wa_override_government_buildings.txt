@@ -1,8 +1,11 @@
 # 再生源地
-# 基础: +100孵育体, 每50人+1免疫体
+# 基础: +100孵育体, 每50人+1免疫体, 给予人口组装速度加成, 反比于行星人口数量
+# 根据人口数量给予舒适度
 # 拥有 基因图谱 科技: +100孵育体
 # 拥有 基因剪裁 科技: +100孵育体
-# 纯净传统完成: +100孵育体, +30%有机人口岗位效率
+# 纯净传统完成: +100孵育体, +30%有机人口岗位效率,
+#   每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
+# 掌控自然修正: 给予-10%行星基础设施花费
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
   category = government
@@ -40,56 +43,9 @@ building_cradle_of_rebirth = {
     }
   }
 
-  # 孵育体岗位
+  # 孵育体
   inline_script = {
-    script = jobs/spawning_drone_add
-    AMOUNT = @building_static_jobs_low
-  }
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = {
-        is_wilderness_empire = yes
-        has_technology = tech_genome_mapping
-      }
-    }
-    modifier = {
-      job_spawning_drone_add = @building_static_jobs_low
-    }
-  }
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = {
-        is_wilderness_empire = yes
-        has_technology = tech_gene_tailoring
-      }
-    }
-    modifier = {
-      job_spawning_drone_add = @building_static_jobs_low
-    }
-  }
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { is_wilderness_empire = yes }
-    }
-    modifier = {
-      job_patrol_drone_per_pop = 0.02
-    }
-  }
-  # 额外有机人口增长系数, 反比于行星人口数量, +1000% - +0%
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { is_wilderness_empire = yes }
-      count_owned_pop_amount = {
-        limit = { has_trait = trait_wilderness }
-        count <= 2000
-      }
-    }
-    bonus_pop_growth_mult = 0.5
-    mult = value:asr_wa_bonus_growth_by_pops
+    script = asr_wa/cor/spawning
   }
 
   # 纯净传统完成: 给予孵育体岗位和岗位效率
@@ -114,16 +70,7 @@ building_cradle_of_rebirth = {
       owner = { is_wilderness_empire = yes }
     }
     planet_amenities_no_happiness_add = 1
-    mult = value:asr_wa_amenities_by_pops|RATIO|0.2|
-  }
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { is_wilderness_empire = yes }
-      has_active_building = building_avatar_chamber_4
-    }
-    planet_amenities_no_happiness_add = 1
-    mult = value:asr_wa_amenities_by_pops|RATIO|0.3|
+    mult = value:asr_wa_amenities_by_pops
   }
 
   # 掌控自然修正给予-10%行星基础设施花费
@@ -147,20 +94,7 @@ building_cradle_of_rebirth = {
     }
     planet_building_build_speed_mult = 0.02
     planet_decision_enact_speed_mult = 0.02
-    mult = value:asr_wa_num_buildings_and_districts
-  }
-  triggered_planet_modifier = {
-    potential = {
-      is_planet_class = pc_gaia
-      exists = owner
-      owner = {
-        is_wilderness_empire = yes
-        has_tradition = tr_purity_finish
-      }
-    }
-    planet_building_build_speed_mult = 0.02
-    planet_decision_enact_speed_mult = 0.02
-    mult = value:asr_wa_num_buildings_and_districts
+    mult = value:asr_wa_cor_bonus_build_speed
   }
 
   inline_script = {
@@ -180,7 +114,7 @@ building_cradle_of_rebirth = {
     trigger = {
       count_owned_pop_amount = {
         limit = { has_trait = trait_wilderness }
-        count <= 2000
+        count <= @wa_bonus_growth_max_pops
       }
     }
     text = asr_wa_b_cor_bonus_pop_growth_func

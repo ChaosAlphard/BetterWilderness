@@ -1,0 +1,20 @@
+resources = {
+  category = planet_buildings
+  cost = {
+    biomass = @wa_b3_biomass
+    $RARE$ = @b3_rare_cost
+  }
+  cost = {
+    food = @wa_b3_minerals
+    minerals = @wa_b3_minerals
+    trigger = { asr_wa_planet_use_food_build_building = no }
+  }
+  cost = {
+    food = @wa_b3_foods
+    trigger = { asr_wa_planet_use_food_build_building = yes }
+  }
+  upkeep = {
+    $BASE$ = @b3_upkeep
+    $RARE$ = @b3_rare_upkeep
+  }
+}

@@ -1,0 +1,3 @@
+asr_wa_planet_use_food_build_building = {
+  has_active_building = building_asr_wa_organic_processing
+}

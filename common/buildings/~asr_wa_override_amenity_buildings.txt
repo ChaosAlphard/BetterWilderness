@@ -27,7 +27,6 @@ building_avatar_chamber_1 = {
 
   building_sets = {
     government
-    unity
   }
 
   potential = {
@@ -86,7 +85,6 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
 
   building_sets = {
     government
-    unity
   }
 
   potential = {
@@ -117,11 +115,11 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
     cost = {
       food = @wa_b2_foods
       biomass = @wa_b2_biomass
-      rare_crystals = @b2_rare_cost
+      exotic_gases = @b2_rare_cost
     }
     upkeep = {
       food = @b2_upkeep
-      rare_crystals = @b2_rare_upkeep
+      exotic_gases = @b2_rare_upkeep
     }
   }
 
@@ -159,7 +157,6 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
 
   building_sets = {
     government
-    unity
   }
 
   planet_limit = 1
@@ -188,11 +185,11 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
     cost = {
       minerals = @wa_b3_foods
       biomass = @wa_b3_biomass
-      rare_crystals = @b3_rare_cost
+      exotic_gases = @b3_rare_cost
     }
     upkeep = {
       food = @b3_upkeep
-      rare_crystals = @b3_rare_upkeep
+      exotic_gases = @b3_rare_upkeep
     }
     produces = {
       trigger = { exists = owner }
@@ -230,7 +227,6 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
 
   building_sets = {
     government
-    unity
   }
 
   planet_limit = 1
@@ -239,7 +235,7 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
     owner = { is_wilderness_empire = yes }
   }
   allow = {
-    has_fully_upgraded_capital = yes
+    has_major_upgraded_capital = yes
     NOT = { has_modifier = slave_colony }
   }
   destroy_trigger = {
@@ -258,11 +254,11 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
     cost = {
       minerals = @wa_b4_foods
       biomass = @wa_b4_biomass
-      rare_crystals = @b3_rare_cost
+      exotic_gases = @b3_rare_cost
     }
     upkeep = {
       food = @b4_upkeep
-      rare_crystals = @b3_rare_upkeep
+      exotic_gases = @b3_rare_upkeep
     }
     produces = {
       trigger = { exists = owner }

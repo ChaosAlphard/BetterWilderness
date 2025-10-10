@@ -30,6 +30,15 @@ asr_wa_num_buildings_and_districts = {
   add = value:asr_wa_num_districts
 }
 
+asr_wa_cor_bonus_build_speed = {
+  base = 0
+  set = value:asr_wa_num_buildings_and_districts
+  modifier = {
+    is_planet_class = pc_gaia
+    mult = 2
+  }
+}
+
 asr_wa_num_wilderness_pops = {
   base = 0
   complex_trigger_modifier = {
@@ -43,35 +52,77 @@ asr_wa_num_wilderness_pops = {
   min = 0
 }
 
+asr_wa_workforce_spawning_drone = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger_scope = planet
+    trigger = count_owned_workforce
+    parameters = {
+      limit = {
+        has_job_type = spawning_drone
+      }
+    }
+    mode = add
+  }
+  min = $MIN$
+}
+
+asr_wa_amenities_ratio = {
+  base = 0.2
+  modifier = {
+    has_active_building = building_avatar_chamber_4
+    add = 0.3
+  }
+}
+
 asr_wa_amenities_by_pops = {
   base = 0
   add = value:asr_wa_num_wilderness_pops
-  mult = $RATIO$
+  mult = value:asr_wa_amenities_ratio
   min = 0
   floor = yes
 }
 
-# 0人口 return 200, 2000人口 return 0
+# 如果有较大的非孵育体岗位的人口组装来源, 则可能导致孵育体岗位更少时获得更高的增长补偿
 asr_wa_bonus_growth_by_pops = {
   base = 0
-  set = 2000
+  set = @wa_bonus_growth_max_pops
+  # 0-100人口 return 2000, 2100人口 return 0
   subtract = value:asr_wa_num_wilderness_pops
+  max = @wa_bonus_growth_calc_max
   min = 0
-  divide = 10
-  floor = yes
+  # 除以孵育体数量, 以保证额外增长实际数值不变
+  divide = value:asr_wa_workforce_spawning_drone|MIN|100|
+  # 200 * 25 * 1% = 5000
+  mult = 25
+  round_to = 0.01
 }
 
-# asr_wa_num_workforce_maintenance_drone = {
+# # 有机人口增长系数 (已测试可用)
+# asr_wa_num_fake_growth = {
+#   base = 0
+#   modifier = {
+#     add = planet.modifier:fake_pop_growth_mod
+#   }
+# }
+# # 人口组装岗位效率 (未测试)
+# asr_wa_bonus_workforce_spawning_drone = {
 #   base = 0
 #   complex_trigger_modifier = {
 #     trigger_scope = planet
-#     trigger = count_owned_workforce
+#     trigger = total_workforce_with_job_tag
 #     parameters = {
-#       limit = {
-#         has_job_type = wilderness_maintenance_drone
-#       }
+#       tags = { pop_assembly }
 #     }
 #     mode = add
 #   }
 #   min = 0
 # }
+
+asr_wa_total_metallurgists_minerals_upkeep = {
+  base = 0
+  modifier = {
+    add = planet.modifier:planet_metallurgists_minerals_upkeep_add
+  }
+  min = 0
+}
