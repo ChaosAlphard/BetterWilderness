@@ -12,31 +12,22 @@ building_tendril_cradle_1 = {
     trade
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b1_minerals
-      biomass = @b1_biomass
-    }
-    upkeep = {
-      minerals = @b1_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t1
+    BASE = food
   }
 
   upgrades = {
     building_tendril_cradle_2
   }
-  planet_modifier = {
-    job_logistics_drone_add = @building_static_jobs_low
+
+  inline_script = {
+    script = jobs/trader_add
+    AMOUNT = @building_static_jobs
   }
 
   inline_script = {
@@ -59,35 +50,39 @@ building_tendril_cradle_2 = {
     trade
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_upgraded_capital = yes
   }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b2_biomass
-    }
-    upkeep = {
-      minerals = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t2
+    BASE = food
+    RARE = rare_crystals
   }
 
   upgrades = {
     building_tendril_cradle_3
   }
 
-  planet_modifier = {
+  inline_script = {
+    script = jobs/trader_add
+    AMOUNT = @building_static_jobs_high
+  }
+  triggered_planet_modifier = {
+    potential = { has_active_building = building_tendril_cradle_4 }
     job_logistics_drone_add = @building_static_jobs
+  }
+  triggered_planet_modifier = {
+    potential = {
+      has_active_building = building_tendril_cradle_4
+      exists = owner
+      owner = { has_active_tradition = tr_logistics_2 }
+    }
+    job_logistics_drone_add = @building_static_jobs
+    mult = 0.5
   }
 
   inline_script = {
@@ -104,36 +99,24 @@ building_tendril_cradle_3 = {
   category = trade
   can_build = no
   can_demolish = yes
+  planet_limit = 1
 
   building_sets = {
     government
     trade
   }
 
-  planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_major_upgraded_capital = yes
   }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b3_minerals
-      biomass = @b3_biomass
-      rare_crystals = @b2_rare_cost
-    }
-    upkeep = {
-      minerals = @b3_upkeep
-      rare_crystals = @b2_rare_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t3
+    BASE = food
+    RARE = rare_crystals
   }
 
   upgrades = {
@@ -141,8 +124,12 @@ building_tendril_cradle_3 = {
   }
 
   planet_modifier = {
-    job_logistics_drone_add = @building_static_jobs_high
-    planet_pops_trade_produces_mult = 0.20
+    planet_traders_produces_mult = 0.20
+  }
+
+  inline_script = {
+    script = jobs/trader_add
+    AMOUNT = @building_static_jobs_very_high
   }
 
   inline_script = {
@@ -159,41 +146,39 @@ building_tendril_cradle_4 = {
   category = trade
   can_build = no
   can_demolish = yes
+  planet_limit = 1
 
   building_sets = {
     government
     trade
   }
 
-  planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_fully_upgraded_capital = yes
   }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b4_minerals
-      biomass = @b4_biomass
-      rare_crystals = @b3_rare_cost
-    }
-    upkeep = {
-      minerals = @b4_upkeep
-      rare_crystals = @b3_rare_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_resource_t4
+    BASE = food
+    RARE = rare_crystals
   }
 
   planet_modifier = {
-    job_logistics_drone_add = @building_static_jobs_high
-    planet_pops_trade_produces_mult = 0.30
+    planet_traders_produces_mult = 0.20
+    planet_traders_upkeep_mult = -0.20
+    pop_logistics_drone_bonus_workforce_mult = 0.20
+  }
+
+  inline_script = {
+    script = jobs/trader_add
+    AMOUNT = @building_static_jobs_very_high
+  }
+
+  triggered_desc = {
+    text = asr_wa_building_tendril_cradle_4_tt
   }
 
   inline_script = {
