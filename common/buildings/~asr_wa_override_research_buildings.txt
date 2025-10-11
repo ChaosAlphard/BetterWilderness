@@ -19,15 +19,23 @@ building_brain_node_1 = {
   resources = {
     category = planet_research_buildings
     cost = {
-      minerals = @b1_minerals
-      biomass = @b1_biomass
+      biomass = @wa_b1_biomass
+    }
+    cost = {
+      food = @wa_b1_minerals
+      minerals = @wa_b1_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_b1_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
     }
     upkeep = {
-      energy = @b1_upkeep
+      food = @b1_upkeep
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
-      energy = 1
+      food = 1
     }
   }
 
@@ -37,7 +45,7 @@ building_brain_node_1 = {
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_low_3
+    AMOUNT = @building_static_jobs_3
   }
 
   inline_script = {
@@ -59,25 +67,36 @@ building_brain_node_2 = {
     government
     research
   }
-  allow = {
-    has_upgraded_capital = yes
-  }
+
   inline_script = {
     script = buildings/wilderness_buildings_potential_destroy
+  }
+  allow = {
+    has_upgraded_capital = yes
   }
 
   resources = {
     category = planet_research_buildings
     cost = {
-      minerals = @b2_minerals
-      biomass = @b2_biomass
+      biomass = @wa_b2_biomass
+      exotic_gases = @b2_rare_cost
+    }
+    cost = {
+      food = @wa_b2_minerals
+      minerals = @wa_b2_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_b2_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
     }
     upkeep = {
-      energy = @b2_upkeep
+      food = @b2_upkeep
+      exotic_gases = @b2_rare_upkeep
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
-      energy = 1
+      food = 1
     }
   }
 
@@ -87,7 +106,14 @@ building_brain_node_2 = {
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_3
+    AMOUNT = @building_static_jobs_high_3
+  }
+
+  triggered_planet_modifier = {
+    potential = { has_active_building = building_brain_node_4 }
+    job_calculator_physicist_add = @building_static_jobs_3
+    job_calculator_biologist_add = @building_static_jobs_3
+    job_calculator_engineer_add = @building_static_jobs_3
   }
 
   inline_script = {
@@ -104,39 +130,42 @@ building_brain_node_3 = {
   category = research
   can_build = no
   can_demolish = yes
+  planet_limit = 1
 
   building_sets = {
     government
     research
   }
 
-  planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_major_upgraded_capital = yes
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
   }
 
   resources = {
     category = planet_research_buildings
     cost = {
-      minerals = @b3_minerals
-      biomass = @b3_biomass
-      exotic_gases = @b2_rare_cost
+      biomass = @wa_b3_biomass
+      exotic_gases = @b3_rare_cost
+    }
+    cost = {
+      food = @wa_b3_minerals
+      minerals = @wa_b3_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_b3_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
     }
     upkeep = {
-      energy = @b3_upkeep
-      exotic_gases = @b2_rare_upkeep
+      food = @b3_upkeep
+      exotic_gases = @b3_rare_upkeep
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
-      energy = 2
+      food = 2
     }
   }
 
@@ -152,11 +181,12 @@ building_brain_node_3 = {
     planet_physicists_physics_research_produces_add = 1
     planet_biologists_society_research_produces_add = 1
     planet_engineers_engineering_research_produces_add = 1
+    planet_researchers_produces_mult = 0.20
   }
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_high_3
+    AMOUNT = @building_static_jobs_very_high_3
   }
 
   inline_script = {
@@ -177,61 +207,71 @@ building_brain_node_4 = {
   category = research
   can_build = no
   can_demolish = yes
+  planet_limit = 1
 
   building_sets = {
     government
     research
   }
 
-  planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_fully_upgraded_capital = yes
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
   }
 
   resources = {
     category = planet_research_buildings
     cost = {
-      minerals = @b4_minerals
-      biomass = @b4_biomass
-      exotic_gases = @b3_rare_cost
+      biomass = @wa_b4_biomass
+      exotic_gases = @b4_rare_cost
+    }
+    cost = {
+      food = @wa_b3_minerals
+      minerals = @wa_b3_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_b3_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
     }
     upkeep = {
-      energy = @b4_upkeep
-      exotic_gases = @b3_rare_upkeep
+      food = @b4_upkeep
+      exotic_gases = @b4_rare_upkeep
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
-      energy = 3
-      food = 1
+      food = 4
     }
   }
+
   prerequisites = {
     "tech_basic_science_lab_3"
   }
+
   planet_modifier = {
-    planet_physicists_physics_research_produces_add = 1
-    planet_biologists_society_research_produces_add = 1
-    planet_engineers_engineering_research_produces_add = 1
-    pop_calculator_physicist_bonus_workforce_mult = 0.15
-    pop_calculator_biologist_bonus_workforce_mult = 0.15
-    pop_calculator_engineer_bonus_workforce_mult = 0.15
+    planet_physicists_physics_research_produces_add = 2
+    planet_biologists_society_research_produces_add = 2
+    planet_engineers_engineering_research_produces_add = 2
+    planet_researchers_produces_mult = 0.20
+    planet_researchers_upkeep_mult = -0.20
+    pop_calculator_physicist_bonus_workforce_mult = 0.20
+    pop_calculator_biologist_bonus_workforce_mult = 0.20
+    pop_calculator_engineer_bonus_workforce_mult = 0.20
   }
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_high_3
+    AMOUNT = @building_static_jobs_very_high_3
   }
 
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  triggered_desc = {
+    text = asr_wa_building_brain_node_4_tt
   }
 
   ai_estimate_without_unemployment = yes
