@@ -270,16 +270,11 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b3_biomass
-    }
-    upkeep = {
-      energy = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_rare_t1
+    BASE = energy
   }
+
   planet_modifier = {
     job_chemist_drone_add = @building_static_jobs
   }
@@ -315,16 +310,11 @@ building_churning_stomach = { # substitute for 'building_refinery'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b3_biomass
-    }
-    upkeep = {
-      energy = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_rare_t1
+    BASE = energy
   }
+
   planet_modifier = {
     job_gas_refiner_drone_add = @building_static_jobs
   }
@@ -360,15 +350,9 @@ building_crystal_growth = { # substitute for 'building_crystal_plant'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    cost = {
-      minerals = @b2_minerals
-      biomass = @b3_biomass
-    }
-    upkeep = {
-      energy = @b2_upkeep
-    }
+  inline_script = {
+    script = asr_wa/building_rare_t1
+    BASE = energy
   }
 
   planet_modifier = {
