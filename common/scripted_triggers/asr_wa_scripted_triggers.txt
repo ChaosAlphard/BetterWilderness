@@ -1,3 +1,37 @@
 asr_wa_planet_use_food_build_building = {
-  has_active_building = building_asr_wa_organic_processing
+  exists = planet
+  planet = {
+    has_active_building = building_asr_wa_organic_processing
+  }
+}
+
+asr_wa_planet_fabricator_use_food = {
+  exists = planet
+  planet = {
+    has_active_building = building_asr_wa_organic_processing
+  }
+}
+
+asr_wa_planet_researcher_use_food = {
+  exists = planet
+  planet = {
+    has_active_building = building_asr_wa_organic_processing
+  }
+}
+
+asr_wa_calc_tr_purity_unlock = {
+  NOT = { has_tradition = tr_purity_finish }
+  calc_true_if = {
+    amount = $AMOUNT$
+    # has_tradition = tr_purity_adopt
+    # has_tradition = tr_purity_finish
+    has_tradition = tr_purity_stage_1_swap
+    has_tradition = tr_purity_stage_2_swap
+    has_tradition = tr_purity_stage_3_swap
+    # has_tradition = tr_purity_genotype_regeneration
+    # has_tradition = tr_purity_exemplary_genetics
+    # has_tradition = tr_purity_optimized_neurology
+    # has_tradition = tr_purity_heightened_attributes
+    # has_tradition = tr_purity_imperfection_remediation
+  }
 }

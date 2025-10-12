@@ -1,0 +1,119 @@
+# 纯净传统额外加成
+asr_wa_tr_purity_effect = {
+  potential = {
+    is_wilderness_empire = yes
+    OR = {
+      has_tradition = tr_purity_adopt
+      has_tradition = tr_purity_finish
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_adopt
+
+    potential = {
+      has_tradition = tr_purity_adopt
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 0 }
+    }
+
+    valid = {
+      has_tradition = tr_purity_adopt
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 0 }
+    }
+
+    modifier = {
+      pop_environment_tolerance = 0.20
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_stage_1
+
+    potential = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 1 }
+    }
+
+    valid = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 1 }
+    }
+
+    modifier = {
+      pop_environment_tolerance = 0.20
+      leader_initial_skill = 2
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_stage_2
+
+    potential = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 2 }
+    }
+
+    valid = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 2 }
+    }
+
+    modifier = {
+      pop_environment_tolerance = 0.20
+      leader_initial_skill = 2
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_stage_3
+
+    potential = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 3 }
+    }
+
+    valid = {
+      asr_wa_calc_tr_purity_unlock = { AMOUNT = 3 }
+    }
+
+    modifier = {
+      pop_environment_tolerance = 0.20
+      leader_initial_skill = 2
+      leader_skill_add = 1
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_finish
+
+    potential = {
+      has_tradition = tr_purity_finish
+    }
+
+    valid = {
+      has_tradition = tr_purity_finish
+    }
+
+    modifier = {
+      pop_environment_tolerance = 0.20
+      leader_initial_skill = 2
+      leader_skill_add = 1
+      empire_size_pops_mult = -0.10
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+}

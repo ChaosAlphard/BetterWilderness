@@ -1,0 +1,19 @@
+define_text = {
+  name = ASRWA_NumPops
+  value = value:asr_wa_num_wilderness_pops
+}
+
+define_text = {
+  name = ASRWA_WorkforceSpawningDrone
+  value = value:asr_wa_workforce_spawning_drone|MIN|100|
+}
+
+define_text = {
+  name = ASRWA_BonusGrowthFromPops
+  value = value:asr_wa_bonus_growth_by_pops
+}
+
+define_text = {
+  name = ASRWA_Test00
+  value = value:asr_wa_total_metallurgists_minerals_upkeep
+}

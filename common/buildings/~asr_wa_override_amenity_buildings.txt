@@ -274,10 +274,10 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
 
   triggered_desc = {
-    text = building_avatar_chamber_4_cor_wa
+    text = asr_wa_building_avatar_chamber_4_cor
   }
   triggered_desc = {
-    text = building_avatar_chamber_4_effect_wa
+    text = asr_wa_building_avatar_chamber_4_tt
   }
   triggered_desc = {
     text = building_hypercomms_forum_effect
