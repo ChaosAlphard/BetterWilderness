@@ -1,0 +1,108 @@
+# Base
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert
+    MINERAL = -4
+    FOOD = 3
+  }
+}
+# 科研部
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_planet_flag = has_science_ministry
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert
+    MINERAL = -1.5
+    FOOD = 1
+  }
+}
+# 星界虹吸
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_active_building = building_astral_siphon_1
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    MINERAL = -2.5
+    FOOD = 2
+  }
+}
+# 星界漏斗
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_active_building = building_astral_siphon_1
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    MINERAL = -5
+    FOOD = 4
+  }
+}
+# 星界节点
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_active_building = building_astral_siphon_1
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    MINERAL = -10
+    FOOD = 8
+  }
+}
+# 传送门研究区域
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_deposit = d_portal_research_zone
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    MINERAL = -8
+    FOOD = 6
+  }
+}
+# 传送门研究区域
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_deposit = d_portal_research_zone
+    has_planet_flag = dportal_hell
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    MINERAL = -4
+    FOOD = 3
+  }
+}
+# 远古学院
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_active_building = building_archaeostudies_faculty
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_soc
+    MINERAL = -2.5
+    FOOD = 2
+  }
+}
+# 武器提取设施
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_has_any_hja_pf = no
+    has_deposit = d_weapon_extraction_facility
+  }
+  inline_script = {
+    script = asr_wa/op/component/researcher_upkeep_convert_eng
+    MINERAL = -4
+    FOOD = 3
+  }
+}

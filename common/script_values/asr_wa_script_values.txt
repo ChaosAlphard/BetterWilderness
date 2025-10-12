@@ -93,36 +93,7 @@ asr_wa_bonus_growth_by_pops = {
   min = 0
   # 除以孵育体数量, 以保证额外增长实际数值不变
   divide = value:asr_wa_workforce_spawning_drone|MIN|100|
-  # 200 * 25 * 1% = 5000
+  # 20 * 25 * 1% = 500%
   mult = 25
   round_to = 0.01
-}
-
-# # 有机人口增长系数 (已测试可用)
-# asr_wa_num_fake_growth = {
-#   base = 0
-#   modifier = {
-#     add = planet.modifier:fake_pop_growth_mod
-#   }
-# }
-# # 人口组装岗位效率 (未测试)
-# asr_wa_bonus_workforce_spawning_drone = {
-#   base = 0
-#   complex_trigger_modifier = {
-#     trigger_scope = planet
-#     trigger = total_workforce_with_job_tag
-#     parameters = {
-#       tags = { pop_assembly }
-#     }
-#     mode = add
-#   }
-#   min = 0
-# }
-
-asr_wa_total_metallurgists_minerals_upkeep = {
-  base = 0
-  modifier = {
-    add = planet.modifier:planet_metallurgists_minerals_upkeep_add
-  }
-  min = 0
 }

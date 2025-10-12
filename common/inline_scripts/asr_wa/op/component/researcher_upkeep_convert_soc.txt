@@ -1,0 +1,2 @@
+planet_biologists_minerals_upkeep_add = $MINERAL$
+planet_biologists_food_upkeep_add = $FOOD$

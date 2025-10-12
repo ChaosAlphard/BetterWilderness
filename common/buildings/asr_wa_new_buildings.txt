@@ -39,9 +39,10 @@ building_asr_wa_organic_processing = {
     }
   }
 
-  triggered_planet_modifier = {
-    potential = { always = yes }
-  }
+  # Planet Modifier
+  inline_script = { script = asr_wa/op/researcher }
+  inline_script = { script = asr_wa/op/fabricator }
+  inline_script = { script = asr_wa/op/rare_drone }
 
   ai_estimate_without_unemployment = yes
 

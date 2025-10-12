@@ -1,0 +1,9 @@
+triggered_planet_modifier = {
+  potential = { always = yes }
+  planet_translucers_minerals_upkeep_add = -10
+  planet_translucers_food_upkeep_add = 15
+  planet_refiners_minerals_upkeep_add = -10
+  planet_refiners_food_upkeep_add = 15
+  planet_chemists_minerals_upkeep_add = -10
+  planet_chemists_food_upkeep_add = 15
+}

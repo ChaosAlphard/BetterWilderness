@@ -19,6 +19,16 @@ asr_wa_planet_researcher_use_food = {
   }
 }
 
+asr_wa_has_any_hja_pf = {
+  exists = owner
+  owner = {
+    OR = {
+      has_policy_flag = irs_hja_researcher_use_default_resource
+      has_policy_flag = irs_hja_researcher_use_food_resource
+    }
+  }
+}
+
 asr_wa_calc_tr_purity_unlock = {
   NOT = { has_tradition = tr_purity_finish }
   calc_true_if = {

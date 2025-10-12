@@ -1,0 +1,48 @@
+# Base
+triggered_planet_modifier = {
+  potential = { always = yes }
+  planet_metallurgists_minerals_upkeep_add = -6
+  planet_metallurgists_food_upkeep_add = 9
+}
+# 合金处理工厂
+triggered_planet_modifier = {
+  potential = {
+    exists = orbital_defence
+    orbital_defence = {
+      exists = starbase
+      starbase = { has_starbase_building = ring_alloys_hub }
+    }
+  }
+  planet_metallurgists_minerals_upkeep_add = -2
+  planet_metallurgists_food_upkeep_add = 3
+}
+# 远古精炼厂
+triggered_planet_modifier = {
+  potential = { has_active_building = building_archaeo_refinery }
+  planet_metallurgists_minerals_upkeep_add = -2
+  planet_metallurgists_food_upkeep_add = 3
+}
+# 异星天然气精炼厂
+triggered_planet_modifier = {
+  potential = { has_active_building = building_refinery }
+  planet_metallurgists_minerals_upkeep_add = -1.25
+  planet_metallurgists_food_upkeep_add = 2
+}
+# 水晶合成厂
+triggered_planet_modifier = {
+  potential = { has_active_building = building_crystal_plant }
+  planet_metallurgists_minerals_upkeep_add = -1.25
+  planet_metallurgists_food_upkeep_add = 2
+}
+# 化学厂
+triggered_planet_modifier = {
+  potential = { has_active_building = building_chemical_plant }
+  planet_metallurgists_minerals_upkeep_add = -1.25
+  planet_metallurgists_food_upkeep_add = 2
+}
+# 合金处理工厂
+triggered_planet_modifier = {
+  potential = { has_active_building = building_crystal_plant_2 }
+  planet_metallurgists_minerals_upkeep_add = -1.25
+  planet_metallurgists_food_upkeep_add = 2
+}

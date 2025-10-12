@@ -1,0 +1,39 @@
+# 异星天然气
+planet_refiners = {
+  parent = planet_jobs_specialist
+  modifier_category = pop_job
+  generate_add_modifiers = {
+    produces
+    upkeep
+  }
+  generate_mult_modifiers = {
+    produces
+    upkeep
+  }
+}
+# 稀有水晶
+planet_translucers = {
+  parent = planet_jobs_specialist
+  modifier_category = pop_job
+  generate_add_modifiers = {
+    produces
+    upkeep
+  }
+  generate_mult_modifiers = {
+    produces
+    upkeep
+  }
+}
+# 易爆微粒
+planet_chemists = {
+  parent = planet_jobs_specialist
+  modifier_category = pop_job
+  generate_add_modifiers = {
+    produces
+    upkeep
+  }
+  generate_mult_modifiers = {
+    produces
+    upkeep
+  }
+}

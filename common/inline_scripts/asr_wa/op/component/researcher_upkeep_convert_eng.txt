@@ -1,0 +1,2 @@
+planet_engineers_minerals_upkeep_add = $MINERAL$
+planet_engineers_food_upkeep_add = $FOOD$
