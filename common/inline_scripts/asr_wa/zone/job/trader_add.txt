@@ -1,0 +1,67 @@
+triggered_district_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_agri_drone_add = $BASE$
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_agri_drone_add = $BASE$
+  mult = 2
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_world = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_agri_drone_add = $BASE$
+  mult = 2
+}
+
+triggered_district_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_active_tradition = tr_logistics_2
+    }
+  }
+  job_agri_drone_add = $BASE$
+  mult = 0.5
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_active_tradition = tr_logistics_2
+    }
+  }
+  job_agri_drone_add = $BASE$
+  # mult = 1
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_world = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_active_tradition = tr_logistics_2
+    }
+  }
+  job_agri_drone_add = $BASE$
+  # mult = 1
+}

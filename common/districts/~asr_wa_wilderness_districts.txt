@@ -71,20 +71,37 @@ district_craglands = {
     }
     planet_defense_armies_add = 2
   }
-
   triggered_planet_modifier = {
     potential = {
       exists = owner
       owner = {
-        has_tradition = tr_prosperity_public_works
+        has_tradition = tr_domination_imperious_architecture
       }
+      asr_wa_planet_is_wilderness_arcology = yes
     }
-    planet_housing_add = 50
+    planet_defense_armies_add = 2
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner
+      owner = {
+        has_tradition = tr_domination_imperious_architecture
+      }
+      asr_wa_planet_is_wilderness_world = yes
+    }
+    planet_defense_armies_add = 2
+  }
+
+  inline_script = {
+    script = asr_wa/districts/tr_housing
+    HOUSE = 100
   }
 
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
   }
+
+  inline_script = { script = asr_wa/districts/triggered_name }
 
   ai_resource_production = {
     unity = 5

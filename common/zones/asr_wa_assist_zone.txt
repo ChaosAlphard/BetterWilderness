@@ -1,0 +1,255 @@
+@assist_zone_produce_mult = 0.20
+@assist_zone_upkeep_add = 1
+
+# 科研支持
+zone_asr_wa_assist_research = {
+  icon = GFX_district_specialization_wilderness_research
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock_gaia }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { research trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_researchers_produces_mult = @assist_zone_produce_mult
+    planet_researchers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 行政支持
+zone_asr_wa_assist_unity = {
+  icon = GFX_district_specialization_wilderness_unity
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock_gaia }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { unity trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_bureaucrats_produces_mult = @assist_zone_produce_mult
+    planet_bureaucrats_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 冶金支持
+zone_asr_wa_assist_alloys = {
+  icon = GFX_district_specialization_wilderness_foundry
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock_gaia }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { foundry trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_metallurgists_produces_mult = @assist_zone_produce_mult
+    planet_metallurgists_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 贸易支持
+zone_asr_wa_assist_trade = {
+  icon = GFX_district_specialization_wilderness_trade
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock_gaia }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_traders_produces_mult = @assist_zone_produce_mult
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 食物支持
+zone_asr_wa_assist_food = {
+  icon = GFX_district_specialization_wilderness_food
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { farming fallen_empire_farming hydroponics trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_farmers_produces_mult = @assist_zone_produce_mult
+    planet_farmers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 能源支持
+zone_asr_wa_assist_energy = {
+  icon = GFX_district_specialization_wilderness_energy
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { generator fallen_empire_generator trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_technician_produces_mult = @assist_zone_produce_mult
+    planet_technician_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}
+
+# 矿物支持
+zone_asr_wa_assist_mineral = {
+  icon = GFX_district_specialization_wilderness_minerals
+  base_buildtime = 360
+
+  inline_script = { script = asr_wa/zone/potential_unlock }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  zone_sets = { urban }
+
+  included_building_sets = { mining fallen_empire_mining trade }
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  district_planet_modifier = {
+    planet_miners_produces_mult = @assist_zone_produce_mult
+    planet_miners_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = 50
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = zone_urban_triggered_desc
+  }
+
+  ai_priority = 0
+}

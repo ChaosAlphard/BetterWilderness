@@ -19,6 +19,24 @@ asr_wa_planet_researcher_use_food = {
   }
 }
 
+asr_wa_planet_is_wilderness_arcology = {
+  exists = planet
+  planet = {
+    is_planet_class = pc_gaia
+    [[NOT_WILDERNESS_WORLD] NOT = {
+      has_planet_flag = asr_wa_pf_wilderness_world
+    } ]
+  }
+}
+
+asr_wa_planet_is_wilderness_world = {
+  exists = planet
+  planet = {
+    is_planet_class = pc_gaia
+    has_planet_flag = asr_wa_pf_wilderness_world
+  }
+}
+
 asr_wa_has_any_hja_pf = {
   exists = owner
   owner = {

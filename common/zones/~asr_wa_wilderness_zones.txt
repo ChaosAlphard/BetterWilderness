@@ -21,12 +21,7 @@ zone_urban_wilderness = {
     }
   }
 
-  resources = {
-    category = planet_zones
-    cost = {
-      minerals = @zone_cost
-    }
-  }
+  inline_script = { script = asr_wa/zone/cost }
 
   max_buildings = 3
 

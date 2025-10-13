@@ -1,0 +1,12 @@
+resources = {
+  category = planet_zones
+  cost = {
+    minerals = @wa_zone_minerals
+    food = @wa_zone_minerals
+    trigger = { asr_wa_planet_use_food_build_building = no }
+  }
+  cost = {
+    food = @wa_zone_foods
+    trigger = { asr_wa_planet_use_food_build_building = yes }
+  }
+}

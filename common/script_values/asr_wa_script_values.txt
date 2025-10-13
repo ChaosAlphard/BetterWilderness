@@ -34,7 +34,7 @@ asr_wa_cor_bonus_build_speed = {
   base = 0
   set = value:asr_wa_num_buildings_and_districts
   modifier = {
-    is_planet_class = pc_gaia
+    asr_wa_planet_is_wilderness_arcology = yes
     mult = 2
   }
 }

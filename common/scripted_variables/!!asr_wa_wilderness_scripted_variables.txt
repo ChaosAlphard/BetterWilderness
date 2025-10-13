@@ -29,12 +29,8 @@
 @wa_b4_foods = 1250
 @wa_b5_foods = 2500
 
-# @wa_f_b0_foods = 200
-# @wa_f_b1_foods = 400
-# @wa_f_b2_foods = 600
-# @wa_f_b3_foods = 800
-# @wa_f_b4_foods = 2000
-# @wa_f_b5_foods = 3000
+@wa_zone_minerals = 500
+@wa_zone_foods = 1250
 
 # 人口增长
 @wa_bonus_growth_max_pops = 2100

@@ -1,0 +1,18 @@
+﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
+l_simp_chinese:
+  asrwa_name_capital: "星之根"
+  zone_asr_wa_assist_research: "演进"
+  zone_asr_wa_assist_research_desc: ""
+  zone_asr_wa_assist_unity: "思绪"
+  zone_asr_wa_assist_unity_desc: ""
+  zone_asr_wa_assist_alloys: "热池"
+  zone_asr_wa_assist_alloys_desc: ""
+  zone_asr_wa_assist_trade: "迁徙"
+  zone_asr_wa_assist_trade_desc: ""
+  # zone_food_wilderness: "迁徙"
+  zone_asr_wa_assist_food: "花锦"
+  zone_asr_wa_assist_food_desc: ""
+  zone_asr_wa_assist_energy: "光肺"
+  zone_asr_wa_assist_energy_desc: ""
+  zone_asr_wa_assist_mineral: "矿脊"
+  zone_asr_wa_assist_mineral_desc: ""

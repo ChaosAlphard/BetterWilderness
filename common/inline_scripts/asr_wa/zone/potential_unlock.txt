@@ -1,0 +1,15 @@
+#  Planet Scope
+potential = {
+  exists = owner
+  owner = {
+    is_wilderness_empire = yes
+  }
+}
+unlock = {
+  hidden_trigger = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+}

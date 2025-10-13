@@ -1,0 +1,5 @@
+# 优先选择第一个满足条件的触发器
+triggered_name = {
+  trigger = { is_capital = yes }
+  text = asrwa_name_capital
+}
