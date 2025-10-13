@@ -34,6 +34,3 @@ l_simp_chinese:
   asr_wa_building_massive_growth_4_tt: "['building:building_massive_growth_2']提供更多$wa_r_job$"
   asr_wa_building_bioelectric_stimulator_4_tt: "['building:building_bioelectric_stimulator_2']提供更多$wa_r_job$"
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2']提供更多$wa_r_job$"
-
-  # 测试
-  asr_wa_test_tt: "Test01:[planet.ASRWA_Test00]"

@@ -12,8 +12,3 @@ define_text = {
   name = ASRWA_BonusGrowthFromPops
   value = value:asr_wa_bonus_growth_by_pops
 }
-
-define_text = {
-  name = ASRWA_Test00
-  value = value:asr_wa_total_metallurgists_minerals_upkeep
-}
