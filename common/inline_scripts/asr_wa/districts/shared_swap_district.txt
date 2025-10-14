@@ -1,0 +1,4 @@
+potential = { always = no }
+show_on_uncolonized = { always = no }
+is_capped_by_modifier = no
+zone_slots = { slot_empty }

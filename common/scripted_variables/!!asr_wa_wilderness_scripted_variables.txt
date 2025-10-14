@@ -31,6 +31,12 @@
 
 @wa_zone_minerals = 500
 @wa_zone_foods = 1250
+@wa_district_minerals = 250
+@wa_district_foods = 625
+@wa_district_upkeep = 2
+@wa_district_extra_minerals = 250
+@wa_district_extra_foods = 625
+@wa_district_extra_upkeep = 3
 
 # 人口增长
 @wa_bonus_growth_max_pops = 2100

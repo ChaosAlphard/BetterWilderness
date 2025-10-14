@@ -1,0 +1,12 @@
+is_capped_by_modifier = no
+potential = {
+  asr_wa_planet_is_wilderness_arcology = yes
+  exists = owner
+  owner = { is_wilderness_empire = yes }
+}
+show_on_uncolonized = {
+  asr_wa_planet_is_wilderness_arcology = yes
+  exists = from
+  from = { is_wilderness_empire = yes }
+}
+inline_script = { script = asr_wa/districts/cost }

@@ -1,0 +1,45 @@
+resources = {
+  category = planet_districts
+  cost = {
+    biomass = 100
+  }
+  cost = {
+    biomass = 200
+    trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+  }
+  cost = {
+    biomass = 200
+    trigger = { asr_wa_planet_is_wilderness_world = yes }
+  }
+  cost = {
+    minerals = @wa_district_minerals
+    food = @wa_district_minerals
+    trigger = { asr_wa_planet_use_food_build_building = no }
+  }
+  cost = {
+    food = @wa_district_foods
+    trigger = { asr_wa_planet_use_food_build_building = yes }
+  }
+  cost = {
+    minerals = @wa_district_extra_minerals
+    food = @wa_district_extra_minerals
+    trigger = {
+      asr_wa_planet_is_wilderness_arcology = yes
+      asr_wa_planet_use_food_build_building = no
+    }
+  }
+  cost = {
+    food = @wa_district_extra_foods
+    trigger = {
+      asr_wa_planet_is_wilderness_arcology = yes
+      asr_wa_planet_use_food_build_building = yes
+    }
+  }
+  upkeep = {
+    food = @wa_district_upkeep
+  }
+  upkeep = {
+    food = @wa_district_extra_upkeep
+    trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+  }
+}

@@ -1,0 +1,73 @@
+@district_buildtime = 480
+
+district_asr_wa_cragland_01 = {
+  base_buildtime = @district_buildtime
+  icon = district_craglands
+  overlay_icon = GFX_district_housing
+  inline_script = { script = asr_wa/districts/shared_gaia_district }
+  inline_script = {
+    script = asr_wa/districts/housing
+    BASE = 100
+  }
+
+  zone_slots = { slot_gaia_rural_01 }
+
+  conversion_ratio = 1
+  convert_to = {
+    district_photosynthesis_fields_uncapped
+    district_photosynthesis_fields
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+  ai_estimate_without_unemployment = yes
+}
+
+district_asr_wa_cragland_02 = {
+  base_buildtime = @district_buildtime
+  icon = district_craglands
+  overlay_icon = GFX_district_housing
+  inline_script = { script = asr_wa/districts/shared_gaia_district }
+  inline_script = {
+    script = asr_wa/districts/housing
+    BASE = 100
+  }
+
+  zone_slots = { slot_gaia_rural_02 }
+
+  conversion_ratio = 1
+  convert_to = {
+    district_hollow_mountains_uncapped
+    district_hollow_mountains
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+  ai_estimate_without_unemployment = yes
+}
+
+district_asr_wa_cragland_03 = {
+  base_buildtime = @district_buildtime
+  icon = district_craglands
+  overlay_icon = GFX_district_housing
+  inline_script = { script = asr_wa/districts/shared_gaia_district }
+  inline_script = {
+    script = asr_wa/districts/housing
+    BASE = 100
+  }
+
+  zone_slots = { slot_gaia_rural_03 }
+
+  conversion_ratio = 1
+  convert_to = {
+    district_orchard_forests_uncapped
+    district_orchard_forests
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+  ai_estimate_without_unemployment = yes
+}

@@ -1,9 +1,0 @@
-triggered_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = {
-      has_tradition = tr_prosperity_public_works
-    }
-  }
-  planet_housing_add = $HOUSE$
-}

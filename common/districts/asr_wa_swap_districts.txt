@@ -1,0 +1,90 @@
+# 再生源地
+district_asr_wa_swap_spawning = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_housing
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_spawning_tt
+  }
+}
+# 共栖密林
+district_asr_wa_swap_coordinator = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_government
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_coordinator_tt
+  }
+}
+# 科研密林
+district_asr_wa_swap_calculator = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_orchard_forests
+  overlay_icon = GFX_district_research
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_calculator_tt
+  }
+}
+# 熔炼热窑
+district_asr_wa_swap_foundry = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_metallic_dew_plains
+  overlay_icon = GFX_district_alloys
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_foundry_tt
+  }
+}
+# 行星须核
+district_asr_wa_swap_trade = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_photosynthesis_fields
+  overlay_icon = GFX_district_trade
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_trade_tt
+  }
+}
+# 骸骨堡垒
+district_asr_wa_swap_fortress = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_fortress
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_planetary_carapace_2
+  }
+}
+# 营养溪谷
+district_asr_wa_swap_food = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_food
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_planetary_carapace_2
+  }
+}
+# 叶绿包囊
+district_asr_wa_swap_energy = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_energy
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_planetary_carapace_2
+  }
+}
+# 石质采盆
+district_asr_wa_swap_minerals = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_minerals
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_planetary_carapace_2
+  }
+}

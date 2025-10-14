@@ -1,7 +1,7 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_simp_chinese:
   tr_purity_finish_wilderness_tt: "['building:building_cradle_of_rebirth']根据£building£§Y建筑§!和£district£§Y区划§!数量提供§Y建造速度§!和§Y决议生效速度§!加成，在$pc_gaia$上加成翻倍\n最大资源区划数§G不受行星特征限制§!"
-  tr_prosperity_public_works_wilderness_desc: "所有£district£§Y区划§!额外提供§G+100§!£housing£§Y$MOD_PLANET_HOUSING_ADD$§!"
+  tr_prosperity_public_works_wilderness_desc: "所有£district£§Y区划§!提供§G双倍§!£housing£§Y$MOD_PLANET_HOUSING_ADD$§!"
   civic_hive_aerospace_adaptation_effects: "—在§G友好§!殖民地轨道的§Y生物舰船§!的维护费§G-50%§!。\n—在§R敌对§!殖民地轨道的§Y生物舰船§!降低§G-85%§!舰船维护费。\n—有§Y生物舰船§!在轨的§G友好§!殖民地依据舰队规模，提升§Y建造速度§!、§Y清理障碍速度§!、§Y稳定度§!以及§Y岗位产出§!。最大1000规模在轨舰队时: ['modifier:aa_ship_planet_support_10']"
   aa_ship_planet_support_0: "$civic_hive_aerospace_adaptation$"
   aa_ship_planet_support_0_desc: "$aa_ship_planet_support_1_desc$"
