@@ -12,6 +12,18 @@ tech_gene_crops = {
     starbase_constructions_food_produces_mult = 0.10
   }
 
+  technology_swap = {
+    trigger = { is_wilderness_empire = yes }
+    inherit_name = yes
+    inherit_icon = yes
+    inherit_effects = no
+    weight = 10
+    modifier = {
+      planet_farmers_food_produces_mult = 0.4
+      starbase_constructions_food_produces_mult = 0.20
+    }
+  }
+
   potential = {  }
 
   weight_modifier = {
@@ -75,5 +87,42 @@ tech_gene_crops = {
       factor = 1.5
       has_ethic = ethic_fanatic_pacifist
     }
+  }
+}
+
+tech_repeatable_improved_tile_food_output = {
+  area = society
+  cost = @repeatableTechBaseCost
+  cost_per_level = @repeatableTechLevelCost
+  tier = @repeatableTechTier
+  category = { biology }
+  levels = -1
+
+  potential = {  }
+  prerequisites = { "tech_gene_crops" }
+
+  weight = @repeatableTechWeight
+
+  weight_modifier = {
+    factor = @repatableTechFactor
+    modifier = {
+      factor = 0
+      has_country_flag = VRH_tech_repeatable_improved_tile_food_output
+    }
+  }
+
+  ai_weight = {
+    factor = 1.0
+  }
+
+  weight_groups = {
+    repeatable
+  }
+  mod_weight_if_group_picked = {
+    repeatable = 0.01
+  }
+
+  modifier = {
+    planet_jobs_food_produces_mult = 0.05
   }
 }

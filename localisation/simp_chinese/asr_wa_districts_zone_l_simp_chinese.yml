@@ -1,6 +1,8 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_simp_chinese:
   asrwa_name_capital: "星之根"
+  asrwa_name_gaia: "盛放"
+  asrwa_name_research: "$building_brain_node_1$"
 
   zone_asr_wa_assist_research: "思绪"
   zone_asr_wa_assist_research_desc: ""
@@ -12,7 +14,7 @@ l_simp_chinese:
   zone_asr_wa_assist_trade_desc: ""
   zone_asr_wa_assist_food: "沃土"
   zone_asr_wa_assist_food_desc: ""
-  zone_asr_wa_assist_energy: "光肺"
+  zone_asr_wa_assist_energy: "晴空"
   zone_asr_wa_assist_energy_desc: ""
   zone_asr_wa_assist_mineral: "沉积"
   zone_asr_wa_assist_mineral_desc: ""
@@ -118,7 +120,7 @@ l_simp_chinese:
 
   district_asr_wa_swap_rare_crystals: "$zone_minerals_wilderness$"
   district_asr_wa_swap_rare_crystals_plural: "$zone_minerals_wilderness$"
-  district_asr_wa_swap_rare_crystals_tt: "水晶矿井"
+  district_asr_wa_swap_rare_crystals_tt: "水晶提取"
   district_asr_wa_swap_rare_crystals_desc: "$zone_minerals_wilderness_desc$"
 
   district_asr_wa_swap_betharian: "$zone_minerals_wilderness$"

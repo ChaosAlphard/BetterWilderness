@@ -1,5 +1,31 @@
 # 优先选择第一个满足条件的触发器
+# Planet Scope
 triggered_name = {
   trigger = { is_capital = yes }
   text = asrwa_name_capital
+}
+
+triggered_name = {
+  trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+  text = asrwa_name_gaia
+}
+
+triggered_name = {
+  trigger = {
+    OR = {
+      num_zones = {
+        type = zone_asr_wa_assist_research
+        value >= 2
+      }
+      num_zones = {
+        type = zone_research_wilderness
+        value >= 2
+      }
+      AND = {
+        has_zone = { zone = zone_research_wilderness }
+        has_zone = { zone = zone_asr_wa_assist_research }
+      }
+    }
+  }
+  text = asrwa_name_research
 }

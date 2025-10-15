@@ -1,5 +1,3 @@
-@biomass_cost = 50
-
 @wilderness_district_build_long = 480
 @wilderness_district_build_short = 240
 
@@ -43,7 +41,10 @@ district_craglands = {
     district_mindlink
   }
 
-  inline_script = { script = asr_wa/districts/cost }
+  inline_script = {
+    script = asr_wa/districts/cost
+    CATEGORY = planet_districts_cities
+  }
   inline_script = {
     script = asr_wa/districts/housing
     BASE = 100
@@ -118,25 +119,22 @@ district_photosynthesis_fields = {
   }
 
   show_on_uncolonized = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
-    from = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    from = { has_uncapped_wilderness_districts = no }
   }
 
   potential = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    owner = { has_uncapped_wilderness_districts = no }
   }
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_01
     district_generator
     district_generator_uncapped
     district_photosynthesis_fields_uncapped
@@ -144,18 +142,11 @@ district_photosynthesis_fields = {
     district_hive_1
   }
 
-  resources = {
-    category = planet_districts_generator
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      energy = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_generator
   }
+
   planet_modifier = {
     job_technician_drone_add = @base_rural_district_jobs
     planet_housing_add = 100
@@ -164,11 +155,9 @@ district_photosynthesis_fields = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   inline_script = {
@@ -234,17 +223,9 @@ district_photosynthesis_fields_uncapped = {
     district_hive_1
   }
 
-  resources = {
-    category = planet_districts_generator
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      energy = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_generator
   }
 
   planet_modifier = {
@@ -255,11 +236,9 @@ district_photosynthesis_fields_uncapped = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   inline_script = {
@@ -304,23 +283,18 @@ district_hollow_mountains = {
   show_on_uncolonized = {
     uses_district_set = standard
     exists = from
-    from = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    from = { has_uncapped_wilderness_districts = no }
   }
 
   potential = {
     uses_district_set = standard
     exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    owner = { has_uncapped_wilderness_districts = no }
   }
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_02
     district_mining_uncapped
     district_mining
     district_hollow_mountains_uncapped
@@ -328,19 +302,10 @@ district_hollow_mountains = {
     district_hive_2
   }
 
-  resources = {
-    category = planet_districts_mining
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      food = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_mining
   }
-
 
   planet_modifier = {
     job_mining_drone_add = @base_rural_district_jobs
@@ -350,11 +315,9 @@ district_hollow_mountains = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   prerequisites = {
@@ -396,9 +359,7 @@ district_hollow_mountains_uncapped = {
     asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
-    from = {
-      has_uncapped_wilderness_districts = yes
-    }
+    from = { has_uncapped_wilderness_districts = yes }
   }
 
   potential = {
@@ -418,17 +379,9 @@ district_hollow_mountains_uncapped = {
     district_hive_2
   }
 
-  resources = {
-    category = planet_districts_mining
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      food = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_mining
   }
 
   inline_script = {
@@ -443,11 +396,9 @@ district_hollow_mountains_uncapped = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   prerequisites = {
@@ -487,19 +438,13 @@ district_orchard_forests = {
   show_on_uncolonized = {
     uses_district_set = standard
     exists = from
-    from = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    from = { has_uncapped_wilderness_districts = no }
   }
 
   potential = {
     uses_district_set = standard
     exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      NOT = { has_tradition = tr_purity_finish }
-    }
+    owner = { has_uncapped_wilderness_districts = no }
   }
 
   allow = {
@@ -508,6 +453,7 @@ district_orchard_forests = {
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_03
     district_farming
     district_farming_uncapped
     district_orchard_forests_uncapped
@@ -515,17 +461,9 @@ district_orchard_forests = {
     district_hive_3
   }
 
-  resources = {
-    category = planet_districts_farming
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      energy = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_farming
   }
 
   planet_modifier = {
@@ -536,11 +474,9 @@ district_orchard_forests = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   inline_script = {
@@ -586,9 +522,7 @@ district_orchard_forests_uncapped = {
     asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
-    from = {
-      has_uncapped_wilderness_districts = yes
-    }
+    from = { has_uncapped_wilderness_districts = yes }
   }
 
   potential = {
@@ -612,17 +546,9 @@ district_orchard_forests_uncapped = {
     district_hive_3
   }
 
-  resources = {
-    category = planet_districts_farming
-    cost = {
-      minerals = 300
-    }
-    cost = {
-      biomass = @biomass_cost
-    }
-    upkeep = {
-      energy = 1
-    }
+  inline_script = {
+    script = asr_wa/districts/rural_cost
+    CATEGORY = planet_districts_farming
   }
 
   planet_modifier = {
@@ -633,11 +559,9 @@ district_orchard_forests_uncapped = {
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = {
-        has_tradition = tr_prosperity_public_works
-      }
+      owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 50
+    planet_housing_add = 100
   }
 
   inline_script = {

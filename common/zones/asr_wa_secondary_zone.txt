@@ -212,7 +212,7 @@ zone_asr_wa_mineral = {
     BASE = 200
   }
 }
-
+# 异星天然气
 zone_asr_wa_exotic_gases = {
   base_buildtime = @zone_buildtime
   icon = GFX_district_specialization_exotic_gases
@@ -257,7 +257,7 @@ zone_asr_wa_exotic_gases = {
 
   ai_priority = 10
 }
-
+# 易爆微粒
 zone_asr_wa_volatile_motes = {
   base_buildtime = @zone_buildtime
   icon = GFX_district_specialization_volatile_motes
@@ -302,7 +302,7 @@ zone_asr_wa_volatile_motes = {
 
   ai_priority = 10
 }
-
+# 稀有水晶
 zone_asr_wa_rare_crystals = {
   base_buildtime = @zone_buildtime
   icon = GFX_district_specialization_rare_crystals
@@ -346,7 +346,7 @@ zone_asr_wa_rare_crystals = {
 
   ai_priority = 10
 }
-
+# 贝塞里安
 zone_asr_wa_betharian = {
   base_buildtime = @zone_buildtime
   icon = GFX_district_specialization_betharian

@@ -1,5 +1,5 @@
 resources = {
-  category = planet_districts
+  category = $CATEGORY$
   cost = {
     biomass = 100
   }

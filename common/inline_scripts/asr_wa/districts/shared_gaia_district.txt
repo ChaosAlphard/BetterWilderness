@@ -9,4 +9,7 @@ show_on_uncolonized = {
   exists = from
   from = { is_wilderness_empire = yes }
 }
-inline_script = { script = asr_wa/districts/cost }
+inline_script = {
+  script = asr_wa/districts/cost
+  CATEGORY = planet_districts
+}

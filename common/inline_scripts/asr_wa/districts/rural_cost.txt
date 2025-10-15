@@ -1,0 +1,18 @@
+resources = {
+  category = $CATEGORY$
+  cost = {
+    biomass = 50
+  }
+  cost = {
+    minerals = 150
+    food = 150
+    trigger = { asr_wa_planet_use_food_build_building = no }
+  }
+  cost = {
+    food = 375
+    trigger = { asr_wa_planet_use_food_build_building = yes }
+  }
+  upkeep = {
+    food = 1
+  }
+}
