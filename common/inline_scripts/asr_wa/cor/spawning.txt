@@ -9,7 +9,7 @@ triggered_planet_modifier = {
     exists = owner
     owner = {
       is_wilderness_empire = yes
-      has_technology = tech_genome_mapping
+      has_ascension_perk = ap_engineered_evolution
     }
   }
   modifier = {

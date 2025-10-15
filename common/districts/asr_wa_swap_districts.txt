@@ -8,11 +8,22 @@ district_asr_wa_swap_spawning = {
     text = district_asr_wa_swap_spawning_tt
   }
 }
+# 化身密林
+district_asr_wa_swap_unity_research = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_government
+  gridbox = district_orchard_forests
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_unity_research_tt
+  }
+}
 # 共栖密林
 district_asr_wa_swap_coordinator = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
   icon = district_craglands
-  overlay_icon = GFX_district_government
+  overlay_icon = GFX_district_unity
   triggered_name = {
     trigger = { always = yes }
     text = district_asr_wa_swap_coordinator_tt
@@ -55,27 +66,27 @@ district_asr_wa_swap_fortress = {
   overlay_icon = GFX_district_fortress
   triggered_name = {
     trigger = { always = yes }
-    text = building_planetary_carapace_2
+    text = district_asr_wa_swap_fortress_tt
   }
 }
 # 营养溪谷
 district_asr_wa_swap_food = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_hollow_mountains
+  icon = district_orchard_forests
   overlay_icon = GFX_district_food
   triggered_name = {
     trigger = { always = yes }
-    text = building_planetary_carapace_2
+    text = district_asr_wa_swap_food_tt
   }
 }
 # 叶绿包囊
 district_asr_wa_swap_energy = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_hollow_mountains
+  icon = district_photosynthesis_fields
   overlay_icon = GFX_district_energy
   triggered_name = {
     trigger = { always = yes }
-    text = building_planetary_carapace_2
+    text = district_asr_wa_swap_energy_tt
   }
 }
 # 石质采盆
@@ -85,6 +96,138 @@ district_asr_wa_swap_minerals = {
   overlay_icon = GFX_district_minerals
   triggered_name = {
     trigger = { always = yes }
-    text = building_planetary_carapace_2
+    text = district_asr_wa_swap_minerals_tt
+  }
+}
+# 气体采集
+district_asr_wa_swap_exotic_gases = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_orchard_forests
+  overlay_icon = GFX_district_exotic_gases
+  gridbox = district_industrial
+
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_nano_vitality_crops }
+    }
+    text = agriculture_exotic_gases_4
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_gene_crops }
+    }
+    text = agriculture_exotic_gases_3
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_eco_simulation }
+    }
+    text = agriculture_exotic_gases_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_exotic_gases_tt
+  }
+}
+# 微粒捕获
+district_asr_wa_swap_volatile_motes = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_photosynthesis_fields
+  overlay_icon = GFX_district_volatile_motes
+  gridbox = district_industrial
+
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_power_plant_4 }
+    }
+    text = generator_volatile_motes_4
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_power_plant_3 }
+    }
+    text = generator_volatile_motes_3
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_power_plant_2 }
+    }
+    text = generator_volatile_motes_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_volatile_motes_tt
+  }
+}
+# 水晶矿井
+district_asr_wa_swap_rare_crystals = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_rare_crystals
+  gridbox = district_industrial
+
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_3 }
+    }
+    text = mining_rare_crystals_4
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_2 }
+    }
+    text = mining_rare_crystals_3
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_1 }
+    }
+    text = mining_rare_crystals_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_rare_crystals_tt
+  }
+}
+# 贝赛里安开采
+district_asr_wa_swap_betharian = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_energy
+  gridbox = district_generator
+
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_3 }
+    }
+    text = mining_betharian_4
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_2 }
+    }
+    text = mining_betharian_3
+  }
+  triggered_name = {
+    trigger = {
+      exists = owner
+      owner = { has_technology = tech_mining_1 }
+    }
+    text = mining_betharian_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_betharian_tt
   }
 }

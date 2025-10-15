@@ -211,12 +211,14 @@ district_photosynthesis_fields_uncapped = {
   }
 
   show_on_uncolonized = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
     from = { has_uncapped_wilderness_districts = yes }
   }
 
   potential = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = owner
     owner = { has_uncapped_wilderness_districts = yes }
@@ -224,6 +226,7 @@ district_photosynthesis_fields_uncapped = {
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_01
     district_generator
     district_generator_uncapped
     district_photosynthesis_fields
@@ -390,6 +393,7 @@ district_hollow_mountains_uncapped = {
   }
 
   show_on_uncolonized = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
     from = {
@@ -398,6 +402,7 @@ district_hollow_mountains_uncapped = {
   }
 
   potential = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = owner
     owner = { has_uncapped_wilderness_districts = yes }
@@ -405,6 +410,7 @@ district_hollow_mountains_uncapped = {
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_02
     district_mining_uncapped
     district_mining
     district_hollow_mountains
@@ -577,6 +583,7 @@ district_orchard_forests_uncapped = {
   }
 
   show_on_uncolonized = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
     from = {
@@ -585,6 +592,7 @@ district_orchard_forests_uncapped = {
   }
 
   potential = {
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = owner
     owner = { has_uncapped_wilderness_districts = yes }
@@ -596,6 +604,7 @@ district_orchard_forests_uncapped = {
 
   conversion_ratio = 1
   convert_to = {
+    district_asr_wa_cragland_03
     district_farming
     district_farming_uncapped
     district_orchard_forests

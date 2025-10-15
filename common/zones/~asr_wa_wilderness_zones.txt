@@ -386,6 +386,9 @@ zone_minerals_wilderness = {
       minerals = @zone_cost
     }
   }
+  convert_to = {
+    zone_asr_wa_mineral
+  }
 
   inline_script = {
     script = jobs/zone_miner_add
@@ -437,6 +440,9 @@ zone_energy_wilderness = {
         is_wilderness_empire = yes
       }
     }
+  }
+  convert_to = {
+    zone_asr_wa_energy
   }
 
   inline_script = {
@@ -492,6 +498,9 @@ zone_food_wilderness = {
     cost = {
       minerals = @zone_cost
     }
+  }
+  convert_to = {
+    zone_asr_wa_food
   }
 
   inline_script = {

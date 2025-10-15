@@ -27,7 +27,7 @@ zone_asr_wa_research_unity = {
 
   included_building_sets = { unity research }
 
-  swap_type = district_asr_wa_swap_coordinator
+  swap_type = district_asr_wa_swap_unity_research
   swap_type_weight = 10
 
   inline_script = {
@@ -124,7 +124,7 @@ zone_asr_wa_trade = {
 }
 # 令苞
 zone_asr_wa_fortress = {
-  icon = GFX_district_specialization_wilderness_trade
+  icon = GFX_district_specialization_wilderness_fortress
   base_buildtime = @zone_buildtime
 
   zone_sets = { gaia_rural }
@@ -141,4 +141,253 @@ zone_asr_wa_fortress = {
     script = asr_wa/zone/job/soldier_add
     BASE = 200
   }
+}
+# 花锦
+zone_asr_wa_food = {
+  icon = GFX_district_specialization_wilderness_food
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = {
+    farming
+    fallen_empire_farming
+    hydroponics
+  }
+
+  swap_type = district_asr_wa_swap_food
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/farmer_add
+    BASE = 200
+  }
+}
+# 光肺
+zone_asr_wa_energy = {
+  icon = GFX_district_specialization_wilderness_energy
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = {
+    generator
+    fallen_empire_generator
+  }
+
+  swap_type = district_asr_wa_swap_energy
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/technicians_add
+    BASE = 200
+  }
+}
+# 矿脊
+zone_asr_wa_mineral = {
+  icon = GFX_district_specialization_wilderness_minerals
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = {
+    mining
+    fallen_empire_mining
+  }
+
+  swap_type = district_asr_wa_swap_minerals
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/miner_add
+    BASE = 200
+  }
+}
+
+zone_asr_wa_exotic_gases = {
+  base_buildtime = @zone_buildtime
+  icon = GFX_district_specialization_exotic_gases
+  planet_limit = 1
+
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    has_exotic_gases_deposit = yes
+  }
+  unlock = {
+    has_exotic_gases_deposit = yes
+    hidden_trigger = { exists = owner }
+    owner = { has_technology = tech_mine_exotic_gases }
+  }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+    planet_farmers_exotic_gases_produces_add = 0.5
+    planet_farmers_food_produces_add = -3
+  }
+  inline_script = {
+    script = asr_wa/zone/job/farmer_add
+    BASE = 200
+  }
+
+  swap_type = district_asr_wa_swap_exotic_gases
+  swap_type_weight = 5
+
+  zone_sets = {
+    gaia_rural
+  }
+
+  included_building_sets = {
+    farming
+    fallen_empire_farming
+    hydroponics
+  }
+
+  ai_priority = 10
+}
+
+zone_asr_wa_volatile_motes = {
+  base_buildtime = @zone_buildtime
+  icon = GFX_district_specialization_volatile_motes
+  planet_limit = 1
+
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    has_volatile_motes_deposit = yes
+  }
+  unlock = {
+    has_volatile_motes_deposit = yes
+    hidden_trigger = { exists = owner }
+    owner = { has_technology = tech_mine_volatile_motes }
+  }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+    planet_technician_volatile_motes_produces_add = 0.5
+    planet_technician_energy_produces_add = -3
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/technicians_add
+    BASE = 200
+  }
+
+  swap_type = district_asr_wa_swap_volatile_motes
+  swap_type_weight = 5
+
+  zone_sets = {
+    gaia_rural
+  }
+
+  included_building_sets = {
+    generator
+    fallen_empire_generator
+  }
+
+  ai_priority = 10
+}
+
+zone_asr_wa_rare_crystals = {
+  base_buildtime = @zone_buildtime
+  icon = GFX_district_specialization_rare_crystals
+  planet_limit = 1
+
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    has_rare_crystals_deposit = yes
+  }
+  unlock = {
+    has_rare_crystals_deposit = yes
+    hidden_trigger = { exists = owner }
+    owner = { has_technology = tech_mine_rare_crystals }
+  }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+    planet_miners_rare_crystals_produces_add = 0.5
+    planet_miners_minerals_produces_add = -2
+  }
+  inline_script = {
+    script = asr_wa/zone/job/miner_add
+    BASE = 200
+  }
+
+  swap_type = district_asr_wa_swap_rare_crystals
+  swap_type_weight = 5
+
+  zone_sets = {
+    gaia_rural
+  }
+
+  included_building_sets = {
+    mining
+    fallen_empire_mining
+  }
+
+  ai_priority = 10
+}
+
+zone_asr_wa_betharian = {
+  base_buildtime = @zone_buildtime
+  icon = GFX_district_specialization_betharian
+  planet_limit = 1
+
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    has_deposit = d_betharian_deposit
+  }
+  unlock = {
+    has_deposit = d_betharian_deposit
+    hidden_trigger = { exists = owner }
+    owner = { has_technology = tech_mine_betharian }
+  }
+
+  inline_script = { script = asr_wa/zone/cost }
+
+  max_buildings = 3
+
+  planet_modifier = {
+    zone_building_slots_add = 3
+    planet_miners_energy_produces_add = 6
+    planet_miners_minerals_produces_add = -2
+  }
+  inline_script = {
+    script = asr_wa/zone/job/miner_add
+    BASE = 200
+  }
+
+  swap_type = district_asr_wa_swap_betharian
+  swap_type_weight = 5
+
+  zone_sets = {
+    gaia_rural
+  }
+
+  included_building_sets = {
+    betharian
+    mining
+    fallen_empire_mining
+  }
+
+  ai_priority = 10
 }

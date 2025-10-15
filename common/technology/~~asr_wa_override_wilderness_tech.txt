@@ -1,0 +1,79 @@
+#Gene Crops
+tech_gene_crops = {
+  cost = @tier2cost1
+  area = society
+  tier = 2
+  category = { biology }
+  prerequisites = { "tech_eco_simulation" }
+  weight = @tier2weight1
+
+  modifier = {
+    planet_farmers_food_produces_mult = 0.2
+    starbase_constructions_food_produces_mult = 0.10
+  }
+
+  potential = {  }
+
+  weight_modifier = {
+    modifier = {
+      factor = 0.01
+      OR = {
+        is_machine_empire = yes
+        is_lithoid_empire = yes
+        is_individual_machine = yes
+        has_origin = origin_synthetic_fertility
+      }
+      NOR = {
+        has_country_flag = non_lithoid_subspecies
+        has_valid_civic = civic_machine_servitor
+        has_valid_civic = civic_machine_assimilator
+        any_owned_planet = {
+          OR = {
+            has_any_capped_planet_farming_district = yes
+            has_any_uncapped_farming_district = yes
+            has_any_agriculture_zone = yes
+          }
+        }
+      }
+    }
+    modifier = {
+      factor = 0.5
+      OR = {
+        is_machine_empire = yes
+        is_lithoid_empire = yes
+        AND = {
+          is_individual_machine = yes
+          NOT = { has_country_flag = non_lithoid_subspecies }
+        }
+      }
+    }
+    modifier = {
+      factor = 1.25
+      has_ethic = ethic_pacifist
+    }
+    modifier = {
+      factor = 1.5
+      has_ethic = ethic_fanatic_pacifist
+    }
+    modifier = {
+      factor = 2
+      has_relic = r_pox_sample
+    }
+    modifier = {
+      factor = 2
+      country_uses_bio_ships = yes
+    }
+  }
+
+  ai_weight = {
+    factor = @farming_ai_weight_factor
+    modifier = {
+      factor = 1.25
+      has_ethic = ethic_pacifist
+    }
+    modifier = {
+      factor = 1.5
+      has_ethic = ethic_fanatic_pacifist
+    }
+  }
+}

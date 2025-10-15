@@ -13,10 +13,10 @@ decision_asr_wa_wilderness_world = {
     }
   }
   allow = {
-    free_district_slots <= 0
-    num_uncleared_blockers <= 0
     has_fully_upgraded_capital = yes
     has_modifier = mastery_of_nature
+    free_district_slots <= 0
+    num_uncleared_blockers <= 0
     asr_wa_planet_is_wilderness_arcology = {
       NOT_WILDERNESS_WORLD = yes
     }
@@ -24,6 +24,7 @@ decision_asr_wa_wilderness_world = {
     owner = {
       has_ascension_perk = ap_world_shaper
       has_ascension_perk = ap_mastery_of_nature
+      has_technology = tech_climate_restoration
       has_technology = tech_mega_engineering
     }
   }
@@ -50,7 +51,6 @@ decision_asr_wa_wilderness_world = {
     weight = 1000
     modifier = {
       factor = 0
-      free_district_slots > 0
       pop_amount < 8000
     }
   }

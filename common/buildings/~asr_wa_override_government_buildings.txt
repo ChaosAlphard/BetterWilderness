@@ -1,7 +1,7 @@
 # 再生源地
 # 基础: +100孵育体, 每50人+1免疫体, 给予人口组装速度加成, 反比于行星人口数量
 # 根据人口数量给予舒适度
-# 拥有 基因图谱 科技: +100孵育体
+# 拥有 基因重塑 飞升: +100孵育体
 # 拥有 基因剪裁 科技: +100孵育体
 # 纯净传统完成: +100孵育体, +30%有机人口岗位效率,
 #   每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
@@ -17,6 +17,7 @@ building_cradle_of_rebirth = {
 
   building_sets = {
     government
+    urban
   }
 
   potential = {
@@ -61,6 +62,11 @@ building_cradle_of_rebirth = {
       job_spawning_drone_add = @building_static_jobs_low
       pop_bonus_workforce_mult = 0.30
     }
+  }
+
+  triggered_planet_modifier = {
+    potential = { asr_wa_planet_is_wilderness_world = yes }
+    pop_bonus_workforce_mult = 0.20
   }
 
   # 根据人口数量给予舒适度
