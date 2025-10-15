@@ -6,11 +6,6 @@ triggered_name = {
 }
 
 triggered_name = {
-  trigger = { asr_wa_planet_is_wilderness_arcology = yes }
-  text = asrwa_name_gaia
-}
-
-triggered_name = {
   trigger = {
     OR = {
       num_zones = {
@@ -28,4 +23,9 @@ triggered_name = {
     }
   }
   text = asrwa_name_research
+}
+
+triggered_name = {
+  trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+  text = asrwa_name_gaia
 }

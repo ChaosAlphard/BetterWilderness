@@ -380,12 +380,8 @@ zone_minerals_wilderness = {
     }
   }
 
-  resources = {
-    category = planet_zones
-    cost = {
-      minerals = @zone_cost
-    }
-  }
+  inline_script = { script = asr_wa/zone/cost }
+
   convert_to = {
     zone_asr_wa_mineral
   }
@@ -419,12 +415,6 @@ zone_minerals_wilderness = {
 zone_energy_wilderness = {
   icon = GFX_district_specialization_wilderness_energy
   base_buildtime = @zone_buildtime
-  resources = {
-    category = planet_zones
-    cost = {
-      minerals = @zone_cost
-    }
-  }
 
   potential = { # planet scope
     exists = owner
@@ -441,6 +431,9 @@ zone_energy_wilderness = {
       }
     }
   }
+
+  inline_script = { script = asr_wa/zone/cost }
+
   convert_to = {
     zone_asr_wa_energy
   }
@@ -493,12 +486,9 @@ zone_food_wilderness = {
       }
     }
   }
-  resources = {
-    category = planet_zones
-    cost = {
-      minerals = @zone_cost
-    }
-  }
+
+  inline_script = { script = asr_wa/zone/cost }
+
   convert_to = {
     zone_asr_wa_food
   }

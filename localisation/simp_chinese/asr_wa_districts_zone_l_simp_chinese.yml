@@ -58,8 +58,8 @@ l_simp_chinese:
   district_asr_wa_cragland_03_plural: "$district_craglands$3"
   district_asr_wa_cragland_03_desc: "$district_craglands_desc$"
   # Swap District
-  district_asr_wa_swap_spawning: "$district_craglands$"
-  district_asr_wa_swap_spawning_plural: "$district_craglands$"
+  district_asr_wa_swap_spawning: "$zone_asr_wa_spawning$"
+  district_asr_wa_swap_spawning_plural: "$zone_asr_wa_spawning$"
   district_asr_wa_swap_spawning_tt: "$building_cradle_of_rebirth$"
   district_asr_wa_swap_spawning_desc: "$zone_urban_wilderness_desc$"
 

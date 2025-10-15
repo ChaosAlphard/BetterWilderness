@@ -9,11 +9,10 @@ building_asr_wa_organic_processing = {
   planet_limit = 1
 
   building_sets = {
-    urban
-    government
     research
     foundry
     factory
+    industrial
   }
 
   potential = {
