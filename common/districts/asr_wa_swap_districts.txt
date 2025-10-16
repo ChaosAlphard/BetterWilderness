@@ -1,3 +1,13 @@
+# 共栖群落
+district_asr_wa_swap_urban = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_housing
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_urban_tt
+  }
+}
 # 再生源地
 district_asr_wa_swap_spawning = {
   inline_script = { script = asr_wa/districts/shared_swap_district }

@@ -14,7 +14,7 @@ zone_asr_wa_assist_research = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {
@@ -41,7 +41,7 @@ zone_asr_wa_assist_unity = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {
@@ -68,7 +68,7 @@ zone_asr_wa_assist_alloys = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {
@@ -122,7 +122,7 @@ zone_asr_wa_assist_food = {
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {
@@ -153,7 +153,7 @@ zone_asr_wa_assist_energy = {
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {
@@ -184,7 +184,7 @@ zone_asr_wa_assist_mineral = {
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 50
+    BASE = @scaling_district_2_jobs
   }
 
   district_planet_modifier = {

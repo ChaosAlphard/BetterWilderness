@@ -1,3 +1,31 @@
+# 林心
+zone_asr_wa_urban = {
+  icon = GFX_district_specialization_wilderness_urban
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  include = { all }
+
+  excluded_building_sets = {
+    generator
+    mining
+    farming
+    knights
+    betharian
+  }
+
+  swap_type = district_asr_wa_swap_urban
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/patrol_add
+    BASE = @doubled_scaling_district_2_jobs
+  }
+}
 # 蔓生
 zone_asr_wa_spawning = {
   icon = GFX_district_specialization_wilderness_spawning
@@ -59,7 +87,7 @@ zone_asr_wa_unity = {
   }
   inline_script = {
     script = asr_wa/zone/job/bureaucrat_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 思茎
@@ -79,7 +107,7 @@ zone_asr_wa_research = {
   }
   inline_script = {
     script = asr_wa/zone/job/researcher_add
-    BASE = 60
+    BASE = @doubled_scaling_district_3_jobs
   }
 }
 # 熔肠
@@ -99,7 +127,7 @@ zone_asr_wa_foundry = {
   }
   inline_script = {
     script = asr_wa/zone/job/foundry_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 须径
@@ -119,7 +147,7 @@ zone_asr_wa_trade = {
   }
   inline_script = {
     script = asr_wa/zone/job/trader_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 令苞
@@ -139,7 +167,7 @@ zone_asr_wa_fortress = {
   }
   inline_script = {
     script = asr_wa/zone/job/soldier_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 花锦
@@ -163,7 +191,7 @@ zone_asr_wa_food = {
   }
   inline_script = {
     script = asr_wa/zone/job/farmer_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 光肺
@@ -186,7 +214,7 @@ zone_asr_wa_energy = {
   }
   inline_script = {
     script = asr_wa/zone/job/technicians_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 矿脊
@@ -209,7 +237,7 @@ zone_asr_wa_mineral = {
   }
   inline_script = {
     script = asr_wa/zone/job/miner_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 异星天然气
@@ -239,7 +267,7 @@ zone_asr_wa_exotic_gases = {
   }
   inline_script = {
     script = asr_wa/zone/job/farmer_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 
   swap_type = district_asr_wa_swap_exotic_gases
@@ -285,7 +313,7 @@ zone_asr_wa_volatile_motes = {
 
   inline_script = {
     script = asr_wa/zone/job/technicians_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 
   swap_type = district_asr_wa_swap_volatile_motes
@@ -329,7 +357,7 @@ zone_asr_wa_rare_crystals = {
   }
   inline_script = {
     script = asr_wa/zone/job/miner_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 
   swap_type = district_asr_wa_swap_rare_crystals
@@ -373,7 +401,7 @@ zone_asr_wa_betharian = {
   }
   inline_script = {
     script = asr_wa/zone/job/miner_add
-    BASE = 200
+    BASE = @doubled_scaling_district_1_job
   }
 
   swap_type = district_asr_wa_swap_betharian

@@ -14,7 +14,7 @@ tech_gene_crops = {
 
   technology_swap = {
     trigger = { is_wilderness_empire = yes }
-    inherit_name = yes
+    name = tech_gene_crops
     inherit_icon = yes
     inherit_effects = no
     weight = 10

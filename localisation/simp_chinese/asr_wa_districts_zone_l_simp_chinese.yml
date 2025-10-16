@@ -19,8 +19,10 @@ l_simp_chinese:
   zone_asr_wa_assist_mineral: "沉积"
   zone_asr_wa_assist_mineral_desc: ""
   # Secondary Zone
+  zone_asr_wa_urban: "$zone_urban_wilderness$"
+  zone_asr_wa_urban_desc: "$zone_urban_wilderness_desc$"
   zone_asr_wa_spawning: "蔓生"
-  zone_asr_wa_spawning_desc: ""
+  zone_asr_wa_spawning_desc: "$building_cradle_of_rebirth_desc$"
   zone_asr_wa_research_unity: "$zone_research_unity_wilderness$"
   zone_asr_wa_research_unity_desc: "$zone_research_unity_wilderness_desc$"
   zone_asr_wa_unity: "$zone_unity_wilderness$"
@@ -58,6 +60,11 @@ l_simp_chinese:
   district_asr_wa_cragland_03_plural: "$district_craglands$3"
   district_asr_wa_cragland_03_desc: "$district_craglands_desc$"
   # Swap District
+  district_asr_wa_swap_urban: "$zone_urban_wilderness$"
+  district_asr_wa_swap_urban_plural: "$zone_urban_wilderness$"
+  district_asr_wa_swap_urban_tt: "$district_craglands$"
+  district_asr_wa_swap_urban_desc: "$zone_urban_wilderness_desc$"
+
   district_asr_wa_swap_spawning: "$zone_asr_wa_spawning$"
   district_asr_wa_swap_spawning_plural: "$zone_asr_wa_spawning$"
   district_asr_wa_swap_spawning_tt: "$building_cradle_of_rebirth$"

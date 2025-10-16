@@ -122,14 +122,20 @@ district_photosynthesis_fields = {
     asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = from
-    from = { has_uncapped_wilderness_districts = no }
+    from = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   potential = {
     asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     exists = owner
-    owner = { has_uncapped_wilderness_districts = no }
+    owner = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   conversion_ratio = 1
@@ -283,13 +289,19 @@ district_hollow_mountains = {
   show_on_uncolonized = {
     uses_district_set = standard
     exists = from
-    from = { has_uncapped_wilderness_districts = no }
+    from = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   potential = {
     uses_district_set = standard
     exists = owner
-    owner = { has_uncapped_wilderness_districts = no }
+    owner = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   conversion_ratio = 1
@@ -438,13 +450,19 @@ district_orchard_forests = {
   show_on_uncolonized = {
     uses_district_set = standard
     exists = from
-    from = { has_uncapped_wilderness_districts = no }
+    from = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   potential = {
     uses_district_set = standard
     exists = owner
-    owner = { has_uncapped_wilderness_districts = no }
+    owner = {
+      is_wilderness_empire = yes
+      NOT = { has_tradition = tr_purity_finish }
+    }
   }
 
   allow = {
