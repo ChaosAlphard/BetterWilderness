@@ -49,9 +49,7 @@ building_natural_furnace_1 = { # substitute for 'building_foundry_1'
     government
     foundry
   }
-  allow = {
-    has_major_upgraded_capital = yes
-  }
+
   inline_script = {
     script = buildings/wilderness_buildings_potential_destroy
   }

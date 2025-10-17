@@ -3,8 +3,8 @@ asr_wa_tr_purity_effect = {
   potential = {
     is_wilderness_empire = yes
     OR = {
-      has_tradition = tr_purity_adopt
       has_tradition = tr_purity_finish
+      has_ascension_perk = ap_engineered_evolution
     }
   }
 
@@ -12,18 +12,16 @@ asr_wa_tr_purity_effect = {
     name = asr_wa_p_purity_adopt
 
     potential = {
-      has_tradition = tr_purity_adopt
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 0 }
+      NOT = { has_tradition = tr_purity_finish }
+      has_ascension_perk = ap_engineered_evolution
     }
 
     valid = {
-      has_tradition = tr_purity_adopt
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 0 }
+      NOT = { has_tradition = tr_purity_finish }
+      has_ascension_perk = ap_engineered_evolution
     }
 
-    modifier = {
-      pop_environment_tolerance = 0.20
-    }
+    modifier = {  }
 
     AI_weight = {
       weight = 10
@@ -34,59 +32,30 @@ asr_wa_tr_purity_effect = {
     name = asr_wa_p_purity_stage_1
 
     potential = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 1 }
+      NOT = { has_tradition = tr_purity_finish }
+      has_tradition = tr_purity_stage_1_swap
     }
 
     valid = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 1 }
+      NOT = { has_tradition = tr_purity_finish }
+      has_tradition = tr_purity_stage_1_swap
+    }
+
+    # 修复加强能力中"领袖起始特质+1"不生效的问题, 以及其他可能的潜在问题
+    # 原因: 蠢驴在判断是否拥有对应类型的可变传统时, 不仅判断是否拥有该传统，
+    #      还要判断是否拥有对应局势解决方案设置的 country_flag
+    #      然而蠢驴并没有在局势中给生体荒野设置 country_flag,
+    #      导致生体荒野被视为不具有任何纯净类型的可变传统, 只被视为拥有通用可变传统
+    #   而"领袖起始特质+1"生效机制实际上是在生成领袖时, 把每一个带有该词条的传统都判断一遍是否拥有
+    #      若拥有则添加随机特质到领袖上, 而荒野又被视为不具有纯净可变1, 故而无法生效
+    on_enabled = {
+      set_country_flag = genetic_ascension_stage_1_purity
+      set_country_flag = genetic_ascension_stage_2_purity
+      set_country_flag = genetic_ascension_stage_3_purity
     }
 
     modifier = {
-      pop_environment_tolerance = 0.20
       leader_initial_skill = 2
-    }
-
-    AI_weight = {
-      weight = 10
-    }
-  }
-
-  option = {
-    name = asr_wa_p_purity_stage_2
-
-    potential = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 2 }
-    }
-
-    valid = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 2 }
-    }
-
-    modifier = {
-      pop_environment_tolerance = 0.20
-      leader_initial_skill = 2
-    }
-
-    AI_weight = {
-      weight = 10
-    }
-  }
-
-  option = {
-    name = asr_wa_p_purity_stage_3
-
-    potential = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 3 }
-    }
-
-    valid = {
-      asr_wa_calc_tr_purity_unlock = { AMOUNT = 3 }
-    }
-
-    modifier = {
-      pop_environment_tolerance = 0.20
-      leader_initial_skill = 2
-      leader_skill_add = 1
     }
 
     AI_weight = {
@@ -105,11 +74,17 @@ asr_wa_tr_purity_effect = {
       has_tradition = tr_purity_finish
     }
 
+    # 再次设置, 避免囤积凝聚力过多在游戏暂停时一口气点完传统导致选项被跳过从而无法设置 country_flag
+    on_enabled = {
+      set_country_flag = genetic_ascension_stage_1_purity
+      set_country_flag = genetic_ascension_stage_2_purity
+      set_country_flag = genetic_ascension_stage_3_purity
+    }
+
     modifier = {
-      pop_environment_tolerance = 0.20
       leader_initial_skill = 2
       leader_skill_add = 1
-      empire_size_pops_mult = -0.10
+      empire_size_pops_mult = -0.20
     }
 
     AI_weight = {

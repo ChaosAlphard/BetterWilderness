@@ -15,16 +15,18 @@ decision_asr_wa_wilderness_world = {
   allow = {
     has_fully_upgraded_capital = yes
     has_modifier = mastery_of_nature
+    planet_size >= 25
     free_district_slots <= 0
     num_uncleared_blockers <= 0
-    asr_wa_planet_is_wilderness_arcology = {
-      NOT_WILDERNESS_WORLD = yes
+    hidden_trigger = {
+      asr_wa_planet_is_wilderness_arcology = {
+        NOT_WILDERNESS_WORLD = yes
+      }
+      exists = owner
     }
-    hidden_trigger = { exists = owner }
     owner = {
-      has_ascension_perk = ap_world_shaper
       has_ascension_perk = ap_mastery_of_nature
-      has_technology = tech_climate_restoration
+      has_ascension_perk = ap_world_shaper
       has_technology = tech_mega_engineering
     }
   }
@@ -32,19 +34,63 @@ decision_asr_wa_wilderness_world = {
   resources = {
     category = decisions
     cost = {
-      food = 40000
-      biomass = 8000
+      food = 100000
+      biomass = 10000
       influence = 100
     }
   }
 
   effect = {
-    hidden_effect = { set_planet_flag = asr_wa_pf_wilderness_world }
+    hidden_effect = {
+      set_planet_flag = asr_wa_pf_wilderness_world
+      every_deposit = {
+        limit = {
+          NOR = {
+            has_deposit_category = deposit_cat_rare
+            has_deposit_category = deposit_cat_rare_resource
+            has_deposit_category = deposit_cat_rare_blocker
+          }
+        }
+        remove_deposit = yes
+      }
+    }
     add_modifier = {
       modifier = asr_wa_wilderness_world
       days = -1
     }
     custom_tooltip = decision_asr_wa_wilderness_world_tt
+  }
+
+  on_queued = {
+    if = { # kill on the same planet
+      limit = {
+        is_variable_set = local_spent_biomass
+        any_owned_pop_group = {
+          has_trait = trait_wilderness
+          pop_group_size > local_spent_biomass
+        }
+      }
+      random_owned_pop_group = {
+        limit = {
+          has_trait = trait_wilderness
+          pop_group_size > local_spent_biomass
+        }
+        kill_pop_group = {
+          pop_group = this
+          amount = local_spent_biomass
+        }
+      }
+    }
+    else_if = {
+      limit = { is_variable_set = local_spent_biomass }
+      owner = {
+        global_biomass_spender = yes
+      }
+    }
+  }
+
+  on_unqueued = { #This way you can only mass produce you main species and not other ones for bodysnatcher shenanigans
+    unqueue_biomass_effect = yes
   }
 
   ai_weight = {
@@ -53,5 +99,43 @@ decision_asr_wa_wilderness_world = {
       factor = 0
       pop_amount < 8000
     }
+  }
+}
+
+decision_asr_wa_renounce_colony = {
+  owned_planets_only = yes
+  icon = decision_burning_settlement
+  enactment_time = 180
+
+  potential = {
+    hidden_trigger = { exists = owner }
+    owner = {
+      is_wilderness_empire = yes
+      is_ai = no
+    }
+    is_capital = no
+  }
+
+  allow = {
+    hidden_trigger = { exists = owner }
+    owner = {
+      is_wilderness_empire = yes
+      is_at_war = no
+      is_ai = no
+    }
+    is_capital = no
+  }
+
+  resources = {
+    category = decisions
+    cost = { unity = 1000 }
+  }
+
+  effect = {
+    destroy_colony = yes
+  }
+
+  ai_weight = {
+    factor = 0
   }
 }

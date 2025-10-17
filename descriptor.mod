@@ -3,6 +3,7 @@ tags={
 	"Balance"
 	"Gameplay"
 }
-name="生体荒野调整"
+name="生体荒野加强"
 picture="thumbnail.png"
-supported_version="v4.*.*"
+supported_version="v4.1.*"
+remote_file_id="3589240156"

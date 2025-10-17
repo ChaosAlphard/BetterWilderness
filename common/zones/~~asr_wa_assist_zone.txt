@@ -2,33 +2,6 @@
 @assist_zone_produce_mult_extra = 0.10
 @assist_zone_upkeep_add = 1
 
-# 科研支持
-zone_asr_wa_assist_research = {
-  icon = GFX_district_specialization_wilderness_research
-  base_buildtime = @zone_buildtime
-
-  zone_sets = { urban }
-
-  included_building_sets = { research trade }
-
-  inline_script = { script = asr_wa/zone/shared_advanced_zone }
-  inline_script = {
-    script = asr_wa/zone/job/trader_add
-    BASE = @scaling_district_2_jobs
-  }
-
-  district_planet_modifier = {
-    planet_researchers_produces_mult = @assist_zone_produce_mult
-    planet_researchers_trade_upkeep_add = @assist_zone_upkeep_add
-  }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_researchers_produces_mult = @assist_zone_produce_mult_extra
-  }
-
-  ai_priority = 0
-}
-
 # 行政支持
 zone_asr_wa_assist_unity = {
   icon = GFX_district_specialization_wilderness_unity
@@ -37,6 +10,9 @@ zone_asr_wa_assist_unity = {
   zone_sets = { urban }
 
   included_building_sets = { unity trade }
+
+  swap_type = district_asr_wa_swap_assist_coordinator
+  swap_type_weight = 20
 
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
@@ -56,14 +32,47 @@ zone_asr_wa_assist_unity = {
   ai_priority = 0
 }
 
+# 科研支持
+zone_asr_wa_assist_research = {
+  icon = GFX_district_specialization_wilderness_research
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+
+  included_building_sets = { research trade }
+
+  swap_type = district_asr_wa_swap_assist_calculator
+  swap_type_weight = 18
+
+  inline_script = { script = asr_wa/zone/shared_advanced_zone }
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = @scaling_district_2_jobs
+  }
+
+  district_planet_modifier = {
+    planet_researchers_produces_mult = @assist_zone_produce_mult
+    planet_researchers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+  triggered_district_planet_modifier = {
+    potential = { asr_wa_planet_is_wilderness_world = yes }
+    planet_researchers_produces_mult = @assist_zone_produce_mult_extra
+  }
+
+  ai_priority = 0
+}
+
 # 冶金支持
-zone_asr_wa_assist_alloys = {
+zone_asr_wa_assist_foundry = {
   icon = GFX_district_specialization_wilderness_foundry
   base_buildtime = @zone_buildtime
 
   zone_sets = { urban }
 
   included_building_sets = { foundry trade }
+
+  swap_type = district_asr_wa_swap_assist_foundry
+  swap_type_weight = 16
 
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
@@ -92,6 +101,9 @@ zone_asr_wa_assist_trade = {
 
   included_building_sets = { trade }
 
+  swap_type = district_asr_wa_swap_assist_trade
+  swap_type_weight = 14
+
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
 
   district_planet_modifier = {
@@ -118,6 +130,9 @@ zone_asr_wa_assist_food = {
     hydroponics
     trade
   }
+
+  swap_type = district_asr_wa_swap_assist_food
+  swap_type_weight = 12
 
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
@@ -150,6 +165,9 @@ zone_asr_wa_assist_energy = {
     trade
   }
 
+  swap_type = district_asr_wa_swap_assist_energy
+  swap_type_weight = 10
+
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
@@ -180,6 +198,9 @@ zone_asr_wa_assist_mineral = {
     fallen_empire_mining
     trade
   }
+
+  swap_type = district_asr_wa_swap_assist_minerals
+  swap_type_weight = 8
 
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {

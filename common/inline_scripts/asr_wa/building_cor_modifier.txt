@@ -1,0 +1,110 @@
+# 孵育体岗位
+inline_script = {
+  script = jobs/spawning_drone_add
+  AMOUNT = @building_static_jobs_low
+}
+# 100孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_ascension_perk = ap_engineered_evolution
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+# 100孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_technology = tech_gene_tailoring
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+# 100孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_tradition = tr_purity_finish
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+# 每50人口 +1免疫体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  modifier = {
+    job_patrol_drone_per_pop = 0.02
+  }
+}
+# 额外有机人口增长系数, 反比于行星人口与孵育体岗位数量, +500% - +0%
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+    count_owned_pop_amount = {
+      limit = { has_trait = trait_wilderness }
+      count <= @wa_bonus_growth_max_pops
+    }
+  }
+  bonus_pop_growth_mult = 0.01
+  mult = value:asr_wa_bonus_growth_by_pops
+}
+# 岗位效率
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_tradition = tr_purity_finish
+    }
+  }
+  pop_bonus_workforce_mult = 0.01
+  mult = value:asr_wa_cor_bonus_workforce_all
+}
+# 根据人口数量给予舒适度
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  planet_amenities_no_happiness_add = 1
+  mult = value:asr_wa_amenities_by_pops
+}
+# 掌控自然修正给予-10%行星基础设施花费
+triggered_planet_modifier = {
+  potential = {
+    has_modifier = mastery_of_nature
+  }
+  modifier = {
+    planet_structures_cost_mult = -0.10
+  }
+}
+# 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_tradition = tr_purity_finish
+    }
+  }
+  planet_building_build_speed_mult = 0.02
+  planet_decision_enact_speed_mult = 0.02
+  mult = value:asr_wa_cor_bonus_build_speed
+}

@@ -18,17 +18,6 @@ district_asr_wa_swap_spawning = {
     text = district_asr_wa_swap_spawning_tt
   }
 }
-# 化身密林
-district_asr_wa_swap_unity_research = {
-  inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_craglands
-  overlay_icon = GFX_district_government
-  gridbox = district_orchard_forests
-  triggered_name = {
-    trigger = { always = yes }
-    text = district_asr_wa_swap_unity_research_tt
-  }
-}
 # 共栖密林
 district_asr_wa_swap_coordinator = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
@@ -42,11 +31,44 @@ district_asr_wa_swap_coordinator = {
 # 科研密林
 district_asr_wa_swap_calculator = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_orchard_forests
+  icon = district_craglands
   overlay_icon = GFX_district_research
   triggered_name = {
     trigger = { always = yes }
     text = district_asr_wa_swap_calculator_tt
+  }
+}
+# 物理学
+district_asr_wa_swap_calculator_phy = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_photosynthesis_fields
+  overlay_icon = GFX_district_physics
+  gridbox = district_city
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_calculator_phy_tt
+  }
+}
+# 社会学
+district_asr_wa_swap_calculator_soc = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_orchard_forests
+  overlay_icon = GFX_district_society
+  # gridbox = district_orchard_forests
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_calculator_soc_tt
+  }
+}
+# 工程学
+district_asr_wa_swap_calculator_eng = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_hollow_mountains
+  overlay_icon = GFX_district_engineering
+  gridbox = district_metallic_dew_plains
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_calculator_eng_tt
   }
 }
 # 熔炼热窑

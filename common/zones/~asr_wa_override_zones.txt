@@ -93,7 +93,7 @@ zone_unity_wilderness = {
 }
 
 zone_asr_wa_assist_unity = {
-  potential = { always = no }
+  zone_sets = { urban }
   included_building_sets = { urban }
 }
 
@@ -147,7 +147,7 @@ zone_foundry_wilderness = {
   }
 }
 
-zone_asr_wa_assist_alloys = {
+zone_asr_wa_assist_foundry = {
   zone_sets = { urban }
   included_building_sets = { urban }
 }

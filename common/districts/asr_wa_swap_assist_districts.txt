@@ -1,0 +1,162 @@
+# 共栖密林
+district_asr_wa_swap_assist_coordinator = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_unity
+  triggered_name = {
+    trigger = { has_active_building = building_commensal_clearing_4 }
+    text = building_commensal_clearing_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_commensal_clearing_3 }
+    text = building_commensal_clearing_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_commensal_clearing_2 }
+    text = building_commensal_clearing_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_commensal_clearing_1
+  }
+}
+# 科研密林
+district_asr_wa_swap_assist_calculator = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_research
+  triggered_name = {
+    trigger = { has_active_building = building_brain_node_4 }
+    text = building_brain_node_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_brain_node_3 }
+    text = building_brain_node_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_brain_node_2 }
+    text = building_brain_node_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_brain_node_1
+  }
+}
+# 熔炼热窑
+district_asr_wa_swap_assist_foundry = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_alloys
+  gridbox = district_metallic_dew_plains
+  district_background = district_metallic_dew_plains
+  triggered_name = {
+    trigger = { has_active_building = building_natural_furnace_3 }
+    text = building_natural_furnace_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_natural_furnace_2 }
+    text = building_natural_furnace_2
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_natural_furnace_1 }
+    text = building_natural_furnace_1
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_natural_furnace_0
+  }
+}
+# 行星须核
+district_asr_wa_swap_assist_trade = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_trade
+  triggered_name = {
+    trigger = { has_active_building = building_tendril_cradle_4 }
+    text = building_tendril_cradle_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_tendril_cradle_3 }
+    text = building_tendril_cradle_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_tendril_cradle_2 }
+    text = building_tendril_cradle_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_tendril_cradle_1
+  }
+}
+# 营养溪谷
+district_asr_wa_swap_assist_food = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_food
+  gridbox = district_orchard_forests
+  district_background = district_orchard_forests
+  triggered_name = {
+    trigger = { has_active_building = building_massive_growth_4 }
+    text = building_massive_growth_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_massive_growth_3 }
+    text = building_massive_growth_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_massive_growth_2 }
+    text = building_massive_growth_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_massive_growth_1
+  }
+}
+# 叶绿包囊
+district_asr_wa_swap_assist_energy = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_energy
+  gridbox = district_photosynthesis_fields
+  district_background = district_photosynthesis_fields
+  triggered_name = {
+    trigger = { has_active_building = building_bioelectric_stimulator_4 }
+    text = building_bioelectric_stimulator_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_bioelectric_stimulator_3 }
+    text = building_bioelectric_stimulator_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_bioelectric_stimulator_2 }
+    text = building_bioelectric_stimulator_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_bioelectric_stimulator_1
+  }
+}
+# 石质采盆
+district_asr_wa_swap_assist_minerals = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_minerals
+  gridbox = district_hollow_mountains
+  district_background = district_hollow_mountains
+  triggered_name = {
+    trigger = { has_active_building = building_churning_tunnels_4 }
+    text = building_churning_tunnels_4
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_churning_tunnels_3 }
+    text = building_churning_tunnels_3
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_churning_tunnels_2 }
+    text = building_churning_tunnels_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = building_churning_tunnels_1
+  }
+}

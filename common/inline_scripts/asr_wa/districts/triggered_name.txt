@@ -7,25 +7,68 @@ triggered_name = {
 
 triggered_name = {
   trigger = {
-    OR = {
-      num_zones = {
-        type = zone_asr_wa_assist_research
-        value >= 2
-      }
-      num_zones = {
-        type = zone_research_wilderness
-        value >= 2
-      }
-      AND = {
-        has_zone = { zone = zone_research_wilderness }
-        has_zone = { zone = zone_asr_wa_assist_research }
-      }
+    num_zones = {
+      type = zone_research_wilderness
+      value >= 2
     }
   }
   text = asrwa_name_research
 }
 
 triggered_name = {
-  trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+  trigger = {
+    num_zones = {
+      type = zone_unity_wilderness
+      value >= 2
+    }
+  }
+  text = asrwa_name_unity
+}
+
+triggered_name = {
+  trigger = {
+    num_zones = {
+      type = zone_foundry_wilderness
+      value >= 2
+    }
+  }
+  text = asrwa_name_foundry
+}
+
+triggered_name = {
+  trigger = {
+    num_zones = {
+      type = zone_trade_wilderness
+      value >= 2
+    }
+  }
+  text = asrwa_name_trade
+}
+
+triggered_name = {
+  trigger = {
+    num_zones = {
+      type = zone_fortress_wilderness
+      value >= 2
+    }
+  }
+  text = asrwa_name_fortress
+}
+
+triggered_name = {
+  trigger = {
+    OR = {
+      asr_wa_planet_is_wilderness_arcology = yes
+      has_fully_upgraded_capital = yes
+    }
+  }
   text = asrwa_name_gaia
+}
+triggered_name = {
+  trigger = { has_major_upgraded_capital = yes }
+  text = asrwa_name_growth
+}
+triggered_name = {
+  trigger = { always = yes }
+  text = asrwa_name_default
 }

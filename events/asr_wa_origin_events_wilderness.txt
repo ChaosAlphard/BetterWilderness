@@ -11,6 +11,6 @@ country_event = {
       tech = tech_terrestrial_sculpting
       message = no
     }
-    add_research_option = tech_ecological_adaptation
+    # add_research_option = tech_ecological_adaptation
   }
 }

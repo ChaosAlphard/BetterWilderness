@@ -1,6 +1,6 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_simp_chinese:
-  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n—$ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n—$GUARANTEED_RESEARCH_OPTION_STRING$£society_research£['technology:tech_ecological_adaptation']"
+  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n—$ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n—在['concept_planet:pc_gaia']上解锁高级£district£['concept_district']"
   building_asr_wa_organic_processing: "催化林地"
   building_asr_wa_organic_processing_desc: "§Y催化林地§!将工业与科研岗位的$r_minerals$维护费替换为$r_food$维护费，并将建筑的$r_minerals$建造费用替换为$r_food$建造费用"
   # 政策
@@ -21,9 +21,9 @@ l_simp_chinese:
   wa_r_housing: "£housing£§Y住房§!"
   wa_r_job: "£job£§Y岗位§!"
   # 建筑
-  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']与['ascension_perk:ap_engineered_evolution']各提供§G+100§!$mod_job_spawning_drone_add$\n—['tradition_category:tradition_purity']传统完成提供§G+100§!$mod_job_spawning_drone_add$与§G+30%§!岗位效率\n—['modifier:mastery_of_nature']提供§G-10%§!$mod_planet_structures_cost_mult$\n—根据人口数提供少量$wa_r_amenities_gestalt$"
-  asr_wa_b_cor_bonus_pop_growth_tt: "人口较少时给予额外的§Y有机人口增长系数§!加成"
-  asr_wa_b_cor_bonus_pop_growth_func: "§YClamp(§!0,2000,2100-[planet.ASRWA_NumPops]§Y)§!/[planet.ASRWA_WorkforceSpawningDrone] *0.25*100% = §G[planet.ASRWA_BonusGrowthFromPops]%§!"
+  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity']传统完成各提供§G+100§!$mod_job_spawning_drone_add$\n—['modifier:mastery_of_nature']提供§G-10%§!$mod_planet_structures_cost_mult$\n—根据人口数提供少量$wa_r_amenities_gestalt$"
+  asr_wa_b_cor_bonus_pop_growth_tt: "人口少于§Y$@wa_bonus_growth_max_pops|0$§!时给予额外的§Y有机人口增长系数§!加成"
+  asr_wa_b_cor_bonus_pop_growth_func: "($@wa_bonus_growth_max_pops|0$-[planet.ASRWA_NumPops])/[planet.ASRWA_WorkforceSpawningDrone] *0.25*100% = §G[planet.ASRWA_BonusGrowthFromPops]%§!"
   # T4建筑加成 Tooltip
   asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2']额外产出§G2000§!$wa_r_amenities_gestalt$与$wa_r_housing$"
@@ -36,9 +36,10 @@ l_simp_chinese:
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2']提供更多$wa_r_job$"
   # 决议
   decision_asr_wa_wilderness_world: "重塑自然"
-  decision_asr_wa_wilderness_world_tt: "所有£district£['concept_district']提供更多£job£['concept_jobs']"
+  decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth']额外提供§G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\n所有£district£['concept_district']提供更多£job£['concept_jobs']"
   decision_asr_wa_wilderness_world_desc: ""
-  #
+  decision_asr_wa_renounce_colony: "§R切断根须§!"
+  decision_asr_wa_renounce_colony_desc: "切断殖民地与我们的联系"
+  # Static Modifier
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
-  asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth']额外提供§G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$"
   asr_wa_wilderness_world_desc: ""

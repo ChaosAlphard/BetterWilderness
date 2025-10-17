@@ -46,30 +46,6 @@ zone_asr_wa_spawning = {
     BASE = 100
   }
 }
-# 谐核
-zone_asr_wa_research_unity = {
-  icon = GFX_district_specialization_wilderness_spawning
-  base_buildtime = @zone_buildtime
-
-  zone_sets = { gaia_rural }
-
-  included_building_sets = { unity research }
-
-  swap_type = district_asr_wa_swap_unity_research
-  swap_type_weight = 10
-
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
-  inline_script = {
-    script = asr_wa/zone/job/researcher_add
-    BASE = 40
-  }
-  inline_script = {
-    script = asr_wa/zone/job/bureaucrat_add
-    BASE = 80
-  }
-}
 # 咏崖
 zone_asr_wa_unity = {
   icon = GFX_district_specialization_wilderness_unity
@@ -108,6 +84,69 @@ zone_asr_wa_research = {
   inline_script = {
     script = asr_wa/zone/job/researcher_add
     BASE = @doubled_scaling_district_3_jobs
+  }
+}
+# 物理学特化
+zone_asr_wa_research_phy = {
+  icon = GFX_district_specialization_physics
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { research }
+
+  swap_type = district_asr_wa_swap_calculator_phy
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_type_add
+    BASE = @doubled_scaling_district_1_job
+    TYPE = physicist
+  }
+}
+# 物理学特化
+zone_asr_wa_research_soc = {
+  icon = GFX_district_specialization_society
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { research }
+
+  swap_type = district_asr_wa_swap_calculator_soc
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_type_add
+    BASE = @doubled_scaling_district_1_job
+    TYPE = biologist
+  }
+}
+# 物理学特化
+zone_asr_wa_research_eng = {
+  icon = GFX_district_specialization_engineering
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { research }
+
+  swap_type = district_asr_wa_swap_calculator_eng
+  swap_type_weight = 10
+
+  inline_script = {
+    script = asr_wa/zone/shared_advanced_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_type_add
+    BASE = @doubled_scaling_district_1_job
+    TYPE = engineer
   }
 }
 # 熔肠
