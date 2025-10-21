@@ -1,4 +1,5 @@
-is_capped_by_modifier = no
+expansion_planner = yes
+is_uncapped = { always = yes }
 potential = {
   asr_wa_planet_is_wilderness_arcology = yes
   exists = owner

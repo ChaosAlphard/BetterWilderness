@@ -39,6 +39,8 @@ l_simp_chinese:
   zone_asr_wa_research_soc_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_eng: "工程学演进"
   zone_asr_wa_research_eng_desc: "$zone_research_wilderness_desc$"
+  zone_asr_wa_factory: "工业"
+  zone_asr_wa_factory_desc: "出现消费品支出或者研究['technology:tech_luxuries_1']科技即可解锁该特化\n消费品维护费是为了保持消费品支出，以确保帝国被视为使用消费品的国家"
   zone_asr_wa_foundry: "$zone_foundry_wilderness$"
   zone_asr_wa_foundry_desc: "$zone_foundry_wilderness_desc$"
   zone_asr_wa_trade: "$zone_trade_wilderness$"

@@ -107,7 +107,7 @@ zone_asr_wa_research_phy = {
     TYPE = physicist
   }
 }
-# 物理学特化
+# 社会学特化
 zone_asr_wa_research_soc = {
   icon = GFX_district_specialization_society
   base_buildtime = @zone_buildtime
@@ -128,7 +128,7 @@ zone_asr_wa_research_soc = {
     TYPE = biologist
   }
 }
-# 物理学特化
+# 工程学特化
 zone_asr_wa_research_eng = {
   icon = GFX_district_specialization_engineering
   base_buildtime = @zone_buildtime
@@ -147,6 +147,65 @@ zone_asr_wa_research_eng = {
     script = asr_wa/zone/job/researcher_type_add
     BASE = @doubled_scaling_district_1_job
     TYPE = engineer
+  }
+}
+# 工业集群
+zone_asr_wa_factory = {
+  icon = GFX_district_specialization_factory
+  base_buildtime = @zone_buildtime
+  potential = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      OR = {
+        has_technology = tech_luxuries_1
+        country_uses_consumer_goods = yes
+      }
+    }
+  }
+  unlock = {
+    hidden_trigger = {
+      asr_wa_planet_is_wilderness_arcology = yes
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        OR = {
+          has_technology = tech_luxuries_1
+          country_uses_consumer_goods = yes
+        }
+      }
+    }
+  }
+  resources = {
+    category = planet_zones
+    cost = {
+      minerals = @wa_zone_minerals
+      food = @wa_zone_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_zone_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
+    }
+    upkeep = { consumer_goods = 0.01 }
+  }
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { factory }
+
+  swap_type = district_hive_factory
+  swap_type_weight = 10
+
+  max_buildings = 3
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/artisan_add
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 熔肠
