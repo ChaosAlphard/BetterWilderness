@@ -49,3 +49,72 @@ building_asr_wa_organic_processing = {
     factor = 0
   }
 }
+
+# 护卫哨所
+building_asr_wa_sentinel_posts = {
+  icon = "building_sentinel_posts"
+  category = government
+  base_buildtime = @b1_time
+  can_build = yes
+  can_demolish = yes
+  can_be_ruined = yes
+
+  building_sets = {
+    government
+    urban
+  }
+
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+
+  allow = {
+    hidden_trigger = {
+      OR = {
+        owner = { is_ai = no }
+        AND = {
+          NOT = { has_building = building_asr_wa_sentinel_posts }
+          NOT = { has_forbidden_jobs = patrol_drone }
+          NOT = { has_available_jobs = patrol_drone }
+        }
+      }
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      biomass = @wa_b2_biomass
+    }
+    cost = {
+      food = @wa_b1_minerals
+      minerals = @wa_b1_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_b1_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+  }
+
+  planet_modifier = {
+    job_patrol_drone_per_pop = 0.01
+  }
+
+  prerequisites = {
+    "tech_planetary_government"
+  }
+
+  show_tech_unlock_if = {
+    always = no
+  }
+}

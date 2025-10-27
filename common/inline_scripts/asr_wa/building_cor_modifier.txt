@@ -43,15 +43,15 @@ triggered_planet_modifier = {
   }
 }
 # 每50人口 +1免疫体岗位
-triggered_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  modifier = {
-    job_patrol_drone_per_pop = 0.02
-  }
-}
+# triggered_planet_modifier = {
+#   potential = {
+#     exists = owner
+#     owner = { is_wilderness_empire = yes }
+#   }
+#   modifier = {
+#     job_patrol_drone_per_pop = 0.02
+#   }
+# }
 # 额外有机人口增长系数, 反比于行星人口与孵育体岗位数量, +500% - +0%
 triggered_planet_modifier = {
   potential = {
@@ -78,14 +78,14 @@ triggered_planet_modifier = {
   mult = value:asr_wa_cor_bonus_workforce_all
 }
 # 根据人口数量给予舒适度
-triggered_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  planet_amenities_no_happiness_add = 1
-  mult = value:asr_wa_amenities_by_pops
-}
+# triggered_planet_modifier = {
+#   potential = {
+#     exists = owner
+#     owner = { is_wilderness_empire = yes }
+#   }
+#   planet_amenities_no_happiness_add = 1
+#   mult = value:asr_wa_amenities_by_pops
+# }
 # 掌控自然修正给予-10%行星基础设施花费
 triggered_planet_modifier = {
   potential = {

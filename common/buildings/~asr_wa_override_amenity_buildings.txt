@@ -273,9 +273,9 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
     planet_amenities_no_happiness_mult = 0.20
   }
 
-  triggered_desc = {
-    text = asr_wa_building_avatar_chamber_4_cor
-  }
+  # triggered_desc = {
+  #   text = asr_wa_building_avatar_chamber_4_cor
+  # }
   triggered_desc = {
     text = asr_wa_building_avatar_chamber_4_tt
   }

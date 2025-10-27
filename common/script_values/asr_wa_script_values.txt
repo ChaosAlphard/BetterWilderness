@@ -82,21 +82,21 @@ asr_wa_workforce_spawning_drone = {
   min = $MIN$
 }
 
-asr_wa_amenities_ratio = {
-  base = 0.2
-  modifier = {
-    has_active_building = building_avatar_chamber_4
-    add = 0.3
-  }
-}
+# asr_wa_amenities_ratio = {
+#   base = 0.2
+#   modifier = {
+#     has_active_building = building_avatar_chamber_4
+#     add = 0.3
+#   }
+# }
 
-asr_wa_amenities_by_pops = {
-  base = 0
-  add = value:asr_wa_num_wilderness_pops
-  mult = value:asr_wa_amenities_ratio
-  min = 0
-  floor = yes
-}
+# asr_wa_amenities_by_pops = {
+#   base = 0
+#   add = value:asr_wa_num_wilderness_pops
+#   mult = value:asr_wa_amenities_ratio
+#   min = 0
+#   floor = yes
+# }
 
 # 如果有较大的非孵育体岗位的人口组装来源, 则可能导致孵育体岗位更少时获得更高的增长补偿
 asr_wa_bonus_growth_by_pops = {
