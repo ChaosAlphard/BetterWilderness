@@ -1,4 +1,4 @@
-#Gene Crops
+# Gene Crops
 tech_gene_crops = {
   cost = @tier2cost1
   area = society
@@ -42,7 +42,6 @@ tech_gene_crops = {
         any_owned_planet = {
           OR = {
             has_any_capped_planet_farming_district = yes
-            has_any_uncapped_farming_district = yes
             has_any_agriculture_zone = yes
           }
         }

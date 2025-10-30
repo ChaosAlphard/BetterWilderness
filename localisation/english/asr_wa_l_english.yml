@@ -1,0 +1,47 @@
+﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
+l_english:
+  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n- $ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n- Unlock advanced £district£['concept_district'] on ['concept_pc_gaia']"
+  building_asr_wa_organic_processing: "Organic Processing Field"
+  building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§! change industrial jobs and research jobs upkeep from $r_minerals$ to $r_food$, and change build cost from $r_minerals$ to $r_food$"
+  building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
+  building_asr_wa_sentinel_posts_desc: "$building_sentinel_posts_desc$"
+  # 政策
+  policy_asr_wa_tr_purity_effect: "$ap_engineered_evolution$"
+  policy_asr_wa_tr_purity_effect_desc: "根据$tradition_purity$传统解锁进度给予额外加成"
+  asr_wa_p_purity_adopt: "$tradition_purity$"
+  asr_wa_p_purity_adopt_desc: ""
+  asr_wa_p_purity_stage_1: "$tradition_purity$"
+  asr_wa_p_purity_stage_1_desc: ""
+  asr_wa_p_purity_stage_2: "$tradition_purity$"
+  asr_wa_p_purity_stage_2_desc: ""
+  asr_wa_p_purity_stage_3: "$tradition_purity$"
+  asr_wa_p_purity_stage_3_desc: ""
+  asr_wa_p_purity_finish: "$tradition_purity$"
+  asr_wa_p_purity_finish_desc: ""
+  # resource with icon
+  wa_r_amenities_gestalt: "£amenities_no_happiness£['concept_amenities']"
+  wa_r_housing: "£housing£['concept_housing']"
+  wa_r_job: "£job£['concept_jobs']"
+  # 建筑
+  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity'] give §G+100§!$mod_job_spawning_drone_add$\n- ['modifier:mastery_of_nature'] give §G-10%§!$mod_planet_structures_cost_mult$"
+  asr_wa_b_cor_bonus_pop_growth_tt: "Give extra §Y$MOD_BONUS_POP_GROWTH$§! when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
+  asr_wa_b_cor_bonus_pop_growth_func: "($@wa_bonus_growth_max_pops|0$-[planet.ASRWA_NumPops])/[planet.ASRWA_WorkforceSpawningDrone] *0.25*100% = §G[planet.ASRWA_BonusGrowthFromPops]%§!"
+  # T4建筑加成 Tooltip
+  # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
+  asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2'] provide more $wa_r_amenities_gestalt$ and $wa_r_housing$"
+  asr_wa_building_commensal_clearing_4_tt: "['building:building_commensal_clearing_2'] provide more $wa_r_job$"
+  asr_wa_building_brain_node_4_tt: "['building:building_brain_node_2'] provide more $wa_r_job$"
+  asr_wa_building_natural_furnace_4_tt: "['building:building_natural_furnace_1'] provide more $wa_r_job$"
+  asr_wa_building_tendril_cradle_4_tt: "['building:building_tendril_cradle_2'] provide more $wa_r_job$"
+  asr_wa_building_massive_growth_4_tt: "['building:building_massive_growth_2'] provide more $wa_r_job$"
+  asr_wa_building_bioelectric_stimulator_4_tt: "['building:building_bioelectric_stimulator_2'] provide more $wa_r_job$"
+  asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2'] provide more $wa_r_job$"
+  # 决议
+  decision_asr_wa_wilderness_world: "Shaping Wilderness World"
+  decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth'] provide §G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\nAll £district£['concept_district'] provide more $wa_r_job$"
+  decision_asr_wa_wilderness_world_desc: ""
+  decision_asr_wa_renounce_colony: "§RRenounce Colony§!"
+  decision_asr_wa_renounce_colony_desc: "Renounce Colony"
+  # Static Modifier
+  asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
+  asr_wa_wilderness_world_desc: ""
