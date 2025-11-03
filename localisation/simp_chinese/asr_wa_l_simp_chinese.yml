@@ -40,6 +40,7 @@ l_simp_chinese:
   decision_asr_wa_wilderness_world: "重塑自然"
   decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth']额外提供§G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\n所有£district£['concept_district']提供更多$wa_r_job$"
   decision_asr_wa_wilderness_world_desc: ""
+  decision_asr_wa_wilderness_world_message: "$PLANET|H$已被重塑"
   decision_asr_wa_renounce_colony: "§R切断根须§!"
   decision_asr_wa_renounce_colony_desc: "切断殖民地与我们的联系"
   # Static Modifier

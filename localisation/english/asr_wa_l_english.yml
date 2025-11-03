@@ -40,6 +40,7 @@ l_english:
   decision_asr_wa_wilderness_world: "Shaping Wilderness World"
   decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth'] provide §G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\nAll £district£['concept_district'] provide more $wa_r_job$"
   decision_asr_wa_wilderness_world_desc: ""
+  decision_asr_wa_wilderness_world_message: "$PLANET|H$ has been shaped"
   decision_asr_wa_renounce_colony: "§RRenounce Colony§!"
   decision_asr_wa_renounce_colony_desc: "Renounce Colony"
   # Static Modifier

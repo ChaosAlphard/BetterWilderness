@@ -5,10 +5,7 @@ district_asr_wa_cragland_01 = {
   icon = district_craglands
   overlay_icon = GFX_district_housing
   inline_script = { script = asr_wa/districts/shared_gaia_district }
-  inline_script = {
-    script = asr_wa/districts/housing
-    BASE = 100
-  }
+  inline_script = { script = asr_wa/districts/housing }
 
   zone_slots = { slot_gaia_rural_01 }
 
@@ -29,10 +26,7 @@ district_asr_wa_cragland_02 = {
   icon = district_craglands
   overlay_icon = GFX_district_housing
   inline_script = { script = asr_wa/districts/shared_gaia_district }
-  inline_script = {
-    script = asr_wa/districts/housing
-    BASE = 100
-  }
+  inline_script = { script = asr_wa/districts/housing }
 
   zone_slots = { slot_gaia_rural_02 }
 
@@ -53,10 +47,7 @@ district_asr_wa_cragland_03 = {
   icon = district_craglands
   overlay_icon = GFX_district_housing
   inline_script = { script = asr_wa/districts/shared_gaia_district }
-  inline_script = {
-    script = asr_wa/districts/housing
-    BASE = 100
-  }
+  inline_script = { script = asr_wa/districts/housing }
 
   zone_slots = { slot_gaia_rural_03 }
 

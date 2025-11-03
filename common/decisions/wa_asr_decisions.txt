@@ -59,6 +59,17 @@ decision_asr_wa_wilderness_world = {
       days = -1
     }
     custom_tooltip = decision_asr_wa_wilderness_world_tt
+    create_message = {
+      type = TERRAFORM_MESSAGE_TYPE
+      localization = decision_asr_wa_wilderness_world_message
+      target = this
+      days = 30
+      variable = {
+        scope = this
+        type = name
+        localization = PLANET
+      }
+    }
   }
 
   on_queued = {

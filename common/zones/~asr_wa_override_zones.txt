@@ -41,7 +41,7 @@ zone_research_unity_wilderness = {
 
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
-    script = asr_wa/zone/job/researcher_add
+    script = asr_wa/zone/job/researcher_all_add
     BASE = @scaling_district_researchers_4_jobs
   }
   inline_script = {
@@ -103,7 +103,7 @@ zone_research_wilderness = {
 
   inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
-    script = asr_wa/zone/job/researcher_add
+    script = asr_wa/zone/job/researcher_all_add
     BASE = @scaling_district_3_jobs
   }
 

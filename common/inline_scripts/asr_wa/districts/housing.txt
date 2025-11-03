@@ -1,5 +1,6 @@
-planet_modifier = {
-  planet_housing_add = $BASE$
+triggered_planet_modifier = {
+  potential = { always = yes }
+  planet_housing_add = 100
 }
 triggered_planet_modifier = {
   potential = {
@@ -8,39 +9,37 @@ triggered_planet_modifier = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = $BASE$
+  planet_housing_add = 100
 }
 
+# 1500 + 500
 triggered_planet_modifier = {
-  potential = { asr_wa_planet_is_wilderness_arcology = yes }
-  planet_housing_add = $BASE$
-  mult = 2
+  potential = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
+  planet_housing_add = 1400
 }
 triggered_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_arcology = yes
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
     exists = owner
     owner = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = $BASE$
-  mult = 2
+  planet_housing_add = 400
 }
 
+# 2000 + 1000
 triggered_planet_modifier = {
-  potential = { asr_wa_planet_is_wilderness_world = yes }
-  planet_housing_add = $BASE$
-  mult = 2
+  potential = { asr_wa_planet_is_wilderness_world_equivalent = yes }
+  planet_housing_add = 1900
 }
 triggered_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_world = yes
+    asr_wa_planet_is_wilderness_world_equivalent = yes
     exists = owner
     owner = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = $BASE$
-  mult = 2
+  planet_housing_add = 900
 }

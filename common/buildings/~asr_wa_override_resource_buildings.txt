@@ -219,6 +219,10 @@ building_massive_growth_4 = { # substitute for 'building_food_processing_center'
     potential = { has_exotic_gases_deposit = yes }
     planet_farmers_exotic_gases_produces_add = 0.5
   }
+  triggered_planet_modifier = {
+    potential = { is_ringworld = yes }
+    planet_farmers_food_produces_add = 2
+  }
 
   inline_script = {
     script = jobs/farmers_add
@@ -443,6 +447,10 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
     potential = { has_volatile_motes_deposit = yes }
     planet_technician_volatile_motes_produces_add = 0.5
   }
+  triggered_planet_modifier = {
+    potential = { is_ringworld = yes }
+    planet_technician_energy_produces_add = 2
+  }
 
   inline_script = {
     script = jobs/technicians_add
@@ -660,6 +668,10 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
   triggered_planet_modifier = {
     potential = { has_rare_crystals_deposit = yes }
     planet_miners_rare_crystals_produces_add = 0.5
+  }
+  triggered_planet_modifier = {
+    potential = { is_ringworld = yes }
+    planet_miners_minerals_produces_add = 2
   }
 
   inline_script = {

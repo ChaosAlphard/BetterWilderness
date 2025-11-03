@@ -5,7 +5,7 @@ triggered_district_planet_modifier = {
       is_wilderness_empire = yes
     }
   }
-  job_technician_drone_add = $BASE$
+  job_calculator_engineer_add = $BASE$
 }
 triggered_district_planet_modifier = {
   potential = {
@@ -15,7 +15,7 @@ triggered_district_planet_modifier = {
       is_wilderness_empire = yes
     }
   }
-  job_technician_drone_add = $BASE$
+  job_calculator_engineer_add = $BASE$
   mult = 2
 }
 triggered_district_planet_modifier = {
@@ -26,6 +26,6 @@ triggered_district_planet_modifier = {
       is_wilderness_empire = yes
     }
   }
-  job_technician_drone_add = $BASE$
+  job_calculator_engineer_add = $BASE$
   mult = 4
 }

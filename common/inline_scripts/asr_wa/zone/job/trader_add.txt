@@ -9,7 +9,7 @@ triggered_district_planet_modifier = {
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_arcology = yes
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
@@ -20,14 +20,14 @@ triggered_district_planet_modifier = {
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_world = yes
+    asr_wa_planet_is_wilderness_world_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
     }
   }
   job_logistics_drone_add = $BASE$
-  mult = 2
+  mult = 4
 }
 
 triggered_district_planet_modifier = {
@@ -43,7 +43,7 @@ triggered_district_planet_modifier = {
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_arcology = yes
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
@@ -55,7 +55,7 @@ triggered_district_planet_modifier = {
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_world = yes
+    asr_wa_planet_is_wilderness_world_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
@@ -63,5 +63,5 @@ triggered_district_planet_modifier = {
     }
   }
   job_logistics_drone_add = $BASE$
-  # mult = 1
+  mult = 2
 }

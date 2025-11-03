@@ -229,6 +229,22 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
     potential = { asr_wa_planet_fabricator_use_food = yes }
     planet_metallurgists_food_upkeep_add = 6
   }
+  triggered_planet_modifier = {
+    potential = {
+      is_ringworld = yes
+      asr_wa_planet_fabricator_use_food = no
+    }
+    planet_metallurgists_alloys_produces_add = 1
+    planet_metallurgists_minerals_upkeep_add = 2
+  }
+  triggered_planet_modifier = {
+    potential = {
+      is_ringworld = yes
+      asr_wa_planet_fabricator_use_food = yes
+    }
+    planet_metallurgists_alloys_produces_add = 1
+    planet_metallurgists_food_upkeep_add = 3
+  }
 
   inline_script = {
     script = jobs/foundry_add

@@ -5,27 +5,27 @@ triggered_district_planet_modifier = {
       is_wilderness_empire = yes
     }
   }
-  job_calculator_$TYPE$_add = $BASE$
+  job_calculator_biologist_add = $BASE$
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_arcology = yes
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
     }
   }
-  job_calculator_$TYPE$_add = $BASE$
+  job_calculator_biologist_add = $BASE$
   mult = 2
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_world = yes
+    asr_wa_planet_is_wilderness_world_equivalent = yes
     exists = owner
     owner = {
       is_wilderness_empire = yes
     }
   }
-  job_calculator_$TYPE$_add = $BASE$
-  mult = 2
+  job_calculator_biologist_add = $BASE$
+  mult = 4
 }

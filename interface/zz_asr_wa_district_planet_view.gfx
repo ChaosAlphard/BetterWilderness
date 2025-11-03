@@ -1,0 +1,139 @@
+# 这个文件必须被置于原版文件之后, 所以用zz开头
+spriteTypes = {
+  # spriteType = {
+  #   name = "GFX_district_craglands_box_icon_rectangle"
+  #   texturefile = "gfx/interface/icons/districts/grid_box/district_craglands_rectangle.dds"
+  #   effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+  #   noOfFrames = 3
+  #   animation = {
+  #     animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+  #     animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+  #     animationrotation = 90.0
+  #     animationlooping = yes
+  #     animationtime = 2.0
+  #     animationdelay = 0.0
+  #     animationblendmode = "add"       #add, multiply, overlay
+  #     animationtype = "pulsing"      #scrolling, rotating, pulsing
+  #     animationrotationoffset = { x = 0.0 y = 0.0 }
+  #     animationtexturescale = { x = 1.0 y = 1.0 }
+  #     #animationframes = { 1 2 3 }
+  #   }
+  # }
+  # spriteType = {
+  #   name = "GFX_district_metallic_dew_plains_box_icon_rectangle"
+  #   texturefile = "gfx/interface/icons/districts/grid_box/district_metallic_dew_plains_rectangle.dds"
+  #   effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+  #   noOfFrames = 3
+  #   animation = {
+  #     animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+  #     animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+  #     animationrotation = 90.0
+  #     animationlooping = yes
+  #     animationtime = 2.0
+  #     animationdelay = 0.0
+  #     animationblendmode = "add"       #add, multiply, overlay
+  #     animationtype = "pulsing"      #scrolling, rotating, pulsing
+  #     animationrotationoffset = { x = 0.0 y = 0.0 }
+  #     animationtexturescale = { x = 1.0 y = 1.0 }
+  #     #animationframes = { 1 2 3 }
+  #   }
+  # }
+  # spriteType = {
+  #   name = "GFX_district_photosynthesis_fields_box_icon_rectangle"
+  #   texturefile = "gfx/interface/icons/districts/grid_box/district_photosynthesis_fields_rectangle.dds"
+  #   effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+  #   noOfFrames = 3
+  #   animation = {
+  #     animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+  #     animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+  #     animationrotation = 90.0
+  #     animationlooping = yes
+  #     animationtime = 2.0
+  #     animationdelay = 0.0
+  #     animationblendmode = "add"       #add, multiply, overlay
+  #     animationtype = "pulsing"      #scrolling, rotating, pulsing
+  #     animationrotationoffset = { x = 0.0 y = 0.0 }
+  #     animationtexturescale = { x = 1.0 y = 1.0 }
+  #     #animationframes = { 1 2 3 }
+  #   }
+  # }
+  # spriteType = {
+  #   name = "GFX_district_hollow_mountains_box_icon_rectangle"
+  #   texturefile = "gfx/interface/icons/districts/grid_box/district_hollow_mountains_rectangle.dds"
+  #   effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+  #   noOfFrames = 3
+  #   animation = {
+  #     animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+  #     animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+  #     animationrotation = 90.0
+  #     animationlooping = yes
+  #     animationtime = 2.0
+  #     animationdelay = 0.0
+  #     animationblendmode = "add"       #add, multiply, overlay
+  #     animationtype = "pulsing"      #scrolling, rotating, pulsing
+  #     animationrotationoffset = { x = 0.0 y = 0.0 }
+  #     animationtexturescale = { x = 1.0 y = 1.0 }
+  #     #animationframes = { 1 2 3 }
+  #   }
+  # }
+  # spriteType = {
+  #   name = "GFX_district_orchard_forests_box_icon_rectangle"
+  #   texturefile = "gfx/interface/icons/districts/grid_box/district_orchard_forests_rectangle.dds"
+  #   effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+  #   noOfFrames = 3
+  #   animation = {
+  #     animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+  #     animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+  #     animationrotation = 90.0
+  #     animationlooping = yes
+  #     animationtime = 2.0
+  #     animationdelay = 0.0
+  #     animationblendmode = "add"       #add, multiply, overlay
+  #     animationtype = "pulsing"      #scrolling, rotating, pulsing
+  #     animationrotationoffset = { x = 0.0 y = 0.0 }
+  #     animationtexturescale = { x = 1.0 y = 1.0 }
+  #     #animationframes = { 1 2 3 }
+  #   }
+  # }
+  # 使区划背景可以自动填充
+  corneredTileSpriteType = {
+    name = "GFX_district_craglands_bg"
+    textureFile = "gfx/interface/planetview/district_backgrounds/district_craglands_bg.dds"
+    borderSize = {
+      x = 1
+      y = 1
+    }
+  }
+  corneredTileSpriteType = {
+    name = "GFX_district_metallic_dew_plains_bg"
+    textureFile = "gfx/interface/planetview/district_backgrounds/district_metallic_dew_plains_bg.dds"
+    borderSize = {
+      x = 1
+      y = 1
+    }
+  }
+  corneredTileSpriteType = {
+    name = "GFX_district_photosynthesis_fields_bg"
+    textureFile = "gfx/interface/planetview/district_backgrounds/district_photosynthesis_fields_bg.dds"
+    borderSize = {
+      x = 1
+      y = 1
+    }
+  }
+  corneredTileSpriteType = {
+    name = "GFX_district_hollow_mountains_bg"
+    textureFile = "gfx/interface/planetview/district_backgrounds/district_hollow_mountains_bg.dds"
+    borderSize = {
+      x = 1
+      y = 1
+    }
+  }
+  corneredTileSpriteType = {
+    name = "GFX_district_orchard_forests_bg"
+    textureFile = "gfx/interface/planetview/district_backgrounds/district_orchard_forests_bg.dds"
+    borderSize = {
+      x = 1
+      y = 1
+    }
+  }
+}

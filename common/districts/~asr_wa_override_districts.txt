@@ -44,10 +44,7 @@ district_craglands = {
     script = asr_wa/districts/cost
     CATEGORY = planet_districts_cities
   }
-  inline_script = {
-    script = asr_wa/districts/housing
-    BASE = 100
-  }
+  inline_script = { script = asr_wa/districts/housing }
 
   triggered_planet_modifier = {
     potential = {
@@ -60,7 +57,7 @@ district_craglands = {
   }
   triggered_planet_modifier = {
     potential = {
-      asr_wa_planet_is_wilderness_arcology = yes
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
       exists = owner
       owner = {
         has_tradition = tr_domination_imperious_architecture
@@ -70,13 +67,13 @@ district_craglands = {
   }
   triggered_planet_modifier = {
     potential = {
-      asr_wa_planet_is_wilderness_world = yes
+      asr_wa_planet_is_wilderness_world_equivalent = yes
       exists = owner
       owner = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
-    planet_defense_armies_add = 2
+    planet_defense_armies_add = 4
   }
 
   inline_script = {

@@ -15,7 +15,13 @@ asr_wa_planet_fabricator_use_food = {
 asr_wa_planet_researcher_use_food = {
   exists = planet
   planet = {
-    has_active_building = building_asr_wa_organic_processing
+    OR = {
+      has_active_building = building_asr_wa_organic_processing
+      AND = {
+        exists = owner
+        owner = { has_policy_flag = irs_hja_researcher_use_food_resource }
+      }
+    }
   }
 }
 
@@ -34,6 +40,23 @@ asr_wa_planet_is_wilderness_world = {
   planet = {
     is_planet_class = pc_gaia
     has_planet_flag = asr_wa_pf_wilderness_world
+  }
+}
+
+# 判断当前行星是否应该具有和 荒野盖亚星球 等效的岗位数量
+asr_wa_planet_is_wilderness_arcology_equivalent = {
+  is_planet_class = pc_gaia
+  NOT = { has_planet_flag = asr_wa_pf_wilderness_world }
+}
+# 判断当前行星是否应该具有和 荒野重塑自然 等效的岗位数量
+asr_wa_planet_is_wilderness_world_equivalent = {
+  is_planet_class = pc_gaia
+  has_planet_flag = asr_wa_pf_wilderness_world
+}
+asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {
+  OR = {
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
+    asr_wa_planet_is_wilderness_world_equivalent = yes
   }
 }
 

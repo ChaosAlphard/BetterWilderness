@@ -5,11 +5,11 @@ resources = {
   }
   cost = {
     biomass = 200
-    trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+    trigger = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
   }
   cost = {
-    biomass = 200
-    trigger = { asr_wa_planet_is_wilderness_world = yes }
+    biomass = 400
+    trigger = { asr_wa_planet_is_wilderness_world_equivalent = yes }
   }
   cost = {
     minerals = @wa_district_minerals
@@ -24,14 +24,14 @@ resources = {
     minerals = @wa_district_extra_minerals
     food = @wa_district_extra_minerals
     trigger = {
-      asr_wa_planet_is_wilderness_arcology = yes
+      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
       asr_wa_planet_use_food_build_building = no
     }
   }
   cost = {
     food = @wa_district_extra_foods
     trigger = {
-      asr_wa_planet_is_wilderness_arcology = yes
+      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
       asr_wa_planet_use_food_build_building = yes
     }
   }
@@ -40,6 +40,6 @@ resources = {
   }
   upkeep = {
     food = @wa_district_extra_upkeep
-    trigger = { asr_wa_planet_is_wilderness_arcology = yes }
+    trigger = { asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes }
   }
 }
