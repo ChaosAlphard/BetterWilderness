@@ -201,6 +201,9 @@ zone_fortress_wilderness = {
     fortress
   }
 
+  swap_type = district_asr_wa_swap_fortress_city
+  swap_type_weight = 6
+
   triggered_desc = {
     trigger = {
       always = yes

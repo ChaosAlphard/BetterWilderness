@@ -41,8 +41,9 @@ district_asr_wa_swap_calculator = {
 # 物理学
 district_asr_wa_swap_calculator_phy = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_photosynthesis_fields
+  icon = district_craglands
   overlay_icon = GFX_district_physics
+  # district_background = district_craglands
   gridbox = district_city
   triggered_name = {
     trigger = { always = yes }
@@ -52,9 +53,10 @@ district_asr_wa_swap_calculator_phy = {
 # 社会学
 district_asr_wa_swap_calculator_soc = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_orchard_forests
+  icon = district_craglands
   overlay_icon = GFX_district_society
-  # gridbox = district_orchard_forests
+  district_background = district_orchard_forests
+  gridbox = district_orchard_forests
   triggered_name = {
     trigger = { always = yes }
     text = district_asr_wa_swap_calculator_soc_tt
@@ -63,8 +65,9 @@ district_asr_wa_swap_calculator_soc = {
 # 工程学
 district_asr_wa_swap_calculator_eng = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_hollow_mountains
+  icon = district_craglands
   overlay_icon = GFX_district_engineering
+  district_background = district_metallic_dew_plains
   gridbox = district_metallic_dew_plains
   triggered_name = {
     trigger = { always = yes }
@@ -84,8 +87,10 @@ district_asr_wa_swap_foundry = {
 # 行星须核
 district_asr_wa_swap_trade = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_photosynthesis_fields
+  icon = district_craglands
   overlay_icon = GFX_district_trade
+  district_background = district_photosynthesis_fields
+  gridbox = district_photosynthesis_fields
   triggered_name = {
     trigger = { always = yes }
     text = district_asr_wa_swap_trade_tt
@@ -94,11 +99,32 @@ district_asr_wa_swap_trade = {
 # 骸骨堡垒
 district_asr_wa_swap_fortress = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
-  icon = district_hollow_mountains
+  icon = district_boneyard_fortress
   overlay_icon = GFX_district_fortress
+  district_background = district_hollow_mountains
+  gridbox = district_hollow_mountains
   triggered_name = {
     trigger = { always = yes }
     text = district_asr_wa_swap_fortress_tt
+  }
+}
+district_asr_wa_swap_fortress_city = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_craglands
+  overlay_icon = GFX_district_fortress
+  district_background = district_hollow_mountains
+  gridbox = district_hollow_mountains
+  triggered_name = {
+    trigger = { has_active_building = building_ozone_thickener }
+    text = building_ozone_thickener
+  }
+  triggered_name = {
+    trigger = { has_active_building = building_planetary_carapace_2 }
+    text = building_planetary_carapace_2
+  }
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_fortress_city_tt
   }
 }
 # 营养溪谷

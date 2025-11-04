@@ -1,7 +1,7 @@
-namespace = wa_asr_wilderness
+namespace = asr_wa_wilderness
 
 country_event = {
-  id = wa_asr_wilderness.1
+  id = asr_wa_wilderness.1
   hide_window = yes
   is_triggered_only = yes
   trigger = { is_wilderness_empire = yes }

@@ -3,7 +3,7 @@ planet_refiners = {
   parent = planet_jobs_specialist
   modifier_category = pop_job
   generate_add_modifiers = {
-    # produces
+    produces
     upkeep
   }
   generate_mult_modifiers = {
@@ -16,7 +16,7 @@ planet_translucers = {
   parent = planet_jobs_specialist
   modifier_category = pop_job
   generate_add_modifiers = {
-    # produces
+    produces
     upkeep
   }
   generate_mult_modifiers = {
@@ -29,7 +29,7 @@ planet_chemists = {
   parent = planet_jobs_specialist
   modifier_category = pop_job
   generate_add_modifiers = {
-    # produces
+    produces
     upkeep
   }
   generate_mult_modifiers = {

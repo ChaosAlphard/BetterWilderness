@@ -140,6 +140,10 @@ l_english:
   district_asr_wa_swap_fortress_plural: "$zone_fortress_wilderness$"
   district_asr_wa_swap_fortress_tt: "$building_planetary_carapace_2$"
   district_asr_wa_swap_fortress_desc: "$zone_fortress_wilderness_desc$"
+  district_asr_wa_swap_fortress_city: "$zone_fortress_wilderness$"
+  district_asr_wa_swap_fortress_city_plural: "$zone_fortress_wilderness$"
+  district_asr_wa_swap_fortress_city_tt: "$building_planetary_carapace$"
+  district_asr_wa_swap_fortress_city_desc: "$zone_fortress_wilderness_desc$"
 
   district_asr_wa_swap_food: "$zone_food_wilderness$"
   district_asr_wa_swap_food_plural: "$zone_food_wilderness$"

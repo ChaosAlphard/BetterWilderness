@@ -71,6 +71,8 @@ district_asr_wa_swap_assist_trade = {
   inline_script = { script = asr_wa/districts/shared_swap_district }
   icon = district_craglands
   overlay_icon = GFX_district_trade
+  gridbox = district_photosynthesis_fields
+  district_background = district_photosynthesis_fields
   triggered_name = {
     trigger = { has_active_building = building_tendril_cradle_4 }
     text = building_tendril_cradle_4
