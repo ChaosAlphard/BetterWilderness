@@ -81,7 +81,7 @@ building_commensal_clearing_2 = { # substitute for 'building_hive_node'
     building_commensal_clearing_3
   }
   prerequisites = {
-    tech_wilderness_node
+    tech_wilderness_cluster
   }
   show_tech_unlock_if = {
     is_wilderness_empire = yes

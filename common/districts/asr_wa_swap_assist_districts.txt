@@ -98,6 +98,10 @@ district_asr_wa_swap_assist_food = {
   gridbox = district_orchard_forests
   district_background = district_orchard_forests
   triggered_name = {
+    trigger = { has_active_building = building_asr_wa_churning_stomach }
+    text = building_asr_wa_churning_stomach
+  }
+  triggered_name = {
     trigger = { has_active_building = building_massive_growth_4 }
     text = building_massive_growth_4
   }
@@ -122,6 +126,10 @@ district_asr_wa_swap_assist_energy = {
   gridbox = district_photosynthesis_fields
   district_background = district_photosynthesis_fields
   triggered_name = {
+    trigger = { has_active_building = building_asr_wa_mote_aggravator }
+    text = building_asr_wa_mote_aggravator
+  }
+  triggered_name = {
     trigger = { has_active_building = building_bioelectric_stimulator_4 }
     text = building_bioelectric_stimulator_4
   }
@@ -145,6 +153,10 @@ district_asr_wa_swap_assist_minerals = {
   overlay_icon = GFX_district_minerals
   gridbox = district_hollow_mountains
   district_background = district_hollow_mountains
+  triggered_name = {
+    trigger = { has_active_building = building_asr_wa_crystal_growth }
+    text = building_asr_wa_crystal_growth
+  }
   triggered_name = {
     trigger = { has_active_building = building_churning_tunnels_4 }
     text = building_churning_tunnels_4

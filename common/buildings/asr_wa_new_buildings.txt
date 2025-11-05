@@ -118,3 +118,117 @@ building_asr_wa_sentinel_posts = {
     always = no
   }
 }
+
+# 化学消化器
+building_asr_wa_mote_aggravator = {
+  base_buildtime = @b1_time
+  icon = "mote_aggravator"
+  ruined_icon = "wilderness_building_ruined"
+  planet_limit = 1
+
+  category = resource
+
+  building_sets = {
+    generator
+  }
+
+  potential = {
+    owner = { is_wilderness_empire = yes }
+  }
+
+  prerequisites = {
+    "tech_volatile_motes"
+  }
+  show_tech_unlock_if = { is_wilderness_empire = yes }
+
+  planet_modifier = {
+    planet_technician_volatile_motes_produces_add = 0.25
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      biomass = @wa_b1_biomass
+      food = 250
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+}
+
+# 异星天然气滤网
+building_asr_wa_churning_stomach = {
+  base_buildtime = @b1_time
+  icon = "churning_stomach"
+  ruined_icon = "wilderness_building_ruined"
+  planet_limit = 1
+
+  category = resource
+
+  building_sets = {
+    farming
+  }
+
+  potential = {
+    owner = { is_wilderness_empire = yes }
+  }
+
+  prerequisites = {
+    "tech_exotic_gases"
+  }
+  show_tech_unlock_if = { is_wilderness_empire = yes }
+
+  planet_modifier = {
+    planet_farmers_exotic_gases_produces_add = 0.25
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      biomass = @wa_b1_biomass
+      food = 250
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+}
+
+# 水晶矿床
+building_asr_wa_crystal_growth = {
+  base_buildtime = @b1_time
+  icon = "crystal_growth"
+  ruined_icon = "wilderness_building_ruined"
+  planet_limit = 1
+
+  category = resource
+
+  building_sets = {
+    mining
+  }
+
+  potential = {
+    owner = { is_wilderness_empire = yes }
+  }
+
+  prerequisites = {
+    "tech_rare_crystals"
+  }
+  show_tech_unlock_if = { is_wilderness_empire = yes }
+
+  planet_modifier = {
+    planet_miners_rare_crystals_produces_add = 0.25
+  }
+
+  resources = {
+    category = planet_buildings
+    cost = {
+      biomass = @wa_b1_biomass
+      food = 250
+    }
+    upkeep = {
+      food = @b1_upkeep
+    }
+  }
+}

@@ -107,7 +107,7 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
   }
 
   prerequisites = {
-    tech_wilderness_node
+    tech_wilderness_cluster
   }
 
   resources = {
@@ -175,7 +175,13 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
       owner = { is_wilderness_empire = no }
     }
   }
-  convert_to = {  }
+  convert_to = {
+    building_organic_paradise
+    building_drone_megastorage
+    building_expanded_warren
+    building_communal_housing_large
+    building_paradise_dome
+  }
   prerequisites = {
     tech_wilderness_cluster
   }
@@ -245,7 +251,13 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
       owner = { is_wilderness_empire = no }
     }
   }
-  convert_to = {  }
+  convert_to = {
+    building_organic_paradise
+    building_drone_megastorage
+    building_expanded_warren
+    building_communal_housing_large
+    building_paradise_dome
+  }
   prerequisites = {
     tech_wilderness_confluence
   }

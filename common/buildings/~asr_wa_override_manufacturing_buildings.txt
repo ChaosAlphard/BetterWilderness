@@ -55,7 +55,7 @@ building_natural_furnace_1 = { # substitute for 'building_foundry_1'
   }
 
   prerequisites = {
-    tech_basic_industry
+    tech_alloys_1
   }
   show_tech_unlock_if = {
     is_wilderness_empire = yes
@@ -294,6 +294,11 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
   planet_modifier = {
     job_chemist_drone_add = @building_static_jobs
   }
+  triggered_planet_modifier = {
+    potential = { asr_wa_planet_is_wilderness_arcology = yes }
+    job_chemist_drone_add = @building_static_jobs
+    mult = 2
+  }
 
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
@@ -334,6 +339,11 @@ building_churning_stomach = { # substitute for 'building_refinery'
   planet_modifier = {
     job_gas_refiner_drone_add = @building_static_jobs
   }
+  triggered_planet_modifier = {
+    potential = { asr_wa_planet_is_wilderness_arcology = yes }
+    job_gas_refiner_drone_add = @building_static_jobs
+    mult = 2
+  }
 
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
@@ -373,6 +383,11 @@ building_crystal_growth = { # substitute for 'building_crystal_plant'
 
   planet_modifier = {
     job_translucer_drone_add = @building_static_jobs
+  }
+  triggered_planet_modifier = {
+    potential = { asr_wa_planet_is_wilderness_arcology = yes }
+    job_translucer_drone_add = @building_static_jobs
+    mult = 2
   }
 
   inline_script = {

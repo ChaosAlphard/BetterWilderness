@@ -61,6 +61,13 @@ building_massive_growth_2 = {
     RARE = exotic_gases
   }
 
+  prerequisites = {
+    "tech_food_processing_1"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
   upgrades = {
     building_massive_growth_3
   }
@@ -303,6 +310,13 @@ building_bioelectric_stimulator_2 = {
     RARE = rare_crystals
   }
 
+  prerequisites = {
+    tech_power_hub_1
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
   upgrades = {
     building_bioelectric_stimulator_3
   }
@@ -530,6 +544,13 @@ building_churning_tunnels_2 = {
     script = asr_wa/building_resource_t2
     BASE = food
     RARE = volatile_motes
+  }
+
+  prerequisites = {
+    "tech_mineral_purification_1"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
   }
 
   upgrades = {

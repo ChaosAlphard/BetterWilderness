@@ -1,0 +1,285 @@
+# Wilderness Links
+@wildernessCost = 400
+@wildernessTime = 720
+@wildernessGaiaCost = 200
+@wildernessGaiaTime = 480
+
+terraform_link = {
+  from = "pc_continental"
+  to = "pc_continental"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_ocean"
+  to = "pc_ocean"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_tropical"
+  to = "pc_tropical"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_desert"
+  to = "pc_desert"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_arid"
+  to = "pc_arid"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_savannah"
+  to = "pc_savannah"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_tundra"
+  to = "pc_tundra"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_arctic"
+  to = "pc_arctic"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_alpine"
+  to = "pc_alpine"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessCost
+    }
+  }
+
+  duration = @wildernessTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 100
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}
+
+terraform_link = {
+  from = "pc_gaia"
+  to = "pc_gaia"
+
+  resources = {
+    category = terraforming
+
+    cost = {
+      biomass = @wildernessGaiaCost
+    }
+  }
+
+  duration = @wildernessGaiaTime
+
+  potential = {
+    has_origin = origin_wilderness
+    from = { is_colony = no }
+  }
+
+  ai_weight = {
+    weight = 200
+  }
+
+  inline_script = {
+    script = terraform/wilderness_biomass_special
+  }
+}

@@ -417,6 +417,7 @@ district_photosynthesis_fields_uncapped = {
   prerequisites = {
     tech_power_plant_1
   }
+  show_tech_unlock_if = { always = no }
 
   ai_resource_production = {
     energy = 5
@@ -491,6 +492,7 @@ district_hollow_mountains_uncapped = {
   prerequisites = {
     tech_mechanized_mining
   }
+  show_tech_unlock_if = { always = no }
 
   ai_resource_production = {
     minerals = 5
@@ -569,6 +571,7 @@ district_orchard_forests_uncapped = {
   prerequisites = {
     tech_industrial_farming
   }
+  show_tech_unlock_if = { always = no }
 
   ai_resource_production = {
     food = 5

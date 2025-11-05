@@ -1,0 +1,35 @@
+asr_wa_wilderness_advanced_assault_army = {
+  use_armynames_from = wilderness_pre_sapient_assault_army
+  icon = GFX_wilderness_army_type_assault
+  defensive = no
+  is_pop_spawned = no
+  pop_limited = no
+  has_species = no
+  has_morale = no
+  health = 1.5
+  damage = 3.0
+  morale = 4.0
+  morale_damage = 1.0
+  collateral_damage = 1.0
+  war_exhaustion = 0.0
+
+  prerequisites = { "tech_glandular_acclimation" }
+  show_tech_unlock_if = { is_wilderness_empire = yes }
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+
+  time = 180
+  resources = {
+    category = armies
+    cost = {
+      food = 600
+    }
+    upkeep = {
+      food = 2
+    }
+  }
+}
