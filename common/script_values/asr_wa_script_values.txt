@@ -60,7 +60,13 @@ asr_wa_num_wilderness_pops = {
     trigger_scope = planet
     trigger = count_owned_pop_amount
     parameters = {
-      limit = { has_trait = trait_wilderness }
+      limit = {
+        has_trait = trait_wilderness
+        has_population_control = {
+          type = population_control_no
+          country = owner
+        }
+      }
     }
     mode = add
   }

@@ -1,7 +1,20 @@
 on_game_start_country = {
-  events = { asr_wa_wilderness.1 }
+  events = {
+    asr_wa_wilderness.1
+    asr_wa_wilderness.100
+  }
 }
-
-on_system_gained = {
-  events = { asr_wa_wilderness.1 }
-}
+# 还没测, 以后再说
+# on_country_created = {
+#   events = {
+#     asr_wa_wilderness.1
+#     asr_wa_wilderness.100
+#   }
+# }
+# 蠢驴为什么要把开局事件(wilderness.100)写在'获得星系'的action里
+# 删掉似乎没啥影响?
+# on_system_gained = {
+#   events = {
+#     asr_wa_wilderness.1
+#   }
+# }

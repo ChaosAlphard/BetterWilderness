@@ -14,3 +14,70 @@ country_event = {
     # add_research_option = tech_ecological_adaptation
   }
 }
+
+country_event = {
+  id = asr_wa_wilderness.100
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = { is_wilderness_empire = yes }
+
+  immediate = {
+    country_event = {
+      id = asr_wa_wilderness.101
+      days = 2
+    }
+  }
+}
+
+country_event = {
+  id = asr_wa_wilderness.101
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+  }
+
+  immediate = {
+    every_owned_planet = {
+      asr_wa_change_to_wilderness_districts = yes
+      if = { # 多重起源Mod, 盖亚开兼容
+        limit = { asr_wa_planet_is_wilderness_arcology = yes }
+        asr_wa_change_to_wilderness_advanced_districts = yes
+      }
+    }
+    country_event = {
+      id = asr_wa_wilderness.102
+      months = 1
+    }
+  }
+}
+
+country_event = {
+  id = asr_wa_wilderness.102
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+  }
+
+  immediate = {
+    every_owned_planet = {
+      if = {
+        limit = {
+          NOR = {
+            has_building = building_colony_shelter_wilderness
+            has_building = building_capital_wilderness
+            has_building = building_major_capital_wilderness
+            has_building = building_system_capital_wilderness
+            has_building = building_imperial_capital_wilderness
+          }
+        }
+        set_timed_planet_flag = {
+          flag = ignore_ai_building_limitations
+          days = 1
+        }
+        add_building = building_capital_wilderness
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+asr_wa_change_to_wilderness_districts = {
+  asr_wa_export_city_districts_num = yes
+  # 城市区划
+  while = {
+    # 城市区划可能被设置为主要区划导致无法移除最后一个, 所以不能直接用是否还有城市区划来判断
+    count = var_asr_wa_num_district_city
+    add_district = {
+      district_type = district_craglands
+      ignore_cap = yes
+    }
+    remove_district = district_city
+    remove_district = district_hive
+  }
+  clear_variable = var_asr_wa_num_district_city
+  if = {
+    # 如果还剩下一个城市区划, 则说明最后一个城市区划没有被移除
+    limit = {
+      OR = {
+        has_district = district_city
+        has_district = district_hive
+      }
+    }
+    remove_district = district_craglands
+  }
+  # 发电区划
+  while = {
+    limit = { has_district = district_generator }
+    add_district = {
+      district_type = district_photosynthesis_fields
+      ignore_cap = yes
+    }
+    remove_district = district_generator
+  }
+  # 采矿区划
+  while = {
+    limit = { has_district = district_mining }
+    add_district = {
+      district_type = district_hollow_mountains
+      ignore_cap = yes
+    }
+    remove_district = district_mining
+  }
+  # 农业区划
+  while = {
+    limit = { has_district = district_farming }
+    add_district = {
+      district_type = district_orchard_forests
+      ignore_cap = yes
+    }
+    remove_district = district_farming
+  }
+}
+
+asr_wa_change_to_wilderness_advanced_districts = {
+  # 光合原野
+  while = {
+    limit = { has_district = district_photosynthesis_fields }
+    add_district = {
+      district_type = district_asr_wa_cragland_01
+      ignore_cap = yes
+    }
+    remove_district = district_photosynthesis_fields
+  }
+  add_zone = {
+    zone = zone_asr_wa_energy
+    zone_slot = slot_gaia_rural_01
+    district = district_asr_wa_cragland_01
+    replace = no
+  }
+  # 中空山岭
+  while = {
+    limit = { has_district = district_hollow_mountains }
+    add_district = {
+      district_type = district_asr_wa_cragland_02
+      ignore_cap = yes
+    }
+    remove_district = district_hollow_mountains
+  }
+  add_zone = {
+    zone = zone_asr_wa_mineral
+    zone_slot = slot_gaia_rural_02
+    district = district_asr_wa_cragland_02
+    replace = no
+  }
+  # 硕果森林
+  while = {
+    limit = { has_district = district_orchard_forests }
+    add_district = {
+      district_type = district_asr_wa_cragland_03
+      ignore_cap = yes
+    }
+    remove_district = district_orchard_forests
+  }
+  add_zone = {
+    zone = zone_asr_wa_food
+    zone_slot = slot_gaia_rural_03
+    district = district_asr_wa_cragland_03
+    replace = no
+  }
+}
+
+asr_wa_export_city_districts_num = {
+  export_trigger_value_to_variable = {
+    trigger = num_districts
+    variable = var_asr_wa_num_district_city
+    parameters = { type = district_city }
+  }
+  export_trigger_value_to_variable = {
+    trigger = num_districts
+    variable = var_asr_wa_num_district_hive
+    parameters = { type = district_hive }
+  }
+  add_variable = {
+    which = var_asr_wa_num_district_city
+    value = var_asr_wa_num_district_hive
+  }
+  clear_variable = var_asr_wa_num_district_hive
+}

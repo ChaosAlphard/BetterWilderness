@@ -142,7 +142,8 @@ building_asr_wa_mote_aggravator = {
   show_tech_unlock_if = { is_wilderness_empire = yes }
 
   planet_modifier = {
-    planet_technician_volatile_motes_produces_add = 0.25
+    planet_technician_volatile_motes_produces_add = 0.5
+    planet_technician_energy_produces_add = -3
   }
 
   resources = {
@@ -180,7 +181,8 @@ building_asr_wa_churning_stomach = {
   show_tech_unlock_if = { is_wilderness_empire = yes }
 
   planet_modifier = {
-    planet_farmers_exotic_gases_produces_add = 0.25
+    planet_farmers_exotic_gases_produces_add = 0.5
+    planet_farmers_food_produces_add = -3
   }
 
   resources = {
@@ -218,7 +220,8 @@ building_asr_wa_crystal_growth = {
   show_tech_unlock_if = { is_wilderness_empire = yes }
 
   planet_modifier = {
-    planet_miners_rare_crystals_produces_add = 0.25
+    planet_miners_rare_crystals_produces_add = 0.5
+    planet_miners_minerals_produces_add = -2
   }
 
   resources = {
