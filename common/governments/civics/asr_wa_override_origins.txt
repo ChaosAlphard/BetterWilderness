@@ -1,4 +1,4 @@
-
+# 生体荒野
 origin_wilderness = {
   is_origin = yes
   icon = "gfx/interface/icons/origins/origins_wilderness.dds"
@@ -57,7 +57,9 @@ origin_wilderness = {
     empire_size_pops_mult = -0.5
     logistic_growth_mult = 0.25
     planet_building_capacity_add = 3
-    planet_building_build_speed_mult = 0.5
+    # planet_building_build_speed_mult = 0.5
+    building_time_mult = -0.25
+    # daily_terraform_progress_add = 1
     terraform_speed_mult = 0.5
     terraforming_cost_mult = -0.25
   }

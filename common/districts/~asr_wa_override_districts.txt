@@ -7,13 +7,13 @@ district_craglands = {
   overlay_icon = GFX_district_government
 
   show_on_uncolonized = {
-    uses_district_set = standard
+    asr_wa_district_set_can_build_craglands = yes
     exists = from
     from = { is_wilderness_empire = yes }
   }
 
   potential = {
-    uses_district_set = standard
+    asr_wa_district_set_can_build_craglands = yes
     exists = owner
     owner = { is_wilderness_empire = yes }
     NAND = {

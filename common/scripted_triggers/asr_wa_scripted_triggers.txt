@@ -25,6 +25,10 @@ asr_wa_planet_researcher_use_food = {
   }
 }
 
+asr_wa_district_set_can_build_craglands = {
+  uses_district_set = standard
+}
+
 asr_wa_planet_is_wilderness_arcology = {
   hidden_trigger = { exists = planet }
   planet = {

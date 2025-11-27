@@ -9,6 +9,33 @@ triggered_planet_modifier = {
   planet_artisans_minerals_upkeep_add = -10
   planet_artisans_food_upkeep_add = 15
 }
+# 固态光冶炼炉
+triggered_planet_modifier = {
+  potential = {
+    has_active_building = building_natural_furnace_2
+    asr_wa_planet_fabricator_use_food = yes
+  }
+  planet_metallurgists_minerals_upkeep_add = -2
+  planet_metallurgists_food_upkeep_add = 3
+}
+# 纳米熔炉
+triggered_planet_modifier = {
+  potential = {
+    has_active_building = building_natural_furnace_3
+    asr_wa_planet_fabricator_use_food = yes
+  }
+  planet_metallurgists_minerals_upkeep_add = -4
+  planet_metallurgists_food_upkeep_add = 6
+}
+triggered_planet_modifier = {
+  potential = {
+    is_ringworld = yes
+    has_active_building = building_natural_furnace_3
+    asr_wa_planet_fabricator_use_food = yes
+  }
+  planet_metallurgists_minerals_upkeep_add = -2
+  planet_metallurgists_food_upkeep_add = 3
+}
 # 合金处理工厂
 triggered_planet_modifier = {
   potential = {

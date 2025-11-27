@@ -1,1 +1,87 @@
 # Override
+# 所有 Zone 在这里只是为了占位保持顺序
+# 实际内容应在 ~asr_wa_override_zones 和 ~asr_wa_assist_zones 中编辑
+zone_urban_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_research_unity_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_unity_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_unity = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_research_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_research = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_foundry_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_foundry = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_trade_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_trade = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_fortress_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_food_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_food = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_energy_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_energy = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_minerals_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_assist_mineral = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
