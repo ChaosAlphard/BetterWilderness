@@ -111,15 +111,31 @@ zone_asr_wa_assist_trade = {
 
   zone_sets = { urban }
 
-  included_building_sets = { trade }
+  included_building_sets = {
+    trade
+    generator
+    fallen_empire_generator
+  }
+
+  exclude = {
+    building_subterranean_cache
+    building_fe_silo_1
+    building_fe_silo_2
+    building_resource_silo
+  }
 
   swap_type = district_asr_wa_swap_assist_trade
   swap_type_weight = 14
 
   inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/technicians_add
+    BASE = @scaling_district_2_jobs
+  }
 
   district_planet_modifier = {
     planet_traders_produces_mult = @assist_zone_produce_mult
+    planet_traders_energy_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_planet_is_wilderness_world = yes }

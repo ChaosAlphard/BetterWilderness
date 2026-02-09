@@ -45,6 +45,7 @@ l_simp_chinese:
   asr_wa_building_massive_growth_4_tt: "['building:building_massive_growth_2']提供更多$wa_r_job$"
   asr_wa_building_bioelectric_stimulator_4_tt: "['building:building_bioelectric_stimulator_2']提供更多$wa_r_job$"
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2']提供更多$wa_r_job$"
+  asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['starbase_building:ring_energy_hub',$sm_ring_energy_hub$]时提供$r_energy$产出加成"
   # 决议
   decision_asr_wa_wilderness_world: "重塑自然"
   decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth']额外提供§G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\n所有£district£['concept_district']提供更多$wa_r_job$"

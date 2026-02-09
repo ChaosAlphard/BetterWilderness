@@ -37,7 +37,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     asr_wa_has_any_hja_pf = no
-    has_active_building = building_astral_siphon_1
+    has_active_building = building_astral_siphon_2
   }
   inline_script = {
     script = asr_wa/op/component/researcher_upkeep_convert_phy
@@ -49,7 +49,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     asr_wa_has_any_hja_pf = no
-    has_active_building = building_astral_siphon_1
+    has_active_building = building_astral_siphon_3
   }
   inline_script = {
     script = asr_wa/op/component/researcher_upkeep_convert_phy

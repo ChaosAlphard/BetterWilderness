@@ -107,7 +107,7 @@ building_asr_wa_sentinel_posts = {
   }
 
   planet_modifier = {
-    job_patrol_drone_per_pop = 0.01
+    job_patrol_drone_per_pop = 0.02
   }
 
   prerequisites = {
@@ -116,6 +116,10 @@ building_asr_wa_sentinel_posts = {
 
   show_tech_unlock_if = {
     always = no
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
   }
 }
 

@@ -694,6 +694,20 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
     potential = { is_ringworld = yes }
     planet_miners_minerals_produces_add = 2
   }
+  # 贝塞里安
+  triggered_planet_modifier = {
+    potential = {
+      has_active_building = building_betharian_power_plant
+      exists = orbital_defence
+      orbital_defence = {
+        exists = starbase
+        starbase = {
+          has_starbase_building = ring_energy_hub
+        }
+      }
+    }
+    planet_miners_energy_produces_add = 2
+  }
 
   inline_script = {
     script = jobs/miners_add
@@ -702,6 +716,10 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
 
   triggered_desc = {
     text = asr_wa_building_churning_tunnels_4_tt
+  }
+  triggered_desc = {
+    trigger = { has_deposit = d_betharian_deposit }
+    text = asr_wa_betharian_tt
   }
 
   inline_script = {

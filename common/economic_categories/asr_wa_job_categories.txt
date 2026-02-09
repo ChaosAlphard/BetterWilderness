@@ -37,3 +37,16 @@ planet_chemists = {
     upkeep
   }
 }
+# 纺锤体
+planet_traders = {
+  parent = planet_jobs_specialist
+  modifier_category = pop_job
+  generate_add_modifiers = {
+    produces
+    upkeep
+  }
+  generate_mult_modifiers = {
+    produces
+    upkeep
+  }
+}
