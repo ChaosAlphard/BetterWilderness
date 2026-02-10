@@ -38,6 +38,7 @@
 @wa_district_extra_foods = 625
 @wa_district_extra_upkeep = 3
 
-# 人口增长
-@wa_bonus_growth_max_pops = 2100
-@wa_bonus_growth_calc_max = 2000
+# 人口增长 需要满足: (max - min) * ratio = 10
+@wa_bonus_growth_max_pops = 2400
+@wa_bonus_growth_min_pops = 400
+@wa_bonus_growth_pops_ratio = 0.005

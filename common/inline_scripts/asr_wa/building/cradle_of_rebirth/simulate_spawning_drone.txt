@@ -1,0 +1,28 @@
+# 根据行星人口数量反比提供模拟组装岗位, 最大1000岗位, 提供10人口组装(S型增长上限)
+# mult 在 triggered_planet_pop_group_modifier_for_all 中不起效
+# 可以考虑每个阶段(一共10个)的加成都写出来, 或者提供新的岗位, 岗位提供人口组装
+# 模拟组装岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+    count_owned_pop_amount = {
+      limit = { asr_wa_is_normal_wilderness_pop = yes }
+      count <= @wa_bonus_growth_max_pops
+    }
+  }
+  job_asr_wa_simulate_spawning_drone_add = 100
+  mult = value:asr_wa_simulate_spawning_drone_from_pops
+}
+# 自动化模拟孵育体岗位 (荒野本身就是虚拟岗所以不需要这个)
+# triggered_planet_modifier = {
+#   potential = {
+#     exists = owner
+#     owner = { is_wilderness_empire = yes }
+#     count_owned_pop_amount = {
+#       limit = { asr_wa_is_normal_wilderness_pop = yes }
+#       count <= @wa_bonus_growth_max_pops
+#     }
+#   }
+#   job_asr_wa_simulate_spawning_drone_automated_workforce_mult = 1.0
+# }

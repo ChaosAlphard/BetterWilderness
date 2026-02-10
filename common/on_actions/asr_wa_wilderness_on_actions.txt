@@ -18,3 +18,7 @@ on_game_start_country = {
 #     asr_wa_wilderness.1
 #   }
 # }
+# 环境改造完成自动添加对应一产特化
+on_terraforming_complete = {
+  events = { asr_wa_wilderness.1000 }
+}

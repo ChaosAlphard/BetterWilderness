@@ -81,3 +81,35 @@ country_event = {
     }
   }
 }
+
+# This = planet, From = country
+planet_event = {
+  id = asr_wa_wilderness.1000
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    from = { is_wilderness_empire = yes }
+    asr_wa_planet_is_wilderness_arcology = yes
+  }
+
+  immediate = {
+    add_zone = {
+      zone = zone_asr_wa_energy
+      zone_slot = slot_gaia_rural_01
+      district = district_asr_wa_cragland_01
+      replace = no
+    }
+    add_zone = {
+      zone = zone_asr_wa_mineral
+      zone_slot = slot_gaia_rural_02
+      district = district_asr_wa_cragland_02
+      replace = no
+    }
+    add_zone = {
+      zone = zone_asr_wa_food
+      zone_slot = slot_gaia_rural_03
+      district = district_asr_wa_cragland_03
+      replace = no
+    }
+  }
+}

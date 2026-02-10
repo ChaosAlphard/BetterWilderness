@@ -1,0 +1,70 @@
+# 模拟孵育体
+asr_wa_simulate_spawning_drone = {
+  category = complex_drone
+  can_be_automated = yes
+  can_set_priority = yes
+
+  swappable_data = {
+    default = {
+      condition_string = DRONE_JOB_TRIGGER
+      building_icon = seed_cradle_2
+      icon = spawning_drone
+    }
+  }
+
+  tags = { pop_assembly }
+
+  possible_pre_triggers = {
+    has_owner = yes
+    is_enslaved = no
+    is_being_purged = no
+    is_being_assimilated = no
+    is_sapient = yes
+  }
+
+  possible_precalc = can_fill_drone_job
+
+  possible = {
+    can_think = yes
+  }
+
+  resources = {
+    category = planet_pop_assemblers
+  }
+
+  triggered_planet_pop_group_modifier_for_species = {
+    potential = {
+      species = { has_trait = trait_wilderness }
+    }
+    bonus_pop_growth = 1
+  }
+
+  triggered_planet_modifier = {
+    fake_pop_growth_mod = 1
+  }
+
+  weight = {
+    weight = @spawner_drone_job_weight
+    modifier = {
+      factor = 0.01 # crisis purge
+      exists = planet
+      exists = planet.controller
+      planet.controller = {
+        OR = {
+          is_country_type = swarm
+          is_country_type = ai_empire
+        }
+      }
+    }
+  }
+
+  promotion = {
+    time = @standard_promotion_time
+    effect = {
+      pop_amount_change_category = {
+        CATEGORY = complex_drone
+        AMOUNT = local_pop_amount
+      }
+    }
+  }
+}

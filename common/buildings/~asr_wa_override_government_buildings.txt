@@ -4,7 +4,7 @@
 # 拥有 基因剪裁 科技: +100孵育体
 # 纯净传统完成: +100孵育体, 根据'物种基因完美'给予岗位效率,
 #   每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
-# 掌控自然修正: 给予-10%行星基础设施花费
+# 掌控自然飞升: 给予-10%行星基础设施花费
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
   category = government
@@ -43,9 +43,49 @@ building_cradle_of_rebirth = {
     }
   }
 
-  # 孵育体
-  inline_script = {
-    script = asr_wa/building_cor_modifier
+  # 基因重塑局势推进
+  # 不起效, 原因是蠢驴在局势里面特意屏蔽了荒野相关修正
+  # triggered_country_modifier = {
+  #   potential = {
+  #     owner = {
+  #       country_has_situation = { SITUATION = genetic_ascension_situation_hive }
+  #       # has_ascension_perk = ap_engineered_evolution
+  #       # has_completed_genetic_situation = no
+  #     }
+  #   }
+  #   biomorphosis_progress_mult = 0.000125
+  #   mult = value:asr_wa_workforce_spawning_drone|MIN|100|
+  # }
+
+  inline_script = { script = asr_wa/building/cradle_of_rebirth/spawning_drone }
+  inline_script = { script = asr_wa/building/cradle_of_rebirth/simulate_spawning_drone }
+  inline_script = { script = asr_wa/building/cradle_of_rebirth/workforce }
+
+  # 掌控自然飞升给予-10%行星基础设施花费
+  triggered_planet_modifier = {
+    potential = {
+      OR = {
+        has_modifier = mastery_of_nature
+        AND = {
+          exists = owner
+          owner = { has_ascension_perk = ap_mastery_of_nature }
+        }
+      }
+    }
+    planet_structures_cost_mult = -0.10
+  }
+  # 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        has_tradition = tr_purity_finish
+      }
+    }
+    planet_building_build_speed_mult = 0.02
+    planet_decision_enact_speed_mult = 0.02
+    mult = value:asr_wa_cor_bonus_build_speed
   }
 
   inline_script = {
@@ -60,15 +100,6 @@ building_cradle_of_rebirth = {
   triggered_desc = {
     trigger = { always = yes }
     text = asr_wa_b_cor_bonus_pop_growth_tt
-  }
-  triggered_desc = {
-    trigger = {
-      count_owned_pop_amount = {
-        limit = { has_trait = trait_wilderness }
-        count <= @wa_bonus_growth_max_pops
-      }
-    }
-    text = asr_wa_b_cor_bonus_pop_growth_func
   }
 
   ai_estimate_without_unemployment = yes

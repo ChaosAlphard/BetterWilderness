@@ -32,9 +32,8 @@ l_simp_chinese:
   wa_r_housing: "£housing£['concept_housing']"
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
-  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity']传统完成各提供§G+100§!$mod_job_spawning_drone_add$\n—['modifier:mastery_of_nature']提供§G-10%§!$mod_planet_structures_cost_mult$"
-  asr_wa_b_cor_bonus_pop_growth_tt: "人口少于§Y$@wa_bonus_growth_max_pops|0$§!时给予额外的§Y$MOD_BONUS_POP_GROWTH$§!加成"
-  asr_wa_b_cor_bonus_pop_growth_func: "($@wa_bonus_growth_max_pops|0$-[planet.ASRWA_NumPops])/[planet.ASRWA_WorkforceSpawningDrone] *0.25*100% = §G[planet.ASRWA_BonusGrowthFromPops]%§!"
+  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity']传统完成各提供§G+100§!$mod_job_spawning_drone_add$\n—['ascension_perk:ap_mastery_of_nature']提供§G-10%§!$mod_planet_structures_cost_mult$"
+  asr_wa_b_cor_bonus_pop_growth_tt: "—人口少于§Y$@wa_bonus_growth_max_pops|0$§!时，按人口数反比提供§Y$job_asr_wa_simulate_spawning_drone$§!岗位。仅计算没有被施行人口控制的荒野人口"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2']提供更多$wa_r_amenities_gestalt$与$wa_r_housing$"
@@ -56,3 +55,12 @@ l_simp_chinese:
   # Static Modifier
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
   asr_wa_wilderness_world_desc: ""
+  # Job
+  job_asr_wa_simulate_spawning_drone: "模拟$job_broodsymbiont$"
+  job_asr_wa_simulate_spawning_drone_plural: "模拟$job_broodsymbiont_plural$"
+  job_asr_wa_simulate_spawning_drone_plural_with_icon: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$"
+  job_asr_wa_simulate_spawning_drone_desc: "由于游戏机制无法直接增加可变的人口组装基数，所以通过新增岗位来实现。人口数越少，$job_asr_wa_simulate_spawning_drone_plural$岗位越多。"
+  job_asr_wa_simulate_spawning_drone_effect_desc: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$产出£biomass£§Y生物质§!"
+  mod_job_asr_wa_simulate_spawning_drone_add: "$job_asr_wa_simulate_spawning_drone$岗位"
+  mod_job_asr_wa_simulate_spawning_drone_per_pop: "每$VALUE$个人口提供§G+1§!个$job_asr_wa_simulate_spawning_drone$岗位"
+  mod_job_asr_wa_simulate_spawning_drone_per_pop_short: "\n每$VALUE$£pop£§G+1§!£mod_job_spawning_drone_add£"

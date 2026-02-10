@@ -1,0 +1,61 @@
+# 孵育体岗位
+inline_script = {
+  script = jobs/spawning_drone_add
+  AMOUNT = @building_static_jobs_low
+}
+# 固有设计开局可以多获得100孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      OR = {
+        has_technology = tech_gene_tailoring
+        is_natural_design_empire = yes
+      }
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+# AI可以根据飞升数量获得孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      OR = {
+        has_ascension_perk = ap_engineered_evolution
+        AND = {
+          is_ai = yes
+          is_natural_design_empire = no
+          num_ascension_perks >= 3
+        }
+      }
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}
+
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      OR = {
+        has_tradition = tr_purity_finish
+        AND = {
+          is_ai = yes
+          is_natural_design_empire = no
+          num_ascension_perks >= 4
+        }
+      }
+    }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
+}

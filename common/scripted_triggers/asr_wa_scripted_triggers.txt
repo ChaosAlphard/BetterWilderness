@@ -1,3 +1,11 @@
+asr_wa_is_normal_wilderness_pop = {
+  has_trait = trait_wilderness
+  has_population_control = {
+    type = population_control_no
+    country = owner
+  }
+}
+
 asr_wa_planet_use_food_build_building = {
   exists = planet
   planet = {

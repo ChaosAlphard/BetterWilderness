@@ -10,5 +10,5 @@ define_text = {
 
 define_text = {
   name = ASRWA_BonusGrowthFromPops
-  value = value:asr_wa_bonus_growth_by_pops
+  value = value:asr_wa_simulate_spawning_drone_from_pops
 }

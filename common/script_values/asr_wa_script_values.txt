@@ -48,10 +48,6 @@ asr_wa_cor_bonus_workforce_all = {
   }
   min = 0
   mult = 2.5
-  modifier = {
-    asr_wa_planet_is_wilderness_world = yes
-    add = 20
-  }
 }
 
 asr_wa_num_wilderness_pops = {
@@ -60,17 +56,17 @@ asr_wa_num_wilderness_pops = {
     trigger_scope = planet
     trigger = count_owned_pop_amount
     parameters = {
-      limit = {
-        has_trait = trait_wilderness
-        has_population_control = {
-          type = population_control_no
-          country = owner
-        }
-      }
+      limit = { asr_wa_is_normal_wilderness_pop = yes }
     }
     mode = add
   }
   min = 0
+}
+
+asr_wa_num_wilderness_pops_calc = {
+  base = 0
+  add = value:asr_wa_num_wilderness_pops
+  min = $MIN$
 }
 
 asr_wa_workforce_spawning_drone = {
@@ -88,33 +84,11 @@ asr_wa_workforce_spawning_drone = {
   min = $MIN$
 }
 
-# asr_wa_amenities_ratio = {
-#   base = 0.2
-#   modifier = {
-#     has_active_building = building_avatar_chamber_4
-#     add = 0.3
-#   }
-# }
-
-# asr_wa_amenities_by_pops = {
-#   base = 0
-#   add = value:asr_wa_num_wilderness_pops
-#   mult = value:asr_wa_amenities_ratio
-#   min = 0
-#   floor = yes
-# }
-
-# 如果有较大的非孵育体岗位的人口组装来源, 则可能导致孵育体岗位更少时获得更高的增长补偿
-asr_wa_bonus_growth_by_pops = {
+asr_wa_simulate_spawning_drone_from_pops = {
   base = 0
   set = @wa_bonus_growth_max_pops
-  # 0-100人口 return 2000, 2100人口 return 0
-  subtract = value:asr_wa_num_wilderness_pops
-  max = @wa_bonus_growth_calc_max
+  subtract = value:asr_wa_num_wilderness_pops_calc|MIN|@wa_bonus_growth_min_pops|
   min = 0
-  # 除以孵育体数量, 以保证额外增长实际数值不变
-  divide = value:asr_wa_workforce_spawning_drone|MIN|100|
-  # 20 * 25 * 1% = 500%
-  mult = 25
+  mult = @wa_bonus_growth_pops_ratio
   round_to = 0.01
 }

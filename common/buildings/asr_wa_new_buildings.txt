@@ -39,9 +39,9 @@ building_asr_wa_organic_processing = {
   }
 
   # Planet Modifier
-  inline_script = { script = asr_wa/op/researcher }
-  inline_script = { script = asr_wa/op/fabricator }
-  inline_script = { script = asr_wa/op/rare_drone }
+  inline_script = { script = asr_wa/building/organic_processing/researcher }
+  inline_script = { script = asr_wa/building/organic_processing/fabricator }
+  inline_script = { script = asr_wa/building/organic_processing/rare_drone }
 
   ai_estimate_without_unemployment = yes
 

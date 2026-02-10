@@ -4,7 +4,7 @@ triggered_planet_modifier = {
     asr_wa_has_any_hja_pf = no
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert
+    script = asr_wa/researcher_upkeep_convert
     MINERAL = -4
     FOOD = 3
   }
@@ -16,7 +16,7 @@ triggered_planet_modifier = {
     has_planet_flag = has_science_ministry
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert
+    script = asr_wa/researcher_upkeep_convert
     MINERAL = -1.5
     FOOD = 1
   }
@@ -28,7 +28,7 @@ triggered_planet_modifier = {
     has_active_building = building_astral_siphon_1
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    script = asr_wa/researcher_upkeep_convert_phy
     MINERAL = -2.5
     FOOD = 2
   }
@@ -40,7 +40,7 @@ triggered_planet_modifier = {
     has_active_building = building_astral_siphon_2
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    script = asr_wa/researcher_upkeep_convert_phy
     MINERAL = -5
     FOOD = 4
   }
@@ -52,7 +52,7 @@ triggered_planet_modifier = {
     has_active_building = building_astral_siphon_3
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    script = asr_wa/researcher_upkeep_convert_phy
     MINERAL = -10
     FOOD = 8
   }
@@ -64,7 +64,7 @@ triggered_planet_modifier = {
     has_deposit = d_portal_research_zone
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    script = asr_wa/researcher_upkeep_convert_phy
     MINERAL = -8
     FOOD = 6
   }
@@ -77,7 +77,7 @@ triggered_planet_modifier = {
     has_planet_flag = dportal_hell
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_phy
+    script = asr_wa/researcher_upkeep_convert_phy
     MINERAL = -4
     FOOD = 3
   }
@@ -89,7 +89,7 @@ triggered_planet_modifier = {
     has_active_building = building_archaeostudies_faculty
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_soc
+    script = asr_wa/researcher_upkeep_convert_soc
     MINERAL = -2.5
     FOOD = 2
   }
@@ -101,7 +101,7 @@ triggered_planet_modifier = {
     has_deposit = d_weapon_extraction_facility
   }
   inline_script = {
-    script = asr_wa/op/component/researcher_upkeep_convert_eng
+    script = asr_wa/researcher_upkeep_convert_eng
     MINERAL = -4
     FOOD = 3
   }
