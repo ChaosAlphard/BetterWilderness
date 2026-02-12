@@ -18,6 +18,16 @@ on_game_start_country = {
 #     asr_wa_wilderness.1
 #   }
 # }
+
+# 物种修饰特殊项目完成时触发
+on_modification_complete = {
+  events = { asr_wa_wilderness.200 }
+}
+# 每月触发
+on_monthly_pulse_country = {
+  events = { asr_wa_wilderness.201 }
+}
+
 # 环境改造完成自动添加对应一产特化
 on_terraforming_complete = {
   events = { asr_wa_wilderness.1000 }

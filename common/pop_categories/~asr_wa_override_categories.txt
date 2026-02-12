@@ -1,0 +1,35 @@
+# 生物质
+wilderness_heart_strata = {
+  rank = 0
+  can_change_category = no
+  change_job_threshold = 1.15
+
+  pop_group_modifier = {
+    pop_amenities_usage_no_happiness_base = 1
+    pop_housing_usage_base = 1
+  }
+
+  allow_resettlement = {
+    always = yes
+  }
+
+  inline_script = "pop_categories/social_classes_triggered_modifiers_no_happiness"
+
+  triggered_pop_group_modifier = {
+    potential = {
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        has_tradition = tr_purity_finish
+      }
+      species = { is_variable_set = species_traits_purity_count }
+    }
+    key = concept_genetic_purity
+    pop_bonus_workforce_mult = 0.025
+    mult = species.species_traits_purity_count
+  }
+
+  weight = {
+    weight = 10000
+  }
+}

@@ -1,15 +1,15 @@
 # 岗位效率
-triggered_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      has_tradition = tr_purity_finish
-    }
-  }
-  pop_bonus_workforce_mult = 0.01
-  mult = value:asr_wa_cor_bonus_workforce_all
-}
+# triggered_planet_modifier = {
+#   potential = {
+#     exists = owner
+#     owner = {
+#       is_wilderness_empire = yes
+#       has_tradition = tr_purity_finish
+#     }
+#   }
+#   pop_bonus_workforce_mult = 0.01
+#   mult = value:asr_wa_cor_bonus_workforce_all
+# }
 
 triggered_planet_modifier = {
   potential = {

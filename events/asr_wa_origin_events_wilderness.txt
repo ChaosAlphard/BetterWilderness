@@ -82,6 +82,75 @@ country_event = {
   }
 }
 
+# This = Country From = Species (post modify) FromFrom = Species (pre modify)
+country_event = {
+  id = asr_wa_wilderness.200
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+    has_tradition = tr_purity_finish
+    any_owned_species = {
+      OR = {
+        has_trait = trait_wilderness
+        is_archetype = PRESAPIENT
+        is_archetype = BIOLOGICAL
+        is_archetype = LITHOID
+      }
+    }
+  }
+
+  immediate = {
+    # 更新所有物种, 这样就可以在事件给物种添加上特质时用这种方式刷新变量
+    # from = { set_species_traits_purity_count_variable = yes }
+    every_owned_species = {
+      limit = {
+        OR = {
+          has_trait = trait_wilderness
+          is_archetype = PRESAPIENT
+          is_archetype = BIOLOGICAL
+          is_archetype = LITHOID
+        }
+      }
+      set_species_traits_purity_count_variable = yes
+    }
+  }
+}
+
+country_event = {
+  id = asr_wa_wilderness.201
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+    has_tradition = tr_purity_finish
+    any_owned_species = {
+      OR = {
+        has_trait = trait_wilderness
+        is_archetype = PRESAPIENT
+        is_archetype = BIOLOGICAL
+        is_archetype = LITHOID
+      }
+      NOT = { is_variable_set = species_traits_purity_count }
+    }
+  }
+
+  immediate = {
+    every_owned_species = {
+      limit = {
+        OR = {
+          has_trait = trait_wilderness
+          is_archetype = PRESAPIENT
+          is_archetype = BIOLOGICAL
+          is_archetype = LITHOID
+        }
+        NOT = { is_variable_set = species_traits_purity_count }
+      }
+      set_species_traits_purity_count_variable = yes
+    }
+  }
+}
+
 # This = planet, From = country
 planet_event = {
   id = asr_wa_wilderness.1000

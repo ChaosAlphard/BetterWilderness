@@ -39,16 +39,16 @@ asr_wa_cor_bonus_build_speed = {
   }
 }
 
-# TODO: 需要评估对性能影响, 考虑是否使用 Country Variable 的形式
+# 已完成: 需要评估对性能影响, 考虑是否使用 Country Variable 的形式, 或者使用原版接口
 # 参考 event: bio.5107 bio.5108
-asr_wa_cor_bonus_workforce_all = {
-  base = 0
-  modifier = {
-    add = owner_main_species.value:species_traits_purity_count_value
-  }
-  min = 0
-  mult = 2.5
-}
+# asr_wa_cor_bonus_workforce_all = {
+#   base = 0
+#   modifier = {
+#     add = owner_main_species.value:species_traits_purity_count_value
+#   }
+#   min = 0
+#   mult = 2.5
+# }
 
 asr_wa_num_wilderness_pops = {
   base = 0
