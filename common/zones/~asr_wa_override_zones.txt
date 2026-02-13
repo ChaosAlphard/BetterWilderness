@@ -8,6 +8,10 @@ zone_urban_wilderness = {
     BASE = @scaling_district_2_jobs
   }
 
+  district_planet_modifier = {
+    planet_jobs_produces_mult = 0.05
+  }
+
   zone_sets = {
     urban
   }

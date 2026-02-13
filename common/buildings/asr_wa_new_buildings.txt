@@ -17,15 +17,15 @@ building_asr_wa_organic_processing = {
 
   potential = {
     exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
+    owner = { is_wilderness_empire = yes }
+  }
+  allow = {
+    exists = owner
+    owner = { is_ai = no }
   }
   destroy_trigger = {
     exists = owner
-    owner = {
-      is_wilderness_empire = no
-    }
+    owner = { is_wilderness_empire = no }
   }
 
   resources = {
@@ -45,9 +45,8 @@ building_asr_wa_organic_processing = {
 
   ai_estimate_without_unemployment = yes
 
-  ai_weight = {
-    factor = 0
-  }
+  # 这个参数已经被弃用
+  ai_weight = { factor = 0 }
 }
 
 # 护卫哨所

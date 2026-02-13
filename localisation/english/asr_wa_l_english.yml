@@ -47,7 +47,7 @@ l_english:
   asr_wa_betharian_tt: "More $r_energy$ produces if built ['building:building_betharian_power_plant'] and ['starbase_building:ring_energy_hub',$sm_ring_energy_hub$]"
   # 决议
   decision_asr_wa_wilderness_world: "Shaping Wilderness World"
-  decision_asr_wa_wilderness_world_tt: "['building:building_cradle_of_rebirth'] provide §G+20%§!$MOD_POP_BONUS_WORKFORCE_MULT$\nAll £district£['concept_district'] provide more $wa_r_job$"
+  decision_asr_wa_wilderness_world_tt: "All £district£['concept_district'] provide more $wa_r_job$"
   decision_asr_wa_wilderness_world_desc: ""
   decision_asr_wa_wilderness_world_message: "$PLANET|H$ has been shaped"
   decision_asr_wa_renounce_colony: "§RRenounce Colony§!"
@@ -55,6 +55,8 @@ l_english:
   # Static Modifier
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
   asr_wa_wilderness_world_desc: ""
+  # Scripted Modifiers
+  mod_biomass_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Biomass Pops"
   # Job
   job_asr_wa_simulate_spawning_drone: "Simulated $job_broodsymbiont$"
   job_asr_wa_simulate_spawning_drone_plural: "Simulated $job_broodsymbiont_plural$"

@@ -12,12 +12,12 @@ asr_wa_tr_purity_effect = {
     name = asr_wa_p_purity_adopt
 
     potential = {
-      NOT = { has_tradition = tr_purity_finish }
+      NOT = { has_tradition = tr_purity_stage_1_swap }
       has_ascension_perk = ap_engineered_evolution
     }
 
     valid = {
-      NOT = { has_tradition = tr_purity_finish }
+      NOT = { has_tradition = tr_purity_stage_1_swap }
       has_ascension_perk = ap_engineered_evolution
     }
 

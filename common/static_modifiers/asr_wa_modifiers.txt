@@ -3,4 +3,5 @@ asr_wa_wilderness_world = {
   icon = "gfx/interface/icons/planet_modifiers/pm_natural_beauty.dds"
   icon_frame = 1
   planet_max_districts_add = 2
+  biomass_pop_bonus_workforce_mult = 0.2
 }

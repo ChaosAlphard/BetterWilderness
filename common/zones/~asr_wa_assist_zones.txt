@@ -14,7 +14,7 @@ zone_asr_wa_assist_unity = {
   swap_type = district_asr_wa_swap_assist_coordinator
   swap_type_weight = 20
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs
@@ -44,7 +44,7 @@ zone_asr_wa_assist_research = {
   swap_type = district_asr_wa_swap_assist_calculator
   swap_type_weight = 18
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs
@@ -74,7 +74,7 @@ zone_asr_wa_assist_foundry = {
   swap_type = district_asr_wa_swap_assist_foundry
   swap_type_weight = 16
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs
@@ -127,7 +127,7 @@ zone_asr_wa_assist_trade = {
   swap_type = district_asr_wa_swap_assist_trade
   swap_type_weight = 14
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/technicians_add
     BASE = @scaling_district_2_jobs
@@ -162,7 +162,7 @@ zone_asr_wa_assist_food = {
   swap_type = district_asr_wa_swap_assist_food
   swap_type_weight = 12
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs
@@ -196,7 +196,7 @@ zone_asr_wa_assist_energy = {
   swap_type = district_asr_wa_swap_assist_energy
   swap_type_weight = 10
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs
@@ -230,7 +230,7 @@ zone_asr_wa_assist_mineral = {
   swap_type = district_asr_wa_swap_assist_minerals
   swap_type_weight = 8
 
-  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @scaling_district_2_jobs

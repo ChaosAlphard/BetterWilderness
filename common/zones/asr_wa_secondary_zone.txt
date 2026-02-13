@@ -25,6 +25,10 @@ zone_asr_wa_urban = {
     script = asr_wa/zone/job/patrol_add
     BASE = @doubled_scaling_district_2_jobs
   }
+
+  district_planet_modifier = {
+    planet_jobs_produces_mult = 0.10
+  }
 }
 # 蔓生
 zone_asr_wa_spawning = {

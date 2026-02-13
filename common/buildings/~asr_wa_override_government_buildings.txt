@@ -2,8 +2,7 @@
 # 基础: +100孵育体, 给予人口组装速度加成, 反比于行星人口数量
 # 拥有 基因重塑 飞升: +100孵育体
 # 拥有 基因剪裁 科技: +100孵育体
-# 纯净传统完成: +100孵育体, 根据'物种基因完美'给予岗位效率,
-#   每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
+# 纯净传统完成: +100孵育体, 每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
 # 掌控自然飞升: 给予-10%行星基础设施花费
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
@@ -59,7 +58,6 @@ building_cradle_of_rebirth = {
 
   inline_script = { script = asr_wa/building/cradle_of_rebirth/spawning_drone }
   inline_script = { script = asr_wa/building/cradle_of_rebirth/simulate_spawning_drone }
-  inline_script = { script = asr_wa/building/cradle_of_rebirth/workforce }
 
   # 掌控自然飞升给予-10%行星基础设施花费
   triggered_planet_modifier = {

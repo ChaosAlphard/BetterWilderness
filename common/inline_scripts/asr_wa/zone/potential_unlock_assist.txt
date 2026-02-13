@@ -1,0 +1,19 @@
+#  Planet Scope
+potential = {
+  asr_wa_planet_is_wilderness_arcology = yes
+  exists = owner
+  owner = {
+    is_wilderness_empire = yes
+  }
+}
+unlock = {
+  hidden_trigger = {
+    asr_wa_planet_is_wilderness_arcology = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      # 智障AI并不能很好的利用支援区划, 基本是负提升
+      is_ai = no
+    }
+  }
+}

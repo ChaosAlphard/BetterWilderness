@@ -29,6 +29,17 @@ wilderness_heart_strata = {
     mult = species.species_traits_purity_count
   }
 
+  triggered_pop_group_modifier = {
+    potential = {
+      exists = owner
+      owner = { is_wilderness_empire = yes }
+      species = { has_trait = trait_wilderness }
+    }
+    key = mod_biomass_pop_bonus_workforce_mult
+    pop_bonus_workforce_mult = 1
+    mult = planet.modifier:biomass_pop_bonus_workforce_mult
+  }
+
   weight = {
     weight = 10000
   }

@@ -1,4 +1,4 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_simp_chinese:
-  tr_purity_finish_wilderness_tt: "$pop_effects_from_purity_header$$TABBED_NEW_LINE$—$MOD_POP_BONUS_WORKFORCE_MULT$：$plus_minus_icon$§Y2.5%§!\n['building:building_cradle_of_rebirth']根据£building£['concept_buildings']和£district£['concept_district']数量提供§Y建造速度§!和§Y决议颁布速度§!加成，在['concept_pc_gaia']上加成翻倍\n最大资源区划数§G不受行星特征限制§!"
+  tr_purity_finish_wilderness_tt: "$pop_effects_from_purity_header$$plus_minus_icon$§Y2.5%§!$MOD_POP_BONUS_WORKFORCE_MULT$\n['building:building_cradle_of_rebirth']根据£building£['concept_buildings']和£district£['concept_district']数量提供§Y建造速度§!和§Y决议颁布速度§!加成，在['concept_pc_gaia']上加成翻倍\n最大资源区划数§G不受行星特征限制§!"
   tr_prosperity_public_works_wilderness_desc: "所有£district£['concept_district']提供更多£housing£['concept_housing']"
