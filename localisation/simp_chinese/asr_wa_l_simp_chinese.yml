@@ -1,6 +1,6 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_simp_chinese:
-  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n—$ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n—在['concept_pc_gaia']上解锁高级£district£['concept_district']"
+  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n—£biomass£['concept_biomass']人口不占用£empire_sprawl£['concept_empire_size']\n—$ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n—在['concept_pc_gaia']上解锁高级£district£['concept_district']"
   building_asr_wa_organic_processing: "催化林地"
   building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§!将工业与科研岗位的$r_minerals$维护费替换为$r_food$维护费，并将建筑的$r_minerals$建造费用替换为$r_food$建造费用"
   building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
@@ -17,14 +17,10 @@ l_simp_chinese:
   # 政策
   policy_asr_wa_tr_purity_effect: "$ap_engineered_evolution$"
   policy_asr_wa_tr_purity_effect_desc: "根据$tradition_purity$传统解锁进度给予额外加成"
+  asr_wa_p_purity_evolution: "$tradition_purity$"
+  asr_wa_p_purity_evolution_desc: ""
   asr_wa_p_purity_adopt: "$tradition_purity$"
   asr_wa_p_purity_adopt_desc: ""
-  asr_wa_p_purity_stage_1: "$tradition_purity$"
-  asr_wa_p_purity_stage_1_desc: ""
-  asr_wa_p_purity_stage_2: "$tradition_purity$"
-  asr_wa_p_purity_stage_2_desc: ""
-  asr_wa_p_purity_stage_3: "$tradition_purity$"
-  asr_wa_p_purity_stage_3_desc: ""
   asr_wa_p_purity_finish: "$tradition_purity$"
   asr_wa_p_purity_finish_desc: ""
   # resource with icon

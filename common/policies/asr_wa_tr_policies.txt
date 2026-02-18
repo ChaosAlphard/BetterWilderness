@@ -9,19 +9,21 @@ asr_wa_tr_purity_effect = {
   }
 
   option = {
-    name = asr_wa_p_purity_adopt
+    name = asr_wa_p_purity_evolution
 
     potential = {
-      NOT = { has_tradition = tr_purity_stage_1_swap }
+      NOT = { has_tradition = tr_purity_adopt }
       has_ascension_perk = ap_engineered_evolution
     }
 
     valid = {
-      NOT = { has_tradition = tr_purity_stage_1_swap }
+      NOT = { has_tradition = tr_purity_adopt }
       has_ascension_perk = ap_engineered_evolution
     }
 
-    modifier = {  }
+    modifier = {
+      pop_environment_tolerance = 0.2
+    }
 
     AI_weight = {
       weight = 10
@@ -29,16 +31,16 @@ asr_wa_tr_purity_effect = {
   }
 
   option = {
-    name = asr_wa_p_purity_stage_1
+    name = asr_wa_p_purity_adopt
 
     potential = {
       NOT = { has_tradition = tr_purity_finish }
-      has_tradition = tr_purity_stage_1_swap
+      has_tradition = tr_purity_adopt
     }
 
     valid = {
       NOT = { has_tradition = tr_purity_finish }
-      has_tradition = tr_purity_stage_1_swap
+      has_tradition = tr_purity_adopt
     }
 
     # 修复加强能力中"领袖起始特质+1"不生效的问题, 以及其他可能的潜在问题
@@ -55,6 +57,7 @@ asr_wa_tr_purity_effect = {
     }
 
     modifier = {
+      pop_environment_tolerance = 0.2
       leader_initial_skill = 2
     }
 
@@ -82,9 +85,9 @@ asr_wa_tr_purity_effect = {
     }
 
     modifier = {
+      pop_environment_tolerance = 0.2
       leader_initial_skill = 2
       leader_skill_add = 1
-      empire_size_pops_mult = -0.20
     }
 
     AI_weight = {

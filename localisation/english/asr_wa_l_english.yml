@@ -1,6 +1,6 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_english:
-  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n- $ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n- Unlock advanced £district£['concept_district'] on ['concept_pc_gaia']"
+  origin_tooltip_wilderness_effects_wa_asr: "$origin_tooltip_wilderness_effects$\n- £biomass£['concept_biomass'] pops has no £empire_sprawl£['concept_empire_size']\n- $ADDITIONAL_TECHNOLOGIES_STRING$£society_research£['technology:tech_terrestrial_sculpting']\n- Unlock advanced £district£['concept_district'] on ['concept_pc_gaia']"
   building_asr_wa_organic_processing: "Organic Processing Field"
   building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§! change industrial jobs and research jobs upkeep from $r_minerals$ to $r_food$, and change build cost from $r_minerals$ to $r_food$"
   building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
@@ -17,14 +17,10 @@ l_english:
   # 政策
   policy_asr_wa_tr_purity_effect: "$ap_engineered_evolution$"
   policy_asr_wa_tr_purity_effect_desc: ""
+  asr_wa_p_purity_evolution: "$tradition_purity$"
+  asr_wa_p_purity_evolution_desc: ""
   asr_wa_p_purity_adopt: "$tradition_purity$"
   asr_wa_p_purity_adopt_desc: ""
-  asr_wa_p_purity_stage_1: "$tradition_purity$"
-  asr_wa_p_purity_stage_1_desc: ""
-  asr_wa_p_purity_stage_2: "$tradition_purity$"
-  asr_wa_p_purity_stage_2_desc: ""
-  asr_wa_p_purity_stage_3: "$tradition_purity$"
-  asr_wa_p_purity_stage_3_desc: ""
   asr_wa_p_purity_finish: "$tradition_purity$"
   asr_wa_p_purity_finish_desc: ""
   # resource with icon

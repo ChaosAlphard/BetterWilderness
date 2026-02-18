@@ -15,6 +15,7 @@ triggered_planet_modifier = {
   mult = value:asr_wa_simulate_spawning_drone_from_pops
 }
 # 自动化模拟孵育体岗位 (荒野本身就是虚拟岗所以不需要这个)
+# 荒野的自动化劳动力能吃到生物质人口能吃的所有buff, 但吃不到自动化劳动力相关buff
 # triggered_planet_modifier = {
 #   potential = {
 #     exists = owner

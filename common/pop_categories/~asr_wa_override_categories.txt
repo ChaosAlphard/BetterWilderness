@@ -7,6 +7,21 @@ wilderness_heart_strata = {
   pop_group_modifier = {
     pop_amenities_usage_no_happiness_base = 1
     pop_housing_usage_base = 1
+    species_empire_size_mult = -2
+  }
+  triggered_pop_group_modifier = {
+    potential = {
+      species = { has_trait = trait_docile }
+    }
+    key = trait_docile
+    pop_amenities_usage_no_happiness_add = -0.2
+  }
+  triggered_pop_group_modifier = {
+    potential = {
+      species = { has_trait = trait_unruly }
+    }
+    key = trait_unruly
+    pop_amenities_usage_no_happiness_add = 0.2
   }
 
   allow_resettlement = {
