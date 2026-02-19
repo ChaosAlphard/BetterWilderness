@@ -5,7 +5,7 @@ triggered_planet_modifier = {
   planet_metallurgists_food_upkeep_add = 9
 }
 triggered_planet_modifier = {
-  potential = { has_zone = { zone = zone_asr_wa_factory } }
+  potential = { asr_wa_foundry_zone_assist_artisans = yes }
   planet_artisans_minerals_upkeep_add = -10
   planet_artisans_food_upkeep_add = 15
 }
@@ -69,7 +69,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     has_active_building = building_archaeo_refinery
-    has_zone = { zone = zone_asr_wa_factory }
+    asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = -2
   planet_artisans_food_upkeep_add = 3
@@ -83,7 +83,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     has_active_building = building_refinery
-    has_zone = { zone = zone_asr_wa_factory }
+    asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = -1.25
   planet_artisans_food_upkeep_add = 1.5
@@ -97,7 +97,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     has_active_building = building_crystal_plant
-    has_zone = { zone = zone_asr_wa_factory }
+    asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = -1.25
   planet_artisans_food_upkeep_add = 1.5
@@ -111,7 +111,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     has_active_building = building_chemical_plant
-    has_zone = { zone = zone_asr_wa_factory }
+    asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = -1.25
   planet_artisans_food_upkeep_add = 1.5
@@ -125,7 +125,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     has_active_building = building_crystal_plant_2
-    has_zone = { zone = zone_asr_wa_factory }
+    asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = -1.25
   planet_artisans_food_upkeep_add = 1.5

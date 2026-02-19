@@ -189,7 +189,6 @@ zone_asr_wa_factory = {
       food = @wa_zone_foods
       trigger = { asr_wa_planet_use_food_build_building = yes }
     }
-    upkeep = { consumer_goods = 0.01 }
   }
 
   zone_sets = { gaia_rural }
@@ -336,6 +335,123 @@ zone_asr_wa_mineral = {
   }
   inline_script = {
     script = asr_wa/zone/job/miner_add
+    BASE = @doubled_scaling_district_1_job
+  }
+}
+# 稀有资源
+zone_asr_wa_rare_resources_plant = {
+  icon = GFX_district_specialization_industrial
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { foundry }
+
+  swap_type = district_asr_wa_swap_rare_resources_plant
+  swap_type_weight = 10
+
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_technology = tech_exotic_gases
+      has_technology = tech_volatile_motes
+      has_technology = tech_rare_crystals
+    }
+  }
+  unlock = {
+    hidden_trigger = {
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        has_technology = tech_exotic_gases
+        has_technology = tech_volatile_motes
+        has_technology = tech_rare_crystals
+      }
+    }
+  }
+  inline_script = { script = asr_wa/zone/cost }
+  max_buildings = 3
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/refiner_add
+    BASE = @doubled_scaling_district_3_jobs
+  }
+  inline_script = {
+    script = asr_wa/zone/job/chemist_add
+    BASE = @doubled_scaling_district_3_jobs
+  }
+  inline_script = {
+    script = asr_wa/zone/job/translucer_add
+    BASE = @doubled_scaling_district_3_jobs
+  }
+}
+# 异星天然气
+zone_asr_wa_exotic_gases_plant = {
+  icon = GFX_district_specialization_exotic_gases
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { foundry }
+
+  swap_type = district_asr_wa_swap_exotic_gases_plant
+  swap_type_weight = 10
+
+  show_in_tech = tech_exotic_gases
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_exotic_gases
+  }
+  inline_script = {
+    script = asr_wa/zone/job/refiner_add
+    BASE = @doubled_scaling_district_1_job
+  }
+}
+# 易爆微粒
+zone_asr_wa_volatile_motes_plant = {
+  icon = GFX_district_specialization_volatile_motes
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { foundry }
+
+  swap_type = district_asr_wa_swap_volatile_motes_plant
+  swap_type_weight = 10
+
+  show_in_tech = tech_volatile_motes
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_volatile_motes
+  }
+  inline_script = {
+    script = asr_wa/zone/job/chemist_add
+    BASE = @doubled_scaling_district_1_job
+  }
+}
+# 稀有水晶
+zone_asr_wa_rare_crystals_plant = {
+  icon = GFX_district_specialization_rare_crystals
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { gaia_rural }
+
+  included_building_sets = { foundry }
+
+  swap_type = district_asr_wa_swap_rare_crystals_plant
+  swap_type_weight = 10
+
+  show_in_tech = tech_rare_crystals
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_rare_crystals
+  }
+  inline_script = {
+    script = asr_wa/zone/job/translucer_add
     BASE = @doubled_scaling_district_1_job
   }
 }

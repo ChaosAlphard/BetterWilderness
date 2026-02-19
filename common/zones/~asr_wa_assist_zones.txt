@@ -89,16 +89,31 @@ zone_asr_wa_assist_foundry = {
     planet_metallurgists_produces_mult = @assist_zone_produce_mult_extra
   }
   triggered_district_planet_modifier = {
-    potential = { has_zone = { zone = zone_asr_wa_factory } }
+    potential = { asr_wa_foundry_zone_assist_artisans = yes }
     planet_artisans_produces_mult = @assist_zone_produce_mult
     planet_artisans_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = {
       asr_wa_planet_is_wilderness_world = yes
-      has_zone = { zone = zone_asr_wa_factory }
+      asr_wa_foundry_zone_assist_artisans = yes
     }
     planet_artisans_produces_mult = @assist_zone_produce_mult_extra
+  }
+  triggered_district_planet_modifier = {
+    potential = { asr_wa_foundry_zone_assist_translucers = yes }
+    planet_translucers_produces_mult = @assist_zone_produce_mult
+    planet_translucers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+  triggered_district_planet_modifier = {
+    potential = { asr_wa_foundry_zone_assist_refiners = yes }
+    planet_refiners_produces_mult = @assist_zone_produce_mult
+    planet_refiners_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+  triggered_district_planet_modifier = {
+    potential = { asr_wa_foundry_zone_assist_chemists = yes }
+    planet_chemists_produces_mult = @assist_zone_produce_mult
+    planet_chemists_trade_upkeep_add = @assist_zone_upkeep_add
   }
 
   ai_priority = 0

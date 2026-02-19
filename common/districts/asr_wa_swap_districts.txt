@@ -84,6 +84,46 @@ district_asr_wa_swap_foundry = {
     text = district_asr_wa_swap_foundry_tt
   }
 }
+# 稀有资源
+district_asr_wa_swap_rare_resources_plant = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_metallic_dew_plains
+  overlay_icon = GFX_colony_type_refinery
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_rare_resources_plant_tt
+  }
+}
+# 异星天然气
+district_asr_wa_swap_exotic_gases_plant = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_metallic_dew_plains
+  overlay_icon = GFX_district_exotic_gases
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_exotic_gases_plant_tt
+  }
+}
+# 易爆微粒
+district_asr_wa_swap_volatile_motes_plant = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_metallic_dew_plains
+  overlay_icon = GFX_district_volatile_motes
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_volatile_motes_plant_tt
+  }
+}
+# 稀有水晶
+district_asr_wa_swap_rare_crystals_plant = {
+  inline_script = { script = asr_wa/districts/shared_swap_district }
+  icon = district_metallic_dew_plains
+  overlay_icon = GFX_district_rare_crystals
+  triggered_name = {
+    trigger = { always = yes }
+    text = district_asr_wa_swap_rare_crystals_plant_tt
+  }
+}
 # 行星须核
 district_asr_wa_swap_trade = {
   inline_script = { script = asr_wa/districts/shared_swap_district }

@@ -37,6 +37,43 @@ asr_wa_district_set_can_build_craglands = {
   uses_district_set = standard
 }
 
+asr_wa_foundry_zone_assist_artisans = {
+  OR = {
+    has_zone = { zone = zone_asr_wa_factory }
+    has_zone = { zone = zone_asr_wa_factory_wilderness }
+    has_building = building_factory_1
+    has_building = building_factory_2
+    has_building = building_factory_3
+  }
+}
+asr_wa_foundry_zone_assist_refiners = {
+  OR = {
+    has_zone = { zone = zone_asr_wa_rare_resources_plant }
+    has_zone = { zone = zone_asr_wa_rare_resources_plant_wilderness }
+    has_zone = { zone = zone_asr_wa_exotic_gases_plant }
+    has_zone = { zone = zone_asr_wa_exotic_gases_plant_wilderness }
+    has_building = building_churning_stomach
+  }
+}
+asr_wa_foundry_zone_assist_translucers = {
+  OR = {
+    has_zone = { zone = zone_asr_wa_rare_resources_plant }
+    has_zone = { zone = zone_asr_wa_rare_resources_plant_wilderness }
+    has_zone = { zone = zone_asr_wa_rare_crystals_plant }
+    has_zone = { zone = zone_asr_wa_rare_crystals_plant_wilderness }
+    has_building = building_crystal_growth
+  }
+}
+asr_wa_foundry_zone_assist_chemists = {
+  OR = {
+    has_zone = { zone = zone_asr_wa_rare_resources_plant }
+    has_zone = { zone = zone_asr_wa_rare_resources_plant_wilderness }
+    has_zone = { zone = zone_asr_wa_volatile_motes_plant }
+    has_zone = { zone = zone_asr_wa_volatile_motes_plant_wilderness }
+    has_building = building_mote_aggravator
+  }
+}
+
 asr_wa_planet_is_wilderness_arcology = {
   hidden_trigger = { exists = planet }
   planet = {

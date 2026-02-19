@@ -26,7 +26,27 @@ zone_research_wilderness = {
   included_building_sets = { urban }
 }
 
+zone_asr_wa_research_phy_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_research_soc_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_research_eng_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
 zone_asr_wa_assist_research = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_factory_wilderness = {
   zone_sets = { urban }
   included_building_sets = { urban }
 }

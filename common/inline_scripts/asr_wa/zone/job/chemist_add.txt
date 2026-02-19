@@ -1,0 +1,31 @@
+triggered_district_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_chemist_drone_add = $BASE$
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_chemist_drone_add = $BASE$
+  mult = 2
+}
+triggered_district_planet_modifier = {
+  potential = {
+    asr_wa_planet_is_wilderness_world_equivalent = yes
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+    }
+  }
+  job_chemist_drone_add = $BASE$
+  mult = 4
+}

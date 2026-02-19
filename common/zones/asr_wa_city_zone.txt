@@ -1,0 +1,206 @@
+# 物理学特化
+zone_asr_wa_research_phy_wilderness = {
+  icon = GFX_district_specialization_physics
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+
+  included_building_sets = { research }
+
+  inline_script = {
+    script = asr_wa/zone/shared_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_physicist_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 社会学特化
+zone_asr_wa_research_soc_wilderness = {
+  icon = GFX_district_specialization_society
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+
+  included_building_sets = { research }
+
+  inline_script = {
+    script = asr_wa/zone/shared_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_biologist_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 工程学特化
+zone_asr_wa_research_eng_wilderness = {
+  icon = GFX_district_specialization_engineering
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+
+  included_building_sets = { research }
+
+  inline_script = {
+    script = asr_wa/zone/shared_zone
+  }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_engineer_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 工业区划
+zone_asr_wa_factory_wilderness = {
+  icon = GFX_district_specialization_factory
+  base_buildtime = @zone_buildtime
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      OR = {
+        has_technology = tech_luxuries_1
+        country_uses_consumer_goods = yes
+      }
+    }
+  }
+  unlock = {
+    hidden_trigger = {
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        OR = {
+          has_technology = tech_luxuries_1
+          country_uses_consumer_goods = yes
+        }
+      }
+    }
+  }
+  resources = {
+    category = planet_zones
+    cost = {
+      minerals = @wa_zone_minerals
+      food = @wa_zone_minerals
+      trigger = { asr_wa_planet_use_food_build_building = no }
+    }
+    cost = {
+      food = @wa_zone_foods
+      trigger = { asr_wa_planet_use_food_build_building = yes }
+    }
+  }
+
+  zone_sets = { urban }
+
+  included_building_sets = { factory }
+
+  max_buildings = 3
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/artisan_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 稀有资源
+zone_asr_wa_rare_resources_plant_wilderness = {
+  icon = GFX_district_specialization_industrial
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+
+  included_building_sets = { foundry }
+
+  potential = {
+    exists = owner
+    owner = {
+      is_wilderness_empire = yes
+      has_technology = tech_exotic_gases
+      has_technology = tech_volatile_motes
+      has_technology = tech_rare_crystals
+    }
+  }
+  unlock = {
+    hidden_trigger = {
+      exists = owner
+      owner = {
+        is_wilderness_empire = yes
+        has_technology = tech_exotic_gases
+        has_technology = tech_volatile_motes
+        has_technology = tech_rare_crystals
+      }
+    }
+  }
+  inline_script = { script = asr_wa/zone/cost }
+  max_buildings = 3
+  planet_modifier = {
+    zone_building_slots_add = 3
+  }
+
+  inline_script = {
+    script = asr_wa/zone/job/refiner_add
+    BASE = @scaling_district_3_jobs
+  }
+  inline_script = {
+    script = asr_wa/zone/job/chemist_add
+    BASE = @scaling_district_3_jobs
+  }
+  inline_script = {
+    script = asr_wa/zone/job/translucer_add
+    BASE = @scaling_district_3_jobs
+  }
+}
+# 异星天然气
+zone_asr_wa_exotic_gases_plant_wilderness = {
+  icon = GFX_district_specialization_exotic_gases
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+
+  included_building_sets = { foundry }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_exotic_gases
+  }
+  inline_script = {
+    script = asr_wa/zone/job/refiner_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 易爆微粒
+zone_asr_wa_volatile_motes_plant_wilderness = {
+  icon = GFX_district_specialization_volatile_motes
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+
+  included_building_sets = { foundry }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_volatile_motes
+  }
+  inline_script = {
+    script = asr_wa/zone/job/chemist_add
+    BASE = @scaling_district_1_job
+  }
+}
+# 稀有水晶
+zone_asr_wa_rare_crystals_plant_wilderness = {
+  icon = GFX_district_specialization_rare_crystals
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+
+  included_building_sets = { foundry }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_rare_crystals
+  }
+  inline_script = {
+    script = asr_wa/zone/job/translucer_add
+    BASE = @scaling_district_1_job
+  }
+}
