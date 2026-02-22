@@ -1,7 +1,7 @@
 # Base
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
   }
   inline_script = {
     script = asr_wa/researcher_upkeep_convert
@@ -12,7 +12,7 @@ triggered_planet_modifier = {
 # 科研部
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_planet_flag = has_science_ministry
   }
   inline_script = {
@@ -24,7 +24,7 @@ triggered_planet_modifier = {
 # 星界虹吸
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_active_building = building_astral_siphon_1
   }
   inline_script = {
@@ -36,7 +36,7 @@ triggered_planet_modifier = {
 # 星界漏斗
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_active_building = building_astral_siphon_2
   }
   inline_script = {
@@ -48,7 +48,7 @@ triggered_planet_modifier = {
 # 星界节点
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_active_building = building_astral_siphon_3
   }
   inline_script = {
@@ -60,7 +60,7 @@ triggered_planet_modifier = {
 # 传送门研究区域
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_deposit = d_portal_research_zone
   }
   inline_script = {
@@ -72,7 +72,7 @@ triggered_planet_modifier = {
 # 传送门研究区域
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_deposit = d_portal_research_zone
     has_planet_flag = dportal_hell
   }
@@ -85,7 +85,7 @@ triggered_planet_modifier = {
 # 远古学院
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_active_building = building_archaeostudies_faculty
   }
   inline_script = {
@@ -97,7 +97,7 @@ triggered_planet_modifier = {
 # 武器提取设施
 triggered_planet_modifier = {
   potential = {
-    asr_wa_has_any_hja_pf = no
+    asr_wa_is_hja_installed = no
     has_deposit = d_weapon_extraction_facility
   }
   inline_script = {

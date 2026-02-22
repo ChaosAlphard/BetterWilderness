@@ -1,0 +1,4 @@
+# Override by other mod
+asr_wa_is_hja_installed = {
+  always = no
+}

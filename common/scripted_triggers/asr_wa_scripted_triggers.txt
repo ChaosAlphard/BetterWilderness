@@ -26,6 +26,7 @@ asr_wa_planet_researcher_use_food = {
     OR = {
       has_active_building = building_asr_wa_organic_processing
       AND = {
+        asr_wa_is_hja_installed = yes
         exists = owner
         owner = { has_policy_flag = irs_hja_researcher_use_food_resource }
       }
@@ -106,32 +107,5 @@ asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {
   OR = {
     asr_wa_planet_is_wilderness_arcology_equivalent = yes
     asr_wa_planet_is_wilderness_world_equivalent = yes
-  }
-}
-
-asr_wa_has_any_hja_pf = {
-  exists = owner
-  owner = {
-    OR = {
-      has_policy_flag = irs_hja_researcher_use_default_resource
-      has_policy_flag = irs_hja_researcher_use_food_resource
-    }
-  }
-}
-
-asr_wa_calc_tr_purity_unlock = {
-  NOT = { has_tradition = tr_purity_finish }
-  calc_true_if = {
-    amount = $AMOUNT$
-    # has_tradition = tr_purity_adopt
-    # has_tradition = tr_purity_finish
-    has_tradition = tr_purity_stage_1_swap
-    has_tradition = tr_purity_stage_2_swap
-    has_tradition = tr_purity_stage_3_swap
-    # has_tradition = tr_purity_genotype_regeneration
-    # has_tradition = tr_purity_exemplary_genetics
-    # has_tradition = tr_purity_optimized_neurology
-    # has_tradition = tr_purity_heightened_attributes
-    # has_tradition = tr_purity_imperfection_remediation
   }
 }

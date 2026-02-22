@@ -43,8 +43,8 @@ l_simp_chinese:
   asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['starbase_building:ring_energy_hub',$sm_ring_energy_hub$]时提供$r_energy$产出加成"
   # 决议
   decision_asr_wa_wilderness_world: "重塑自然"
-  decision_asr_wa_wilderness_world_tt: "所有£district£['concept_district']提供更多$wa_r_job$"
-  decision_asr_wa_wilderness_world_desc: ""
+  decision_asr_wa_wilderness_world_tt: "所有£district£['concept_district']提供更多$wa_r_job$\n§R移除§!$RARE_DEPOSITS$§Y以外§!的所有§Y$DEPOSITS_TITLE$§!"
+  decision_asr_wa_wilderness_world_desc: "我们即是自然，自然即是我们"
   decision_asr_wa_wilderness_world_message: "$PLANET|H$已被重塑"
   decision_asr_wa_renounce_colony: "§R切断根须§!"
   decision_asr_wa_renounce_colony_desc: "切断殖民地与我们的联系"

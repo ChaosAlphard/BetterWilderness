@@ -1,0 +1,7 @@
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_is_hja_installed = no
+  }
+  planet_traders_minerals_upkeep_add = -2
+  planet_traders_food_upkeep_add = 2
+}
