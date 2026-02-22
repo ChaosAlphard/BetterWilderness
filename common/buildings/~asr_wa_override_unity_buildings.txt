@@ -144,8 +144,7 @@ building_commensal_clearing_3 = { # substitute for 'building_hive_cluster'
   }
 
   planet_modifier = {
-    planet_bureaucrats_unity_produces_add = 1
-    planet_bureaucrats_produces_mult = 0.20
+    planet_bureaucrats_unity_produces_add = 0.5
   }
 
   inline_script = {
@@ -199,10 +198,12 @@ building_commensal_clearing_4 = { # equivalent to 'building_hive_confluence'
   }
 
   planet_modifier = {
-    planet_bureaucrats_unity_produces_add = 2
-    planet_bureaucrats_produces_mult = 0.20
-    planet_bureaucrats_upkeep_mult = -0.20
+    planet_bureaucrats_unity_produces_add = 1
     pop_coordinator_bonus_workforce_mult = 0.20
+  }
+  triggered_planet_modifier = {
+    potential = { has_ringworld_output_boost = yes }
+    planet_bureaucrats_unity_produces_add = 0.5
   }
 
   inline_script = {

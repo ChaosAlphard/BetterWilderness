@@ -1,5 +1,4 @@
 @assist_zone_produce_mult = 0.20
-@assist_zone_produce_mult_extra = 0.10
 @assist_zone_upkeep_add = 1
 
 # 行政支持
@@ -23,10 +22,6 @@ zone_asr_wa_assist_unity = {
   district_planet_modifier = {
     planet_bureaucrats_produces_mult = @assist_zone_produce_mult
     planet_bureaucrats_trade_upkeep_add = @assist_zone_upkeep_add
-  }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_bureaucrats_produces_mult = @assist_zone_produce_mult_extra
   }
 
   ai_priority = 0
@@ -53,10 +48,6 @@ zone_asr_wa_assist_research = {
   district_planet_modifier = {
     planet_researchers_produces_mult = @assist_zone_produce_mult
     planet_researchers_trade_upkeep_add = @assist_zone_upkeep_add
-  }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_researchers_produces_mult = @assist_zone_produce_mult_extra
   }
 
   ai_priority = 0
@@ -85,20 +76,9 @@ zone_asr_wa_assist_foundry = {
     planet_metallurgists_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_metallurgists_produces_mult = @assist_zone_produce_mult_extra
-  }
-  triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_artisans = yes }
     planet_artisans_produces_mult = @assist_zone_produce_mult
     planet_artisans_trade_upkeep_add = @assist_zone_upkeep_add
-  }
-  triggered_district_planet_modifier = {
-    potential = {
-      asr_wa_planet_is_wilderness_world = yes
-      asr_wa_foundry_zone_assist_artisans = yes
-    }
-    planet_artisans_produces_mult = @assist_zone_produce_mult_extra
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_translucers = yes }
@@ -152,10 +132,6 @@ zone_asr_wa_assist_trade = {
     planet_traders_produces_mult = @assist_zone_produce_mult
     planet_traders_energy_upkeep_add = @assist_zone_upkeep_add
   }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_traders_produces_mult = @assist_zone_produce_mult_extra
-  }
 
   ai_priority = 0
 }
@@ -187,10 +163,6 @@ zone_asr_wa_assist_food = {
     planet_farmers_produces_mult = @assist_zone_produce_mult
     planet_farmers_trade_upkeep_add = @assist_zone_upkeep_add
   }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_farmers_produces_mult = @assist_zone_produce_mult_extra
-  }
 
   ai_priority = 0
 }
@@ -221,10 +193,6 @@ zone_asr_wa_assist_energy = {
     planet_technician_produces_mult = @assist_zone_produce_mult
     planet_technician_trade_upkeep_add = @assist_zone_upkeep_add
   }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_technician_produces_mult = @assist_zone_produce_mult_extra
-  }
 
   ai_priority = 0
 }
@@ -254,10 +222,6 @@ zone_asr_wa_assist_mineral = {
   district_planet_modifier = {
     planet_miners_produces_mult = @assist_zone_produce_mult
     planet_miners_trade_upkeep_add = @assist_zone_upkeep_add
-  }
-  triggered_district_planet_modifier = {
-    potential = { asr_wa_planet_is_wilderness_world = yes }
-    planet_miners_produces_mult = @assist_zone_produce_mult_extra
   }
 
   ai_priority = 0

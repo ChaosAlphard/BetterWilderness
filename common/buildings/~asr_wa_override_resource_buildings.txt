@@ -144,11 +144,11 @@ building_massive_growth_3 = { # substitute for 'building_food_processing_facilit
   }
 
   planet_modifier = {
-    planet_farmers_food_produces_add = 2
+    planet_farmers_food_produces_add = 0.25
   }
   triggered_planet_modifier = {
     potential = { has_exotic_gases_deposit = yes }
-    planet_farmers_exotic_gases_produces_add = 0.5
+    planet_farmers_exotic_gases_produces_add = 0.1
   }
 
   inline_script = {
@@ -219,16 +219,16 @@ building_massive_growth_4 = { # substitute for 'building_food_processing_center'
   }
 
   planet_modifier = {
-    planet_farmers_food_produces_add = 2
+    planet_farmers_food_produces_add = 0.5
     pop_agri_drone_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_exotic_gases_deposit = yes }
-    planet_farmers_exotic_gases_produces_add = 0.5
+    planet_farmers_exotic_gases_produces_add = 0.25
   }
   triggered_planet_modifier = {
-    potential = { is_ringworld = yes }
-    planet_farmers_food_produces_add = 2
+    potential = { has_ringworld_output_boost = yes }
+    planet_farmers_food_produces_add = 0.5
   }
 
   inline_script = {
@@ -388,11 +388,11 @@ building_bioelectric_stimulator_3 = { # substitute for 'building_energy_grid'
   }
 
   planet_modifier = {
-    planet_technician_energy_produces_add = 2
+    planet_technician_energy_produces_add = 0.25
   }
   triggered_planet_modifier = {
     potential = { has_volatile_motes_deposit = yes }
-    planet_technician_volatile_motes_produces_add = 0.5
+    planet_technician_volatile_motes_produces_add = 0.1
   }
 
   inline_script = {
@@ -454,16 +454,16 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
   }
 
   planet_modifier = {
-    planet_technician_energy_produces_add = 2
+    planet_technician_energy_produces_add = 0.5
     pop_technician_drone_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_volatile_motes_deposit = yes }
-    planet_technician_volatile_motes_produces_add = 0.5
+    planet_technician_volatile_motes_produces_add = 0.25
   }
   triggered_planet_modifier = {
-    potential = { is_ringworld = yes }
-    planet_technician_energy_produces_add = 2
+    potential = { has_ringworld_output_boost = yes }
+    planet_technician_energy_produces_add = 0.5
   }
 
   inline_script = {
@@ -624,11 +624,11 @@ building_churning_tunnels_3 = { # substitute for 'building_mineral_purification_
   }
 
   planet_modifier = {
-    planet_miners_minerals_produces_add = 2
+    planet_miners_minerals_produces_add = 0.25
   }
   triggered_planet_modifier = {
     potential = { has_rare_crystals_deposit = yes }
-    planet_miners_rare_crystals_produces_add = 0.5
+    planet_miners_rare_crystals_produces_add = 0.1
   }
 
   inline_script = {
@@ -683,16 +683,16 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
   }
 
   planet_modifier = {
-    planet_miners_minerals_produces_add = 2
+    planet_miners_minerals_produces_add = 0.5
     pop_mining_drone_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_rare_crystals_deposit = yes }
-    planet_miners_rare_crystals_produces_add = 0.5
+    planet_miners_rare_crystals_produces_add = 0.25
   }
   triggered_planet_modifier = {
-    potential = { is_ringworld = yes }
-    planet_miners_minerals_produces_add = 2
+    potential = { has_ringworld_output_boost = yes }
+    planet_miners_minerals_produces_add = 0.5
   }
   # 贝塞里安
   triggered_planet_modifier = {
@@ -706,7 +706,7 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
         }
       }
     }
-    planet_miners_energy_produces_add = 2
+    planet_miners_energy_produces_add = 0.5
   }
 
   inline_script = {

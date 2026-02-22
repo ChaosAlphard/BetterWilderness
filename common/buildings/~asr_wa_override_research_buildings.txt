@@ -186,10 +186,9 @@ building_brain_node_3 = {
   }
 
   planet_modifier = {
-    planet_physicists_physics_research_produces_add = 1
-    planet_biologists_society_research_produces_add = 1
-    planet_engineers_engineering_research_produces_add = 1
-    planet_researchers_produces_mult = 0.20
+    planet_physicists_physics_research_produces_add = 0.5
+    planet_biologists_society_research_produces_add = 0.5
+    planet_engineers_engineering_research_produces_add = 0.5
   }
 
   inline_script = {
@@ -259,11 +258,9 @@ building_brain_node_4 = {
   }
 
   planet_modifier = {
-    planet_physicists_physics_research_produces_add = 2
-    planet_biologists_society_research_produces_add = 2
-    planet_engineers_engineering_research_produces_add = 2
-    planet_researchers_produces_mult = 0.20
-    planet_researchers_upkeep_mult = -0.20
+    planet_physicists_physics_research_produces_add = 1
+    planet_biologists_society_research_produces_add = 1
+    planet_engineers_engineering_research_produces_add = 1
     pop_calculator_physicist_bonus_workforce_mult = 0.20
     pop_calculator_biologist_bonus_workforce_mult = 0.20
     pop_calculator_engineer_bonus_workforce_mult = 0.20

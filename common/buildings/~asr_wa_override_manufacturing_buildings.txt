@@ -140,9 +140,8 @@ building_natural_furnace_2 = { # substitute for 'building_foundry_2'
   }
 
   planet_modifier = {
-    planet_metallurgists_alloys_produces_add = 1
-    planet_metallurgists_minerals_upkeep_add = 2
-    planet_metallurgists_produces_mult = 0.2
+    planet_metallurgists_alloys_produces_add = 0.5
+    planet_metallurgists_minerals_upkeep_add = 1
   }
 
   inline_script = {
@@ -205,16 +204,14 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
   }
 
   planet_modifier = {
-    planet_metallurgists_alloys_produces_add = 2
-    planet_metallurgists_minerals_upkeep_add = 4
-    planet_metallurgists_produces_mult = 0.2
-    planet_metallurgists_upkeep_mult = -0.2
+    planet_metallurgists_alloys_produces_add = 1
+    planet_metallurgists_minerals_upkeep_add = 2
     pop_fabricator_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
-    potential = { is_ringworld = yes }
-    planet_metallurgists_alloys_produces_add = 1
-    planet_metallurgists_minerals_upkeep_add = 2
+    potential = { has_ringworld_output_boost = yes }
+    planet_metallurgists_alloys_produces_add = 0.5
+    planet_metallurgists_minerals_upkeep_add = 1
   }
 
   inline_script = {
