@@ -189,7 +189,7 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @wa_b3_foods
+      food = @wa_b3_foods
       biomass = @wa_b3_biomass
       exotic_gases = @b3_rare_cost
     }
@@ -264,7 +264,7 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @wa_b4_foods
+      food = @wa_b4_foods
       biomass = @wa_b4_biomass
       exotic_gases = @b3_rare_cost
     }

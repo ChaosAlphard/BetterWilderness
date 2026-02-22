@@ -163,17 +163,13 @@ tech_nutrient_replication = {
   tier = 4
   is_rare = yes
   category = { biology }
-  potential = { always = yes }
+  potential = { is_machine_empire = no }
   prerequisites = { "tech_nano_vitality_crops" }
   weight = @tier4weight3
 
   modifier = {
     planet_jobs_food_produces_mult = 0.15
     starbase_constructions_food_produces_mult = 0.10
-  }
-
-  potential = {
-    is_machine_empire = no
   }
 
   weight_modifier = {
