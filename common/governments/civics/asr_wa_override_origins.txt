@@ -68,6 +68,9 @@ origin_wilderness = {
     # daily_terraform_progress_add = 1
     terraform_speed_mult = 0.5
     terraforming_cost_mult = -0.25
+    district_generator_max_mult = 1
+    district_mining_max_mult = 1
+    district_farming_max_mult = 1
   }
 
   random_weight = {
