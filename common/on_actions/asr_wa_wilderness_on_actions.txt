@@ -27,8 +27,10 @@ on_modification_complete = {
 on_monthly_pulse_country = {
   events = { asr_wa_wilderness.201 }
 }
-
-# 环境改造完成自动添加对应一产特化
-on_terraforming_complete = {
+# 环境改造完成时触发
+# on_terraforming_complete = {}
+# 星球类型改变时触发
+on_planet_class_changed = {
+  # 自动给未特化乡村区划的盖亚星球添加对应一产特化
   events = { asr_wa_wilderness.1000 }
 }

@@ -116,3 +116,73 @@ asr_wa_export_city_districts_num = {
   }
   clear_variable = var_asr_wa_num_district_hive
 }
+
+asr_wa_restore_wilderness_buildings = {
+  if = {
+    limit = {
+      NOR = {
+        has_building = building_colony_shelter_wilderness
+        has_building = building_capital_wilderness
+        has_building = building_major_capital_wilderness
+        has_building = building_system_capital_wilderness
+        has_building = building_imperial_capital_wilderness
+      }
+    }
+    set_timed_planet_flag = {
+      flag = ignore_ai_building_limitations
+      days = 1
+    }
+    add_building = building_capital_wilderness
+  }
+  if = {
+    limit = {
+      NOT = { has_building = building_cradle_of_rebirth }
+    }
+    add_building = building_cradle_of_rebirth
+  }
+  if = {
+    limit = {
+      owner = { is_idyllic_bloom_empire = yes }
+      is_capital = yes
+      NOR = {
+        has_building = building_gaiaseeders_1
+        has_building = building_gaiaseeders_2
+        has_building = building_gaiaseeders_3
+        has_building = building_gaiaseeders_4
+        has_building = building_gaiaseeders_pc_gaia
+      }
+    }
+    add_building = building_gaiaseeders_1
+  }
+  if = {
+    limit = {
+      is_capital = yes
+      NOT = { has_building = building_avatar_chamber_1 }
+    }
+    add_building = building_avatar_chamber_1
+  }
+  if = {
+    limit = {
+      is_capital = yes
+      NOT = { has_building = building_natural_furnace_0 }
+    }
+    add_building = building_natural_furnace_0
+  }
+}
+
+asr_wa_add_zone_if_has_district = {
+  if = {
+    limit = {
+      num_districts = {
+        type = $DISTRICT$
+        value >= 1
+      }
+    }
+    add_zone = {
+      zone = $ZONE$
+      zone_slot = $ZONE_SLOT$
+      district = $DISTRICT$
+      replace = $REPLACE$
+    }
+  }
+}

@@ -38,14 +38,29 @@ country_event = {
   }
 
   immediate = {
+    # 系统会给高级AI添加额外的开局区划, 然而添加给荒野的并不是共栖群落而是蜂巢的蜂巢集群
+    # 月底检测的时候会把共栖群落和蜂巢集群合并, 然而并不是合并到共栖群落而是合并到蜂巢集群
+    # 这会导致共栖群落建筑槽中的起始建筑全部被清空, 蜂巢集群建筑槽中的建筑才能留保留下来
+    # 当然蜂巢集群里面本身不会有任何建筑, 并且蜂巢集群最后会被转换成共栖群落
+    # 所以约等于过月直接清空荒野的所有建筑
     every_owned_planet = {
+      # 这里通过手动移除蜂巢集群来避免触发区划合并导致建筑被清空
+      # 然而殖民地添加的是城市区划和蜂巢集群, 甚至没有共栖群落
+      # 这会导致最后的一个城市区划无法被移除, 无法避免触发区划合并
+      # 只能在移除后手动添加被移除的建筑
       asr_wa_change_to_wilderness_districts = yes
-      if = { # 多重起源Mod, 盖亚开兼容
-        limit = { asr_wa_planet_is_wilderness_arcology = yes }
-        asr_wa_change_to_wilderness_advanced_districts = yes
-      }
+      # 已经移交 on_planet_class_changed 事件里处理, 这里不用了
+      # if = { # 多重起源Mod, 盖亚开兼容
+      #   limit = { asr_wa_planet_is_wilderness_arcology = yes }
+      #   asr_wa_change_to_wilderness_advanced_districts = yes
+      # }
+      # 立即触发一次检测, 如果触发区划合并的话还是会丢建筑
+      validate_planet_buildings_and_districts = yes
+      # 手动添加被移除的建筑
+      asr_wa_restore_wilderness_buildings = yes
     }
     country_event = {
+      # 双重保险
       id = asr_wa_wilderness.102
       months = 1
     }
@@ -62,22 +77,7 @@ country_event = {
 
   immediate = {
     every_owned_planet = {
-      if = {
-        limit = {
-          NOR = {
-            has_building = building_colony_shelter_wilderness
-            has_building = building_capital_wilderness
-            has_building = building_major_capital_wilderness
-            has_building = building_system_capital_wilderness
-            has_building = building_imperial_capital_wilderness
-          }
-        }
-        set_timed_planet_flag = {
-          flag = ignore_ai_building_limitations
-          days = 1
-        }
-        add_building = building_capital_wilderness
-      }
+      asr_wa_restore_wilderness_buildings = yes
     }
   }
 }
@@ -151,34 +151,35 @@ country_event = {
   }
 }
 
-# This = planet, From = country
+# This = planet
 planet_event = {
   id = asr_wa_wilderness.1000
   hide_window = yes
   is_triggered_only = yes
   trigger = {
-    from = { is_wilderness_empire = yes }
+    exists = owner
+    owner = { is_wilderness_empire = yes }
     asr_wa_planet_is_wilderness_arcology = yes
   }
 
   immediate = {
-    add_zone = {
-      zone = zone_asr_wa_energy
-      zone_slot = slot_asr_wa_gaia_rural_01
-      district = district_asr_wa_cragland_01
-      replace = no
+    asr_wa_add_zone_if_has_district = {
+      ZONE = zone_asr_wa_energy
+      ZONE_SLOT = slot_asr_wa_gaia_rural_01
+      DISTRICT = district_asr_wa_cragland_01
+      REPLACE = no
     }
-    add_zone = {
-      zone = zone_asr_wa_mineral
-      zone_slot = slot_asr_wa_gaia_rural_02
-      district = district_asr_wa_cragland_02
-      replace = no
+    asr_wa_add_zone_if_has_district = {
+      ZONE = zone_asr_wa_mineral
+      ZONE_SLOT = slot_asr_wa_gaia_rural_02
+      DISTRICT = district_asr_wa_cragland_02
+      REPLACE = no
     }
-    add_zone = {
-      zone = zone_asr_wa_food
-      zone_slot = slot_asr_wa_gaia_rural_03
-      district = district_asr_wa_cragland_03
-      replace = no
+    asr_wa_add_zone_if_has_district = {
+      ZONE = zone_asr_wa_food
+      ZONE_SLOT = slot_asr_wa_gaia_rural_03
+      DISTRICT = district_asr_wa_cragland_03
+      REPLACE = no
     }
   }
 }
