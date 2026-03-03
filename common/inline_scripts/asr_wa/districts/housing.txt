@@ -1,6 +1,6 @@
 triggered_planet_modifier = {
   potential = { always = yes }
-  planet_housing_add = 100
+  planet_housing_add = 400
 }
 triggered_planet_modifier = {
   potential = {
@@ -9,13 +9,13 @@ triggered_planet_modifier = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = 100
+  planet_housing_add = 200
 }
 
-# 1500 + 500
+# 1400 + 600
 triggered_planet_modifier = {
   potential = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
-  planet_housing_add = 1400
+  planet_housing_add = 1000  # 1400 - 400
 }
 triggered_planet_modifier = {
   potential = {
@@ -25,13 +25,13 @@ triggered_planet_modifier = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = 400
+  planet_housing_add = 400  # 600 - 200
 }
 
 # 2000 + 1000
 triggered_planet_modifier = {
   potential = { asr_wa_planet_is_wilderness_world_equivalent = yes }
-  planet_housing_add = 1900
+  planet_housing_add = 1600  # 2000 - 400
 }
 triggered_planet_modifier = {
   potential = {
@@ -41,5 +41,5 @@ triggered_planet_modifier = {
       has_tradition = tr_prosperity_public_works
     }
   }
-  planet_housing_add = 900
+  planet_housing_add = 800  # 1000 - 200
 }

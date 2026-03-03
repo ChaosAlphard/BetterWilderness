@@ -1,25 +1,25 @@
-slot_gaia_rural_01 = {
+slot_asr_wa_gaia_rural_01 = {
   included_zone_sets = {
-    gaia_rural
-    gaia_rural_01
+    asr_wa_gaia_rural
+    asr_wa_gaia_rural_01
   }
   unlock = {
     always = yes
   }
 }
-slot_gaia_rural_02 = {
+slot_asr_wa_gaia_rural_02 = {
   included_zone_sets = {
-    gaia_rural
-    gaia_rural_02
+    asr_wa_gaia_rural
+    asr_wa_gaia_rural_02
   }
   unlock = {
     always = yes
   }
 }
-slot_gaia_rural_03 = {
+slot_asr_wa_gaia_rural_03 = {
   included_zone_sets = {
-    gaia_rural
-    gaia_rural_03
+    asr_wa_gaia_rural
+    asr_wa_gaia_rural_03
   }
   unlock = {
     always = yes

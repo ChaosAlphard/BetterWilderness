@@ -63,7 +63,7 @@ asr_wa_change_to_wilderness_advanced_districts = {
   }
   add_zone = {
     zone = zone_asr_wa_energy
-    zone_slot = slot_gaia_rural_01
+    zone_slot = slot_asr_wa_gaia_rural_01
     district = district_asr_wa_cragland_01
     replace = no
   }
@@ -78,7 +78,7 @@ asr_wa_change_to_wilderness_advanced_districts = {
   }
   add_zone = {
     zone = zone_asr_wa_mineral
-    zone_slot = slot_gaia_rural_02
+    zone_slot = slot_asr_wa_gaia_rural_02
     district = district_asr_wa_cragland_02
     replace = no
   }
@@ -93,7 +93,7 @@ asr_wa_change_to_wilderness_advanced_districts = {
   }
   add_zone = {
     zone = zone_asr_wa_food
-    zone_slot = slot_gaia_rural_03
+    zone_slot = slot_asr_wa_gaia_rural_03
     district = district_asr_wa_cragland_03
     replace = no
   }

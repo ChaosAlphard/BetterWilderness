@@ -7,7 +7,7 @@ district_asr_wa_cragland_01 = {
   inline_script = { script = asr_wa/districts/shared_gaia_district }
   inline_script = { script = asr_wa/districts/housing }
 
-  zone_slots = { slot_gaia_rural_01 }
+  zone_slots = { slot_asr_wa_gaia_rural_01 }
 
   conversion_ratio = 1
   convert_to = {
@@ -28,7 +28,7 @@ district_asr_wa_cragland_02 = {
   inline_script = { script = asr_wa/districts/shared_gaia_district }
   inline_script = { script = asr_wa/districts/housing }
 
-  zone_slots = { slot_gaia_rural_02 }
+  zone_slots = { slot_asr_wa_gaia_rural_02 }
 
   conversion_ratio = 1
   convert_to = {
@@ -49,7 +49,7 @@ district_asr_wa_cragland_03 = {
   inline_script = { script = asr_wa/districts/shared_gaia_district }
   inline_script = { script = asr_wa/districts/housing }
 
-  zone_slots = { slot_gaia_rural_03 }
+  zone_slots = { slot_asr_wa_gaia_rural_03 }
 
   conversion_ratio = 1
   convert_to = {

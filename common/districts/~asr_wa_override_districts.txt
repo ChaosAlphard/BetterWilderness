@@ -150,7 +150,7 @@ district_photosynthesis_fields = {
 
   planet_modifier = {
     job_technician_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -158,7 +158,7 @@ district_photosynthesis_fields = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   inline_script = {
@@ -236,7 +236,7 @@ district_hollow_mountains = {
 
   planet_modifier = {
     job_mining_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -244,7 +244,7 @@ district_hollow_mountains = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   inline_script = {
@@ -322,7 +322,7 @@ district_orchard_forests = {
 
   planet_modifier = {
     job_agri_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -330,7 +330,7 @@ district_orchard_forests = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   inline_script = {
@@ -358,7 +358,7 @@ district_orchard_forests = {
 }
 
 # 无上限区划现在通过 is_uncapped(4.1.6版本) 合并到普通区划中
-# 所以这个三个区划已经没有用了, 出于兼容考虑继续保留, 但对玩家不可见
+# 所以这三个区划现在已经没有用了, 出于兼容考虑继续保留, 但对玩家不可见
 district_photosynthesis_fields_uncapped = {
   expansion_planner = no
   is_uncapped = { always = yes }
@@ -399,7 +399,7 @@ district_photosynthesis_fields_uncapped = {
 
   planet_modifier = {
     job_technician_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -407,7 +407,7 @@ district_photosynthesis_fields_uncapped = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   inline_script = {
@@ -478,7 +478,7 @@ district_hollow_mountains_uncapped = {
 
   planet_modifier = {
     job_mining_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -486,7 +486,7 @@ district_hollow_mountains_uncapped = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   prerequisites = {
@@ -553,7 +553,7 @@ district_orchard_forests_uncapped = {
 
   planet_modifier = {
     job_agri_drone_add = @base_rural_district_jobs
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   triggered_planet_modifier = {
@@ -561,7 +561,7 @@ district_orchard_forests_uncapped = {
       exists = owner
       owner = { has_tradition = tr_prosperity_public_works }
     }
-    planet_housing_add = 100
+    planet_housing_add = 200
   }
 
   inline_script = {
