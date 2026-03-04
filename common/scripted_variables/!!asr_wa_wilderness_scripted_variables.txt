@@ -12,33 +12,45 @@
 @buildtime_5 = 600
 @buildtime_6 = 720
 
+# 在 inline_script/asr_wa/building/tier_cost.txt 中有使用
+# 因为 b1-b4 是通过字符串拼接进行传参, 所以全局搜索搜不出来
 @wa_b1_biomass = 100
 @wa_b2_biomass = 200
 @wa_b3_biomass = 400
 @wa_b4_biomass = 400
 
-@wa_b1_minerals = 200
-@wa_b2_minerals = 300
-@wa_b3_minerals = 400
-@wa_b4_minerals = 500
-@wa_b5_minerals = 1000
+@wa_b1_mixed = 200
+@wa_b2_mixed = 300
+@wa_b3_mixed = 400
+@wa_b4_mixed = 400  # 500
+# @wa_b5_mixed = 1000
+
+# minerals 决定AI的建筑成本, 对玩家没影响
+@wa_b1_minerals = 400
+@wa_b2_minerals = 600
+@wa_b3_minerals = 800
+@wa_b4_minerals = 800  # 1000
+# @wa_b5_minerals = 2000
 
 @wa_b1_foods = 500
 @wa_b2_foods = 750
 @wa_b3_foods = 1000
-@wa_b4_foods = 1250
-@wa_b5_foods = 2500
+@wa_b4_foods = 1000  # 1250
+# @wa_b5_foods = 2500
 
-@wa_zone_minerals = 500
-@wa_zone_foods = 1250
-@wa_district_minerals = 250
-@wa_district_foods = 625
+@wa_zone_r_mixed = 500
+@wa_zone_r_minerals = 1000  # 这个决定AI的区划特化成本, 对玩家没影响
+@wa_zone_r_foods = 1250
+@wa_district_r_mixed = 250
+@wa_district_r_minerals = 500  # 这个决定AI的区划成本, 对玩家没影响
+@wa_district_r_foods = 625
+@wa_district_r_extra_mixed = 250
+@wa_district_r_extra_minerals = 500  # 这个决定AI的区划成本, 对玩家没影响
+@wa_district_r_extra_foods = 625
 @wa_district_upkeep = 2
-@wa_district_extra_minerals = 250
-@wa_district_extra_foods = 625
 @wa_district_extra_upkeep = 3
 
-# 人口增长 需要满足: (max - min) * ratio = 10
+# 人口增长加成, 最大增长加成为: (max - min) * ratio, 现在的数值是10
 @wa_bonus_growth_max_pops = 2400
 @wa_bonus_growth_min_pops = 400
 @wa_bonus_growth_pops_ratio = 0.005

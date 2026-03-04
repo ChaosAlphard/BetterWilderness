@@ -17,7 +17,7 @@ building_natural_furnace_0 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = energy
   }
 
@@ -62,9 +62,10 @@ building_natural_furnace_1 = { # substitute for 'building_foundry_1'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2_boost
     BASE = energy
     RARE = volatile_motes
+    BOOST_BUILDING = building_natural_furnace_3
   }
 
   upgrades = {
@@ -122,7 +123,7 @@ building_natural_furnace_2 = { # substitute for 'building_foundry_2'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t3
+    script = asr_wa/building/cost_t3
     BASE = energy
     RARE = volatile_motes
   }
@@ -191,7 +192,7 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t4
+    script = asr_wa/building/cost_t4
     BASE = energy
     RARE = volatile_motes
   }
@@ -254,9 +255,13 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
     is_wilderness_empire = yes
   }
 
-  inline_script = {
-    script = asr_wa/building_rare_t1
-    BASE = energy
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/tier_cost
+      TIER = b2
+      UPKEEP_TYPE = energy
+    }
   }
 
   planet_modifier = {
@@ -294,9 +299,13 @@ building_churning_stomach = { # substitute for 'building_refinery'
     is_wilderness_empire = yes
   }
 
-  inline_script = {
-    script = asr_wa/building_rare_t1
-    BASE = energy
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/tier_cost
+      TIER = b2
+      UPKEEP_TYPE = energy
+    }
   }
 
   planet_modifier = {
@@ -334,9 +343,13 @@ building_crystal_growth = { # substitute for 'building_crystal_plant'
     is_wilderness_empire = yes
   }
 
-  inline_script = {
-    script = asr_wa/building_rare_t1
-    BASE = energy
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/tier_cost
+      TIER = b2
+      UPKEEP_TYPE = energy
+    }
   }
 
   planet_modifier = {

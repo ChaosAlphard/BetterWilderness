@@ -1,0 +1,8 @@
+resources = {
+  category = planet_buildings
+  inline_script = {
+    script = asr_wa/building/tier_cost
+    TIER = b1
+    UPKEEP_TYPE = $BASE$
+  }
+}

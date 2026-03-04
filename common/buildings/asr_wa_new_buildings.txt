@@ -84,20 +84,14 @@ building_asr_wa_sentinel_posts = {
 
   resources = {
     category = planet_buildings
-    cost = {
-      biomass = @wa_b2_biomass
-    }
-    cost = {
-      food = @wa_b1_minerals
-      minerals = @wa_b1_minerals
-      trigger = { asr_wa_planet_use_food_build_building = no }
-    }
-    cost = {
-      food = @wa_b1_foods
-      trigger = { asr_wa_planet_use_food_build_building = yes }
-    }
-    upkeep = {
-      food = @b1_upkeep
+    inline_script = {
+      script = asr_wa/building/shared_cost_upkeep
+      BIOMASS = @wa_b2_biomass
+      FOOD_AND_MINERAL_COST = @wa_b1_mixed
+      FOOD_COST = @wa_b1_foods
+      MINERAL_COST = @wa_b1_minerals
+      UPKEEP_TYPE = food
+      UPKEEP = @b1_upkeep
     }
   }
 

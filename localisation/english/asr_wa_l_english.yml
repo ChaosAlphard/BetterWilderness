@@ -54,8 +54,8 @@ l_english:
   # Scripted Modifiers
   mod_biomass_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Biomass Pops"
   # Job
-  job_asr_wa_simulate_spawning_drone: "Simulated $job_broodsymbiont$"
-  job_asr_wa_simulate_spawning_drone_plural: "Simulated $job_broodsymbiont_plural$"
+  job_asr_wa_simulate_spawning_drone: "Incubator"
+  job_asr_wa_simulate_spawning_drone_plural: "Incubators"
   job_asr_wa_simulate_spawning_drone_plural_with_icon: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$"
   job_asr_wa_simulate_spawning_drone_desc: "$job_broodsymbiont_desc$"
   job_asr_wa_simulate_spawning_drone_effect_desc: "[asr_wa_simulate_spawning_drone.GetIcon] $job_asr_wa_simulate_spawning_drone_plural$ produce £biomass£ §YBiomass§!"

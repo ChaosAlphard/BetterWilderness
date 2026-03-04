@@ -1,0 +1,24 @@
+cost = {
+  trigger = {
+    NOT = { has_active_building = $BOOST_BUILDING$ }
+  }
+  $RARE_TYPE$ = $COST$
+}
+upkeep = {
+  trigger = {
+    NOT = { has_active_building = $BOOST_BUILDING$ }
+  }
+  $RARE_TYPE$ = $UPKEEP$
+}
+cost = {
+  trigger = {
+    has_active_building = $BOOST_BUILDING$
+  }
+  $RARE_TYPE$ = $BOOSTED_COST$
+}
+upkeep = {
+  trigger = {
+    has_active_building = $BOOST_BUILDING$
+  }
+  $RARE_TYPE$ = $BOOSTED_UPKEEP$
+}

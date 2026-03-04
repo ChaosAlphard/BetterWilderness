@@ -1,5 +1,6 @@
 resources = {
   category = $CATEGORY$
+
   cost = {
     biomass = 100
   }
@@ -11,35 +12,59 @@ resources = {
     biomass = 400
     trigger = { asr_wa_planet_is_wilderness_world_equivalent = yes }
   }
+
   cost = {
-    minerals = @wa_district_minerals
-    food = @wa_district_minerals
-    trigger = { asr_wa_planet_use_food_build_building = no }
-  }
-  cost = {
-    food = @wa_district_foods
-    trigger = { asr_wa_planet_use_food_build_building = yes }
-  }
-  cost = {
-    minerals = @wa_district_extra_minerals
-    food = @wa_district_extra_minerals
     trigger = {
+      owner = { is_ai = no }
+      asr_wa_planet_use_food_build_building = no
+    }
+    minerals = @wa_district_r_mixed
+    food = @wa_district_r_mixed
+  }
+  cost = {
+    trigger = {
+      owner = { is_ai = no }
+      asr_wa_planet_use_food_build_building = yes
+    }
+    food = @wa_district_r_foods
+  }
+  cost = {
+    trigger = {
+      owner = { is_ai = no }
       asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
       asr_wa_planet_use_food_build_building = no
     }
+    minerals = @wa_district_r_extra_mixed
+    food = @wa_district_r_extra_mixed
   }
   cost = {
-    food = @wa_district_extra_foods
     trigger = {
+      owner = { is_ai = no }
       asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
       asr_wa_planet_use_food_build_building = yes
     }
+    food = @wa_district_r_extra_foods
   }
+  # AI不会用食物建区划和建筑, 所以建筑花费对AI替换为矿物
+  cost = {
+    trigger = {
+      owner = { is_ai = yes }
+    }
+    minerals = @wa_district_r_minerals
+  }
+  cost = {
+    trigger = {
+      owner = { is_ai = yes }
+      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
+    }
+    minerals = @wa_district_r_extra_minerals
+  }
+
   upkeep = {
     food = @wa_district_upkeep
   }
   upkeep = {
-    food = @wa_district_extra_upkeep
     trigger = { asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes }
+    food = @wa_district_extra_upkeep
   }
 }

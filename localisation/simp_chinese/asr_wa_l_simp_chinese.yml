@@ -54,10 +54,10 @@ l_simp_chinese:
   # Scripted Modifiers
   mod_biomass_pop_bonus_workforce_mult: "生物质人口$BONUS_WORKFORCE_FOR$"
   # Job
-  job_asr_wa_simulate_spawning_drone: "模拟$job_broodsymbiont$"
-  job_asr_wa_simulate_spawning_drone_plural: "模拟$job_broodsymbiont_plural$"
+  job_asr_wa_simulate_spawning_drone: "孵化体"
+  job_asr_wa_simulate_spawning_drone_plural: "孵化体"
   job_asr_wa_simulate_spawning_drone_plural_with_icon: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$"
-  job_asr_wa_simulate_spawning_drone_desc: "由于游戏机制无法直接增加可变的人口组装基数，所以通过新增岗位来实现。人口数越少，$job_asr_wa_simulate_spawning_drone_plural$岗位越多。"
+  job_asr_wa_simulate_spawning_drone_desc: "当行星上的生物质贮备告罄时，荒野便会分配更多的精力进行生物质孵化\n人口数越少，$job_asr_wa_simulate_spawning_drone_plural$岗位越多"
   job_asr_wa_simulate_spawning_drone_effect_desc: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$产出£biomass£§Y生物质§!"
   mod_job_asr_wa_simulate_spawning_drone_add: "$job_asr_wa_simulate_spawning_drone$岗位"
   mod_job_asr_wa_simulate_spawning_drone_per_pop: "每$VALUE$个人口提供§G+1§!个$job_asr_wa_simulate_spawning_drone$岗位"

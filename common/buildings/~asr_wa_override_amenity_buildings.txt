@@ -50,9 +50,11 @@ building_avatar_chamber_1 = {
 
   resources = {
     category = planet_buildings
-    cost = {
-      food = @wa_b1_foods
-      biomass = @wa_b1_biomass
+    inline_script = {
+      script = asr_wa/building/shared_cost_food
+      BIOMASS = @wa_b1_biomass
+      FOOD = @wa_b1_foods
+      MINERAL = @wa_b1_minerals
     }
     upkeep = {
       food = @b1_upkeep
@@ -112,14 +114,23 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
 
   resources = {
     category = planet_buildings
-    cost = {
-      food = @wa_b2_foods
-      biomass = @wa_b2_biomass
-      exotic_gases = @b2_rare_cost
+    inline_script = {
+      script = asr_wa/building/shared_cost_food
+      BIOMASS = @wa_b2_biomass
+      FOOD = @wa_b2_foods
+      MINERAL = @wa_b2_minerals
     }
     upkeep = {
       food = @b2_upkeep
-      exotic_gases = @b2_rare_upkeep
+    }
+    inline_script = {
+      script = asr_wa/building/shared_cost_boost
+      BOOST_BUILDING = building_avatar_chamber_4
+      RARE_TYPE = exotic_gases
+      COST = @b2_rare_cost
+      UPKEEP = @b2_rare_upkeep
+      BOOSTED_COST = @b3_rare_cost
+      BOOSTED_UPKEEP = @b3_rare_upkeep
     }
   }
 
@@ -189,9 +200,13 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @wa_b3_foods
-      biomass = @wa_b3_biomass
       exotic_gases = @b3_rare_cost
+    }
+    inline_script = {
+      script = asr_wa/building/shared_cost_food
+      BIOMASS = @wa_b3_biomass
+      FOOD = @wa_b3_foods
+      MINERAL = @wa_b3_minerals
     }
     upkeep = {
       food = @b3_upkeep
@@ -264,9 +279,13 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   resources = {
     category = planet_buildings
     cost = {
-      minerals = @wa_b4_foods
-      biomass = @wa_b4_biomass
       exotic_gases = @b3_rare_cost
+    }
+    inline_script = {
+      script = asr_wa/building/shared_cost_food
+      BIOMASS = @wa_b4_biomass
+      FOOD = @wa_b4_foods
+      MINERAL = @wa_b4_minerals
     }
     upkeep = {
       food = @b4_upkeep
