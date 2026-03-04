@@ -1,0 +1,27 @@
+cost = {
+  biomass = $BIOMASS$
+}
+cost = {
+  trigger = {
+    owner = { is_ai = no }
+    asr_wa_planet_use_food_build_building = no
+  }
+  food = $FOOD_AND_MINERAL_COST$
+  minerals = $FOOD_AND_MINERAL_COST$
+}
+cost = {
+  trigger = {
+    owner = { is_ai = no }
+    asr_wa_planet_use_food_build_building = yes
+  }
+  food = $FOOD_COST$
+}
+cost = {
+  trigger = {
+    owner = { is_ai = yes }
+  }
+  minerals = $MINERAL_COST$
+}
+upkeep = {
+  $UPKEEP_TYPE$ = $UPKEEP$
+}

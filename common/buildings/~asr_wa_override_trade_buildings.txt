@@ -17,7 +17,7 @@ building_tendril_cradle_1 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = food
   }
 
@@ -58,9 +58,10 @@ building_tendril_cradle_2 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2_boost
     BASE = food
     RARE = rare_crystals
+    BOOST_BUILDING = building_tendril_cradle_4
   }
 
   upgrades = {
@@ -114,7 +115,7 @@ building_tendril_cradle_3 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t3
+    script = asr_wa/building/cost_t3
     BASE = food
     RARE = rare_crystals
   }
@@ -161,7 +162,7 @@ building_tendril_cradle_4 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t4
+    script = asr_wa/building/cost_t4
     BASE = food
     RARE = rare_crystals
   }

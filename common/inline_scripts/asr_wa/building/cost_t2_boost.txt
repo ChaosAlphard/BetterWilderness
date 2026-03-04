@@ -1,0 +1,17 @@
+resources = {
+  category = planet_buildings
+  inline_script = {
+    script = asr_wa/building/tier_cost
+    TIER = b2
+    UPKEEP_TYPE = $BASE$
+  }
+  inline_script = {
+    script = asr_wa/building/shared_cost_boost
+    BOOST_BUILDING = $BOOST_BUILDING$
+    RARE_TYPE = $RARE$
+    COST = @b2_rare_cost
+    UPKEEP = @b2_rare_upkeep
+    BOOSTED_COST = @b3_rare_cost
+    BOOSTED_UPKEEP = @b3_rare_upkeep
+  }
+}

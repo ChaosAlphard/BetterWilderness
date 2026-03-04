@@ -18,9 +18,13 @@ on_game_start_country = {
 #     asr_wa_wilderness.1
 #   }
 # }
-
-# 物种修饰特殊项目完成时触发
-on_modification_complete = {
+# 物种修饰特殊项目完成时触发, 每个物种和行星组合都会触发一次
+#   This = Country From = Species (post modify)
+#   FromFrom = Species (pre modify) Prev = Planet
+# on_modification_complete = {}
+# 物种修饰特殊项目完成时触发, 只触发一次
+#   This = Country From = Species (post modify)
+on_modification_completion = {
   events = { asr_wa_wilderness.200 }
 }
 # 每月触发

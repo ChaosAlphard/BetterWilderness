@@ -1,0 +1,9 @@
+inline_script = {
+  script = asr_wa/building/shared_cost_upkeep
+  BIOMASS = @wa_$TIER$_biomass
+  FOOD_AND_MINERAL_COST = @wa_$TIER$_mixed
+  FOOD_COST = @wa_$TIER$_foods
+  MINERAL_COST = @wa_$TIER$_minerals
+  UPKEEP_TYPE = $UPKEEP_TYPE$
+  UPKEEP = @$TIER$_upkeep
+}

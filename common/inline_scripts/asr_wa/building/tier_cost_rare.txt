@@ -1,0 +1,12 @@
+inline_script = {
+  script = asr_wa/building/shared_cost_upkeep_rare
+  BIOMASS = @wa_$TIER$_biomass
+  FOOD_AND_MINERAL_COST = @wa_$TIER$_mixed
+  FOOD_COST = @wa_$TIER$_foods
+  MINERAL_COST = @wa_$TIER$_minerals
+  UPKEEP_TYPE = $UPKEEP_TYPE$
+  UPKEEP = @$TIER$_upkeep
+  RARE_TYPE = $RARE_TYPE$
+  RARE_COST = @$TIER$_rare_cost
+  RARE_UPKEEP = @$TIER$_rare_upkeep
+}

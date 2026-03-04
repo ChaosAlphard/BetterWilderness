@@ -20,7 +20,7 @@ building_massive_growth_1 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = food
   }
 
@@ -60,9 +60,10 @@ building_massive_growth_2 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2_boost
     BASE = food
     RARE = exotic_gases
+    BOOST_BUILDING = building_massive_growth_4
   }
 
   prerequisites = {
@@ -131,7 +132,7 @@ building_massive_growth_3 = { # substitute for 'building_food_processing_facilit
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t3
+    script = asr_wa/building/cost_t3
     BASE = food
     RARE = exotic_gases
   }
@@ -210,7 +211,7 @@ building_massive_growth_4 = { # substitute for 'building_food_processing_center'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t4
+    script = asr_wa/building/cost_t4
     BASE = food
     RARE = exotic_gases
   }
@@ -269,7 +270,7 @@ building_bioelectric_stimulator_1 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = food
   }
 
@@ -309,9 +310,10 @@ building_bioelectric_stimulator_2 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2_boost
     BASE = food
     RARE = rare_crystals
+    BOOST_BUILDING = building_bioelectric_stimulator_4
   }
 
   prerequisites = {
@@ -375,7 +377,7 @@ building_bioelectric_stimulator_3 = { # substitute for 'building_energy_grid'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t3
+    script = asr_wa/building/cost_t3
     BASE = food
     RARE = rare_crystals
   }
@@ -445,7 +447,7 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t4
+    script = asr_wa/building/cost_t4
     BASE = food
     RARE = rare_crystals
   }
@@ -505,7 +507,7 @@ building_churning_tunnels_1 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = food
   }
 
@@ -545,9 +547,10 @@ building_churning_tunnels_2 = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2_boost
     BASE = food
     RARE = volatile_motes
+    BOOST_BUILDING = building_churning_tunnels_4
   }
 
   prerequisites = {
@@ -611,7 +614,7 @@ building_churning_tunnels_3 = { # substitute for 'building_mineral_purification_
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t3
+    script = asr_wa/building/cost_t3
     BASE = food
     RARE = volatile_motes
   }
@@ -681,7 +684,7 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t4
+    script = asr_wa/building/cost_t4
     BASE = food
     RARE = volatile_motes
   }
@@ -745,6 +748,8 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
 # Storage
 ##########
 @wa_storage_biomass = 50
+@wa_storage_minerals = 200
+@wa_storage_foods = 250
 building_subterranean_cache = { # substitute for 'building_resource_silo'
   icon = "subterranean_cache"
   ruined_icon = "wilderness_building_ruined"
@@ -766,15 +771,13 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
   }
   allow = {
     exists = owner
-    hidden_trigger = {
-      OR = {
-        owner = { is_ai = no }
-        AND = {
-          NOT = { has_building = building_resource_silo }
-          OR = {
-            is_active_resolution = "resolution_greatergood_balance_in_the_middle"
-            is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
-          }
+    OR = {
+      owner = { is_ai = no }
+      AND = {
+        NOT = { has_building = building_subterranean_cache }
+        OR = {
+          is_active_resolution = "resolution_greatergood_balance_in_the_middle"
+          is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
         }
       }
     }
@@ -782,9 +785,11 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
 
   resources = {
     category = planet_buildings
-    cost = {
-      food = @wa_b1_foods
-      biomass = @wa_storage_biomass
+    inline_script = {
+      script = asr_wa/building/shared_cost_food
+      BIOMASS = @wa_storage_biomass
+      FOOD = @wa_storage_foods
+      MINERAL = @wa_storage_minerals
     }
     upkeep = {
       food = @b1_upkeep
@@ -808,7 +813,7 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
         has_technology = tech_archaeostudies
       }
     }
-    country_resource_max_minor_artifacts_add = 100
+    country_resource_max_minor_artifacts_add = 200
   }
 
   inline_script = {

@@ -1,0 +1,9 @@
+resources = {
+  category = planet_buildings
+  inline_script = {
+    script = asr_wa/building/tier_cost_rare
+    TIER = b3
+    UPKEEP_TYPE = $BASE$
+    RARE_TYPE = $RARE$
+  }
+}

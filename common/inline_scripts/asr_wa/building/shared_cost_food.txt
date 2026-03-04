@@ -1,0 +1,11 @@
+cost = {
+  biomass = $BIOMASS$
+}
+cost = {
+  trigger = { owner = { is_ai = no } }
+  food = $FOOD$
+}
+cost = {
+  trigger = { owner = { is_ai = yes } }
+  minerals = $MINERAL$
+}

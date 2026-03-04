@@ -1,4 +1,4 @@
 ﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
 l_english:
-  tr_purity_finish_wilderness_tt: "$pop_effects_from_purity_header$$plus_minus_icon$§Y2.5%§!$MOD_POP_BONUS_WORKFORCE_MULT$\n['building:building_cradle_of_rebirth'] provide §YBuild Speed§! and §YDecision Enactment Speed§! based on £building£['concept_buildings'] and £district£['concept_district'] amount, double on ['concept_pc_gaia']\nAll £district£['concept_districts'] are §Guncapped§!"
+  tr_purity_finish_wilderness_tt: "$pop_effects_from_purity_header$$plus_minus_icon$§Y2.5%§! $MOD_POP_BONUS_WORKFORCE_MULT$\n['building:building_cradle_of_rebirth'] provide §YBuild Speed§! and §YDecision Enactment Speed§! based on £building£['concept_buildings'] and £district£['concept_district'] amount, double on ['concept_pc_gaia']\nAll £district£['concept_districts'] are §Guncapped§!"
   tr_prosperity_public_works_wilderness_desc: "All £district£ ['concept_district'] provide more £housing£['concept_housing']"

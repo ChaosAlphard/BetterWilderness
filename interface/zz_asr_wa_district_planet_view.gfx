@@ -95,9 +95,67 @@ spriteTypes = {
   #     #animationframes = { 1 2 3 }
   #   }
   # }
+  # 这里定义显示已用区划和空余区划的进度条的材质
   spriteType = {
-    name = "GFX_district_boneyard_fortress_box_icon_rectangle"
-    texturefile = "gfx/interface/icons/districts/grid_box/district_boneyard_fortress_rectangle.dds"
+    name = "GFX_district_asr_wa_boneyard_fortress_box_icon_rectangle"
+    texturefile = "gfx/interface/icons/districts/grid_box/district_asr_wa_boneyard_fortress_rectangle.dds"
+    effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+    noOfFrames = 3
+    animation = {
+      animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+      animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+      animationrotation = 90.0
+      animationlooping = yes
+      animationtime = 2.0
+      animationdelay = 0.0
+      animationblendmode = "add"     #add, multiply, overlay
+      animationtype = "pulsing"      #scrolling, rotating, pulsing
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+      #animationframes = { 1 2 3 }
+    }
+  }
+  spriteType = {
+    name = "GFX_district_asr_wa_gases_plant_box_icon_rectangle"
+    texturefile = "gfx/interface/icons/districts/grid_box/district_asr_wa_gases_plant_rectangle.dds"
+    effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+    noOfFrames = 3
+    animation = {
+      animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+      animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+      animationrotation = 90.0
+      animationlooping = yes
+      animationtime = 2.0
+      animationdelay = 0.0
+      animationblendmode = "add"     #add, multiply, overlay
+      animationtype = "pulsing"      #scrolling, rotating, pulsing
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+      #animationframes = { 1 2 3 }
+    }
+  }
+  spriteType = {
+    name = "GFX_district_asr_wa_motes_plant_box_icon_rectangle"
+    texturefile = "gfx/interface/icons/districts/grid_box/district_asr_wa_motes_plant_rectangle.dds"
+    effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+    noOfFrames = 3
+    animation = {
+      animationmaskfile = "gfx/interface/icons/districts/grid_box/default_animated_mask.dds"
+      animationtexturefile = "gfx/interface/icons/districts/grid_box/default_animated_texture.dds"
+      animationrotation = 90.0
+      animationlooping = yes
+      animationtime = 2.0
+      animationdelay = 0.0
+      animationblendmode = "add"     #add, multiply, overlay
+      animationtype = "pulsing"      #scrolling, rotating, pulsing
+      animationrotationoffset = { x = 0.0 y = 0.0 }
+      animationtexturescale = { x = 1.0 y = 1.0 }
+      #animationframes = { 1 2 3 }
+    }
+  }
+  spriteType = {
+    name = "GFX_district_asr_wa_crystals_plant_box_icon_rectangle"
+    texturefile = "gfx/interface/icons/districts/grid_box/district_asr_wa_crystals_plant_rectangle.dds"
     effectFile = "gfx/FX/buttonstate_onlydisable.shader"
     noOfFrames = 3
     animation = {

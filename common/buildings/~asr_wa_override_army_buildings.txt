@@ -26,7 +26,7 @@ building_planetary_carapace = { # substitute for 'building_stronghold'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = energy
   }
 
@@ -74,7 +74,7 @@ building_planetary_carapace_2 = { # substitute for 'building_fortress'
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t2
+    script = asr_wa/building/cost_t2
     BASE = energy
     RARE = volatile_motes
   }
@@ -144,7 +144,7 @@ building_ozone_thickener = {
   }
 
   inline_script = {
-    script = asr_wa/building_resource_t1
+    script = asr_wa/building/cost_t1
     BASE = energy
   }
 

@@ -1,0 +1,15 @@
+resources = {
+  category = planet_buildings
+  inline_script = {
+    script = asr_wa/building/shared_cost_upkeep_rare
+    BIOMASS = @wa_b4_biomass
+    FOOD_AND_MINERAL_COST = @wa_b3_mixed
+    FOOD_COST = @wa_b3_foods
+    MINERAL_COST = @wa_b3_minerals
+    UPKEEP_TYPE = $BASE$
+    UPKEEP = @b4_upkeep
+    RARE_TYPE = $RARE$
+    RARE_COST = @b4_rare_cost
+    RARE_UPKEEP = @b4_rare_upkeep
+  }
+}

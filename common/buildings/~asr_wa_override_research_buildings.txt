@@ -18,20 +18,10 @@ building_brain_node_1 = {
 
   resources = {
     category = planet_research_buildings
-    cost = {
-      biomass = @wa_b1_biomass
-    }
-    cost = {
-      food = @wa_b1_minerals
-      minerals = @wa_b1_minerals
-      trigger = { asr_wa_planet_use_food_build_building = no }
-    }
-    cost = {
-      food = @wa_b1_foods
-      trigger = { asr_wa_planet_use_food_build_building = yes }
-    }
-    upkeep = {
-      food = @b1_upkeep
+    inline_script = {
+      script = asr_wa/building/tier_cost
+      TIER = b1
+      UPKEEP_TYPE = food
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
@@ -77,22 +67,19 @@ building_brain_node_2 = {
 
   resources = {
     category = planet_research_buildings
-    cost = {
-      biomass = @wa_b2_biomass
-      exotic_gases = @b2_rare_cost
+    inline_script = {
+      script = asr_wa/building/tier_cost
+      TIER = b2
+      UPKEEP_TYPE = food
     }
-    cost = {
-      food = @wa_b2_minerals
-      minerals = @wa_b2_minerals
-      trigger = { asr_wa_planet_use_food_build_building = no }
-    }
-    cost = {
-      food = @wa_b2_foods
-      trigger = { asr_wa_planet_use_food_build_building = yes }
-    }
-    upkeep = {
-      food = @b2_upkeep
-      exotic_gases = @b2_rare_upkeep
+    inline_script = {
+      script = asr_wa/building/shared_cost_boost
+      BOOST_BUILDING = building_brain_node_4
+      RARE_TYPE = exotic_gases
+      COST = @b2_rare_cost
+      UPKEEP = @b2_rare_upkeep
+      BOOSTED_COST = @b3_rare_cost
+      BOOSTED_UPKEEP = @b3_rare_upkeep
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
@@ -154,22 +141,11 @@ building_brain_node_3 = {
 
   resources = {
     category = planet_research_buildings
-    cost = {
-      biomass = @wa_b3_biomass
-      exotic_gases = @b3_rare_cost
-    }
-    cost = {
-      food = @wa_b3_minerals
-      minerals = @wa_b3_minerals
-      trigger = { asr_wa_planet_use_food_build_building = no }
-    }
-    cost = {
-      food = @wa_b3_foods
-      trigger = { asr_wa_planet_use_food_build_building = yes }
-    }
-    upkeep = {
-      food = @b3_upkeep
-      exotic_gases = @b3_rare_upkeep
+    inline_script = {
+      script = asr_wa/building/tier_cost_rare
+      TIER = b3
+      UPKEEP_TYPE = food
+      RARE_TYPE = exotic_gases
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }
@@ -230,22 +206,11 @@ building_brain_node_4 = {
 
   resources = {
     category = planet_research_buildings
-    cost = {
-      biomass = @wa_b4_biomass
-      exotic_gases = @b4_rare_cost
-    }
-    cost = {
-      food = @wa_b3_minerals
-      minerals = @wa_b3_minerals
-      trigger = { asr_wa_planet_use_food_build_building = no }
-    }
-    cost = {
-      food = @wa_b3_foods
-      trigger = { asr_wa_planet_use_food_build_building = yes }
-    }
-    upkeep = {
-      food = @b4_upkeep
-      exotic_gases = @b4_rare_upkeep
+    inline_script = {
+      script = asr_wa/building/tier_cost_rare
+      TIER = b4
+      UPKEEP_TYPE = food
+      RARE_TYPE = exotic_gases
     }
     upkeep = {
       trigger = { has_planet_flag = has_science_ministry }

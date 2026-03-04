@@ -4,13 +4,25 @@ resources = {
     biomass = 100
   }
   cost = {
-    minerals = 150
-    food = 150
-    trigger = { asr_wa_planet_use_food_build_building = no }
+    trigger = {
+      owner = { is_ai = yes }
+    }
+    minerals = 300
   }
   cost = {
+    trigger = {
+      owner = { is_ai = no }
+      asr_wa_planet_use_food_build_building = no
+    }
+    minerals = 150
+    food = 150
+  }
+  cost = {
+    trigger = {
+      owner = { is_ai = no }
+      asr_wa_planet_use_food_build_building = yes
+    }
     food = 375
-    trigger = { asr_wa_planet_use_food_build_building = yes }
   }
   upkeep = {
     food = 1

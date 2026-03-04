@@ -1,11 +1,18 @@
-# 孵育体岗位
-inline_script = {
-  script = jobs/spawning_drone_add
-  AMOUNT = @building_static_jobs_low
+# 没有空余住房时不提供孵育体岗位
+triggered_planet_modifier = {
+  potential = {
+    free_housing > 0
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+  }
+  modifier = {
+    job_spawning_drone_add = @building_static_jobs_low
+  }
 }
 # 固有设计开局可以多获得100孵育体岗位
 triggered_planet_modifier = {
   potential = {
+    free_housing > 0
     exists = owner
     owner = {
       is_wilderness_empire = yes
@@ -22,6 +29,7 @@ triggered_planet_modifier = {
 # AI可以根据飞升数量获得孵育体岗位
 triggered_planet_modifier = {
   potential = {
+    free_housing > 0
     exists = owner
     owner = {
       is_wilderness_empire = yes
@@ -42,6 +50,7 @@ triggered_planet_modifier = {
 
 triggered_planet_modifier = {
   potential = {
+    free_housing > 0
     exists = owner
     owner = {
       is_wilderness_empire = yes

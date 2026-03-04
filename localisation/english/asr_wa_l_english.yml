@@ -28,8 +28,8 @@ l_english:
   wa_r_housing: "£housing£['concept_housing']"
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
-  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity'] give §G+100§!$mod_job_spawning_drone_add$\n- ['ascension_perk:ap_mastery_of_nature'] give §G-10%§!$mod_planet_structures_cost_mult$"
-  asr_wa_b_cor_bonus_pop_growth_tt: "Give more §Y$job_asr_wa_simulate_spawning_drone$§! jobs when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
+  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring'], ['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity'] give §G+100§! $mod_job_spawning_drone_add$\n- ['ascension_perk:ap_mastery_of_nature'] give §G-10%§! $mod_planet_structures_cost_mult$"
+  asr_wa_b_cor_bonus_pop_growth_tt: "- Doesn't give $mod_job_spawning_drone_add$ when free housing less than §Y0§!\n- Give more §Y$job_asr_wa_simulate_spawning_drone$§! jobs when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2'] provide more $wa_r_amenities_gestalt$ and $wa_r_housing$"
@@ -54,8 +54,8 @@ l_english:
   # Scripted Modifiers
   mod_biomass_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Biomass Pops"
   # Job
-  job_asr_wa_simulate_spawning_drone: "Simulated $job_broodsymbiont$"
-  job_asr_wa_simulate_spawning_drone_plural: "Simulated $job_broodsymbiont_plural$"
+  job_asr_wa_simulate_spawning_drone: "Incubator"
+  job_asr_wa_simulate_spawning_drone_plural: "Incubators"
   job_asr_wa_simulate_spawning_drone_plural_with_icon: "[asr_wa_simulate_spawning_drone.GetIcon]$job_asr_wa_simulate_spawning_drone_plural$"
   job_asr_wa_simulate_spawning_drone_desc: "$job_broodsymbiont_desc$"
   job_asr_wa_simulate_spawning_drone_effect_desc: "[asr_wa_simulate_spawning_drone.GetIcon] $job_asr_wa_simulate_spawning_drone_plural$ produce £biomass£ §YBiomass§!"
