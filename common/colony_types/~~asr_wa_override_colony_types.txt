@@ -1,0 +1,656 @@
+@stickiness = 10
+@stickiness_low = 5
+@zone_urban = 100
+@zone_rural = 10
+@rural_max_size = 13
+@rural_over_max_size = -20
+
+col_wilderness_capital = {
+  icon = GFX_colony_type_capital
+
+  potential = {
+    is_capital = yes
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  planet_modifier = {
+    planet_stability_add = 5
+    planet_housing_add = 1000
+    planet_crime_no_happiness_add = -20
+    pop_bonus_workforce_mult = 0.1
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner_or_space_owner
+      owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+    }
+    modifier = {
+      pop_bonus_workforce_mult = 0.05
+    }
+  }
+
+  weight_modifier = {
+    base = 1000
+  }
+}
+
+col_wilderness_unification = {
+  icon = GFX_colony_type_bureaucratic
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier
+    MODIFIER = bureaucrat_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_unification
+    }
+    modifier = {
+      num_zones = {
+        type = zone_unity_wilderness
+        value > 0
+      }
+      add = @zone_urban
+    }
+    modifier = {
+      add = 5
+      has_building = building_league_offices
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_commensal_clearing_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_commensal_clearing_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_commensal_clearing_3
+        has_building = building_commensal_clearing_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = { type = district_craglands }
+      mode = add
+    }
+  }
+}
+
+col_wilderness_tech = {
+  icon = GFX_colony_type_research
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier
+    MODIFIER = researcher_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_tech
+    }
+    modifier = {
+      OR = {
+        num_zones = {
+          type = zone_research_unity_wilderness
+          value > 0
+        }
+        num_zones = {
+          type = zone_research_wilderness
+          value > 0
+        }
+        num_zones = {
+          type = zone_asr_wa_research_phy_wilderness
+          value > 0
+        }
+        num_zones = {
+          type = zone_asr_wa_research_soc_wilderness
+          value > 0
+        }
+        num_zones = {
+          type = zone_asr_wa_research_eng_wilderness
+          value > 0
+        }
+      }
+      add = @zone_urban
+    }
+    inline_script = { script = colony_types/shared_weights_research }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_brain_node_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_brain_node_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_brain_node_3
+        has_building = building_brain_node_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = { type = district_craglands }
+      mode = add
+    }
+  }
+}
+
+col_wilderness_forge = {
+  icon = GFX_colony_type_foundry
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier
+    MODIFIER = foundry_jobs_bonus_workforce_mult
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner_or_space_owner
+      owner_or_space_owner = { is_galactic_community_member = yes }
+      OR = {
+        is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+        is_active_resolution = "resolution_industry_project_cornucopia"
+      }
+    }
+    modifier = {
+      foundry_jobs_bonus_workforce_mult = 0.05
+    }
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_forge
+    }
+    modifier = {
+      num_zones = {
+        type = zone_foundry_wilderness
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_natural_furnace_0 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_natural_furnace_1 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_natural_furnace_2
+        has_building = building_natural_furnace_3
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = { type = district_craglands }
+      mode = add
+    }
+  }
+}
+
+col_wilderness_refinery = {
+  icon = GFX_colony_type_refinery
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  planet_modifier = {
+    planet_refiners_produces_mult = 0.15
+    planet_translucers_produces_mult = 0.15
+    planet_chemists_produces_mult = 0.15
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner_or_space_owner
+      owner_or_space_owner = { has_tradition = tr_adaptability_finish }
+    }
+    modifier = {
+      planet_refiners_produces_mult = 0.10
+      planet_translucers_produces_mult = 0.10
+      planet_chemists_produces_mult = 0.10
+    }
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_refinery
+    }
+  }
+}
+
+col_wilderness_nest = {
+  icon = GFX_colony_type_rural
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier
+    MODIFIER = trader_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_nest
+    }
+    modifier = {
+      num_zones = {
+        type = zone_trade_wilderness
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_tendril_cradle_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_tendril_cradle_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_tendril_cradle_3
+        has_building = building_tendril_cradle_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = { type = district_craglands }
+      mode = add
+    }
+  }
+}
+
+col_wilderness_fortress = {
+  icon = GFX_colony_type_fortress
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier
+    MODIFIER = soldier_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_fortress
+    }
+    modifier = {
+      num_zones = {
+        type = zone_fortress_wilderness
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_planetary_carapace }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_planetary_carapace_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      has_building = building_planetary_shield_generator
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = { type = district_craglands }
+      mode = add
+    }
+  }
+}
+
+col_wilderness_farming = {
+  icon = GFX_colony_type_farm
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier_rural
+    MODIFIER = farmer_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_farming
+    }
+    modifier = {
+      planet_size > @rural_max_size
+      add = @rural_over_max_size
+    }
+    modifier = {
+      num_zones = {
+        type = zone_food_wilderness
+        value > 0
+      }
+      add = @zone_rural
+    }
+    modifier = {
+      num_zones = {
+        type = zone_asr_wa_food
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_massive_growth_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_massive_growth_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_massive_growth_3
+        has_building = building_massive_growth_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = {
+        type = district_orchard_forests
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_orchard_forests
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_asr_wa_cragland_03
+      }
+      mode = add
+    }
+    modifier = {
+      add = 5
+      has_modifier = lush_planet
+    }
+    modifier = {
+      add = -10
+      OR = {
+        has_modifier = bleak_planet
+        has_modifier = unbalanced_ecosystem
+        has_modifier = irradiated_planet
+      }
+    }
+  }
+}
+
+col_wilderness_generator = {
+  icon = GFX_colony_type_generator
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier_rural
+    MODIFIER = technician_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_generator
+    }
+    modifier = {
+      planet_size > @rural_max_size
+      add = @rural_over_max_size
+    }
+    modifier = {
+      num_zones = {
+        type = zone_energy_wilderness
+        value > 0
+      }
+      add = @zone_rural
+    }
+    modifier = {
+      num_zones = {
+        type = zone_asr_wa_energy
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_bioelectric_stimulator_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_bioelectric_stimulator_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_bioelectric_stimulator_3
+        has_building = building_bioelectric_stimulator_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = {
+        type = district_photosynthesis_fields
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_photosynthesis_fields
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_asr_wa_cragland_01
+      }
+      mode = add
+    }
+    modifier = {
+      add = 5
+      OR = {
+        has_modifier = hazardous_weather
+        has_modifier = strong_magnetic_field
+      }
+    }
+    modifier = {
+      add = -10
+      has_modifier = energy_poor
+    }
+  }
+}
+
+col_wilderness_mining = {
+  icon = GFX_colony_type_mine
+
+  potential = {
+    is_capital = no
+    is_special_colony_type = no
+    exists = owner_or_space_owner
+    owner_or_space_owner = { is_wilderness_empire = yes }
+  }
+
+  inline_script = {
+    script = colony_types/colony_type_planet_modifier_rural
+    MODIFIER = miner_jobs_bonus_workforce_mult
+  }
+
+  weight_modifier = {
+    modifier = {
+      add = @stickiness
+      has_designation = col_wilderness_mining
+    }
+    modifier = {
+      planet_size > @rural_max_size
+      add = @rural_over_max_size
+    }
+    modifier = {
+      num_zones = {
+        type = zone_minerals_wilderness
+        value > 0
+      }
+      add = @zone_rural
+    }
+    modifier = {
+      num_zones = {
+        type = zone_asr_wa_mineral
+        value > 0
+      }
+      add = @zone_urban
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_churning_tunnels_1 }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_buildings
+      parameters = { type = building_churning_tunnels_2 }
+      mode = add
+      mult = 2
+    }
+    modifier = {
+      OR = {
+        has_building = building_churning_tunnels_3
+        has_building = building_churning_tunnels_4
+      }
+      add = @stickiness
+    }
+    complex_trigger_modifier = {
+      trigger = num_districts
+      parameters = {
+        type = district_hollow_mountains
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_hollow_mountains
+      }
+      mode = add
+    }
+    complex_trigger_modifier = {
+      trigger = num_free_districts
+      parameters = {
+        type = district_asr_wa_cragland_02
+      }
+      mode = add
+    }
+    modifier = {
+      add = 5
+      OR = {
+        has_modifier = asteroid_belt
+        has_modifier = mineral_rich
+        has_modifier = ultra_rich
+        has_modifier = extensive_moon_system
+        has_modifier = asteroid_impacts
+        has_modifier = carbon_world
+        # Volcanic Worlds
+        has_modifier = volcanic_mineral_rich
+        has_modifier = volcanic_ultra_rich
+        has_modifier = volcanic_subterranean
+        has_modifier = volcanic_asteroid_impacts
+        has_modifier = volcanic_hollow_planet
+        has_modifier = volcanic_lavafall
+      }
+    }
+    modifier = {
+      add = -10
+      has_modifier = mineral_poor
+    }
+  }
+}
