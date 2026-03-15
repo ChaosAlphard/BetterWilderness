@@ -1,0 +1,34 @@
+# 修复加强能力中"领袖起始特质+1"不生效的问题, 以及其他可能的潜在问题
+# 原因: 蠢驴在判断是否拥有对应类型的可变传统时, 不仅判断是否拥有该传统，
+#      还要判断是否拥有对应局势解决方案设置的 country_flag
+#      然而蠢驴并没有在局势中给生体荒野设置 country_flag,
+#      导致生体荒野被视为不具有任何纯净类型的可变传统, 只被视为拥有通用可变传统
+#   而"领袖起始特质+1"生效机制实际上是在生成领袖时, 把每一个带有该词条的传统都判断一遍是否拥有
+#      若拥有则添加随机特质到领袖上, 而荒野又被视为不具有"加强能力"传统, 故而无法生效
+
+has_optimized_neurology_tradition = {
+  OR = {
+    has_country_flag = genetic_ascension_stage_2_purity
+    is_wilderness_empire = yes
+  }
+  has_genetic_stage_2_tradition = yes
+}
+
+has_purity_heightened_attributes_tradition = {
+  OR = {
+    has_country_flag = genetic_ascension_stage_1_purity
+    is_wilderness_empire = yes
+  }
+  has_genetic_stage_1_tradition = yes
+}
+
+has_purity_imperfection_remediation_tradition = {
+  custom_tooltip = {
+    text = has_purity_imperfection_remediation_tradition_tt
+    OR = {
+      has_country_flag = genetic_ascension_stage_3_purity
+      is_wilderness_empire = yes
+    }
+    has_genetic_stage_3_tradition = yes
+  }
+}

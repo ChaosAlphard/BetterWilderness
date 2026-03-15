@@ -23,11 +23,7 @@ zone_asr_wa_urban = {
   }
   inline_script = {
     script = asr_wa/zone/job/patrol_add
-    BASE = @doubled_scaling_district_2_jobs
-  }
-
-  district_planet_modifier = {
-    planet_jobs_produces_mult = 0.10
+    BASE = @doubled_scaling_district_1_job
   }
 }
 # 蔓生

@@ -1,4 +1,5 @@
-@assist_zone_produce_mult = 0.20
+@assist_zone_produce_mult = 0.2
+@assist_zone_produce_mult_low = 0.1
 @assist_zone_upkeep_add = 1
 
 # 行政支持
@@ -20,8 +21,15 @@ zone_asr_wa_assist_unity = {
   }
 
   district_planet_modifier = {
-    planet_bureaucrats_produces_mult = @assist_zone_produce_mult
+    planet_bureaucrats_produces_mult = @assist_zone_produce_mult_low
     planet_bureaucrats_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = { JOB = coordinator }
+    }
+    text = asr_wa_assist_unity_tt
   }
 
   ai_priority = 0
@@ -46,8 +54,19 @@ zone_asr_wa_assist_research = {
   }
 
   district_planet_modifier = {
-    planet_researchers_produces_mult = @assist_zone_produce_mult
+    planet_researchers_produces_mult = @assist_zone_produce_mult_low
     planet_researchers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  triggered_desc = {
+    trigger = {
+      OR = {
+        asr_wa_has_any_workforce = { JOB = calculator_physicist }
+        asr_wa_has_any_workforce = { JOB = calculator_biologist }
+        asr_wa_has_any_workforce = { JOB = calculator_engineer }
+      }
+    }
+    text = asr_wa_assist_research_tt
   }
 
   ai_priority = 0
@@ -72,28 +91,37 @@ zone_asr_wa_assist_foundry = {
   }
 
   district_planet_modifier = {
-    planet_metallurgists_produces_mult = @assist_zone_produce_mult
+    planet_metallurgists_produces_mult = @assist_zone_produce_mult_low
     planet_metallurgists_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_artisans = yes }
-    planet_artisans_produces_mult = @assist_zone_produce_mult
+    planet_artisans_produces_mult = @assist_zone_produce_mult_low
     planet_artisans_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_translucers = yes }
-    planet_translucers_produces_mult = @assist_zone_produce_mult
+    planet_translucers_produces_mult = @assist_zone_produce_mult_low
     planet_translucers_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_refiners = yes }
-    planet_refiners_produces_mult = @assist_zone_produce_mult
+    planet_refiners_produces_mult = @assist_zone_produce_mult_low
     planet_refiners_trade_upkeep_add = @assist_zone_upkeep_add
   }
   triggered_district_planet_modifier = {
     potential = { asr_wa_foundry_zone_assist_chemists = yes }
-    planet_chemists_produces_mult = @assist_zone_produce_mult
+    planet_chemists_produces_mult = @assist_zone_produce_mult_low
     planet_chemists_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = {
+        JOB = fabricator
+      }
+    }
+    text = asr_wa_assist_alloy_tt
   }
 
   ai_priority = 0
@@ -133,6 +161,15 @@ zone_asr_wa_assist_trade = {
     planet_traders_energy_upkeep_add = @assist_zone_upkeep_add
   }
 
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = {
+        JOB = logistics_drone
+      }
+    }
+    text = asr_wa_assist_trade_tt
+  }
+
   ai_priority = 0
 }
 
@@ -162,6 +199,15 @@ zone_asr_wa_assist_food = {
   district_planet_modifier = {
     planet_farmers_produces_mult = @assist_zone_produce_mult
     planet_farmers_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = {
+        JOB = agri_drone
+      }
+    }
+    text = asr_wa_assist_food_tt
   }
 
   ai_priority = 0
@@ -194,6 +240,15 @@ zone_asr_wa_assist_energy = {
     planet_technician_trade_upkeep_add = @assist_zone_upkeep_add
   }
 
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = {
+        JOB = technician_drone
+      }
+    }
+    text = asr_wa_assist_energy_tt
+  }
+
   ai_priority = 0
 }
 
@@ -222,6 +277,15 @@ zone_asr_wa_assist_mineral = {
   district_planet_modifier = {
     planet_miners_produces_mult = @assist_zone_produce_mult
     planet_miners_trade_upkeep_add = @assist_zone_upkeep_add
+  }
+
+  triggered_desc = {
+    trigger = {
+      asr_wa_has_any_workforce = {
+        JOB = mining_drone
+      }
+    }
+    text = asr_wa_assist_mineral_tt
   }
 
   ai_priority = 0

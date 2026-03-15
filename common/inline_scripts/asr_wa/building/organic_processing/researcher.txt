@@ -57,6 +57,18 @@ triggered_planet_modifier = {
     FOOD = 8
   }
 }
+# 时空异常研究员
+triggered_planet_modifier = {
+  potential = {
+    asr_wa_is_hja_installed = no
+    physicist_is_space_time_researcher_trigger = yes
+  }
+  inline_script = {
+    script = asr_wa/researcher_upkeep_convert_phy
+    MINERAL = -4
+    FOOD = 3
+  }
+}
 # 传送门研究区域
 triggered_planet_modifier = {
   potential = {
@@ -65,8 +77,8 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/researcher_upkeep_convert_phy
-    MINERAL = -8
-    FOOD = 6
+    MINERAL = -4
+    FOOD = 3
   }
 }
 # 传送门研究区域
@@ -78,8 +90,8 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/researcher_upkeep_convert_phy
-    MINERAL = -4
-    FOOD = 3
+    MINERAL = -2
+    FOOD = 1.5
   }
 }
 # 远古学院
@@ -90,8 +102,8 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/researcher_upkeep_convert_soc
-    MINERAL = -2.5
-    FOOD = 2
+    MINERAL = -1
+    FOOD = 1
   }
 }
 # 武器提取设施

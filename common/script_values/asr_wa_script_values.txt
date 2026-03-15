@@ -39,17 +39,6 @@ asr_wa_cor_bonus_build_speed = {
   }
 }
 
-# 已完成: 需要评估对性能影响, 考虑是否使用 Country Variable 的形式, 或者使用原版接口
-# 参考 event: bio.5107 bio.5108
-# asr_wa_cor_bonus_workforce_all = {
-#   base = 0
-#   modifier = {
-#     add = owner_main_species.value:species_traits_purity_count_value
-#   }
-#   min = 0
-#   mult = 2.5
-# }
-
 asr_wa_num_wilderness_pops = {
   base = 0
   complex_trigger_modifier = {
@@ -69,19 +58,18 @@ asr_wa_num_wilderness_pops_calc = {
   min = $MIN$
 }
 
-asr_wa_workforce_spawning_drone = {
+asr_wa_total_workforce = {
   base = 0
   complex_trigger_modifier = {
     trigger_scope = planet
     trigger = count_owned_workforce
     parameters = {
       limit = {
-        has_job_type = spawning_drone
+        has_job_type = $JOB_TYPE$
       }
     }
     mode = add
   }
-  min = $MIN$
 }
 
 asr_wa_simulate_spawning_drone_from_pops = {
@@ -91,4 +79,51 @@ asr_wa_simulate_spawning_drone_from_pops = {
   min = 0
   mult = @wa_bonus_growth_pops_ratio
   round_to = 0.01
+}
+
+asr_wa_total_job_output_modifier = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger = check_economic_production_modifier_for_job
+    trigger_scope = planet
+    parameters = {
+      job = $JOB$
+      resource = $RESOURCE$
+    }
+    mode = add
+  }
+  mult = 100
+  round_to = 0.01
+}
+asr_wa_total_job_output_modifier_loc = {
+  base = 0
+  add = value:asr_wa_total_job_output_modifier|JOB|$JOB$|RESOURCE|$RESOURCE$|
+  min = 0
+}
+asr_wa_zone_job_output_modifier = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger = num_districts
+    trigger_scope = planet
+    parameters = {
+      type = district_craglands
+    }
+    mode = add
+  }
+  complex_trigger_modifier = {
+    trigger = num_zones
+    trigger_scope = planet
+    parameters = {
+      type = $ZONE$
+    }
+    mode = mult
+  }
+  mult = 100
+  mult = $MULT$  # 支援区划的产出加成
+  round_to = 0.01
+}
+asr_wa_job_output_modifier_loc = {
+  base = 0
+  add = value:asr_wa_total_job_output_modifier|JOB|$JOB$|RESOURCE|$RESOURCE$|
+  subtract = value:asr_wa_zone_job_output_modifier|ZONE|$ZONE$|MULT|$MULT$|
 }

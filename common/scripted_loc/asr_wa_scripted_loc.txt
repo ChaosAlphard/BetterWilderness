@@ -1,14 +1,79 @@
+# 凝聚力
 define_text = {
-  name = ASRWA_NumPops
-  value = value:asr_wa_num_wilderness_pops
+  name = ASRWA_TotalJobProducesUnity
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|coordinator|RESOURCE|unity|
 }
-
 define_text = {
-  name = ASRWA_WorkforceSpawningDrone
-  value = value:asr_wa_workforce_spawning_drone|MIN|100|
+  name = ASRWA_JobProducesUnity
+  value = value:asr_wa_job_output_modifier_loc|JOB|coordinator|RESOURCE|unity|ZONE|zone_asr_wa_assist_unity|MULT|0.1|
 }
-
+# 科研
 define_text = {
-  name = ASRWA_BonusGrowthFromPops
-  value = value:asr_wa_simulate_spawning_drone_from_pops
+  name = ASRWA_TotalJobProducesPhysicist
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|calculator_physicist|RESOURCE|physics_research|
+}
+define_text = {
+  name = ASRWA_JobProducesPhysicist
+  value = value:asr_wa_job_output_modifier_loc|JOB|calculator_physicist|RESOURCE|physics_research|ZONE|zone_asr_wa_assist_research|MULT|0.1|
+}
+define_text = {
+  name = ASRWA_TotalJobProducesSociety
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|calculator_biologist|RESOURCE|society_research|
+}
+define_text = {
+  name = ASRWA_JobProducesSociety
+  value = value:asr_wa_job_output_modifier_loc|JOB|calculator_biologist|RESOURCE|society_research|ZONE|zone_asr_wa_assist_research|MULT|0.1|
+}
+define_text = {
+  name = ASRWA_TotalJobProducesEngineering
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|calculator_engineer|RESOURCE|engineering_research|
+}
+define_text = {
+  name = ASRWA_JobProducesEngineering
+  value = value:asr_wa_job_output_modifier_loc|JOB|calculator_engineer|RESOURCE|engineering_research|ZONE|zone_asr_wa_assist_research|MULT|0.1|
+}
+# 合金
+define_text = {
+  name = ASRWA_TotalJobProducesAlloy
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|fabricator|RESOURCE|alloys|
+}
+define_text = {
+  name = ASRWA_JobProducesAlloy
+  value = value:asr_wa_job_output_modifier_loc|JOB|fabricator|RESOURCE|alloys|ZONE|zone_asr_wa_assist_foundry|MULT|0.1|
+}
+# 贸易
+define_text = {
+  name = ASRWA_TotalJobProducesTrade
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|logistics_drone|RESOURCE|trade|
+}
+define_text = {
+  name = ASRWA_JobProducesTrade
+  value = value:asr_wa_job_output_modifier_loc|JOB|logistics_drone|RESOURCE|trade|ZONE|zone_asr_wa_assist_trade|MULT|0.2|
+}
+# 食物
+define_text = {
+  name = ASRWA_TotalJobProducesFood
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|agri_drone|RESOURCE|food|
+}
+define_text = {
+  name = ASRWA_JobProducesFood
+  value = value:asr_wa_job_output_modifier_loc|JOB|agri_drone|RESOURCE|food|ZONE|zone_asr_wa_assist_food|MULT|0.2|
+}
+# 能量币
+define_text = {
+  name = ASRWA_TotalJobProducesEnergy
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|technician_drone|RESOURCE|energy|
+}
+define_text = {
+  name = ASRWA_JobProducesEnergy
+  value = value:asr_wa_job_output_modifier_loc|JOB|technician_drone|RESOURCE|energy|ZONE|zone_asr_wa_assist_energy|MULT|0.2|
+}
+# 矿物
+define_text = {
+  name = ASRWA_TotalJobProducesMineral
+  value = value:asr_wa_total_job_output_modifier_loc|JOB|mining_drone|RESOURCE|minerals|
+}
+define_text = {
+  name = ASRWA_JobProducesMineral
+  value = value:asr_wa_job_output_modifier_loc|JOB|mining_drone|RESOURCE|minerals|ZONE|zone_asr_wa_assist_mineral|MULT|0.2|
 }

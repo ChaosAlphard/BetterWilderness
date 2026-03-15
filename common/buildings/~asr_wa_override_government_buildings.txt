@@ -1,3 +1,4 @@
+@wa_b2_biomass = 200
 # 再生源地
 # 基础: +100孵育体, 给予人口组装速度加成, 反比于行星人口数量
 # 拥有 基因重塑 飞升: +100孵育体
@@ -53,7 +54,7 @@ building_cradle_of_rebirth = {
   #     }
   #   }
   #   biomorphosis_progress_mult = 0.000125
-  #   mult = value:asr_wa_workforce_spawning_drone|MIN|100|
+  #   mult = value:asr_wa_total_workforce|JOB_TYPE|spawning_drone|
   # }
 
   inline_script = { script = asr_wa/building/cradle_of_rebirth/spawning_drone }

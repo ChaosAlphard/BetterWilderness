@@ -109,3 +109,10 @@ asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {
     asr_wa_planet_is_wilderness_world_equivalent = yes
   }
 }
+
+asr_wa_has_any_workforce = {
+  count_owned_workforce = {
+    limit = { has_job_type = $JOB$ }
+    count > 0
+  }
+}
