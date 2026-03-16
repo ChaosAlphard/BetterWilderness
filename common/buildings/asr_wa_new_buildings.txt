@@ -50,6 +50,7 @@ building_asr_wa_organic_processing = {
   ai_weight = { factor = 0 }
 }
 
+@wa_b2_biomass = 200
 # 护卫哨所
 building_asr_wa_sentinel_posts = {
   icon = "building_sentinel_posts"
@@ -85,13 +86,14 @@ building_asr_wa_sentinel_posts = {
   resources = {
     category = planet_buildings
     inline_script = {
-      script = asr_wa/building/shared_cost_upkeep
+      script = asr_wa/building/shared_cost
       BIOMASS = @wa_b2_biomass
       FOOD_AND_MINERAL_COST = @wa_b1_mixed
       FOOD_COST = @wa_b1_foods
       MINERAL_COST = @wa_b1_minerals
-      UPKEEP_TYPE = food
-      UPKEEP = @b1_upkeep
+    }
+    upkeep = {
+      food = @b1_upkeep
     }
   }
 

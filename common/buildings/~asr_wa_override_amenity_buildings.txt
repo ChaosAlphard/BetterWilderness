@@ -1,14 +1,14 @@
-@wa_t1_houseing = 600
-@wa_t1_amenities = 600
-@wa_t2_houseing = 1200
-@wa_t2_amenities = 1200
-@wa_t3_houseing = 2000
-@wa_t3_amenities = 2000
-@wa_t4_houseing = 3200
-@wa_t4_amenities = 3200
+@wa_t1_housing = 800
+@wa_t1_amenities = 800
+@wa_t2_housing = 1600
+@wa_t2_amenities = 1600
+@wa_t3_housing = 2800
+@wa_t3_amenities = 2800
+@wa_t4_housing = 4000
+@wa_t4_amenities = 4000
 
-@wa_t2_extra_houseing = 2000
-@wa_t2_extra_amenities = 2000
+@wa_t2_extra_housing = 2400
+@wa_t2_extra_amenities = 2400
 
 # override common variables
 @wa_b1_biomass = 50
@@ -66,7 +66,7 @@ building_avatar_chamber_1 = {
   }
 
   planet_modifier = {
-    planet_housing_add = @wa_t1_houseing
+    planet_housing_add = @wa_t1_housing
     planet_amenities_no_happiness_add = @wa_t1_amenities
   }
 
@@ -120,17 +120,22 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
       FOOD = @wa_b2_foods
       MINERAL = @wa_b2_minerals
     }
+    cost = {
+      exotic_gases = @b2_rare_cost
+    }
+    cost = {
+      trigger = { has_building = building_avatar_chamber_4 }
+      exotic_gases = @b3_rare_cost
+    }
     upkeep = {
+      trigger = { NOT = { has_active_building = building_avatar_chamber_4 } }
+      exotic_gases = @b2_rare_upkeep
       food = @b2_upkeep
     }
-    inline_script = {
-      script = asr_wa/building/shared_cost_boost
-      BOOST_BUILDING = building_avatar_chamber_4
-      RARE_TYPE = exotic_gases
-      COST = @b2_rare_cost
-      UPKEEP = @b2_rare_upkeep
-      BOOSTED_COST = @b3_rare_cost
-      BOOSTED_UPKEEP = @b3_rare_upkeep
+    upkeep = {
+      trigger = { has_active_building = building_avatar_chamber_4 }
+      exotic_gases = @b3_rare_upkeep
+      food = @b3_upkeep
     }
   }
 
@@ -139,7 +144,7 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
   }
 
   planet_modifier = {
-    planet_housing_add = @wa_t2_houseing
+    planet_housing_add = @wa_t2_housing
     planet_amenities_no_happiness_add = @wa_t2_amenities
   }
 
@@ -147,7 +152,7 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
     potential = {
       has_active_building = building_avatar_chamber_4
     }
-    planet_housing_add = @wa_t2_extra_houseing
+    planet_housing_add = @wa_t2_extra_housing
     planet_amenities_no_happiness_add = @wa_t2_extra_amenities
   }
 
@@ -223,7 +228,7 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   }
 
   planet_modifier = {
-    planet_housing_add = @wa_t3_houseing
+    planet_housing_add = @wa_t3_housing
     planet_amenities_no_happiness_add = @wa_t3_amenities
   }
 
@@ -299,14 +304,11 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
 
   planet_modifier = {
-    planet_housing_add = @wa_t4_houseing
+    planet_housing_add = @wa_t4_housing
     planet_amenities_no_happiness_add = @wa_t4_amenities
     planet_amenities_no_happiness_mult = 0.20
   }
 
-  # triggered_desc = {
-  #   text = asr_wa_building_avatar_chamber_4_cor
-  # }
   triggered_desc = {
     text = asr_wa_building_avatar_chamber_4_tt
   }

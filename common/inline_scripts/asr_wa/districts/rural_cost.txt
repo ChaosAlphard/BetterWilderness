@@ -4,6 +4,10 @@ resources = {
     biomass = 100
   }
   cost = {
+    trigger = { free_district_slots > 0 }
+    biomass = 100
+  }
+  cost = {
     trigger = {
       owner = { is_ai = yes }
     }

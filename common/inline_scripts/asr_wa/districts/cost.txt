@@ -5,12 +5,30 @@ resources = {
     biomass = 100
   }
   cost = {
-    biomass = 200
     trigger = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
+    biomass = 200
   }
   cost = {
-    biomass = 400
     trigger = { asr_wa_planet_is_wilderness_world_equivalent = yes }
+    biomass = 400
+  }
+  cost = {
+    trigger = { free_district_slots > 0 }
+    biomass = 100
+  }
+  cost = {
+    trigger = {
+      free_district_slots > 0
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
+    }
+    biomass = 200
+  }
+  cost = {
+    trigger = {
+      free_district_slots > 0
+      asr_wa_planet_is_wilderness_world_equivalent = yes
+    }
+    biomass = 400
   }
 
   cost = {

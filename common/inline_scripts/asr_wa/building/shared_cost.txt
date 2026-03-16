@@ -22,6 +22,3 @@ cost = {
   }
   minerals = $MINERAL_COST$
 }
-upkeep = {
-  $UPKEEP_TYPE$ = $UPKEEP$
-}

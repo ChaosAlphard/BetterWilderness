@@ -8,7 +8,17 @@ inline_script = {
 cost = {
   $RARE_TYPE$ = @$TIER$_rare_cost
 }
+cost = {
+  trigger = { has_building = $BOOST_BUILDING$ }
+  $RARE_TYPE$ = @$BOOSTED_TIER$_rare_cost
+}
 upkeep = {
+  trigger = { NOT = { has_active_building = $BOOST_BUILDING$ } }
   $UPKEEP_TYPE$ = @$TIER$_upkeep
   $RARE_TYPE$ = @$TIER$_rare_upkeep
+}
+upkeep = {
+  trigger = { has_active_building = $BOOST_BUILDING$ }
+  $UPKEEP_TYPE$ = @$BOOSTED_TIER$_upkeep
+  $RARE_TYPE$ = @$BOOSTED_TIER$_rare_upkeep
 }

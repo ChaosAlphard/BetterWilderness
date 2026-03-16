@@ -14,9 +14,9 @@
 
 # 在 inline_script/asr_wa/building/tier_cost.txt 中有使用
 # 因为 b1-b4 是通过字符串拼接进行传参, 所以全局搜索搜不出来
-@wa_b1_biomass = 100
-@wa_b2_biomass = 200
-@wa_b3_biomass = 400
+@wa_b1_biomass = 200
+@wa_b2_biomass = 400
+@wa_b3_biomass = 200
 @wa_b4_biomass = 400
 
 @wa_b1_mixed = 200
