@@ -336,6 +336,7 @@ col_wilderness_fortress = {
   }
 
   weight_modifier = {
+    subtract = @stickiness_low
     modifier = {
       add = @stickiness
       has_designation = col_wilderness_fortress
@@ -360,7 +361,7 @@ col_wilderness_fortress = {
     }
     modifier = {
       has_building = building_planetary_shield_generator
-      add = @stickiness
+      add = @stickiness_low
     }
     complex_trigger_modifier = {
       trigger = num_districts

@@ -559,7 +559,6 @@ zone_asr_wa_exotic_gases_plant = {
   swap_type = district_asr_wa_swap_exotic_gases_plant
   swap_type_weight = 10
 
-  show_in_tech = tech_exotic_gases
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
     TECH = tech_exotic_gases
@@ -581,7 +580,6 @@ zone_asr_wa_volatile_motes_plant = {
   swap_type = district_asr_wa_swap_volatile_motes_plant
   swap_type_weight = 10
 
-  show_in_tech = tech_volatile_motes
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
     TECH = tech_volatile_motes
@@ -603,7 +601,6 @@ zone_asr_wa_rare_crystals_plant = {
   swap_type = district_asr_wa_swap_rare_crystals_plant
   swap_type_weight = 10
 
-  show_in_tech = tech_rare_crystals
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
     TECH = tech_rare_crystals

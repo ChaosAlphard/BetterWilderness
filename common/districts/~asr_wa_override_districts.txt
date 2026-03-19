@@ -53,7 +53,7 @@ district_craglands = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
-    planet_defense_armies_add = 2
+    planet_defense_armies_add = 1
   }
   triggered_planet_modifier = {
     potential = {
@@ -63,7 +63,7 @@ district_craglands = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
-    planet_defense_armies_add = 2
+    planet_defense_armies_add = 1
   }
   triggered_planet_modifier = {
     potential = {
@@ -73,7 +73,7 @@ district_craglands = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
-    planet_defense_armies_add = 4
+    planet_defense_armies_add = 3
   }
 
   inline_script = {

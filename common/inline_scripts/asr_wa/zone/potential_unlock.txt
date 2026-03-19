@@ -1,4 +1,4 @@
-#  Planet Scope
+# Planet Scope
 potential = {
   exists = owner
   owner = {
