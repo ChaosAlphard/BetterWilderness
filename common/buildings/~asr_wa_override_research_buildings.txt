@@ -228,9 +228,7 @@ building_brain_node_4 = {
     planet_physicists_physics_research_produces_add = 1
     planet_biologists_society_research_produces_add = 1
     planet_engineers_engineering_research_produces_add = 1
-    pop_calculator_physicist_bonus_workforce_mult = 0.20
-    pop_calculator_biologist_bonus_workforce_mult = 0.20
-    pop_calculator_engineer_bonus_workforce_mult = 0.20
+    researcher_jobs_bonus_workforce_mult = 0.20
   }
 
   inline_script = {

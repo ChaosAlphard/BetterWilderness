@@ -1,14 +1,14 @@
-@wa_t1_housing = 800
-@wa_t1_amenities = 800
-@wa_t2_housing = 1600
-@wa_t2_amenities = 1600
-@wa_t3_housing = 2800
-@wa_t3_amenities = 2800
-@wa_t4_housing = 4000
-@wa_t4_amenities = 4000
+@wa_t1_housing = 400
+@wa_t2_housing = 800
+@wa_t3_housing = 1200
+@wa_t4_housing = 2000
+@wa_t1_amenities = 1200
+@wa_t2_amenities = 2400
+@wa_t3_amenities = 3600
+@wa_t4_amenities = 6000
 
-@wa_t2_extra_housing = 2400
-@wa_t2_extra_amenities = 2400
+@wa_t2_extra_housing = 1200
+@wa_t2_extra_amenities = 3600
 
 # override common variables
 @wa_b1_biomass = 50
@@ -29,14 +29,8 @@ building_avatar_chamber_1 = {
     government
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
+  inline_script = { script = buildings/wilderness_buildings_potential_destroy }
+
   convert_to = {
     building_drone_storage
     building_hive_warren
@@ -89,17 +83,11 @@ building_avatar_chamber_2 = { # substitute for 'building_sensorium_1'
     government
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
+  inline_script = { script = buildings/wilderness_buildings_potential_destroy }
   allow = {
     has_upgraded_capital = yes
   }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
+
   convert_to = {
     building_organic_paradise
     building_drone_megastorage
@@ -176,21 +164,12 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
   }
 
   planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
+
+  inline_script = { script = buildings/wilderness_buildings_potential_destroy }
   allow = {
     has_major_upgraded_capital = yes
-    NOT = { has_modifier = slave_colony }
   }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = slave_colony
-      owner = { is_wilderness_empire = no }
-    }
-  }
+
   convert_to = {
     building_organic_paradise
     building_drone_megastorage
@@ -256,21 +235,12 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
 
   planet_limit = 1
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
+
+  inline_script = { script = buildings/wilderness_buildings_potential_destroy }
   allow = {
     has_major_upgraded_capital = yes
-    NOT = { has_modifier = slave_colony }
   }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = slave_colony
-      owner = { is_wilderness_empire = no }
-    }
-  }
+
   convert_to = {
     building_organic_paradise
     building_drone_megastorage
@@ -310,10 +280,10 @@ building_avatar_chamber_4 = { # substitute for 'building_sensorium_3'
   }
 
   triggered_desc = {
-    text = asr_wa_building_avatar_chamber_4_tt
+    text = building_hypercomms_forum_effect
   }
   triggered_desc = {
-    text = building_hypercomms_forum_effect
+    text = asr_wa_building_avatar_chamber_4_tt
   }
 
   inline_script = {

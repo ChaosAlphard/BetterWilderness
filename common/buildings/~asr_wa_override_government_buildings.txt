@@ -19,18 +19,7 @@ building_cradle_of_rebirth = {
     urban
   }
 
-  potential = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = no
-    }
-  }
+  inline_script = { script = buildings/wilderness_buildings_potential_destroy }
 
   resources = {
     category = planet_buildings
@@ -63,13 +52,8 @@ building_cradle_of_rebirth = {
   # 掌控自然飞升给予-10%行星基础设施花费
   triggered_planet_modifier = {
     potential = {
-      OR = {
-        has_modifier = mastery_of_nature
-        AND = {
-          exists = owner
-          owner = { has_ascension_perk = ap_mastery_of_nature }
-        }
-      }
+      exists = owner
+      owner = { has_ascension_perk = ap_mastery_of_nature }
     }
     planet_structures_cost_mult = -0.10
   }
@@ -92,12 +76,10 @@ building_cradle_of_rebirth = {
   }
 
   triggered_desc = {
-    trigger = { always = yes }
     text = asr_wa_b_cor_tt
   }
 
   triggered_desc = {
-    trigger = { always = yes }
     text = asr_wa_b_cor_bonus_pop_growth_tt
   }
 

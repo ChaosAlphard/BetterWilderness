@@ -106,29 +106,11 @@ building_massive_growth_3 = { # substitute for 'building_food_processing_facilit
     farming
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      owner = {
-        is_ai = yes
-        country_uses_food = no
-        is_wilderness_empire = no
-      }
-      is_planet_class = pc_machine
-      has_modifier = resort_colony
-      AND = {
-        owner = { is_ai = yes }
-        has_any_farming_district_or_building = no
-      }
-    }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -181,33 +163,11 @@ building_massive_growth_4 = { # substitute for 'building_food_processing_center'
     farming
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
-  }
-  destroy_trigger = {
-    OR = {
-      AND = {
-        exists = owner
-        OR = {
-          owner = {
-            is_ai = yes
-            country_uses_food = no
-            is_wilderness_empire = no
-          }
-          AND = {
-            owner = { is_ai = yes }
-            has_any_farming_district_or_building = no
-          }
-        }
-      }
-      is_planet_class = pc_machine
-      has_modifier = resort_colony
-    }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -225,7 +185,7 @@ building_massive_growth_4 = { # substitute for 'building_food_processing_center'
 
   planet_modifier = {
     planet_farmers_food_produces_add = @job_produce_add_t4_building
-    pop_agri_drone_bonus_workforce_mult = 0.20
+    farmer_jobs_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_exotic_gases_deposit = yes }
@@ -356,24 +316,11 @@ building_bioelectric_stimulator_3 = { # substitute for 'building_energy_grid'
     generator
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      AND = {
-        owner = { is_ai = yes }
-        has_any_generator_district_or_building = no
-      }
-      owner = { is_wilderness_empire = no }
-    }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -426,24 +373,11 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
     generator
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      AND = {
-        owner = { is_ai = yes }
-        has_any_generator_district_or_building = no
-      }
-      owner = { is_wilderness_empire = no }
-    }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -461,7 +395,7 @@ building_bioelectric_stimulator_4 = { # substitute for 'building_energy_nexus'
 
   planet_modifier = {
     planet_technician_energy_produces_add = @job_produce_add_t4_building
-    pop_technician_drone_bonus_workforce_mult = 0.20
+    technician_jobs_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_volatile_motes_deposit = yes }
@@ -593,24 +527,11 @@ building_churning_tunnels_3 = { # substitute for 'building_mineral_purification_
     mining
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      AND = {
-        owner = { is_ai = yes }
-        has_any_mining_district_or_building = no
-      }
-      owner = { is_wilderness_empire = no }
-    }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -663,24 +584,11 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
     mining
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      AND = {
-        owner = { is_ai = yes }
-        has_any_mining_district_or_building = no
-      }
-      owner = { is_wilderness_empire = no }
-    }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
-    NOT = { has_modifier = resort_colony }
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -691,7 +599,7 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
 
   planet_modifier = {
     planet_miners_minerals_produces_add = @job_produce_add_t4_building
-    pop_mining_drone_bonus_workforce_mult = 0.20
+    miner_jobs_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_rare_crystals_deposit = yes }

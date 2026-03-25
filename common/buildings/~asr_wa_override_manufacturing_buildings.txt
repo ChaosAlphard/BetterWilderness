@@ -102,24 +102,11 @@ building_natural_furnace_2 = { # substitute for 'building_foundry_2'
     foundry
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_major_upgraded_capital = yes
-    NOR = {
-      has_modifier = resort_colony
-      has_modifier = slave_colony
-    }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      has_modifier = slave_colony
-      owner = { is_wilderness_empire = no }
-    }
   }
 
   inline_script = {
@@ -171,24 +158,11 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
     foundry
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_fully_upgraded_capital = yes
-    NOR = {
-      has_modifier = resort_colony
-      has_modifier = slave_colony
-    }
-  }
-  destroy_trigger = {
-    exists = owner
-    OR = {
-      has_modifier = resort_colony
-      has_modifier = slave_colony
-      owner = { is_wilderness_empire = no }
-    }
   }
 
   inline_script = {
@@ -207,7 +181,7 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
   planet_modifier = {
     planet_metallurgists_alloys_produces_add = 1
     planet_metallurgists_minerals_upkeep_add = 2
-    pop_fabricator_bonus_workforce_mult = 0.20
+    foundry_jobs_bonus_workforce_mult = 0.20
   }
   triggered_planet_modifier = {
     potential = { has_ringworld_output_boost = yes }

@@ -169,7 +169,7 @@ building_tendril_cradle_4 = {
 
   planet_modifier = {
     planet_traders_trade_produces_add = 2
-    pop_logistics_drone_bonus_workforce_mult = 0.20
+    trader_jobs_bonus_workforce_mult = 0.20
   }
 
   inline_script = {

@@ -106,24 +106,11 @@ building_ozone_thickener = {
     fortress
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     has_upgraded_capital = yes
-    if = {
-      limit = { exists = orbital_defence }
-      orbital_defence = {
-        exists = starbase
-        starbase = {
-          NOR = {
-            has_starbase_building = ring_orbital_shield_generator
-            is_starbase_building_building = ring_orbital_shield_generator
-          }
-        }
-      }
-    }
   }
   prerequisites = {
     "tech_planetary_shield_generator"
@@ -139,9 +126,9 @@ building_ozone_thickener = {
     potential = { has_cosmic_storms_dlc = yes }
     planet_storm_devastation_mult = -0.5
   }
-  inline_script = { # on_built & on_destroy behaviors
-    script = cosmic_storms/PlanetaryShieldOnBuiltDestroy
-  }
+
+  # on_built & on_destroy behaviors
+  inline_script = { script = cosmic_storms/PlanetaryShieldOnBuiltDestroy }
 
   inline_script = {
     script = asr_wa/building/cost_t1

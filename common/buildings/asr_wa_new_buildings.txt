@@ -15,17 +15,12 @@ building_asr_wa_organic_processing = {
     industrial
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
     exists = owner
     owner = { is_ai = no }
-  }
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
   }
 
   resources = {
@@ -65,17 +60,14 @@ building_asr_wa_sentinel_posts = {
     urban
   }
 
-  potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+  inline_script = {
+    script = buildings/wilderness_buildings_potential_destroy
   }
-
   allow = {
     hidden_trigger = {
       OR = {
         owner = { is_ai = no }
         AND = {
-          NOT = { has_building = building_asr_wa_sentinel_posts }
           NOT = { has_forbidden_jobs = patrol_drone }
           NOT = { has_available_jobs = patrol_drone }
         }
@@ -97,13 +89,16 @@ building_asr_wa_sentinel_posts = {
     }
   }
 
-  destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-  }
-
   planet_modifier = {
     job_patrol_drone_per_pop = 0.02
+  }
+  # AI无法识别按人口数提供的岗位, 所以需要有固定提供的岗位让AI识别
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner
+      owner = { is_ai = yes }
+    }
+    job_patrol_drone_add = 200
   }
 
   prerequisites = {
@@ -117,6 +112,8 @@ building_asr_wa_sentinel_posts = {
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
   }
+
+  ai_estimate_without_unemployment = yes
 }
 
 # 化学消化器
