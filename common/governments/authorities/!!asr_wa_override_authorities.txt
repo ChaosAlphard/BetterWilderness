@@ -1,0 +1,34 @@
+# 尽管政体的重载方式为"同名文件覆盖"(DUPL)
+# 但是通过在原版文件载入前预先覆盖 advanced_authority_swap 就可以做到部分重载
+# 另外, 虽然科技也是 DUPL 重载, 但是不能用这个方法部分重载科技 (technology_swap)
+auth_hive_mind = {
+  advanced_authority_swap = {
+    name = "auth_mutualistic_intelligence"
+    description = "auth_mutualistic_intelligence_desc"
+
+    inherit_icon = no
+    inherit_effects = no
+    trigger = {
+      is_scope_valid = yes
+      is_wilderness_empire = yes
+    }
+    tags = { # note: completely replaces all Hive Mind tags, so repetition is intentional
+      AUTH_HIVE_MIND_AI_RESTRICTIONS
+      AUTH_MUTUALISTIC_FOREIGN_POP_SURVIVAL
+      AUTH_MUTUALISTIC_ASCENSION_RESTRICTIONS
+      NEW_LINE
+      AUTHORITY_SUCCESSION_TYPE
+      AUTH_GESTALT_IMMORTAL_LEADERS
+    }
+    modifier = {
+      empire_size_penalty_mult = -0.25
+      empire_size_districts_mult = 1
+      empire_size_colonies_mult = 1
+      diplo_weight_economy_mult = 1
+      diplo_weight_pops_mult = -1
+      district_generator_max_mult = 1
+      district_mining_max_mult = 1
+      district_farming_max_mult = 1
+    }
+  }
+}

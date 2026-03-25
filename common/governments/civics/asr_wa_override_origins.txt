@@ -59,18 +59,10 @@ origin_wilderness = {
   }
 
   modifier = {
-    diplo_weight_pops_mult = -1
-    empire_size_districts_mult = -1.00
-    empire_size_colonies_mult = -1.00
-    # logistic_growth_mult = 0.25
     planet_building_capacity_add = 3
     building_time_mult = -0.25
-    # daily_terraform_progress_add = 1
     terraform_speed_mult = 0.5
     terraforming_cost_mult = -0.25
-    district_generator_max_mult = 1
-    district_mining_max_mult = 1
-    district_farming_max_mult = 1
   }
 
   random_weight = {
