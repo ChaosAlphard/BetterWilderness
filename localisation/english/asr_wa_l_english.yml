@@ -52,7 +52,7 @@ l_english:
   asr_wa_wilderness_world: "Shaped Nature"
   asr_wa_wilderness_world_desc: ""
   # Scripted Modifiers
-  mod_biomass_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Biomass Pops"
+  mod_wilderness_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Wilderness Pops"
   # Job
   job_asr_wa_simulate_spawning_drone: "Incubator"
   job_asr_wa_simulate_spawning_drone_plural: "Incubators"

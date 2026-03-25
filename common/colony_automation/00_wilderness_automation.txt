@@ -34,14 +34,6 @@ automate_wilderness_capital = {
         has_zone = { zone = zone_foundry_wilderness }
       }
     }
-    4 = {
-      building = building_planetary_carapace
-      planet_limit = 1
-    }
-    5 = {
-      building = building_planetary_shield_generator
-      planet_limit = 1
-    }
   }
 }
 

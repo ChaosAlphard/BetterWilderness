@@ -29,7 +29,7 @@ l_simp_chinese:
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
   asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity']传统完成各提供§G+100§!$mod_job_spawning_drone_add$\n—['ascension_perk:ap_mastery_of_nature']提供§G-10%§!$mod_planet_structures_cost_mult$"
-  asr_wa_b_cor_bonus_pop_growth_tt: "—若无空余$wa_r_housing$，则不提供$mod_job_spawning_drone_add$\n—人口少于§Y$@wa_bonus_growth_max_pops|0$§!时，按人口数反比提供§Y$job_asr_wa_simulate_spawning_drone$§!岗位，仅计算没有被施行人口控制的生物质人口"
+  asr_wa_b_cor_bonus_pop_growth_tt: "—若无空余$wa_r_housing$，则不提供$mod_job_spawning_drone_add$\n—人口少于§Y$@wa_bonus_growth_max_pops|0$§!时，按人口数反比提供§Y$job_asr_wa_simulate_spawning_drone$§!岗位，仅计算没有被施行人口控制的荒野人口"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2']提供更多$wa_r_amenities_gestalt$与$wa_r_housing$"
@@ -52,7 +52,7 @@ l_simp_chinese:
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
   asr_wa_wilderness_world_desc: ""
   # Scripted Modifiers
-  mod_biomass_pop_bonus_workforce_mult: "生物质人口$BONUS_WORKFORCE_FOR$"
+  mod_wilderness_pop_bonus_workforce_mult: "荒野人口$BONUS_WORKFORCE_FOR$"
   # Job
   job_asr_wa_simulate_spawning_drone: "孵化体"
   job_asr_wa_simulate_spawning_drone_plural: "孵化体"
