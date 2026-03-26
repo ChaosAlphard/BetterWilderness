@@ -127,3 +127,19 @@ asr_wa_job_output_modifier_loc = {
   add = value:asr_wa_total_job_output_modifier|JOB|$JOB$|RESOURCE|$RESOURCE$|
   subtract = value:asr_wa_zone_job_output_modifier|ZONE|$ZONE$|MULT|$MULT$|
 }
+
+# ((n-1)/2+x)*n, n = 增加的行星规模数, x = 当前行星规模
+# asr_wa_expand_planet_mod = {
+#   base = 0
+#   set = $SIZE$
+#   subtract = 1
+#   divide = 2
+#   add = planet.trigger:planet_size
+#   multiply = $SIZE$
+# }
+asr_wa_expand_planet_mod = {
+  base = 0
+  set = planet.trigger:planet_size
+  mult = 4
+  add = 6
+}

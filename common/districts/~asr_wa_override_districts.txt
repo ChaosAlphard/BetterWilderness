@@ -101,6 +101,7 @@ district_craglands = {
 # Energy (yellow)
 district_photosynthesis_fields = {
   expansion_planner = yes
+  expansion_planner_type = district_generator
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_energy
   inherits_capped_modifiers_from = district_generator
@@ -187,6 +188,7 @@ district_photosynthesis_fields = {
 # Mining (red)
 district_hollow_mountains = {
   expansion_planner = yes
+  expansion_planner_type = district_mining
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_minerals
   inherits_capped_modifiers_from = district_mining
@@ -273,6 +275,7 @@ district_hollow_mountains = {
 # Farming (green)
 district_orchard_forests = {
   expansion_planner = yes
+  expansion_planner_type = district_farming
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_food
   inherits_capped_modifiers_from = district_farming

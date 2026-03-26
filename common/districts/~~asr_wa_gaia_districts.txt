@@ -18,7 +18,9 @@ district_asr_wa_cragland_01 = {
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
   }
+  exempt_from_ai_planet_specialization = yes
   ai_estimate_without_unemployment = yes
+  additional_ai_weight = 10
 }
 
 district_asr_wa_cragland_02 = {
@@ -39,7 +41,9 @@ district_asr_wa_cragland_02 = {
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
   }
+  exempt_from_ai_planet_specialization = yes
   ai_estimate_without_unemployment = yes
+  additional_ai_weight = 10
 }
 
 district_asr_wa_cragland_03 = {
@@ -60,5 +64,7 @@ district_asr_wa_cragland_03 = {
   inline_script = {
     script = buildings/on_all_wilderness_buildings_districts
   }
+  exempt_from_ai_planet_specialization = yes
   ai_estimate_without_unemployment = yes
+  additional_ai_weight = 10
 }
