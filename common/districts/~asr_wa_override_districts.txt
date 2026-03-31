@@ -82,17 +82,7 @@ district_craglands = {
 
   inline_script = { script = asr_wa/districts/triggered_name }
 
-  ai_resource_production = {
-    unity = 5
-    trigger = {
-      OR = {
-        has_building = building_commensal_clearing_1
-        has_building = building_commensal_clearing_2
-        has_building = building_commensal_clearing_3
-        has_building = building_commensal_clearing_4
-      }
-    }
-  }
+  inline_script = { script = asr_wa/districts/ai_resource_weight }
 
   exempt_from_ai_planet_specialization = yes
   ai_estimate_without_unemployment = yes

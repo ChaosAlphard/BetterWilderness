@@ -77,7 +77,7 @@ zone_fortress_wilderness = {
 }
 
 zone_food_wilderness = {
-  zone_sets = { urban }
+  zone_sets = { food }
   included_building_sets = { urban }
 }
 
@@ -87,7 +87,7 @@ zone_asr_wa_assist_food = {
 }
 
 zone_energy_wilderness = {
-  zone_sets = { urban }
+  zone_sets = { energy }
   included_building_sets = { urban }
 }
 
@@ -97,11 +97,31 @@ zone_asr_wa_assist_energy = {
 }
 
 zone_minerals_wilderness = {
-  zone_sets = { urban }
+  zone_sets = { minerals }
   included_building_sets = { urban }
 }
 
 zone_asr_wa_assist_mineral = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_rare_resources_plant_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_exotic_gases_plant_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_volatile_motes_plant_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_rare_crystals_plant_wilderness = {
   zone_sets = { urban }
   included_building_sets = { urban }
 }

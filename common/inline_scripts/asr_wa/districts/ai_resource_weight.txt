@@ -1,0 +1,52 @@
+inline_script = { script = districts/ai_urban_district_extra_weighting }
+
+ai_resource_production = {
+  physics_research = 10
+  trigger = {
+    has_zone = { zone = zone_asr_wa_research_phy_wilderness }
+  }
+}
+ai_resource_production = {
+  society_research = 10
+  trigger = {
+    has_zone = { zone = zone_asr_wa_research_soc_wilderness }
+  }
+}
+ai_resource_production = {
+  engineering_research = 10
+  trigger = {
+    has_zone = { zone = zone_asr_wa_research_eng_wilderness }
+  }
+}
+ai_resource_production = {
+  consumer_goods = 10
+  trigger = {
+    has_zone = { zone = zone_asr_wa_factory_wilderness }
+  }
+}
+ai_resource_production = {
+  exotic_gases = 1
+  volatile_motes = 1
+  rare_crystals = 1
+  trigger = {
+    has_zone = { zone = zone_asr_wa_rare_resources_plant_wilderness }
+  }
+}
+ai_resource_production = {
+  exotic_gases = 2
+  trigger = {
+    has_zone = { zone = zone_asr_wa_exotic_gases_plant_wilderness }
+  }
+}
+ai_resource_production = {
+  volatile_motes = 2
+  trigger = {
+    has_zone = { zone = zone_asr_wa_volatile_motes_plant_wilderness }
+  }
+}
+ai_resource_production = {
+  rare_crystals = 2
+  trigger = {
+    has_zone = { zone = zone_asr_wa_rare_crystals_plant_wilderness }
+  }
+}

@@ -19,23 +19,6 @@ country_event = {
   id = asr_wa_wilderness.100
   hide_window = yes
   is_triggered_only = yes
-  trigger = {
-    is_wilderness_empire = yes
-    is_ai = yes
-  }
-
-  immediate = {
-    country_event = {
-      id = asr_wa_wilderness.101
-      days = 2
-    }
-  }
-}
-
-country_event = {
-  id = asr_wa_wilderness.101
-  hide_window = yes
-  is_triggered_only = yes
   trigger = { is_wilderness_empire = yes }
 
   immediate = {
@@ -44,38 +27,16 @@ country_event = {
     # 这会导致共栖群落建筑槽中的起始建筑全部被清空, 蜂巢集群建筑槽中的建筑才能留保留下来
     # 当然蜂巢集群里面本身不会有任何建筑, 并且蜂巢集群最后会被转换成共栖群落
     # 所以约等于过月直接清空荒野的所有建筑
+    # 截止4.3.3版本为止, P社仍未修复这个Bug
     every_owned_planet = {
       # 这里通过手动移除蜂巢集群来避免触发区划合并导致建筑被清空
       # 然而殖民地添加的是城市区划和蜂巢集群, 甚至没有共栖群落
       # 这会导致最后的一个城市区划无法被移除, 无法避免触发区划合并
       # 只能在移除后手动添加被移除的建筑
       asr_wa_change_to_wilderness_districts = yes
-      # 已经移交 on_planet_class_changed 事件里处理, 这里不用了
-      # if = { # 多重起源Mod, 盖亚开兼容
-      #   limit = { asr_wa_planet_is_wilderness_arcology = yes }
-      #   asr_wa_change_to_wilderness_advanced_districts = yes
-      # }
       # 立即触发一次检测, 如果触发区划合并的话还是会丢建筑
       validate_planet_buildings_and_districts = yes
       # 手动添加被移除的建筑
-      asr_wa_restore_wilderness_buildings = yes
-    }
-    country_event = {
-      # 双重保险
-      id = asr_wa_wilderness.102
-      months = 1
-    }
-  }
-}
-
-country_event = {
-  id = asr_wa_wilderness.102
-  hide_window = yes
-  is_triggered_only = yes
-  trigger = { is_wilderness_empire = yes }
-
-  immediate = {
-    every_owned_planet = {
       asr_wa_restore_wilderness_buildings = yes
     }
   }
@@ -92,6 +53,7 @@ country_event = {
     any_owned_species = {
       OR = {
         has_trait = trait_wilderness
+        # 更新非荒野人口 (如果有其他Mod可以让荒野利用非荒野人口)
         is_archetype = PRESAPIENT
         is_archetype = BIOLOGICAL
         is_archetype = LITHOID
@@ -162,6 +124,7 @@ planet_event = {
   }
 
   immediate = {
+    validate_planet_buildings_and_districts = yes
     asr_wa_add_zone_if_has_district = {
       ZONE = zone_asr_wa_energy
       ZONE_SLOT = slot_asr_wa_gaia_rural_01

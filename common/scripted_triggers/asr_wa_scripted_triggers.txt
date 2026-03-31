@@ -62,10 +62,15 @@ asr_wa_foundry_zone_assist_chemists = {
   }
 }
 
+# 兼容其他Mod, 重写这个方法以让其他星球类型也被视为盖亚星球
+asr_wa_is_wilderness_advanced_planet = {
+  is_planet_class = pc_gaia
+}
+
 asr_wa_planet_is_wilderness_arcology = {
   hidden_trigger = { exists = planet }
   planet = {
-    is_planet_class = pc_gaia
+    asr_wa_is_wilderness_advanced_planet = yes
     [[NOT_WILDERNESS_WORLD] NOT = {
       has_planet_flag = asr_wa_pf_wilderness_world
     } ]
@@ -75,19 +80,20 @@ asr_wa_planet_is_wilderness_arcology = {
 asr_wa_planet_is_wilderness_world = {
   hidden_trigger = { exists = planet }
   planet = {
-    is_planet_class = pc_gaia
+    asr_wa_is_wilderness_advanced_planet = yes
     has_planet_flag = asr_wa_pf_wilderness_world
   }
 }
 
+# 兼容其他Mod, 重写这个方法以在其他星球上提供等效盖亚星球的岗位
 # 判断当前行星是否应该具有和 荒野盖亚星球 等效的岗位数量
 asr_wa_planet_is_wilderness_arcology_equivalent = {
-  is_planet_class = pc_gaia
+  asr_wa_is_wilderness_advanced_planet = yes
   NOT = { has_planet_flag = asr_wa_pf_wilderness_world }
 }
 # 判断当前行星是否应该具有和 荒野重塑自然 等效的岗位数量
 asr_wa_planet_is_wilderness_world_equivalent = {
-  is_planet_class = pc_gaia
+  asr_wa_is_wilderness_advanced_planet = yes
   has_planet_flag = asr_wa_pf_wilderness_world
 }
 asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {

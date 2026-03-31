@@ -68,13 +68,19 @@ decision_asr_wa_wilderness_world = {
   }
   allow = {
     has_fully_upgraded_capital = yes
-    has_modifier = mastery_of_nature
+    OR = {
+      has_modifier = mastery_of_nature
+      has_modifier = cultivated_worldscaping_modifier
+    }
     planet_size >= 25
     free_district_slots <= 0
     num_uncleared_blockers <= 0
     hidden_trigger = { exists = owner }
     owner = {
-      has_ascension_perk = ap_mastery_of_nature
+      OR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
       has_ascension_perk = ap_world_shaper
       has_technology = tech_mega_engineering
     }

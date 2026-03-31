@@ -51,54 +51,6 @@ asr_wa_change_to_wilderness_districts = {
   }
 }
 
-asr_wa_change_to_wilderness_advanced_districts = {
-  # 光合原野
-  while = {
-    limit = { has_district = district_photosynthesis_fields }
-    add_district = {
-      district_type = district_asr_wa_cragland_01
-      ignore_cap = yes
-    }
-    remove_district = district_photosynthesis_fields
-  }
-  add_zone = {
-    zone = zone_asr_wa_energy
-    zone_slot = slot_asr_wa_gaia_rural_01
-    district = district_asr_wa_cragland_01
-    replace = no
-  }
-  # 中空山岭
-  while = {
-    limit = { has_district = district_hollow_mountains }
-    add_district = {
-      district_type = district_asr_wa_cragland_02
-      ignore_cap = yes
-    }
-    remove_district = district_hollow_mountains
-  }
-  add_zone = {
-    zone = zone_asr_wa_mineral
-    zone_slot = slot_asr_wa_gaia_rural_02
-    district = district_asr_wa_cragland_02
-    replace = no
-  }
-  # 硕果森林
-  while = {
-    limit = { has_district = district_orchard_forests }
-    add_district = {
-      district_type = district_asr_wa_cragland_03
-      ignore_cap = yes
-    }
-    remove_district = district_orchard_forests
-  }
-  add_zone = {
-    zone = zone_asr_wa_food
-    zone_slot = slot_asr_wa_gaia_rural_03
-    district = district_asr_wa_cragland_03
-    replace = no
-  }
-}
-
 asr_wa_export_city_districts_num = {
   export_trigger_value_to_variable = {
     trigger = num_districts
@@ -173,10 +125,7 @@ asr_wa_restore_wilderness_buildings = {
 asr_wa_add_zone_if_has_district = {
   if = {
     limit = {
-      num_districts = {
-        type = $DISTRICT$
-        value >= 1
-      }
+      has_district = $DISTRICT$
     }
     add_zone = {
       zone = $ZONE$
