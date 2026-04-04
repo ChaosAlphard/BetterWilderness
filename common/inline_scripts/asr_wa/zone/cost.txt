@@ -2,22 +2,20 @@ resources = {
   category = planet_zones
   cost = {
     trigger = {
-      owner = { is_ai = no }
-      asr_wa_planet_use_food_build_building = no
+      asr_wa_planet_use_mixed_build_building = yes
     }
     minerals = @wa_zone_r_mixed
     food = @wa_zone_r_mixed
   }
   cost = {
     trigger = {
-      owner = { is_ai = no }
       asr_wa_planet_use_food_build_building = yes
     }
     food = @wa_zone_r_foods
   }
   cost = {
     trigger = {
-      owner = { is_ai = yes }
+      asr_wa_planet_use_mineral_build_building = yes
     }
     minerals = @wa_zone_r_minerals
   }

@@ -8,7 +8,7 @@ potential = {
 unlock = {
   hidden_trigger = { exists = owner }
   owner = {
-    is_wilderness_empire = yes
+    hidden_trigger = { is_wilderness_empire = yes }
     has_technology = $TECH$
   }
 }

@@ -3,22 +3,20 @@ cost = {
 }
 cost = {
   trigger = {
-    owner = { is_ai = no }
-    asr_wa_planet_use_food_build_building = no
+    asr_wa_planet_use_mixed_build_building = yes
   }
   food = $FOOD_AND_MINERAL_COST$
   minerals = $FOOD_AND_MINERAL_COST$
 }
 cost = {
   trigger = {
-    owner = { is_ai = no }
     asr_wa_planet_use_food_build_building = yes
   }
   food = $FOOD_COST$
 }
 cost = {
   trigger = {
-    owner = { is_ai = yes }
+    asr_wa_planet_use_mineral_build_building = yes
   }
   minerals = $MINERAL_COST$
 }

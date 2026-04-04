@@ -1,32 +1,27 @@
 resources = {
   category = $CATEGORY$
   cost = {
-    biomass = 100
-  }
-  cost = {
     trigger = { free_district_slots > 0 }
-    biomass = 100
+    biomass = 200
   }
   cost = {
     trigger = {
-      owner = { is_ai = yes }
-    }
-    minerals = 300
-  }
-  cost = {
-    trigger = {
-      owner = { is_ai = no }
-      asr_wa_planet_use_food_build_building = no
+      asr_wa_planet_use_mixed_build_building = yes
     }
     minerals = 150
     food = 150
   }
   cost = {
     trigger = {
-      owner = { is_ai = no }
       asr_wa_planet_use_food_build_building = yes
     }
     food = 375
+  }
+  cost = {
+    trigger = {
+      asr_wa_planet_use_mineral_build_building = yes
+    }
+    minerals = 300
   }
   upkeep = {
     food = 1

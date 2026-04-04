@@ -6,33 +6,56 @@ asr_wa_is_normal_wilderness_pop = {
   }
 }
 
-asr_wa_planet_use_food_build_building = {
-  exists = planet
-  planet = {
-    has_active_building = building_asr_wa_organic_processing
-  }
-}
-
-asr_wa_planet_fabricator_use_food = {
-  exists = planet
-  planet = {
-    has_active_building = building_asr_wa_organic_processing
-  }
-}
-
-asr_wa_planet_researcher_use_food = {
-  exists = planet
-  planet = {
-    OR = {
-      has_active_building = building_asr_wa_organic_processing
-      AND = {
-        asr_wa_is_hja_installed = yes
-        exists = owner
-        owner = { has_policy_flag = irs_hja_researcher_use_food_resource }
+asr_wa_planet_use_mineral_build_building = {
+  OR = {
+    AND = {
+      exists = owner
+      owner = {
+        has_policy_flag = asr_wa_pf_building_cost_default
       }
+    }
+    # owner 不存在时, 或者其他特殊情况下的保险
+    AND = {
+      asr_wa_planet_use_mixed_build_building = no
+      asr_wa_planet_use_food_build_building = no
     }
   }
 }
+asr_wa_planet_use_mixed_build_building = {
+  exists = owner
+  owner = {
+    has_policy_flag = asr_wa_pf_building_cost_mixed
+    is_ai = no  # 当前版本(4.3.3)AI不会用食物建造特定建筑以外的建筑和区划
+  }
+}
+asr_wa_planet_use_food_build_building = {
+  exists = owner
+  owner = {
+    has_policy_flag = asr_wa_pf_building_cost_food
+    is_ai = no
+  }
+}
+
+# 并没有被使用
+# asr_wa_planet_fabricator_use_food = {
+#   exists = planet
+#   planet = {
+#     has_active_building = building_asr_wa_organic_processing
+#   }
+# }
+# asr_wa_planet_researcher_use_food = {
+#   exists = planet
+#   planet = {
+#     OR = {
+#       has_active_building = building_asr_wa_organic_processing
+#       AND = {
+#         asr_wa_is_hja_installed = yes
+#         exists = owner
+#         owner = { has_policy_flag = irs_hja_researcher_use_food_resource }
+#       }
+#     }
+#   }
+# }
 
 asr_wa_district_set_can_build_craglands = {
   OR = {

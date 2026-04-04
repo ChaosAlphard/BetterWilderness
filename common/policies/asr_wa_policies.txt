@@ -1,0 +1,128 @@
+# 建筑花费
+asr_wa_building_build_cost = {
+  potential = {
+    is_wilderness_empire = yes
+  }
+
+  # AI不会用食物建造特定建筑以外的建筑和区划, 所以AI只能选择这个选项
+  option = {
+    name = asr_wa_p_building_cost_default
+    policy_flags = { asr_wa_pf_building_cost_default }
+    potential = { always = yes }
+    valid = { always = yes }
+    ai_weight = { weight = 10 }
+  }
+
+  option = {
+    name = asr_wa_p_building_cost_mixed
+    policy_flags = { asr_wa_pf_building_cost_mixed }
+    potential = { always = yes }
+    valid = { is_ai = no }
+    ai_weight = {
+      weight = 0
+      modifier = {
+        add = 20
+        is_ai = no
+      }
+    }
+  }
+
+  option = {
+    name = asr_wa_p_building_cost_food
+    policy_flags = { asr_wa_pf_building_cost_food }
+    potential = { always = yes }
+    valid = { is_ai = no }
+    ai_weight = { weight = 0 }
+  }
+}
+# 掌控自然飞升额外加成
+asr_wa_mastery_of_nature_effect = {
+  potential = {
+    is_wilderness_empire = yes
+  }
+
+  option = {
+    name = asr_wa_p_mastery_of_nature_none
+    potential = {
+      NOR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
+    }
+    valid = {
+      NOR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
+    }
+
+    ai_weight = { weight = 0 }
+  }
+
+  option = {
+    name = asr_wa_p_mastery_of_nature_valid
+    potential = { always = yes }
+    valid = {
+      OR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
+    }
+
+    modifier = {
+      planet_structures_cost_mult = -0.10
+    }
+
+    ai_weight = { weight = 10 }
+  }
+}
+# 纯净传统额外加成
+asr_wa_tr_purity_effect = {
+  potential = {
+    is_wilderness_empire = yes
+    has_tradition = tr_purity_adopt
+  }
+
+  option = {
+    name = asr_wa_p_purity_adopt
+
+    potential = {
+      NOT = { has_tradition = tr_purity_finish }
+      has_tradition = tr_purity_adopt
+    }
+
+    valid = {
+      NOT = { has_tradition = tr_purity_finish }
+      has_tradition = tr_purity_adopt
+    }
+
+    modifier = {
+      leader_initial_skill = 2
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+
+  option = {
+    name = asr_wa_p_purity_finish
+
+    potential = {
+      has_tradition = tr_purity_finish
+    }
+
+    valid = {
+      has_tradition = tr_purity_finish
+    }
+
+    modifier = {
+      leader_initial_skill = 2
+      councilor_skill_add = 2
+    }
+
+    AI_weight = {
+      weight = 10
+    }
+  }
+}

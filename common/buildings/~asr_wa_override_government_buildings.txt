@@ -1,10 +1,8 @@
-@wa_b2_biomass = 200
 # 再生源地
 # 基础: +100孵育体, 给予人口组装速度加成, 反比于行星人口数量
-# 拥有 基因重塑 飞升: +100孵育体
+# 拥有 基因重塑 飞升: +100孵育体, +20%宜居性
 # 拥有 基因剪裁 科技: +100孵育体
 # 纯净传统完成: +100孵育体, 每个建筑与区划给予+2%建造速度和决议颁布速度, 在盖亚星球上加成翻倍
-# 掌控自然飞升: 给予-10%行星基础设施花费
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
   category = government
@@ -25,7 +23,7 @@ building_cradle_of_rebirth = {
     category = planet_buildings
     cost = {
       food = @b2_minerals
-      biomass = @wa_b2_biomass
+      biomass = @b2_biomass
     }
     upkeep = {
       food = @b2_upkeep
@@ -49,13 +47,13 @@ building_cradle_of_rebirth = {
   inline_script = { script = asr_wa/building/cradle_of_rebirth/spawning_drone }
   inline_script = { script = asr_wa/building/cradle_of_rebirth/simulate_spawning_drone }
 
-  # 掌控自然飞升给予-10%行星基础设施花费
+  # 基因重塑飞升给予+20%宜居性
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      owner = { has_ascension_perk = ap_mastery_of_nature }
+      owner = { has_ascension_perk = ap_engineered_evolution }
     }
-    planet_structures_cost_mult = -0.10
+    pop_environment_tolerance = 0.20
   }
   # 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
   triggered_planet_modifier = {
@@ -86,4 +84,133 @@ building_cradle_of_rebirth = {
   ai_estimate_without_unemployment = yes
   ai_weight_coefficient = 1.2
   additional_ai_weight = 200
+}
+
+building_wilderness_storm_relief = {
+  base_buildtime = @b1_time
+  planet_limit = 1
+  category = government
+
+  building_sets = {
+    government
+    urban
+  }
+
+  potential = {
+    exists = owner
+    owner = { is_wilderness_empire = yes }
+    OR = {
+      owner = { is_ai = no }
+      solar_system = { system_has_storm_repelling_tech = no }
+    }
+  }
+  destroy_trigger = {
+    exists = owner
+    owner = { is_wilderness_empire = no }
+    influence_building_destruction_trigger = yes
+  }
+
+  prerequisites = {
+    "tech_industrial_storm_protection"
+  }
+  show_tech_unlock_if = {
+    is_wilderness_empire = yes
+  }
+
+  resources = {
+    category = planet_buildings_storm_tech
+    inline_script = {
+      script = asr_wa/building/shared_cost
+      BIOMASS = @b1_biomass
+      FOOD_AND_MINERAL_COST = @wa_b2_mixed
+      FOOD_COST = @wa_b2_foods
+      MINERAL_COST = @wa_b2_minerals
+    }
+    upkeep = {
+      energy = @b2_upkeep
+    }
+    # 无额外维护费, 因为荒野本就无法从"严阵以待"决议中获取任何收益
+    # upkeep = {
+    #   trigger = { has_modifier = storm_hunkered_down_modifier }
+    #   energy = @b1_upkeep
+    # }
+  }
+
+  planet_modifier = {
+    planet_storm_devastation_mult = -0.25
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = starbase
+      starbase = { has_starbase_building = storm_attraction_computer }
+    }
+    storm_attraction_field_modifier = 0.6
+  }
+  triggered_desc = {
+    trigger = {
+      exists = starbase
+      starbase = { has_starbase_building = storm_attraction_computer }
+    }
+    text = building_cosmic_storm_advanced_attraction_center_tt
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = starbase
+      starbase = { has_starbase_building = storm_repelling_computer }
+    }
+    storm_repelling_field_modifier = 0.6
+  }
+  triggered_desc = {
+    trigger = {
+      exists = starbase
+      starbase = { has_starbase_building = storm_repelling_computer }
+    }
+    text = building_cosmic_storm_advanced_repellent_center_tt
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner
+      solar_system = {
+        is_inside_storm = yes
+      }
+    }
+    modifier = {
+      planet_miners_minerals_produces_add = 1
+      planet_farmers_food_produces_add = 1
+      planet_technician_energy_produces_add = 1
+    }
+  }
+  triggered_desc = {
+    trigger = { always = yes }
+    text = asr_wa_b_sr_tt
+  }
+  triggered_planet_modifier = {
+    potential = {
+      exists = owner
+      owner = { is_galactic_community_member = yes }
+    }
+    modifier = {
+      planet_miners_produces_mult = 1
+      planet_farmers_produces_mult = 1
+      planet_technician_produces_mult = 1
+    }
+    mult = value:storm_building_production_multiplier
+  }
+
+  inline_script = {
+    script = buildings/on_all_wilderness_buildings_districts
+  }
+
+  custom_tooltip = "building_wilderness_storm_relief_tt"
+
+  custom_storm_ai_weight = {
+    weight = 0
+    modifier = {
+      add = 30
+      AND = {
+        exists = owner
+        owner = { num_unique_cosmic_storms_encountered >= 2 }
+      }
+    }
+  }
 }

@@ -2,78 +2,63 @@ resources = {
   category = $CATEGORY$
 
   cost = {
-    biomass = 100
-  }
-  cost = {
-    trigger = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
-    biomass = 200
-  }
-  cost = {
-    trigger = { asr_wa_planet_is_wilderness_world_equivalent = yes }
-    biomass = 400
-  }
-  cost = {
     trigger = { free_district_slots > 0 }
-    biomass = 100
+    biomass = 200
   }
   cost = {
     trigger = {
       free_district_slots > 0
       asr_wa_planet_is_wilderness_arcology_equivalent = yes
     }
-    biomass = 200
+    biomass = 400
   }
   cost = {
     trigger = {
       free_district_slots > 0
       asr_wa_planet_is_wilderness_world_equivalent = yes
     }
-    biomass = 400
+    biomass = 800
   }
 
   cost = {
     trigger = {
-      owner = { is_ai = no }
-      asr_wa_planet_use_food_build_building = no
+      asr_wa_planet_use_mixed_build_building = yes
     }
     minerals = @wa_district_r_mixed
     food = @wa_district_r_mixed
   }
   cost = {
     trigger = {
-      owner = { is_ai = no }
       asr_wa_planet_use_food_build_building = yes
     }
     food = @wa_district_r_foods
   }
   cost = {
     trigger = {
-      owner = { is_ai = no }
+      asr_wa_planet_use_mineral_build_building = yes
+    }
+    minerals = @wa_district_r_minerals
+  }
+
+  cost = {
+    trigger = {
       asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
-      asr_wa_planet_use_food_build_building = no
+      asr_wa_planet_use_mixed_build_building = yes
     }
     minerals = @wa_district_r_extra_mixed
     food = @wa_district_r_extra_mixed
   }
   cost = {
     trigger = {
-      owner = { is_ai = no }
       asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
       asr_wa_planet_use_food_build_building = yes
     }
     food = @wa_district_r_extra_foods
   }
-  # AI不会用食物建区划和建筑, 所以建筑花费对AI替换为矿物
   cost = {
     trigger = {
-      owner = { is_ai = yes }
-    }
-    minerals = @wa_district_r_minerals
-  }
-  cost = {
-    trigger = {
-      owner = { is_ai = yes }
       asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
+      asr_wa_planet_use_mineral_build_building = yes
     }
     minerals = @wa_district_r_extra_minerals
   }

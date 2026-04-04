@@ -2,10 +2,17 @@ cost = {
   biomass = $BIOMASS$
 }
 cost = {
-  trigger = { owner = { is_ai = no } }
+  trigger = {
+    OR = {
+      asr_wa_planet_use_mixed_build_building = yes
+      asr_wa_planet_use_food_build_building = yes
+    }
+  }
   food = $FOOD$
 }
 cost = {
-  trigger = { owner = { is_ai = yes } }
+  trigger = {
+    asr_wa_planet_use_mineral_build_building = yes
+  }
   minerals = $MINERAL$
 }
