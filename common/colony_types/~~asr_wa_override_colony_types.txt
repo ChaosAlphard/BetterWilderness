@@ -41,7 +41,6 @@ col_wilderness_unification = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -98,7 +97,6 @@ col_wilderness_tech = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -170,7 +168,6 @@ col_wilderness_forge = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -236,15 +233,14 @@ col_wilderness_refinery = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
 
   planet_modifier = {
-    planet_refiners_produces_mult = 0.15
-    planet_translucers_produces_mult = 0.15
-    planet_chemists_produces_mult = 0.15
+    planet_refiners_upkeep_mult = -0.15
+    planet_translucers_upkeep_mult = -0.15
+    planet_chemists_upkeep_mult = -0.15
   }
 
   triggered_planet_modifier = {
@@ -253,9 +249,9 @@ col_wilderness_refinery = {
       owner_or_space_owner = { has_tradition = tr_adaptability_finish }
     }
     modifier = {
-      planet_refiners_produces_mult = 0.10
-      planet_translucers_produces_mult = 0.10
-      planet_chemists_produces_mult = 0.10
+      planet_refiners_upkeep_mult = -0.10
+      planet_translucers_upkeep_mult = -0.10
+      planet_chemists_upkeep_mult = -0.10
     }
   }
 
@@ -272,7 +268,6 @@ col_wilderness_nest = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -325,7 +320,6 @@ col_wilderness_fortress = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -376,7 +370,6 @@ col_wilderness_farming = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -468,7 +461,6 @@ col_wilderness_generator = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }
@@ -559,7 +551,6 @@ col_wilderness_mining = {
 
   potential = {
     is_capital = no
-    is_special_colony_type = no
     exists = owner_or_space_owner
     owner_or_space_owner = { is_wilderness_empire = yes }
   }

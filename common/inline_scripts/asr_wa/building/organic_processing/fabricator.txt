@@ -11,19 +11,13 @@ triggered_planet_modifier = {
 }
 # 固态光冶炼炉
 triggered_planet_modifier = {
-  potential = {
-    has_active_building = building_natural_furnace_2
-    asr_wa_planet_fabricator_use_food = yes
-  }
+  potential = { has_active_building = building_natural_furnace_2 }
   planet_metallurgists_minerals_upkeep_add = -1
   planet_metallurgists_food_upkeep_add = 1.5
 }
 # 纳米熔炉
 triggered_planet_modifier = {
-  potential = {
-    has_active_building = building_natural_furnace_3
-    asr_wa_planet_fabricator_use_food = yes
-  }
+  potential = { has_active_building = building_natural_furnace_3 }
   planet_metallurgists_minerals_upkeep_add = -2
   planet_metallurgists_food_upkeep_add = 3
 }
@@ -31,7 +25,6 @@ triggered_planet_modifier = {
   potential = {
     has_ringworld_output_boost = yes
     has_active_building = building_natural_furnace_3
-    asr_wa_planet_fabricator_use_food = yes
   }
   planet_metallurgists_minerals_upkeep_add = -1
   planet_metallurgists_food_upkeep_add = 1.5
