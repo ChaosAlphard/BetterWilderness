@@ -53,6 +53,28 @@ triggered_planet_modifier = {
   planet_artisans_minerals_upkeep_add = -1
   planet_artisans_food_upkeep_add = 1.5
 }
+# 万变魔石
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      has_relic = r_everchanging_stone
+    }
+  }
+  planet_metallurgists_minerals_upkeep_add = 1
+  planet_metallurgists_food_upkeep_add = -1.5
+}
+triggered_planet_modifier = {
+  potential = {
+    exists = owner
+    owner = {
+      has_relic = r_everchanging_stone
+    }
+    asr_wa_foundry_zone_assist_artisans = yes
+  }
+  planet_artisans_minerals_upkeep_add = 1
+  planet_artisans_food_upkeep_add = -1.5
+}
 # 远古精炼厂
 triggered_planet_modifier = {
   potential = { has_active_building = building_archaeo_refinery }

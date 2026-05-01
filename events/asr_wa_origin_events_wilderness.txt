@@ -16,6 +16,32 @@ country_event = {
 }
 
 country_event = {
+  id = asr_wa_wilderness.10
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = { is_wilderness_empire = yes }
+
+  # 将开局的生物质库存设置为正确的值
+  # 4.2某个版本之后, 荒野开局的生物质库存始终为0, 这导致即使通过贸易市场购买到足够的资源, 也无法在在第一个月就开始建设
+  immediate = {
+    export_trigger_value_to_variable = {
+      trigger = count_owned_pop_amount
+      parameters = {
+        limit = {
+          has_trait = trait_wilderness
+        }
+      }
+      variable = asr_wa_start_wilderness_pop_amount
+    }
+    set_resource = {
+      resource = biomass
+      value = asr_wa_start_wilderness_pop_amount
+    }
+    clear_variable = asr_wa_start_wilderness_pop_amount
+  }
+}
+
+country_event = {
   id = asr_wa_wilderness.100
   hide_window = yes
   is_triggered_only = yes

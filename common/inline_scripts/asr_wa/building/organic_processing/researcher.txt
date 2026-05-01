@@ -29,7 +29,7 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/shared/researcher_upkeep_convert_phy
-    MINERAL = -2.5
+    MINERAL = -2
     FOOD = 2
   }
 }
@@ -41,8 +41,8 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/shared/researcher_upkeep_convert_phy
-    MINERAL = -5
-    FOOD = 4
+    MINERAL = -3
+    FOOD = 3
   }
 }
 # 星界节点
@@ -53,8 +53,8 @@ triggered_planet_modifier = {
   }
   inline_script = {
     script = asr_wa/shared/researcher_upkeep_convert_phy
-    MINERAL = -10
-    FOOD = 8
+    MINERAL = -4
+    FOOD = 4
   }
 }
 # 时空异常研究员

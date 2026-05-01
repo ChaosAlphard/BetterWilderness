@@ -116,9 +116,9 @@ asr_wa_restore_wilderness_buildings = {
   if = {
     limit = {
       is_capital = yes
-      NOT = { has_building = building_natural_furnace_0 }
+      NOT = { has_building = building_tendril_cradle_1 }
     }
-    add_building = building_natural_furnace_0
+    add_building = building_tendril_cradle_1
   }
 }
 

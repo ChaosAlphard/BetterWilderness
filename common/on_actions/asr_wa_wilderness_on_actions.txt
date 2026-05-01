@@ -1,6 +1,7 @@
 on_game_start_country = {
   events = {
     asr_wa_wilderness.1
+    asr_wa_wilderness.10
     asr_wa_wilderness.100
   }
 }
