@@ -2,5 +2,5 @@ wilderness_pop_bonus_workforce_mult = {
   icon = mod_pop_bonus_workforce_mult
   percentage = yes
   good = yes
-  category = planet
+  category = colony
 }

@@ -1,17 +1,13 @@
 # Planet Scope
 potential = {
-  asr_wa_planet_is_wilderness_arcology = yes
-  exists = owner
-  owner = {
+  asr_wa_is_wilderness_advanced_planet = yes
+  owner? = {
     is_wilderness_empire = yes
   }
 }
 unlock = {
-  hidden_trigger = {
-    asr_wa_planet_is_wilderness_arcology = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
+  asr_wa_is_wilderness_advanced_planet = yes
+  owner? = {
+    is_wilderness_empire = yes
   }
 }

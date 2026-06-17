@@ -79,8 +79,7 @@ building_tendril_cradle_2 = {
   triggered_planet_modifier = {
     potential = {
       has_active_building = building_tendril_cradle_4
-      exists = owner
-      owner = { has_active_tradition = tr_logistics_2 }
+      owner? = { has_tradition = tr_logistics_2 }
     }
     job_logistics_drone_add = @building_static_jobs
     mult = 0.5

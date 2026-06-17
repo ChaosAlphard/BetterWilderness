@@ -52,7 +52,7 @@ l_english:
   zone_asr_wa_research_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_phy: "Physics Evolve"
   zone_asr_wa_research_phy_desc: "$zone_research_wilderness_desc$"
-  zone_asr_wa_research_soc: "Society Evolve"
+  zone_asr_wa_research_soc: "Biology Evolve"
   zone_asr_wa_research_soc_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_eng: "Engineering Evolve"
   zone_asr_wa_research_eng_desc: "$zone_research_wilderness_desc$"

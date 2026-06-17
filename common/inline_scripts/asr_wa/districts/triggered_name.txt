@@ -56,12 +56,7 @@ triggered_name = {
 }
 
 triggered_name = {
-  trigger = {
-    OR = {
-      asr_wa_planet_is_wilderness_arcology = yes
-      has_fully_upgraded_capital = yes
-    }
-  }
+  trigger = { has_fully_upgraded_capital = yes }
   text = asrwa_name_gaia
 }
 triggered_name = {
@@ -69,6 +64,7 @@ triggered_name = {
   text = asrwa_name_growth
 }
 triggered_name = {
-  trigger = { always = yes }
+  # 检查是否存在 owner 以阻止文本显示在未殖民行星上
+  trigger = { exists = owner }
   text = asrwa_name_default
 }

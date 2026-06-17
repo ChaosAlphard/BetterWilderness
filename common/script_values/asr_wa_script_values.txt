@@ -1,7 +1,7 @@
 asr_wa_num_districts = {
   base = 0
   complex_trigger_modifier = {
-    trigger_scope = planet
+    trigger_scope = colony
     trigger = num_districts
     parameters = { type = any }
     mode = add
@@ -12,7 +12,7 @@ asr_wa_num_districts = {
 asr_wa_num_buildings = {
   base = 0
   complex_trigger_modifier = {
-    trigger_scope = planet
+    trigger_scope = colony
     trigger = num_buildings
     parameters = {
       disabled = no
@@ -34,7 +34,7 @@ asr_wa_cor_bonus_build_speed = {
   base = 0
   set = value:asr_wa_num_buildings_and_districts
   modifier = {
-    asr_wa_planet_is_wilderness_arcology = yes
+    asr_wa_is_wilderness_advanced_planet = yes
     mult = 2
   }
 }
@@ -42,7 +42,7 @@ asr_wa_cor_bonus_build_speed = {
 asr_wa_num_wilderness_pops = {
   base = 0
   complex_trigger_modifier = {
-    trigger_scope = planet
+    trigger_scope = colony
     trigger = count_owned_pop_amount
     parameters = {
       limit = { asr_wa_is_normal_wilderness_pop = yes }
@@ -61,7 +61,6 @@ asr_wa_num_wilderness_pops_calc = {
 asr_wa_total_workforce = {
   base = 0
   complex_trigger_modifier = {
-    trigger_scope = planet
     trigger = count_owned_workforce
     parameters = {
       limit = {
@@ -85,7 +84,7 @@ asr_wa_total_job_output_modifier = {
   base = 0
   complex_trigger_modifier = {
     trigger = check_economic_production_modifier_for_job
-    trigger_scope = planet
+    trigger_scope = colony
     parameters = {
       job = $JOB$
       resource = $RESOURCE$
@@ -104,7 +103,7 @@ asr_wa_zone_job_output_modifier = {
   base = 0
   complex_trigger_modifier = {
     trigger = num_districts
-    trigger_scope = planet
+    trigger_scope = colony
     parameters = {
       type = district_craglands
     }
@@ -112,7 +111,7 @@ asr_wa_zone_job_output_modifier = {
   }
   complex_trigger_modifier = {
     trigger = num_zones
-    trigger_scope = planet
+    trigger_scope = colony
     parameters = {
       type = $ZONE$
     }
@@ -134,12 +133,37 @@ asr_wa_job_output_modifier_loc = {
 #   set = $SIZE$
 #   subtract = 1
 #   divide = 2
-#   add = planet.trigger:planet_size
+#   add = trigger:planet_size
 #   multiply = $SIZE$
 # }
 asr_wa_expand_planet_mod = {
   base = 0
-  set = planet.trigger:planet_size
+  set = trigger:planet_size
   mult = 4
   add = 6
+}
+
+asr_wa_workforce_from_pops = {
+  base = 0
+  set = trigger:asr_wa_wilderness_pop_amount
+  divide = value:asr_wa_num_workforce_except_biomass
+  min = 0
+  max = 1
+  round_to = 0.01
+}
+
+asr_wa_num_workforce_except_biomass = {
+  base = 0
+  complex_trigger_modifier = {
+    trigger = count_owned_workforce
+    parameters = {
+      limit = {
+        NOT = {
+          has_job_category = wilderness_heart_strata
+        }
+      }
+    }
+    mode = set
+  }
+  min = 100
 }

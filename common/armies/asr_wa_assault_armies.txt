@@ -16,17 +16,16 @@ asr_wa_wilderness_advanced_assault_army = {
   prerequisites = { "tech_glandular_acclimation" }
   show_tech_unlock_if = { is_wilderness_empire = yes }
   potential = {
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
     }
   }
 
-  time = 180
+  time = 90
   resources = {
     category = armies
     cost = {
-      food = 600
+      food = 200
     }
     upkeep = {
       food = 2

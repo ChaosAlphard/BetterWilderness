@@ -2,8 +2,7 @@
 triggered_planet_modifier = {
   potential = {
     free_housing > 0
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+    owner? = { is_wilderness_empire = yes }
   }
   modifier = {
     job_spawning_drone_add = @building_static_jobs_low
@@ -13,8 +12,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     free_housing > 0
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       OR = {
         has_technology = tech_gene_tailoring
@@ -30,8 +28,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     free_housing > 0
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       OR = {
         has_ascension_perk = ap_engineered_evolution
@@ -51,8 +48,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     free_housing > 0
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       OR = {
         has_tradition = tr_purity_finish

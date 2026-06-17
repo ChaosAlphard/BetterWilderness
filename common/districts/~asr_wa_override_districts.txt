@@ -8,14 +8,12 @@ district_craglands = {
 
   show_on_uncolonized = {
     asr_wa_district_set_can_build_craglands = yes
-    exists = from
-    from = { is_wilderness_empire = yes }
+    from? = { is_wilderness_empire = yes }
   }
 
   potential = {
     asr_wa_district_set_can_build_craglands = yes
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+    owner? = { is_wilderness_empire = yes }
     NAND = {
       is_capital = yes
       owner = {
@@ -37,6 +35,7 @@ district_craglands = {
     district_nexus
     district_hive
     district_city
+    district_ark_city
     district_mindlink
   }
 
@@ -48,8 +47,7 @@ district_craglands = {
 
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = {
+      owner? = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
@@ -58,8 +56,7 @@ district_craglands = {
   triggered_planet_modifier = {
     potential = {
       asr_wa_planet_is_wilderness_arcology_equivalent = yes
-      exists = owner
-      owner = {
+      owner? = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
@@ -68,8 +65,7 @@ district_craglands = {
   triggered_planet_modifier = {
     potential = {
       asr_wa_planet_is_wilderness_world_equivalent = yes
-      exists = owner
-      owner = {
+      owner? = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
@@ -94,7 +90,7 @@ district_photosynthesis_fields = {
   expansion_planner_type = district_generator
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_energy
-  inherits_capped_modifiers_from = district_generator
+  shared_capacity_modifier = district_generator
   is_uncapped = {
     is_wilderness_generator_district_uncapped = yes
   }
@@ -107,19 +103,17 @@ district_photosynthesis_fields = {
   }
 
   show_on_uncolonized = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = from
-    from = {
+    from? = {
       is_wilderness_empire = yes
     }
   }
 
   potential = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
     }
   }
@@ -130,8 +124,7 @@ district_photosynthesis_fields = {
     district_generator
     district_nexus_1
     district_hive_1
-    district_generator_uncapped
-    district_photosynthesis_fields_uncapped
+    district_ark_generator
   }
 
   inline_script = {
@@ -146,8 +139,7 @@ district_photosynthesis_fields = {
 
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
+      owner? = { has_tradition = tr_prosperity_public_works }
     }
     planet_housing_add = 200
   }
@@ -181,7 +173,7 @@ district_hollow_mountains = {
   expansion_planner_type = district_mining
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_minerals
-  inherits_capped_modifiers_from = district_mining
+  shared_capacity_modifier = district_mining
   is_uncapped = {
     is_wilderness_mining_district_uncapped = yes
   }
@@ -194,19 +186,17 @@ district_hollow_mountains = {
   }
 
   show_on_uncolonized = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = from
-    from = {
+    from? = {
       is_wilderness_empire = yes
     }
   }
 
   potential = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
     }
   }
@@ -217,8 +207,7 @@ district_hollow_mountains = {
     district_mining
     district_nexus_2
     district_hive_2
-    district_mining_uncapped
-    district_hollow_mountains_uncapped
+    district_ark_military
   }
 
   inline_script = {
@@ -233,8 +222,7 @@ district_hollow_mountains = {
 
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
+      owner? = { has_tradition = tr_prosperity_public_works }
     }
     planet_housing_add = 200
   }
@@ -268,7 +256,7 @@ district_orchard_forests = {
   expansion_planner_type = district_farming
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_food
-  inherits_capped_modifiers_from = district_farming
+  shared_capacity_modifier = district_farming
   is_uncapped = {
     is_wilderness_farming_district_uncapped = yes
   }
@@ -281,19 +269,17 @@ district_orchard_forests = {
   }
 
   show_on_uncolonized = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = from
-    from = {
+    from? = {
       is_wilderness_empire = yes
     }
   }
 
   potential = {
-    asr_wa_planet_is_wilderness_arcology = no
+    asr_wa_is_wilderness_advanced_planet = no
     uses_district_set = standard
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
     }
   }
@@ -304,8 +290,7 @@ district_orchard_forests = {
     district_farming
     district_nexus_3
     district_hive_3
-    district_farming_uncapped
-    district_orchard_forests_uncapped
+    district_ark_basic
   }
 
   inline_script = {
@@ -320,8 +305,7 @@ district_orchard_forests = {
 
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
+      owner? = { has_tradition = tr_prosperity_public_works }
     }
     planet_housing_add = 200
   }
@@ -333,238 +317,6 @@ district_orchard_forests = {
   prerequisites = {
     tech_industrial_farming
   }
-
-  ai_resource_production = {
-    food = 5
-    trigger = {
-      OR = {
-        has_building = building_massive_growth_1
-        has_building = building_massive_growth_2
-        has_building = building_massive_growth_3
-        has_building = building_massive_growth_4
-      }
-    }
-  }
-
-  ai_estimate_without_unemployment = yes
-  additional_ai_weight = 10
-}
-
-# 无上限区划现在通过 is_uncapped(4.1.6版本) 合并到普通区划中
-# 所以这三个区划现在已经没有用了, 出于兼容考虑继续保留, 但对玩家不可见
-district_photosynthesis_fields_uncapped = {
-  expansion_planner = no
-  is_uncapped = { always = yes }
-  base_buildtime = @wilderness_district_build_short
-  inherits_capped_modifiers_from = district_generator
-  icon = district_photosynthesis_fields
-  overlay_icon = GFX_district_energy
-
-  min_for_deposits_on_planet = 3
-  max_for_deposits_on_planet = 15
-
-  zone_slots = {
-    slot_energy
-  }
-
-  show_on_uncolonized = {
-    always = no
-  }
-
-  potential = {
-    always = no
-  }
-
-  conversion_ratio = 1
-  convert_to = {
-    district_asr_wa_cragland_01
-    district_generator
-    district_generator_uncapped
-    district_photosynthesis_fields
-    district_nexus_1
-    district_hive_1
-  }
-
-  inline_script = {
-    script = asr_wa/districts/rural_cost
-    CATEGORY = planet_districts_generator
-  }
-
-  planet_modifier = {
-    job_technician_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
-  }
-
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
-  }
-
-  inline_script = {
-    script = buildings/on_all_wilderness_buildings_districts
-  }
-
-  prerequisites = {
-    tech_power_plant_1
-  }
-  show_tech_unlock_if = { always = no }
-
-  ai_resource_production = {
-    energy = 5
-    trigger = {
-      OR = {
-        has_building = building_bioelectric_stimulator_1
-        has_building = building_bioelectric_stimulator_2
-        has_building = building_bioelectric_stimulator_3
-        has_building = building_bioelectric_stimulator_4
-      }
-    }
-  }
-
-  ai_estimate_without_unemployment = yes
-  additional_ai_weight = 10
-}
-district_hollow_mountains_uncapped = {
-  expansion_planner = no
-  is_uncapped = { always = yes }
-  base_buildtime = @wilderness_district_build_short
-  inherits_capped_modifiers_from = district_mining
-  icon = district_hollow_mountains
-  overlay_icon = GFX_district_minerals
-
-  min_for_deposits_on_planet = 1
-  max_for_deposits_on_planet = 15
-
-  zone_slots = {
-    slot_minerals
-  }
-
-  show_on_uncolonized = {
-    always = no
-  }
-
-  potential = {
-    always = no
-  }
-
-  conversion_ratio = 1
-  convert_to = {
-    district_asr_wa_cragland_02
-    district_mining_uncapped
-    district_mining
-    district_hollow_mountains
-    district_nexus_2
-    district_hive_2
-  }
-
-  inline_script = {
-    script = asr_wa/districts/rural_cost
-    CATEGORY = planet_districts_mining
-  }
-
-  inline_script = {
-    script = buildings/on_all_wilderness_buildings_districts
-  }
-
-  planet_modifier = {
-    job_mining_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
-  }
-
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
-  }
-
-  prerequisites = {
-    tech_mechanized_mining
-  }
-  show_tech_unlock_if = { always = no }
-
-  ai_resource_production = {
-    minerals = 5
-    trigger = {
-      OR = {
-        has_building = building_churning_tunnels_1
-        has_building = building_churning_tunnels_2
-        has_building = building_churning_tunnels_3
-        has_building = building_churning_tunnels_4
-      }
-    }
-  }
-
-  ai_estimate_without_unemployment = yes
-  additional_ai_weight = 10
-}
-district_orchard_forests_uncapped = {
-  expansion_planner = no
-  is_uncapped = { always = yes }
-  base_buildtime = @wilderness_district_build_short
-  inherits_capped_modifiers_from = district_farming
-  icon = district_orchard_forests
-  overlay_icon = GFX_district_food
-
-  min_for_deposits_on_planet = 3
-  max_for_deposits_on_planet = 15
-
-  zone_slots = {
-    slot_food
-  }
-
-  show_on_uncolonized = {
-    always = no
-  }
-
-  potential = {
-    always = no
-  }
-
-  allow = {
-    NOT = { has_modifier = resort_colony }
-  }
-
-  conversion_ratio = 1
-  convert_to = {
-    district_asr_wa_cragland_03
-    district_farming
-    district_farming_uncapped
-    district_orchard_forests
-    district_nexus_3
-    district_hive_3
-  }
-
-  inline_script = {
-    script = asr_wa/districts/rural_cost
-    CATEGORY = planet_districts_farming
-  }
-
-  planet_modifier = {
-    job_agri_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
-  }
-
-  triggered_planet_modifier = {
-    potential = {
-      exists = owner
-      owner = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
-  }
-
-  inline_script = {
-    script = buildings/on_all_wilderness_buildings_districts
-  }
-
-  prerequisites = {
-    tech_industrial_farming
-  }
-  show_tech_unlock_if = { always = no }
 
   ai_resource_production = {
     food = 5

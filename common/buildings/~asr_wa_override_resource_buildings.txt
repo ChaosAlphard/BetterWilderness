@@ -434,6 +434,7 @@ building_churning_tunnels_1 = {
 
   building_sets = {
     mining
+    harvest
   }
 
   inline_script = {
@@ -471,6 +472,7 @@ building_churning_tunnels_2 = {
 
   building_sets = {
     mining
+    harvest
   }
 
   inline_script = {
@@ -525,6 +527,7 @@ building_churning_tunnels_3 = { # substitute for 'building_mineral_purification_
 
   building_sets = {
     mining
+    harvest
   }
 
   inline_script = {
@@ -582,6 +585,7 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
 
   building_sets = {
     mining
+    harvest
   }
 
   inline_script = {
@@ -614,11 +618,8 @@ building_churning_tunnels_4 = { # substitute for 'building_mineral_purification_
     potential = {
       has_active_building = building_betharian_power_plant
       exists = orbital_defence
-      orbital_defence = {
-        exists = starbase
-        starbase = {
-          has_starbase_building = ring_energy_hub
-        }
+      orbital_defence.starbase? = {
+        has_starbase_building = ring_energy_hub
       }
     }
     planet_miners_energy_produces_add = @job_produce_add_orbital_ring
@@ -672,6 +673,7 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
     farming
     generator
     urban
+    harvest
   }
 
   inline_script = {
@@ -684,6 +686,7 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
       AND = {
         NOT = { has_building = building_subterranean_cache }
         OR = {
+          owner = { country_near_tangible_resource_cap = yes }
           is_active_resolution = "resolution_greatergood_balance_in_the_middle"
           is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
         }
@@ -709,15 +712,13 @@ building_subterranean_cache = { # substitute for 'building_resource_silo'
   }
   triggered_country_modifier = {
     potential = {
-      exists = owner
-      owner = { has_technology = tech_construction_templates }
+      owner? = { has_technology = tech_construction_templates }
     }
     country_resource_max_add = 5000
   }
   triggered_country_modifier = {
     potential = {
-      exists = owner
-      owner = {
+      owner? = {
         has_technology = tech_archaeostudies
       }
     }

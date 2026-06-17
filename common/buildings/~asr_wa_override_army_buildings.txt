@@ -111,12 +111,14 @@ building_ozone_thickener = {
   }
   allow = {
     has_upgraded_capital = yes
+    owner? = { is_nomadic = no }
   }
   prerequisites = {
     "tech_planetary_shield_generator"
   }
   show_tech_unlock_if = {
     is_wilderness_empire = yes
+    is_nomadic = no
   }
 
   planet_modifier = {
@@ -140,14 +142,17 @@ building_ozone_thickener = {
   }
 
   custom_storm_ai_weight = {
-    weight = 5
+    weight = 0
     modifier = {
-      factor = 5
+      add = 5
+      has_designation = col_wilderness_fortress
+    }
+    modifier = {
+      add = 5
       AND = {
         exists = owner
-        solar_system = {
-          exists = owner
-          owner = { num_cosmic_storms_encountered >= 2 }
+        solar_system? = {
+          owner? = { num_cosmic_storms_encountered >= 2 }
         }
       }
     }

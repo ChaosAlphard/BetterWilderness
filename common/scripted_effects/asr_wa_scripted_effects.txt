@@ -80,7 +80,7 @@ asr_wa_restore_wilderness_buildings = {
         has_building = building_imperial_capital_wilderness
       }
     }
-    set_timed_planet_flag = {
+    set_timed_carrier_flag = {
       flag = ignore_ai_building_limitations
       days = 1
     }

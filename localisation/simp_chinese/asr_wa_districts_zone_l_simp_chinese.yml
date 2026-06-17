@@ -52,7 +52,7 @@ l_simp_chinese:
   zone_asr_wa_research_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_phy: "物理学演进"
   zone_asr_wa_research_phy_desc: "$zone_research_wilderness_desc$"
-  zone_asr_wa_research_soc: "社会学演进"
+  zone_asr_wa_research_soc: "生物学演进"
   zone_asr_wa_research_soc_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_eng: "工程学演进"
   zone_asr_wa_research_eng_desc: "$zone_research_wilderness_desc$"

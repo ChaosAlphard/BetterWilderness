@@ -11,7 +11,6 @@ district_asr_wa_cragland_01 = {
 
   conversion_ratio = 1
   convert_to = {
-    district_photosynthesis_fields_uncapped
     district_photosynthesis_fields
   }
 
@@ -34,7 +33,6 @@ district_asr_wa_cragland_02 = {
 
   conversion_ratio = 1
   convert_to = {
-    district_hollow_mountains_uncapped
     district_hollow_mountains
   }
 
@@ -57,7 +55,6 @@ district_asr_wa_cragland_03 = {
 
   conversion_ratio = 1
   convert_to = {
-    district_orchard_forests_uncapped
     district_orchard_forests
   }
 

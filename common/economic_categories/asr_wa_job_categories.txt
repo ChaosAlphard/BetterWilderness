@@ -1,7 +1,7 @@
 # 异星天然气
 planet_refiners = {
   parent = planet_jobs_specialist
-  modifier_category = pop_job
+  modifier_category = colony
   generate_add_modifiers = {
     produces
     upkeep
@@ -14,7 +14,7 @@ planet_refiners = {
 # 稀有水晶
 planet_translucers = {
   parent = planet_jobs_specialist
-  modifier_category = pop_job
+  modifier_category = colony
   generate_add_modifiers = {
     produces
     upkeep
@@ -27,7 +27,7 @@ planet_translucers = {
 # 易爆微粒
 planet_chemists = {
   parent = planet_jobs_specialist
-  modifier_category = pop_job
+  modifier_category = colony
   generate_add_modifiers = {
     produces
     upkeep
@@ -40,7 +40,7 @@ planet_chemists = {
 # 纺锤体
 planet_traders = {
   parent = planet_jobs_specialist
-  modifier_category = pop_job
+  modifier_category = colony
   generate_add_modifiers = {
     produces
     upkeep

@@ -19,8 +19,7 @@ building_asr_wa_organic_processing = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    exists = owner
-    owner = { is_ai = no }
+    owner? = { is_ai = no }
   }
 
   resources = {
@@ -94,8 +93,7 @@ building_asr_wa_sentinel_posts = {
   # AI无法识别按人口数提供的岗位, 所以需要有固定提供的岗位让AI识别
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { is_ai = yes }
+      owner? = { is_ai = yes }
     }
     job_patrol_drone_add = 200
   }

@@ -1,67 +1,13 @@
-triggered_district_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_logistics_drone_add = $BASE$
+inline_script = {
+  script = asr_wa/zone/job/add
+  JOB = logistics_drone
+  AMOUNT = $BASE$
 }
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_logistics_drone_add = $BASE$
-  mult = 2
-}
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_world_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_logistics_drone_add = $BASE$
-  mult = 4
-}
-
-triggered_district_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      has_active_tradition = tr_logistics_2
-    }
-  }
-  job_logistics_drone_add = $BASE$
-  mult = 0.5
-}
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      has_active_tradition = tr_logistics_2
-    }
-  }
-  job_logistics_drone_add = $BASE$
-  # mult = 1
-}
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_world_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-      has_active_tradition = tr_logistics_2
-    }
-  }
-  job_logistics_drone_add = $BASE$
-  mult = 2
+inline_script = {
+  script = asr_wa/zone/job/add_extra
+  OWNER_TRIGGER = "has_tradition = tr_logistics_2"
+  PLANET_TRIGGER = ""
+  JOB = logistics_drone
+  AMOUNT = $BASE$
+  PERCENT = 0.5
 }

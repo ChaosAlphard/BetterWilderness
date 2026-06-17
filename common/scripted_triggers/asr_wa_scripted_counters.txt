@@ -1,0 +1,8 @@
+#noinspection ParadoxScriptMissingExpression
+asr_wa_wilderness_pop_amount = {
+  count_owned_pop_amount = {
+    limit = {
+      has_trait = trait_wilderness
+    }
+  }
+}

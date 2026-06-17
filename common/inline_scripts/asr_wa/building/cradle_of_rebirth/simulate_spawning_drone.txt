@@ -4,8 +4,7 @@
 # 模拟组装岗位
 triggered_planet_modifier = {
   potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+    owner? = { is_wilderness_empire = yes }
     count_owned_pop_amount = {
       limit = { asr_wa_is_normal_wilderness_pop = yes }
       count <= @wa_bonus_growth_max_pops
@@ -18,8 +17,7 @@ triggered_planet_modifier = {
 # 荒野的自动化劳动力能吃到生物质人口能吃的所有buff, 但吃不到自动化劳动力相关buff
 # triggered_planet_modifier = {
 #   potential = {
-#     exists = owner
-#     owner = { is_wilderness_empire = yes }
+#     owner? = { is_wilderness_empire = yes }
 #     count_owned_pop_amount = {
 #       limit = { asr_wa_is_normal_wilderness_pop = yes }
 #       count <= @wa_bonus_growth_max_pops

@@ -7,7 +7,7 @@ asr_wa_building_build_cost = {
   # AI不会用食物建造特定建筑以外的建筑和区划, 所以AI只能选择这个选项
   option = {
     name = asr_wa_p_building_cost_default
-    policy_flags = { asr_wa_pf_building_cost_default }
+    policy_flags = { asr_wa_p_building_cost_default }
     potential = { always = yes }
     valid = { always = yes }
     ai_weight = { weight = 10 }
@@ -15,7 +15,7 @@ asr_wa_building_build_cost = {
 
   option = {
     name = asr_wa_p_building_cost_mixed
-    policy_flags = { asr_wa_pf_building_cost_mixed }
+    policy_flags = { asr_wa_p_building_cost_mixed }
     potential = { always = yes }
     valid = { is_ai = no }
     ai_weight = {
@@ -29,7 +29,7 @@ asr_wa_building_build_cost = {
 
   option = {
     name = asr_wa_p_building_cost_food
-    policy_flags = { asr_wa_pf_building_cost_food }
+    policy_flags = { asr_wa_p_building_cost_food }
     potential = { always = yes }
     valid = { is_ai = no }
     ai_weight = { weight = 0 }
@@ -60,7 +60,65 @@ asr_wa_mastery_of_nature_effect = {
   }
 
   option = {
-    name = asr_wa_p_mastery_of_nature_valid
+    name = asr_wa_p_mastery_of_nature_valid_1
+    potential = { always = yes }
+    valid = {
+      OR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
+      asr_wa_policy_building_capacity_and_time_check = {
+        POLICY_FLAG = asr_wa_p_mastery_of_nature_valid_1
+        CAP = -4
+        TIME = -0.5
+        POLICY_FLAG_ALT = asr_wa_p_mastery_of_nature_valid_2
+        CAP_ALT = -2
+        TIME_ALT = -0.25
+      }
+    }
+
+    policy_flags = { asr_wa_p_mastery_of_nature_valid_1 }
+
+    modifier = {
+      planet_structures_cost_mult = -0.10
+      planet_building_capacity_add = -4
+      building_time_mult = -0.50
+    }
+
+    ai_weight = { weight = 20 }
+  }
+
+  option = {
+    name = asr_wa_p_mastery_of_nature_valid_2
+    potential = { always = yes }
+    valid = {
+      OR = {
+        has_ascension_perk = ap_mastery_of_nature
+        is_environmental_architects_empire = yes
+      }
+      asr_wa_policy_building_capacity_and_time_check = {
+        POLICY_FLAG = asr_wa_p_mastery_of_nature_valid_2
+        CAP = -2
+        TIME = -0.25
+        POLICY_FLAG_ALT = asr_wa_p_mastery_of_nature_valid_1
+        CAP_ALT = 0
+        TIME_ALT = 0
+      }
+    }
+
+    policy_flags = { asr_wa_p_mastery_of_nature_valid_2 }
+
+    modifier = {
+      planet_structures_cost_mult = -0.10
+      planet_building_capacity_add = -2
+      building_time_mult = -0.25
+    }
+
+    ai_weight = { weight = 10 }
+  }
+
+  option = {
+    name = asr_wa_p_mastery_of_nature_valid_3
     potential = { always = yes }
     valid = {
       OR = {
@@ -69,18 +127,49 @@ asr_wa_mastery_of_nature_effect = {
       }
     }
 
+    policy_flags = { asr_wa_p_mastery_of_nature_valid_3 }
+
     modifier = {
       planet_structures_cost_mult = -0.10
     }
 
-    ai_weight = { weight = 10 }
+    ai_weight = { weight = 1 }
   }
 }
 # 纯净传统额外加成
 asr_wa_tr_purity_effect = {
   potential = {
     is_wilderness_empire = yes
-    has_tradition = tr_purity_adopt
+    OR = {
+      has_tradition = tr_purity_adopt # 被释放的附庸会复制你的传统
+      has_ascension_perk = ap_engineered_evolution
+    }
+  }
+
+  option = {
+    name = asr_wa_p_genetic_ascension
+
+    potential = {
+      NOR = {
+        has_tradition = tr_purity_finish
+        has_tradition = tr_purity_adopt
+      }
+      has_ascension_perk = ap_engineered_evolution
+    }
+
+    valid = {
+      NOR = {
+        has_tradition = tr_purity_finish
+        has_tradition = tr_purity_adopt
+      }
+      has_ascension_perk = ap_engineered_evolution
+    }
+
+    modifier = {}
+
+    AI_weight = {
+      weight = 10
+    }
   }
 
   option = {

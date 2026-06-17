@@ -15,7 +15,7 @@ if = {
     }
   }
   remove_all_buildings = yes
-  set_planet_flag = wilderness_planet
+  set_carrier_flag = wilderness_planet
   add_district_and_planet_size_if_needed_effect_amount = {
     amount = 1
     district = district_craglands

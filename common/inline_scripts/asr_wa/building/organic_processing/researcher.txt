@@ -13,7 +13,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     asr_wa_is_hja_installed = no
-    has_planet_flag = has_science_ministry
+    has_carrier_flag = has_science_ministry
   }
   inline_script = {
     script = asr_wa/shared/researcher_upkeep_convert
@@ -86,7 +86,7 @@ triggered_planet_modifier = {
   potential = {
     asr_wa_is_hja_installed = no
     has_deposit = d_portal_research_zone
-    has_planet_flag = dportal_hell
+    has_carrier_flag = dportal_hell
   }
   inline_script = {
     script = asr_wa/shared/researcher_upkeep_convert_phy

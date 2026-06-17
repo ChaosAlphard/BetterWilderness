@@ -24,7 +24,7 @@ building_brain_node_1 = {
       UPKEEP_TYPE = food
     }
     upkeep = {
-      trigger = { has_planet_flag = has_science_ministry }
+      trigger = { has_carrier_flag = has_science_ministry }
       food = 1
     }
   }
@@ -76,7 +76,7 @@ building_brain_node_2 = {
       RARE_TYPE = exotic_gases
     }
     upkeep = {
-      trigger = { has_planet_flag = has_science_ministry }
+      trigger = { has_carrier_flag = has_science_ministry }
       food = 1
     }
   }
@@ -142,7 +142,7 @@ building_brain_node_3 = {
       RARE_TYPE = exotic_gases
     }
     upkeep = {
-      trigger = { has_planet_flag = has_science_ministry }
+      trigger = { has_carrier_flag = has_science_ministry }
       food = 2
     }
   }
@@ -215,7 +215,7 @@ building_brain_node_4 = {
       exotic_gases = @b4_rare_upkeep
     }
     upkeep = {
-      trigger = { has_planet_flag = has_science_ministry }
+      trigger = { has_carrier_flag = has_science_ministry }
       food = 4
     }
   }

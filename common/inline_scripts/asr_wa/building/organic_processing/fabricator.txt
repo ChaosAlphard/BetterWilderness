@@ -33,10 +33,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     exists = orbital_defence
-    orbital_defence = {
-      exists = starbase
-      starbase = { has_starbase_building = ring_alloys_hub }
-    }
+    orbital_defence.starbase? = { has_starbase_building = ring_alloys_hub }
   }
   planet_metallurgists_minerals_upkeep_add = -2
   planet_metallurgists_food_upkeep_add = 3
@@ -45,10 +42,7 @@ triggered_planet_modifier = {
 triggered_planet_modifier = {
   potential = {
     exists = orbital_defence
-    orbital_defence = {
-      exists = starbase
-      starbase = { has_starbase_building = ring_consumer_goods_hub }
-    }
+    orbital_defence.starbase? = { has_starbase_building = ring_consumer_goods_hub }
   }
   planet_artisans_minerals_upkeep_add = -1
   planet_artisans_food_upkeep_add = 1.5
@@ -56,20 +50,14 @@ triggered_planet_modifier = {
 # 万变魔石
 triggered_planet_modifier = {
   potential = {
-    exists = owner
-    owner = {
-      has_relic = r_everchanging_stone
-    }
+    owner? = { has_relic = r_everchanging_stone }
   }
   planet_metallurgists_minerals_upkeep_add = 1
   planet_metallurgists_food_upkeep_add = -1.5
 }
 triggered_planet_modifier = {
   potential = {
-    exists = owner
-    owner = {
-      has_relic = r_everchanging_stone
-    }
+    owner? = { has_relic = r_everchanging_stone }
     asr_wa_foundry_zone_assist_artisans = yes
   }
   planet_artisans_minerals_upkeep_add = 1

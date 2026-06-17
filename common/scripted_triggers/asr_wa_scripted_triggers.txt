@@ -8,11 +8,8 @@ asr_wa_is_normal_wilderness_pop = {
 
 asr_wa_planet_use_mineral_build_building = {
   OR = {
-    AND = {
-      exists = owner
-      owner = {
-        has_policy_flag = asr_wa_pf_building_cost_default
-      }
+    owner? = {
+      has_policy_flag = asr_wa_p_building_cost_default
     }
     # owner 不存在时, 或者其他特殊情况下的保险
     AND = {
@@ -22,36 +19,69 @@ asr_wa_planet_use_mineral_build_building = {
   }
 }
 asr_wa_planet_use_mixed_build_building = {
-  exists = owner
-  owner = {
-    has_policy_flag = asr_wa_pf_building_cost_mixed
-    is_ai = no  # 当前版本(4.3.3)AI不会用食物建造特定建筑以外的建筑和区划
+  owner? = {
+    has_policy_flag = asr_wa_p_building_cost_mixed
+    is_ai = no  # 当前版本(4.3)AI不会用食物建造特定建筑以外的建筑和区划
   }
 }
 asr_wa_planet_use_food_build_building = {
-  exists = owner
-  owner = {
-    has_policy_flag = asr_wa_pf_building_cost_food
+  owner? = {
+    has_policy_flag = asr_wa_p_building_cost_food
     is_ai = no
+  }
+}
+
+# @[...]用在 scripted_trigger 和 scripted_effect 中时, 需要替换为@\[...]的形式
+asr_wa_policy_building_capacity_and_time_check = {
+  OR = {
+    AND = {
+      check_modifier_value = {
+        modifier = planet_building_capacity_add
+        value >= @\[$CAP$ * -1]  # 0+($CAP$ * -1)
+      }
+      check_modifier_value = {
+        modifier = building_time_mult
+        value > @\[-1 + ($TIME$ * -1)]
+      }
+    }
+    AND = {
+      has_policy_flag = $POLICY_FLAG$
+      check_modifier_value = {
+        modifier = planet_building_capacity_add
+        value >= 0
+      }
+      check_modifier_value = {
+        modifier = building_time_mult
+        value > -1
+      }
+    }
+    AND = {
+      has_policy_flag = $POLICY_FLAG_ALT$
+      check_modifier_value = {
+        modifier = planet_building_capacity_add
+        value >= @\[$CAP_ALT$ * -1]
+      }
+      check_modifier_value = {
+        modifier = building_time_mult
+        value > @\[-1 + ($TIME_ALT$ * -1)]
+      }
+    }
   }
 }
 
 # 并没有被使用
 # asr_wa_planet_fabricator_use_food = {
-#   exists = planet
-#   planet = {
+#   colony? = {
 #     has_active_building = building_asr_wa_organic_processing
 #   }
 # }
 # asr_wa_planet_researcher_use_food = {
-#   exists = planet
-#   planet = {
+#   colony? = {
 #     OR = {
 #       has_active_building = building_asr_wa_organic_processing
 #       AND = {
 #         asr_wa_is_hja_installed = yes
-#         exists = owner
-#         owner = { has_policy_flag = irs_hja_researcher_use_food_resource }
+#         owner? = { has_policy_flag = irs_hja_researcher_use_food_resource }
 #       }
 #     }
 #   }
@@ -91,33 +121,31 @@ asr_wa_is_wilderness_advanced_planet = {
 }
 
 asr_wa_planet_is_wilderness_arcology = {
-  hidden_trigger = { exists = planet }
-  planet = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    [[NOT_WILDERNESS_WORLD] NOT = {
-      has_planet_flag = asr_wa_pf_wilderness_world
-    } ]
-  }
+  asr_wa_is_wilderness_advanced_planet = yes
+  NOT = { has_carrier_flag = asr_wa_pf_wilderness_world }
 }
 
 asr_wa_planet_is_wilderness_world = {
-  hidden_trigger = { exists = planet }
-  planet = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    has_planet_flag = asr_wa_pf_wilderness_world
-  }
+  asr_wa_is_wilderness_advanced_planet = yes
+  has_carrier_flag = asr_wa_pf_wilderness_world
 }
 
+# 判断当前行星是否应该具有和 方舟殖民地 等效的岗位数量
+asr_wa_planet_is_arkship_colony_equivalent = {
+  is_planet_class = pc_ark
+}
+# 可以通过设置 asr_wa_var_job_from_zone_base_amount_add 变量来增加区划特化提供的岗位
+# 见 inline_scripts/asr_wa/zone/job/add.txt
 # 兼容其他Mod, 重写这个方法以在其他星球上提供等效盖亚星球的岗位
 # 判断当前行星是否应该具有和 荒野盖亚星球 等效的岗位数量
 asr_wa_planet_is_wilderness_arcology_equivalent = {
   asr_wa_is_wilderness_advanced_planet = yes
-  NOT = { has_planet_flag = asr_wa_pf_wilderness_world }
+  NOT = { has_carrier_flag = asr_wa_pf_wilderness_world }
 }
 # 判断当前行星是否应该具有和 荒野重塑自然 等效的岗位数量
 asr_wa_planet_is_wilderness_world_equivalent = {
   asr_wa_is_wilderness_advanced_planet = yes
-  has_planet_flag = asr_wa_pf_wilderness_world
+  has_carrier_flag = asr_wa_pf_wilderness_world
 }
 asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {
   OR = {

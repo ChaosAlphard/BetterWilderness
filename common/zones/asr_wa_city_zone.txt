@@ -54,8 +54,7 @@ zone_asr_wa_factory_wilderness = {
   icon = GFX_district_specialization_factory
   base_buildtime = @zone_buildtime
   potential = {
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       OR = {
         has_technology = tech_luxuries_1
@@ -65,8 +64,7 @@ zone_asr_wa_factory_wilderness = {
   }
   unlock = {
     hidden_trigger = {
-      exists = owner
-      owner = {
+      owner? = {
         is_wilderness_empire = yes
         OR = {
           has_technology = tech_luxuries_1
@@ -81,7 +79,6 @@ zone_asr_wa_factory_wilderness = {
 
   included_building_sets = { factory }
 
-  max_buildings = 3
   planet_modifier = {
     zone_building_slots_add = 3
   }
@@ -101,8 +98,7 @@ zone_asr_wa_rare_resources_plant_wilderness = {
   included_building_sets = { foundry }
 
   potential = {
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       has_technology = tech_exotic_gases
       has_technology = tech_volatile_motes
@@ -111,8 +107,7 @@ zone_asr_wa_rare_resources_plant_wilderness = {
   }
   unlock = {
     hidden_trigger = {
-      exists = owner
-      owner = {
+      owner? = {
         is_wilderness_empire = yes
         has_technology = tech_exotic_gases
         has_technology = tech_volatile_motes
@@ -121,7 +116,7 @@ zone_asr_wa_rare_resources_plant_wilderness = {
     }
   }
   inline_script = { script = asr_wa/zone/cost }
-  max_buildings = 3
+
   planet_modifier = {
     zone_building_slots_add = 3
   }
@@ -156,6 +151,8 @@ zone_asr_wa_exotic_gases_plant_wilderness = {
     script = asr_wa/zone/job/refiner_add
     BASE = @scaling_district_1_job
   }
+
+  ai_weight_coefficient = 0
 }
 # 易爆微粒
 zone_asr_wa_volatile_motes_plant_wilderness = {
@@ -174,6 +171,8 @@ zone_asr_wa_volatile_motes_plant_wilderness = {
     script = asr_wa/zone/job/chemist_add
     BASE = @scaling_district_1_job
   }
+
+  ai_weight_coefficient = 0
 }
 # 稀有水晶
 zone_asr_wa_rare_crystals_plant_wilderness = {
@@ -192,4 +191,6 @@ zone_asr_wa_rare_crystals_plant_wilderness = {
     script = asr_wa/zone/job/translucer_add
     BASE = @scaling_district_1_job
   }
+
+  ai_weight_coefficient = 0
 }

@@ -1,14 +1,13 @@
 # Planet Scope
 potential = {
-  exists = owner
-  owner = {
+  owner? = {
     is_wilderness_empire = yes
+    has_technology = $TECH$
   }
 }
 unlock = {
-  hidden_trigger = { exists = owner }
-  owner = {
-    hidden_trigger = { is_wilderness_empire = yes }
+  owner? = {
+    is_wilderness_empire = yes
     has_technology = $TECH$
   }
 }

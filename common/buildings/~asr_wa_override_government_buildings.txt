@@ -50,16 +50,14 @@ building_cradle_of_rebirth = {
   # 基因重塑飞升给予+20%宜居性
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { has_ascension_perk = ap_engineered_evolution }
+      owner? = { has_ascension_perk = ap_engineered_evolution }
     }
     pop_environment_tolerance = 0.20
   }
   # 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = {
+      owner? = {
         is_wilderness_empire = yes
         has_tradition = tr_purity_finish
       }
@@ -97,17 +95,17 @@ building_wilderness_storm_relief = {
   }
 
   potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+    owner? = { is_wilderness_empire = yes }
     OR = {
       owner = { is_ai = no }
       solar_system = { system_has_storm_repelling_tech = no }
     }
   }
   destroy_trigger = {
-    exists = owner
-    owner = { is_wilderness_empire = no }
-    influence_building_destruction_trigger = yes
+    OR = {
+      owner? = { is_wilderness_empire = no }
+      influence_building_destruction_trigger = yes
+    }
   }
 
   prerequisites = {
@@ -141,36 +139,32 @@ building_wilderness_storm_relief = {
   }
   triggered_planet_modifier = {
     potential = {
-      exists = starbase
-      starbase = { has_starbase_building = storm_attraction_computer }
+      starbase? = { has_starbase_building = storm_attraction_computer }
     }
     storm_attraction_field_modifier = 0.6
   }
   triggered_desc = {
     trigger = {
-      exists = starbase
-      starbase = { has_starbase_building = storm_attraction_computer }
+      starbase? = { has_starbase_building = storm_attraction_computer }
     }
     text = building_cosmic_storm_advanced_attraction_center_tt
   }
   triggered_planet_modifier = {
     potential = {
-      exists = starbase
-      starbase = { has_starbase_building = storm_repelling_computer }
+      starbase? = { has_starbase_building = storm_repelling_computer }
     }
     storm_repelling_field_modifier = 0.6
   }
   triggered_desc = {
     trigger = {
-      exists = starbase
-      starbase = { has_starbase_building = storm_repelling_computer }
+      starbase? = { has_starbase_building = storm_repelling_computer }
     }
     text = building_cosmic_storm_advanced_repellent_center_tt
   }
   triggered_planet_modifier = {
     potential = {
       exists = owner
-      solar_system = {
+      solar_system? = {
         is_inside_storm = yes
       }
     }
@@ -186,8 +180,7 @@ building_wilderness_storm_relief = {
   }
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      owner = { is_galactic_community_member = yes }
+      owner? = { is_galactic_community_member = yes }
     }
     modifier = {
       planet_miners_produces_mult = 1
@@ -208,8 +201,7 @@ building_wilderness_storm_relief = {
     modifier = {
       add = 30
       AND = {
-        exists = owner
-        owner = { num_unique_cosmic_storms_encountered >= 2 }
+        owner? = { num_unique_cosmic_storms_encountered >= 2 }
       }
     }
   }

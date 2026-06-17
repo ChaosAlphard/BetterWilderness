@@ -1,0 +1,60 @@
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = {
+      $OWNER_TRIGGER$
+      is_wilderness_empire = yes
+    }
+    $PLANET_TRIGGER$
+  }
+  job_$JOB$_add = @[$AMOUNT$ * $PERCENT$]
+}
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      $OWNER_TRIGGER$
+    }
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
+    $PLANET_TRIGGER$
+  }
+  job_$JOB$_add = @[$AMOUNT$ * 2 * $PERCENT$]
+}
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      $OWNER_TRIGGER$
+    }
+    asr_wa_planet_is_wilderness_world_equivalent = yes
+    $PLANET_TRIGGER$
+  }
+  job_$JOB$_add = @[$AMOUNT$ * 4 * $PERCENT$]
+}
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      $OWNER_TRIGGER$
+    }
+    asr_wa_planet_is_arkship_colony_equivalent = yes
+    $PLANET_TRIGGER$
+  }
+  job_$JOB$_add = @[$AMOUNT$ * $PERCENT$]
+}
+# 方便其他Mod调整
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      $OWNER_TRIGGER$
+    }
+    is_variable_set = asr_wa_var_job_from_zone_base_amount_add
+    check_variable = {
+      which = asr_wa_var_job_from_zone_base_amount_add
+      value > 0
+    }
+    $PLANET_TRIGGER$
+  }
+  job_$JOB$_add = $PERCENT$  # @[1*$PERCENT$]
+  mult = asr_wa_var_job_from_zone_base_amount_add
+}

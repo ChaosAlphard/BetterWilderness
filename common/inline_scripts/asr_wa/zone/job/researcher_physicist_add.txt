@@ -1,31 +1,13 @@
-triggered_district_planet_modifier = {
-  potential = {
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_calculator_physicist_add = $BASE$
+inline_script = {
+  script = asr_wa/zone/job/add
+  JOB = calculator_physicist
+  AMOUNT = $BASE$
 }
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_calculator_physicist_add = $BASE$
-  mult = 2
-}
-triggered_district_planet_modifier = {
-  potential = {
-    asr_wa_planet_is_wilderness_world_equivalent = yes
-    exists = owner
-    owner = {
-      is_wilderness_empire = yes
-    }
-  }
-  job_calculator_physicist_add = $BASE$
-  mult = 4
+inline_script = {
+  script = asr_wa/zone/job/add_extra
+  OWNER_TRIGGER = "has_tradition = tr_discovery_faith_in_science"
+  PLANET_TRIGGER = ""
+  JOB = calculator_physicist
+  AMOUNT = $BASE$
+  PERCENT = 0.2
 }

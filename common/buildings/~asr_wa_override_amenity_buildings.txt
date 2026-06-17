@@ -31,9 +31,8 @@ building_avatar_chamber_1 = {
 
   inline_script = { script = buildings/wilderness_buildings_potential_destroy }
   allow = {
-    hidden_trigger = { exists = owner }
     OR = {
-      owner = { is_ai = no }
+      owner? = { is_ai = no }
       free_amenities < 1000
       NOR = {
         has_building = building_avatar_chamber_1

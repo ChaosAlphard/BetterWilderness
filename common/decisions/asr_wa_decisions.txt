@@ -5,8 +5,7 @@ decision_asr_wa_wilderness_expand = {
   icon = wilderness_planet_expand
 
   potential = {
-    exists = owner
-    owner = { is_wilderness_empire = yes }
+    owner? = { is_wilderness_empire = yes }
     is_artificial = no
     OR = {
       planet_size < 21
@@ -58,13 +57,10 @@ decision_asr_wa_wilderness_world = {
   enactment_time = 7200
 
   potential = {
-    asr_wa_planet_is_wilderness_arcology = {
-      NOT_WILDERNESS_WORLD = yes
-    }
-    exists = owner
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
     }
+    asr_wa_planet_is_wilderness_arcology = yes
   }
   allow = {
     has_fully_upgraded_capital = yes
@@ -75,8 +71,7 @@ decision_asr_wa_wilderness_world = {
     planet_size >= 25
     free_district_slots <= 0
     num_uncleared_blockers <= 0
-    hidden_trigger = { exists = owner }
-    owner = {
+    owner? = {
       OR = {
         has_ascension_perk = ap_mastery_of_nature
         is_environmental_architects_empire = yes
@@ -91,7 +86,7 @@ decision_asr_wa_wilderness_world = {
     cost = {
       food = 4000
       biomass = 400
-      mult = planet.trigger:planet_size
+      mult = trigger:planet_size
     }
     cost = {
       trigger = {
@@ -104,7 +99,7 @@ decision_asr_wa_wilderness_world = {
 
   effect = {
     hidden_effect = {
-      set_planet_flag = asr_wa_pf_wilderness_world
+      set_carrier_flag = asr_wa_pf_wilderness_world
       every_deposit = {
         limit = {
           NOR = {
@@ -164,8 +159,7 @@ decision_asr_wa_renounce_colony = {
   enactment_time = 180
 
   potential = {
-    hidden_trigger = { exists = owner }
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       is_ai = no
     }
@@ -173,8 +167,7 @@ decision_asr_wa_renounce_colony = {
   }
 
   allow = {
-    hidden_trigger = { exists = owner }
-    owner = {
+    owner? = {
       is_wilderness_empire = yes
       is_at_war = no
       is_ai = no
