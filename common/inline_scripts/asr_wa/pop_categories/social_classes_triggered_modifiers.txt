@@ -35,3 +35,23 @@ triggered_pop_group_modifier = {
   pop_bonus_workforce_mult = 1
   mult = colony.modifier:wilderness_pop_bonus_workforce_mult
 }
+
+# 模拟孵育体岗位是为了实现动态改变人口组装而添加的, 所以不应该受到岗位效率影响
+triggered_pop_group_modifier = {
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+    species? = { has_trait = trait_wilderness }
+  }
+  key = job_asr_wa_simulate_spawning_drone_workforce_tt
+  pop_asr_wa_simulate_spawning_drone_bonus_workforce_mult = -1
+  mult = modifier:pop_bonus_workforce_mult
+}
+triggered_pop_group_modifier = {
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+    species? = { has_trait = trait_wilderness }
+  }
+  key = job_asr_wa_simulate_spawning_drone_workforce_tt
+  pop_asr_wa_simulate_spawning_drone_bonus_workforce_mult = -1
+  mult = modifier:pop_cat_complex_drone_bonus_workforce_mult
+}
