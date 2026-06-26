@@ -1,0 +1,41 @@
+icon = GFX_district_specialization_industrial
+base_buildtime = @zone_buildtime
+included_building_sets = { industrial foundry factory }
+
+potential = {
+  owner? = {
+    is_wilderness_empire = yes
+    has_technology = tech_exotic_gases
+    has_technology = tech_volatile_motes
+    has_technology = tech_rare_crystals
+  }
+}
+unlock = {
+  hidden_trigger = {
+    owner? = {
+      is_wilderness_empire = yes
+      has_technology = tech_exotic_gases
+      has_technology = tech_volatile_motes
+      has_technology = tech_rare_crystals
+    }
+  }
+}
+inline_script = { script = asr_wa/zone/cost }
+inline_script = { script = asr_wa/zone/building_slot }
+
+inline_script = {
+  script = asr_wa/zone/job/refiner_add
+  BASE = $JOB_AMOUNT$
+}
+inline_script = {
+  script = asr_wa/zone/job/chemist_add
+  BASE = $JOB_AMOUNT$
+}
+inline_script = {
+  script = asr_wa/zone/job/translucer_add
+  BASE = $JOB_AMOUNT$
+}
+inline_script = {
+  script = asr_wa/zone/job/foundry_add
+  BASE = $JOB2_AMOUNT$
+}

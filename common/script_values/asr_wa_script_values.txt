@@ -125,6 +125,7 @@ asr_wa_job_output_modifier_loc = {
   base = 0
   add = value:asr_wa_total_job_output_modifier|JOB|$JOB$|RESOURCE|$RESOURCE$|
   subtract = value:asr_wa_zone_job_output_modifier|ZONE|$ZONE$|MULT|$MULT$|
+  min = 0
 }
 
 # ((n-1)/2+x)*n, n = 增加的行星规模数, x = 当前行星规模

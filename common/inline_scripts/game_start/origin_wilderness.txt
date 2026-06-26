@@ -12,6 +12,7 @@ if = {
     exists = owner
     owner = {
       has_origin = origin_wilderness
+      is_nomadic = no
     }
   }
   remove_all_buildings = yes

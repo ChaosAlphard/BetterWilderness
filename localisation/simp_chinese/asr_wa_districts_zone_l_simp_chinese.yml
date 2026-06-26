@@ -25,6 +25,8 @@ l_simp_chinese:
   zone_asr_wa_assist_mineral: "沉积"
   zone_asr_wa_assist_mineral_desc: ""
   # New City Zone
+  zone_asr_wa_spawning_wilderness: "$zone_asr_wa_spawning$"
+  zone_asr_wa_spawning_wilderness_desc: "$zone_asr_wa_spawning_desc$"
   zone_asr_wa_research_phy_wilderness: "$zone_asr_wa_research_phy$"
   zone_asr_wa_research_phy_wilderness_desc: "$zone_research_wilderness_desc$"
   zone_asr_wa_research_soc_wilderness: "$zone_asr_wa_research_soc$"

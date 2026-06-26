@@ -1,0 +1,70 @@
+# 原版普通球上的一产特化
+zone_food_wilderness = {
+  icon = GFX_district_specialization_wilderness_food
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { food }
+  included_building_sets = {
+    farming
+    fallen_empire_farming
+    hydroponics
+  }
+  convert_to = {
+    zone_asr_wa_food
+  }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = jobs/zone_farmers_add
+    AMOUNT = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
+}
+
+zone_energy_wilderness = {
+  icon = GFX_district_specialization_wilderness_energy
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { energy }
+  included_building_sets = {
+    generator
+    fallen_empire_generator
+  }
+  convert_to = {
+    zone_asr_wa_energy
+  }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = jobs/zone_technicians_add
+    AMOUNT = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
+}
+
+zone_minerals_wilderness = {
+  icon = GFX_district_specialization_wilderness_minerals
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { minerals }
+  included_building_sets = {
+    mining
+    fallen_empire_mining
+  }
+  convert_to = {
+    zone_asr_wa_mineral
+  }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = jobs/zone_miner_add
+    AMOUNT = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
+}

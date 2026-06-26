@@ -2,11 +2,11 @@
 zone_asr_wa_urban = {
   icon = GFX_district_specialization_wilderness_urban
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_urban
+  swap_type_weight = 10
 
   zone_sets = { asr_wa_gaia_rural }
-
   include = { all }
-
   excluded_building_sets = {
     generator
     mining
@@ -15,532 +15,469 @@ zone_asr_wa_urban = {
     betharian
   }
 
-  swap_type = district_asr_wa_swap_urban
-  swap_type_weight = 10
-
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/patrol_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 2
+  ai_weight_coefficient = 0.1
 }
 # 蔓生
 zone_asr_wa_spawning = {
   icon = GFX_district_specialization_wilderness_spawning
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { urban }
-
   swap_type = district_asr_wa_swap_spawning
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { urban origin }
+
+  inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/gaia_spawning_add
     BASE = 100
   }
+
+  ai_priority = 2
+  # ai_weight_coefficient = 1
 }
 # 咏崖
 zone_asr_wa_unity = {
   icon = GFX_district_specialization_wilderness_unity
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { unity }
-
   swap_type = district_asr_wa_swap_coordinator
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { unity }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/bureaucrat_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
 }
 # 思茎
 zone_asr_wa_research = {
   icon = GFX_district_specialization_wilderness_research
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { research }
-
   swap_type = district_asr_wa_swap_calculator
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { research }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/researcher_all_add
     BASE = @doubled_scaling_district_3_jobs
   }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
 }
 # 物理学特化
 zone_asr_wa_research_phy = {
   icon = GFX_district_specialization_physics
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { research }
-
   swap_type = district_asr_wa_swap_calculator_phy
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { research physics }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/researcher_physicist_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
 }
 # 社会学特化
 zone_asr_wa_research_soc = {
   icon = GFX_district_specialization_society
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { research }
-
   swap_type = district_asr_wa_swap_calculator_soc
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { research society }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/researcher_biologist_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
 }
 # 工程学特化
 zone_asr_wa_research_eng = {
   icon = GFX_district_specialization_engineering
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { research }
-
   swap_type = district_asr_wa_swap_calculator_eng
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { research engineering }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/researcher_engineer_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
 }
 # 工业集群
 zone_asr_wa_factory = {
-  icon = GFX_district_specialization_factory
-  base_buildtime = @zone_buildtime
-  potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      OR = {
-        has_technology = tech_luxuries_1
-        country_uses_consumer_goods = yes
-      }
-    }
-    asr_wa_is_wilderness_advanced_planet = yes
-  }
-  unlock = {
-    hidden_trigger = {
-      owner? = {
-        is_wilderness_empire = yes
-        OR = {
-          has_technology = tech_luxuries_1
-          country_uses_consumer_goods = yes
-        }
-      }
-      asr_wa_is_wilderness_advanced_planet = yes
-    }
-  }
-  inline_script = { script = asr_wa/zone/cost }
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { factory }
-
   swap_type = district_hive_factory
   swap_type_weight = 10
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-  }
+  zone_sets = { asr_wa_gaia_rural }
 
   inline_script = {
-    script = asr_wa/zone/job/artisan_add
-    BASE = @doubled_scaling_district_1_job
+    script = asr_wa/zone/content/factory_zone
+    JOB_AMOUNT = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  ai_weight_coefficient = 0.5
 }
 # 熔肠
 zone_asr_wa_foundry = {
   icon = GFX_district_specialization_wilderness_foundry
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { foundry }
-
   swap_type = district_asr_wa_swap_foundry
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { foundry }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/foundry_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 10
+  ai_weight_coefficient = 1.2
 }
 # 须径
 zone_asr_wa_trade = {
   icon = GFX_district_specialization_wilderness_trade
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { trade }
-
   swap_type = district_asr_wa_swap_trade
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { trade }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/trader_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 10
+  ai_weight_coefficient = 0.5
 }
 # 令苞
 zone_asr_wa_fortress = {
   icon = GFX_district_specialization_wilderness_fortress
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { fortress }
-
   swap_type = district_asr_wa_swap_fortress
   swap_type_weight = 10
 
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
-  }
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { fortress }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/soldier_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
 }
 # 花锦
 zone_asr_wa_food = {
   icon = GFX_district_specialization_wilderness_food
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_food
+  swap_type_weight = 10
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     farming
     fallen_empire_farming
     hydroponics
   }
-
-  swap_type = district_asr_wa_swap_food
-  swap_type_weight = 10
-
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
+  convert_to = {
+    zone_food_wilderness
   }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/farmer_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  ai_weight_coefficient = 1.1
 }
 # 光肺
 zone_asr_wa_energy = {
   icon = GFX_district_specialization_wilderness_energy
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_energy
+  swap_type_weight = 10
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     generator
     fallen_empire_generator
   }
-
-  swap_type = district_asr_wa_swap_energy
-  swap_type_weight = 10
-
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
+  convert_to = {
+    zone_energy_wilderness
   }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/technicians_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  ai_weight_coefficient = 1.1
 }
 # 矿脊
 zone_asr_wa_mineral = {
   icon = GFX_district_specialization_wilderness_minerals
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_minerals
+  swap_type_weight = 10
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     mining
     fallen_empire_mining
   }
-
-  swap_type = district_asr_wa_swap_minerals
-  swap_type_weight = 10
-
-  inline_script = {
-    script = asr_wa/zone/shared_advanced_zone
+  convert_to = {
+    zone_minerals_wilderness
   }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
   inline_script = {
     script = asr_wa/zone/job/miner_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  ai_weight_coefficient = 1.1
 }
 # 异星天然气
 zone_asr_wa_exotic_gases = {
-  base_buildtime = @zone_buildtime
   icon = GFX_district_specialization_exotic_gases
+  base_buildtime = @zone_buildtime
   planet_limit = 1
-
-  # 由于这个区域只出现在 gaia_rural 的 zone_sets 中
-  # 所以理论上可以不用判断 owner 是否是荒野
-  potential = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    has_exotic_gases_deposit = yes
-  }
-  unlock = {
-    has_exotic_gases_deposit = yes
-    owner? = { has_technology = tech_mine_exotic_gases }
-  }
-
-  inline_script = { script = asr_wa/zone/cost }
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-    planet_farmers_exotic_gases_produces_add = 0.5
-    planet_farmers_food_produces_add = -3
-  }
-  inline_script = {
-    script = asr_wa/zone/job/farmer_add
-    BASE = @doubled_scaling_district_1_job
-  }
-
   swap_type = district_asr_wa_swap_exotic_gases
   swap_type_weight = 5
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     farming
     fallen_empire_farming
     hydroponics
   }
 
-  ai_priority = 10
-}
-# 易爆微粒
-zone_asr_wa_volatile_motes = {
-  base_buildtime = @zone_buildtime
-  icon = GFX_district_specialization_volatile_motes
-  planet_limit = 1
-
   potential = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    has_volatile_motes_deposit = yes
+    owner? = { is_wilderness_empire = yes }
+    has_exotic_gases_deposit = yes
   }
   unlock = {
-    has_volatile_motes_deposit = yes
-    owner? = { has_technology = tech_mine_volatile_motes }
+    owner? = { has_technology = tech_mine_exotic_gases }
+    hidden_trigger = { has_exotic_gases_deposit = yes }
   }
-
   inline_script = { script = asr_wa/zone/cost }
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-    planet_technician_volatile_motes_produces_add = 0.5
-    planet_technician_energy_produces_add = -3
-  }
-
+  inline_script = { script = asr_wa/zone/building_slot }
   inline_script = {
-    script = asr_wa/zone/job/technicians_add
+    script = asr_wa/zone/job/farmer_add
     BASE = @doubled_scaling_district_1_job
   }
 
+  triggered_planet_modifier = {
+    potential = { always = yes }
+    planet_farmers_exotic_gases_produces_add = 0.5
+    planet_farmers_food_produces_add = -3
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = agri_drone_is_gas_extractor_tt
+  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
+}
+# 易爆微粒
+zone_asr_wa_volatile_motes = {
+  icon = GFX_district_specialization_volatile_motes
+  base_buildtime = @zone_buildtime
+  planet_limit = 1
   swap_type = district_asr_wa_swap_volatile_motes
   swap_type_weight = 5
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     generator
     fallen_empire_generator
   }
 
-  ai_priority = 10
-}
-# 稀有水晶
-zone_asr_wa_rare_crystals = {
-  base_buildtime = @zone_buildtime
-  icon = GFX_district_specialization_rare_crystals
-  planet_limit = 1
-
   potential = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    has_rare_crystals_deposit = yes
+    owner? = { is_wilderness_empire = yes }
+    has_volatile_motes_deposit = yes
   }
   unlock = {
-    has_rare_crystals_deposit = yes
-    owner? = { has_technology = tech_mine_rare_crystals }
+    owner? = { has_technology = tech_mine_volatile_motes }
+    hidden_trigger = { has_volatile_motes_deposit = yes }
   }
-
   inline_script = { script = asr_wa/zone/cost }
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-    planet_miners_rare_crystals_produces_add = 0.5
-    planet_miners_minerals_produces_add = -2
-  }
+  inline_script = { script = asr_wa/zone/building_slot }
   inline_script = {
-    script = asr_wa/zone/job/miner_add
+    script = asr_wa/zone/job/technicians_add
     BASE = @doubled_scaling_district_1_job
   }
 
+  triggered_planet_modifier = {
+    potential = { always = yes }
+    planet_technician_volatile_motes_produces_add = 0.5
+    planet_technician_energy_produces_add = -3
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = technician_drone_is_mote_harvester_tt
+  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
+}
+# 稀有水晶
+zone_asr_wa_rare_crystals = {
+  icon = GFX_district_specialization_rare_crystals
+  base_buildtime = @zone_buildtime
+  planet_limit = 1
   swap_type = district_asr_wa_swap_rare_crystals
   swap_type_weight = 5
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     mining
     fallen_empire_mining
   }
 
-  ai_priority = 10
-}
-# 贝塞里安
-zone_asr_wa_betharian = {
-  base_buildtime = @zone_buildtime
-  icon = GFX_district_specialization_betharian
-  planet_limit = 1
-
   potential = {
-    asr_wa_is_wilderness_advanced_planet = yes
-    has_deposit = d_betharian_deposit
+    owner? = { is_wilderness_empire = yes }
+    has_rare_crystals_deposit = yes
   }
   unlock = {
-    has_deposit = d_betharian_deposit
-    owner? = { has_technology = tech_mine_betharian }
+    owner? = { has_technology = tech_mine_rare_crystals }
+    hidden_trigger = { has_rare_crystals_deposit = yes }
   }
-
   inline_script = { script = asr_wa/zone/cost }
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-    planet_miners_energy_produces_add = 6
-    planet_miners_minerals_produces_add = -2
-  }
+  inline_script = { script = asr_wa/zone/building_slot }
   inline_script = {
     script = asr_wa/zone/job/miner_add
     BASE = @doubled_scaling_district_1_job
   }
 
+  triggered_planet_modifier = {
+    potential = { always = yes }
+    planet_miners_rare_crystals_produces_add = 0.5
+    planet_miners_minerals_produces_add = -2
+  }
+
+  triggered_desc = {
+    trigger = { always = yes }
+    text = mining_drone_is_crystal_miner_tt
+  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
+}
+# 贝塞里安
+zone_asr_wa_betharian = {
+  icon = GFX_district_specialization_betharian
+  base_buildtime = @zone_buildtime
+  planet_limit = 1
   swap_type = district_asr_wa_swap_betharian
   swap_type_weight = 5
 
   zone_sets = { asr_wa_gaia_rural }
-
   included_building_sets = {
     betharian
     mining
     fallen_empire_mining
   }
 
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+    has_deposit = d_betharian_deposit
+  }
+  unlock = {
+    owner? = { has_technology = tech_mine_betharian }
+    hidden_trigger = { has_deposit = d_betharian_deposit }
+  }
+  inline_script = { script = asr_wa/zone/cost }
+  inline_script = { script = asr_wa/zone/building_slot }
+  inline_script = {
+    script = asr_wa/zone/job/miner_add
+    BASE = @doubled_scaling_district_1_job
+  }
+
+  triggered_planet_modifier = {
+    potential = { always = yes }
+    planet_miners_energy_produces_add = 6
+    planet_miners_minerals_produces_add = -2
+  }
+
   ai_priority = 10
+  # ai_weight_coefficient = 1
 }
 # 稀有资源
 zone_asr_wa_rare_resources_plant = {
-  icon = GFX_district_specialization_industrial
-  base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { foundry }
-
   swap_type = district_asr_wa_swap_rare_resources_plant
   swap_type_weight = 10
-
-  potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      has_technology = tech_exotic_gases
-      has_technology = tech_volatile_motes
-      has_technology = tech_rare_crystals
-    }
-  }
-  unlock = {
-    hidden_trigger = {
-      owner? = {
-        is_wilderness_empire = yes
-        has_technology = tech_exotic_gases
-        has_technology = tech_volatile_motes
-        has_technology = tech_rare_crystals
-      }
-    }
-  }
-  inline_script = { script = asr_wa/zone/cost }
-
-  planet_modifier = {
-    zone_building_slots_add = 3
-  }
+  zone_sets = { asr_wa_gaia_rural }
 
   inline_script = {
-    script = asr_wa/zone/job/refiner_add
-    BASE = @doubled_scaling_district_3_jobs
+    script = asr_wa/zone/content/rare_resources_zone
+    JOB_AMOUNT = @doubled_scaling_district_3_jobs
+    JOB2_AMOUNT = 20
   }
-  inline_script = {
-    script = asr_wa/zone/job/chemist_add
-    BASE = @doubled_scaling_district_3_jobs
-  }
-  inline_script = {
-    script = asr_wa/zone/job/translucer_add
-    BASE = @doubled_scaling_district_3_jobs
-  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
 }
 # 异星天然气
 zone_asr_wa_exotic_gases_plant = {
   icon = GFX_district_specialization_exotic_gases
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { foundry }
-
   swap_type = district_asr_wa_swap_exotic_gases_plant
   swap_type_weight = 10
+
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { industrial foundry factory }
 
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
@@ -550,18 +487,19 @@ zone_asr_wa_exotic_gases_plant = {
     script = asr_wa/zone/job/refiner_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
 }
 # 易爆微粒
 zone_asr_wa_volatile_motes_plant = {
   icon = GFX_district_specialization_volatile_motes
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { foundry }
-
   swap_type = district_asr_wa_swap_volatile_motes_plant
   swap_type_weight = 10
+
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { industrial foundry factory }
 
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
@@ -571,18 +509,19 @@ zone_asr_wa_volatile_motes_plant = {
     script = asr_wa/zone/job/chemist_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
 }
 # 稀有水晶
 zone_asr_wa_rare_crystals_plant = {
   icon = GFX_district_specialization_rare_crystals
   base_buildtime = @zone_buildtime
-
-  zone_sets = { asr_wa_gaia_rural }
-
-  included_building_sets = { foundry }
-
   swap_type = district_asr_wa_swap_rare_crystals_plant
   swap_type_weight = 10
+
+  zone_sets = { asr_wa_gaia_rural }
+  included_building_sets = { industrial foundry factory }
 
   inline_script = {
     script = asr_wa/zone/shared_tech_unlock_zone
@@ -592,4 +531,7 @@ zone_asr_wa_rare_crystals_plant = {
     script = asr_wa/zone/job/translucer_add
     BASE = @doubled_scaling_district_1_job
   }
+
+  ai_priority = 5
+  # ai_weight_coefficient = 1
 }

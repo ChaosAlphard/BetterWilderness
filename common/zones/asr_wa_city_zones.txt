@@ -1,0 +1,284 @@
+zone_urban_wilderness = {
+  icon = GFX_district_specialization_wilderness_urban
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  include = { all }
+  excluded_building_sets = {
+    generator
+    mining
+    farming
+    knights
+    betharian
+  }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/patrol_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 2
+  ai_weight_coefficient = 0.1
+}
+# 新增: 蔓生
+zone_asr_wa_spawning_wilderness = {
+  icon = GFX_district_specialization_wilderness_spawning
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { urban origin }
+
+  inline_script = { script = asr_wa/zone/shared_advanced_zone }
+  inline_script = {
+    script = asr_wa/zone/job/gaia_spawning_add
+    BASE = 50
+  }
+
+  ai_priority = 2
+  # ai_weight_coefficient = 1
+}
+
+zone_research_unity_wilderness = {
+  icon = GFX_district_specialization_wilderness_spawning
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { research unity }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_all_add
+    BASE = @scaling_district_researchers_4_jobs
+  }
+  inline_script = {
+    script = asr_wa/zone/job/bureaucrat_add
+    BASE = @scaling_district_unity_4_jobs
+  }
+
+  ai_priority = 8
+  # ai_weight_coefficient = 1
+}
+
+zone_unity_wilderness = {
+  icon = GFX_district_specialization_wilderness_unity
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { unity }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/bureaucrat_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
+}
+
+zone_research_wilderness = {
+  icon = GFX_district_specialization_wilderness_research
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { research }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_all_add
+    BASE = @scaling_district_3_jobs
+  }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
+}
+# 新增: 物理学特化
+zone_asr_wa_research_phy_wilderness = {
+  icon = GFX_district_specialization_physics
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { research physics }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_physicist_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
+}
+# 新增: 社会学特化
+zone_asr_wa_research_soc_wilderness = {
+  icon = GFX_district_specialization_society
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { research society }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_biologist_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
+}
+# 新增: 工程学特化
+zone_asr_wa_research_eng_wilderness = {
+  icon = GFX_district_specialization_engineering
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban polytechnic }
+  included_building_sets = { research engineering }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/researcher_engineer_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 12
+  ai_weight_coefficient = 1.2
+}
+# 新增: 工业特化
+zone_asr_wa_factory_wilderness = {
+  zone_sets = { urban }
+
+  inline_script = {
+    script = asr_wa/zone/content/factory_zone
+    JOB_AMOUNT = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  ai_weight_coefficient = 0.5
+}
+
+zone_foundry_wilderness = {
+  icon = GFX_district_specialization_wilderness_foundry
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { foundry }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/foundry_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 10
+  ai_weight_coefficient = 1.2
+}
+
+zone_trade_wilderness = {
+  icon = GFX_district_specialization_wilderness_trade
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { trade }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/trader_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 10
+  ai_weight_coefficient = 0.5
+}
+
+zone_fortress_wilderness = {
+  icon = GFX_district_specialization_wilderness_fortress
+  base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_fortress_city
+  swap_type_weight = 6
+
+  zone_sets = { urban }
+  included_building_sets = { fortress }
+
+  inline_script = { script = asr_wa/zone/shared_zone }
+  inline_script = {
+    script = asr_wa/zone/job/soldier_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 10
+  # ai_weight_coefficient = 1
+}
+# 新增: 稀有资源
+zone_asr_wa_rare_resources_plant_wilderness = {
+  zone_sets = { urban }
+
+  inline_script = {
+    script = asr_wa/zone/content/rare_resources_zone
+    JOB_AMOUNT = @scaling_district_3_jobs
+    JOB2_AMOUNT = 10
+  }
+
+  ai_priority = 10
+  ai_weight_coefficient = 0.5
+}
+# 新增: 异星天然气
+zone_asr_wa_exotic_gases_plant_wilderness = {
+  icon = GFX_district_specialization_exotic_gases
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { industrial foundry factory }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_exotic_gases
+  }
+  inline_script = {
+    script = asr_wa/zone/job/refiner_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  ai_weight_coefficient = 0
+}
+# 新增: 易爆微粒
+zone_asr_wa_volatile_motes_plant_wilderness = {
+  icon = GFX_district_specialization_volatile_motes
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { industrial foundry factory }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_volatile_motes
+  }
+  inline_script = {
+    script = asr_wa/zone/job/chemist_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  ai_weight_coefficient = 0
+}
+# 新增: 稀有水晶
+zone_asr_wa_rare_crystals_plant_wilderness = {
+  icon = GFX_district_specialization_rare_crystals
+  base_buildtime = @zone_buildtime
+
+  zone_sets = { urban }
+  included_building_sets = { industrial foundry factory }
+
+  inline_script = {
+    script = asr_wa/zone/shared_tech_unlock_zone
+    TECH = tech_rare_crystals
+  }
+  inline_script = {
+    script = asr_wa/zone/job/translucer_add
+    BASE = @scaling_district_1_job
+  }
+
+  ai_priority = 5
+  ai_weight_coefficient = 0
+}

@@ -6,13 +6,11 @@
 zone_asr_wa_assist_unity = {
   icon = GFX_district_specialization_wilderness_unity
   base_buildtime = @zone_buildtime
-
-  zone_sets = { urban }
-
-  included_building_sets = { unity trade }
-
   swap_type = district_asr_wa_swap_assist_coordinator
   swap_type_weight = 20
+
+  zone_sets = { urban }
+  included_building_sets = { unity trade }
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -32,20 +30,19 @@ zone_asr_wa_assist_unity = {
     text = asr_wa_assist_unity_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 科研支持
 zone_asr_wa_assist_research = {
   icon = GFX_district_specialization_wilderness_research
   base_buildtime = @zone_buildtime
-
-  zone_sets = { urban }
-
-  included_building_sets = { research trade }
-
   swap_type = district_asr_wa_swap_assist_calculator
   swap_type_weight = 18
+
+  zone_sets = { urban }
+  included_building_sets = { research trade }
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -69,20 +66,20 @@ zone_asr_wa_assist_research = {
     text = asr_wa_assist_research_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 冶金支持
 zone_asr_wa_assist_foundry = {
   icon = GFX_district_specialization_wilderness_foundry
   base_buildtime = @zone_buildtime
-
-  zone_sets = { urban }
-
-  included_building_sets = { foundry trade }
-
   swap_type = district_asr_wa_swap_assist_foundry
   swap_type_weight = 16
+
+  zone_sets = { urban }
+  included_building_sets = { industrial foundry factory trade }
+
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -117,38 +114,34 @@ zone_asr_wa_assist_foundry = {
 
   triggered_desc = {
     trigger = {
-      asr_wa_has_any_workforce = {
-        JOB = fabricator
-      }
+      asr_wa_has_any_workforce = { JOB = fabricator }
     }
     text = asr_wa_assist_alloy_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 贸易支持
 zone_asr_wa_assist_trade = {
   icon = GFX_district_specialization_wilderness_trade
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_assist_trade
+  swap_type_weight = 14
 
   zone_sets = { urban }
-
   included_building_sets = {
     trade
     generator
     fallen_empire_generator
   }
-
   exclude = {
     building_subterranean_cache
     building_fe_silo_1
     building_fe_silo_2
     building_resource_silo
   }
-
-  swap_type = district_asr_wa_swap_assist_trade
-  swap_type_weight = 14
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -163,32 +156,29 @@ zone_asr_wa_assist_trade = {
 
   triggered_desc = {
     trigger = {
-      asr_wa_has_any_workforce = {
-        JOB = logistics_drone
-      }
+      asr_wa_has_any_workforce = { JOB = logistics_drone }
     }
     text = asr_wa_assist_trade_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 食物支持
 zone_asr_wa_assist_food = {
   icon = GFX_district_specialization_wilderness_food
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_assist_food
+  swap_type_weight = 12
 
   zone_sets = { urban }
-
   included_building_sets = {
     farming
     fallen_empire_farming
     hydroponics
     trade
   }
-
-  swap_type = district_asr_wa_swap_assist_food
-  swap_type_weight = 12
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -203,31 +193,28 @@ zone_asr_wa_assist_food = {
 
   triggered_desc = {
     trigger = {
-      asr_wa_has_any_workforce = {
-        JOB = agri_drone
-      }
+      asr_wa_has_any_workforce = { JOB = agri_drone }
     }
     text = asr_wa_assist_food_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 能源支持
 zone_asr_wa_assist_energy = {
   icon = GFX_district_specialization_wilderness_energy
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_assist_energy
+  swap_type_weight = 10
 
   zone_sets = { urban }
-
   included_building_sets = {
     generator
     fallen_empire_generator
     trade
   }
-
-  swap_type = district_asr_wa_swap_assist_energy
-  swap_type_weight = 10
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -242,31 +229,28 @@ zone_asr_wa_assist_energy = {
 
   triggered_desc = {
     trigger = {
-      asr_wa_has_any_workforce = {
-        JOB = technician_drone
-      }
+      asr_wa_has_any_workforce = { JOB = technician_drone }
     }
     text = asr_wa_assist_energy_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }
 
 # 矿物支持
 zone_asr_wa_assist_mineral = {
   icon = GFX_district_specialization_wilderness_minerals
   base_buildtime = @zone_buildtime
+  swap_type = district_asr_wa_swap_assist_minerals
+  swap_type_weight = 8
 
   zone_sets = { urban }
-
   included_building_sets = {
     mining
     fallen_empire_mining
     trade
   }
-
-  swap_type = district_asr_wa_swap_assist_minerals
-  swap_type_weight = 8
 
   inline_script = { script = asr_wa/zone/shared_assist_zone }
   inline_script = {
@@ -281,12 +265,11 @@ zone_asr_wa_assist_mineral = {
 
   triggered_desc = {
     trigger = {
-      asr_wa_has_any_workforce = {
-        JOB = mining_drone
-      }
+      asr_wa_has_any_workforce = { JOB = mining_drone }
     }
     text = asr_wa_assist_mineral_tt
   }
 
-  ai_priority = 0
+  ai_priority = 10
+  ai_weight_coefficient = 0
 }

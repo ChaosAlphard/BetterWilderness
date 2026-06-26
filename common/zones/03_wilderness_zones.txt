@@ -1,7 +1,12 @@
 # Override
 # 所有 Zone 在这里只是为了占位保持顺序
-# 实际内容应在 ~asr_wa_override_zones 和 ~asr_wa_assist_zones 中编辑
+# 实际内容应在 asr_wa_city_zones 和 ~asr_wa_assist_zones 中编辑
 zone_urban_wilderness = {
+  zone_sets = { urban }
+  included_building_sets = { urban }
+}
+
+zone_asr_wa_spawning_wilderness = {
   zone_sets = { urban }
   included_building_sets = { urban }
 }
@@ -102,26 +107,6 @@ zone_minerals_wilderness = {
 }
 
 zone_asr_wa_assist_mineral = {
-  zone_sets = { urban }
-  included_building_sets = { urban }
-}
-
-zone_asr_wa_rare_resources_plant_wilderness = {
-  zone_sets = { urban }
-  included_building_sets = { urban }
-}
-
-zone_asr_wa_exotic_gases_plant_wilderness = {
-  zone_sets = { urban }
-  included_building_sets = { urban }
-}
-
-zone_asr_wa_volatile_motes_plant_wilderness = {
-  zone_sets = { urban }
-  included_building_sets = { urban }
-}
-
-zone_asr_wa_rare_crystals_plant_wilderness = {
   zone_sets = { urban }
   included_building_sets = { urban }
 }
