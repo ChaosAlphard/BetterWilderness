@@ -1,4 +1,4 @@
-# max_buildings = 3
+# max_buildings = 3  # 不设置 max_buildings 的值, 使其使用默认值 (DEFAULT_MAX_PLANET_BUILDINGS_PER_ZONE)
 planet_modifier = {
   zone_building_slots_add = 3
 }
