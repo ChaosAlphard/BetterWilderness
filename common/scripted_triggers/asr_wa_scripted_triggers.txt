@@ -116,6 +116,10 @@ asr_wa_foundry_zone_assist_chemists = {
 }
 
 # 兼容其他Mod, 重写这个方法以让其他星球类型也被视为盖亚星球
+asr_wa_is_gaia_planet = {
+  is_planet_class = pc_gaia
+}
+
 asr_wa_is_wilderness_advanced_planet = {
   is_planet_class = pc_gaia
 }

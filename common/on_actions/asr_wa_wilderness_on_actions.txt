@@ -2,7 +2,7 @@ on_game_start_country = {
   events = {
     asr_wa_wilderness.1
     asr_wa_wilderness.10
-    asr_wa_wilderness.100
+    # asr_wa_wilderness.100
   }
 }
 # 还没测, 以后再说
@@ -38,4 +38,8 @@ on_monthly_pulse_country = {
 on_planet_class_changed = {
   # 自动给未特化乡村区划的盖亚星球添加对应一产特化
   events = { asr_wa_wilderness.1000 }
+}
+# 每年触发
+on_yearly_pulse_country = {
+  events = { asr_wa_wilderness.2000 }
 }
