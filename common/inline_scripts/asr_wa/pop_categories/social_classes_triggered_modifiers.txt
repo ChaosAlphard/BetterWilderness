@@ -13,21 +13,6 @@ triggered_pop_group_modifier = {
 
 triggered_pop_group_modifier = {
   potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      OR = {
-        has_tradition = tr_purity_adopt # 被释放的附庸会复制你的传统
-        has_ascension_perk = ap_engineered_evolution
-      }
-    }
-  }
-  key = tradition_purity
-  pop_bonus_workforce_mult = 0.3
-  mult = colony.value:asr_wa_workforce_from_pops
-}
-
-triggered_pop_group_modifier = {
-  potential = {
     owner? = { is_wilderness_empire = yes }
     species? = { has_trait = trait_wilderness }
   }

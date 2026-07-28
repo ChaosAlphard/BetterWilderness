@@ -54,6 +54,14 @@ building_cradle_of_rebirth = {
     }
     pop_environment_tolerance = 0.20
   }
+  # 按照人口数与岗位数比值提供岗位效率加成
+  triggered_planet_modifier = {
+    potential = {
+      owner? = { has_ascension_perk = ap_engineered_evolution }
+    }
+    wilderness_pop_bonus_workforce_mult = 1
+    mult = value:asr_wa_workforce_from_pops|MAX|0.3|
+  }
   # 建筑和区划给予+2%建造和决议颁布速度, 盖亚星球上翻倍
   triggered_planet_modifier = {
     potential = {

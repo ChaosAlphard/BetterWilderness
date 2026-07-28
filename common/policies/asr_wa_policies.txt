@@ -143,36 +143,7 @@ asr_wa_tr_purity_effect = {
   category = asr_wa_policy_cat_wilderness
   potential = {
     is_wilderness_empire = yes
-    OR = {
-      has_tradition = tr_purity_adopt # 被释放的附庸会复制你的传统
-      has_ascension_perk = ap_engineered_evolution
-    }
-  }
-
-  option = {
-    name = asr_wa_p_genetic_ascension
-
-    potential = {
-      NOR = {
-        has_tradition = tr_purity_finish
-        has_tradition = tr_purity_adopt
-      }
-      has_ascension_perk = ap_engineered_evolution
-    }
-
-    valid = {
-      NOR = {
-        has_tradition = tr_purity_finish
-        has_tradition = tr_purity_adopt
-      }
-      has_ascension_perk = ap_engineered_evolution
-    }
-
-    modifier = {}
-
-    AI_weight = {
-      weight = 10
-    }
+    has_tradition = tr_purity_adopt
   }
 
   option = {

@@ -46,19 +46,16 @@ l_english:
   asr_wa_p_idyllic_bloom_valid_desc: "Wilderness pops will be ['trait:trait_plantoid_bloomed'] on ['concept_pc_gaia'] every year"
   policy_asr_wa_tr_purity_effect: "$ap_engineered_evolution$"
   policy_asr_wa_tr_purity_effect_desc: ""
-  asr_wa_genetic_ap_tt: "§Y$MOD_POP_BONUS_WORKFORCE_MULT$§! scales with planet £pop£§Ypops§!-to-£job£§Yjobs§! ratio，up to §G+30%§!"
-  asr_wa_p_genetic_ascension: "$tradition_purity$"
-  asr_wa_p_genetic_ascension_desc: "$asr_wa_genetic_ap_tt$"
   asr_wa_p_purity_adopt: "$tradition_purity$"
-  asr_wa_p_purity_adopt_desc: "$asr_wa_genetic_ap_tt$"
+  asr_wa_p_purity_adopt_desc: ""
   asr_wa_p_purity_finish: "$tradition_purity$"
-  asr_wa_p_purity_finish_desc: "$asr_wa_genetic_ap_tt$"
+  asr_wa_p_purity_finish_desc: ""
   # resource with icon
   wa_r_amenities_gestalt: "£amenities_no_happiness£['concept_amenities']"
   wa_r_housing: "£housing£['concept_housing']"
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
-  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring'], ['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity'] give §G+100§! $mod_job_spawning_drone_add$\n- ['ascension_perk:ap_engineered_evolution'] give §G+20%§! $MOD_POP_ENVIRONMENT_TOLERANCE$"
+  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring'], ['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity',$tr_purity_finish$] give §G+100§! $mod_job_spawning_drone_add$\n- ['ascension_perk:ap_engineered_evolution'] give §G+20%§! $MOD_POP_ENVIRONMENT_TOLERANCE$, and give §Y$MOD_POP_BONUS_WORKFORCE_MULT$§! scales with planet £pop£§Ypops§!-to-£job£§Yjobs§! ratio, up to §G+30%§!"
   asr_wa_b_cor_bonus_pop_growth_tt: "- Doesn't give $mod_job_spawning_drone_add$ when free housing less than §Y0§!\n- Give more §Y$job_asr_wa_simulate_spawning_drone$§! jobs when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
