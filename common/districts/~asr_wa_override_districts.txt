@@ -27,6 +27,10 @@ district_craglands = {
     slot_city_01
     slot_city_02
   }
+  inline_script = {
+    script = districts/BPV_district_slots2_add
+    SLOT_END = slot_city_02
+  }
 
   conversion_ratio = 1
   convert_to = {
