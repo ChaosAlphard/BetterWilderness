@@ -189,6 +189,45 @@ decision_asr_wa_renounce_colony = {
   }
 }
 
+decision_asr_wa_release_vassal = {
+  owned_planets_only = yes
+  icon = decision_asr_wa_wilderness_world
+  enactment_time = 0
+
+  potential = {
+    has_overlord_dlc = yes
+    owner? = {
+      is_wilderness_empire = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+      is_ai = no
+    }
+    is_capital = no
+    is_sector_capital = yes
+  }
+
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_at_war = no
+      is_ai = no
+    }
+    is_capital = no
+    is_sector_capital = yes
+  }
+
+  resources = { category = decisions }
+
+  effect = {
+    colony? = {
+      colony_event = { id = asr_wa_wilderness.3000 }
+    }
+  }
+
+  ai_weight = {
+    factor = 0
+  }
+}
+
 decision_asr_wa_demolish_gaiaseeder = {
   owned_planets_only = yes
   icon = default

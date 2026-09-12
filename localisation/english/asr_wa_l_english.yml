@@ -81,6 +81,8 @@ l_english:
   decision_asr_wa_renounce_colony_desc: "Renounce Colony"
   decision_asr_wa_demolish_gaiaseeder: "Demolish §Y$building_gaiaseeders$§!"
   decision_asr_wa_demolish_gaiaseeder_desc: ""
+  decision_asr_wa_release_vassal: "Release Vassal"
+  decision_asr_wa_release_vassal_desc: "Release Current Sector as Vassal"
   # Static Modifier
   asr_wa_wilderness_world: "Shaped Nature"
   asr_wa_wilderness_world_desc: ""

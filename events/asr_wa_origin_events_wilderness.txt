@@ -285,3 +285,194 @@ colony_event = {
     }
   }
 }
+
+###################
+#### 释放附庸事件 ####
+###################
+
+colony_event = {
+  id = asr_wa_wilderness.3000
+  title = asr_wa_wilderness.3000.name
+  desc = asr_wa_wilderness.3000.desc
+  picture = GFX_evt_wilderness_colonizer
+  location = root
+  is_triggered_only = yes
+  trigger = {
+    owner? = {
+      is_wilderness_empire = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+    }
+  }
+
+  immediate = {
+    # 清理可能存在的遗留 flag
+    asr_wa_rv_cleanup_effect = yes
+  }
+
+  option = {
+    name = asr_wa_wilderness.common.option.no
+  }
+  option = {
+    name = asr_wa_wilderness.3000.opt.1
+    custom_tooltip = specialist_none_desc
+    colony_event = { id = asr_wa_wilderness.3001 }
+  }
+  option = {
+    name = asr_wa_wilderness.3000.opt.2
+    custom_tooltip = specialist_scholarium_desc
+    owner = { set_country_flag = asr_wa_rv_release_as_scholarium }
+    colony_event = { id = asr_wa_wilderness.3001 }
+  }
+  option = {
+    name = asr_wa_wilderness.3000.opt.3
+    custom_tooltip = specialist_prospectorium_desc
+    owner = { set_country_flag = asr_wa_rv_release_as_prospectorium }
+    colony_event = { id = asr_wa_wilderness.3001 }
+  }
+  option = {
+    name = asr_wa_wilderness.3000.opt.4
+    custom_tooltip = specialist_bulwark_desc
+    owner = { set_country_flag = asr_wa_rv_release_as_bulwark }
+    colony_event = { id = asr_wa_wilderness.3001 }
+  }
+}
+
+colony_event = {
+  id = asr_wa_wilderness.3001
+  title = asr_wa_wilderness.3001.name
+  desc = asr_wa_wilderness.3001.desc
+  picture = GFX_evt_wilderness_colonizer
+  location = root
+  is_triggered_only = yes
+  trigger = {
+    owner? = {
+      is_wilderness_empire = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+    }
+  }
+
+  immediate = {
+    every_owned_pop_group = {
+      limit = { has_pop_group_flag = asr_wa_sf_release_vassal_pending_species }
+      remove_pop_group_flag = asr_wa_sf_release_vassal_pending_species
+    }
+
+    ordered_owned_pop_group = {
+      limit = {
+        has_trait = trait_wilderness
+        is_same_species = prev.owner_main_species
+      }
+      order_by = trigger:pop_group_size
+      inverse = no
+      position = 0
+      save_event_target_as = asr_wa_rv_main_species_pop_group
+      export_trigger_value_to_variable = {
+        trigger = pop_group_size
+        variable = asr_wa_num_pops
+      }
+    }
+    ordered_owned_pop_group = {
+      limit = {
+        has_trait = trait_wilderness
+        NOT = { is_same_species = prev.owner_main_species }
+      }
+      order_by = trigger:pop_group_size
+      inverse = no
+      position = 0
+      save_event_target_as = asr_wa_rv_most_pop_group
+      export_trigger_value_to_variable = {
+        trigger = pop_group_size
+        variable = asr_wa_num_pops
+      }
+    }
+    ordered_owned_pop_group = {
+      limit = {
+        has_trait = trait_wilderness
+        NOT = { is_same_species = prev.owner_main_species }
+      }
+      order_by = trigger:pop_group_size
+      inverse = yes
+      position = 0
+      save_event_target_as = asr_wa_rv_least_pop_group
+      export_trigger_value_to_variable = {
+        trigger = pop_group_size
+        variable = asr_wa_num_pops
+      }
+    }
+  }
+
+  after = {
+    hidden_effect = {
+      event_target:asr_wa_rv_main_species_pop_group? = { clear_variable = asr_wa_num_pops }
+      event_target:asr_wa_rv_most_pop_group? = { clear_variable = asr_wa_num_pops }
+      event_target:asr_wa_rv_least_pop_group? = { clear_variable = asr_wa_num_pops }
+    }
+  }
+
+  option = {
+    name = asr_wa_wilderness.common.option.no
+    asr_wa_rv_cleanup_effect = yes
+  }
+  option = {
+    name = asr_wa_wilderness.3001.opt.1
+    trigger = { exists = event_target:asr_wa_rv_main_species_pop_group }
+    event_target:asr_wa_rv_main_species_pop_group = {
+      set_pop_group_flag = asr_wa_sf_release_vassal_pending_species
+    }
+    colony_event = {
+      id = asr_wa_wilderness.3100
+    }
+  }
+  option = {
+    name = asr_wa_wilderness.3001.opt.2
+    trigger = { exists = event_target:asr_wa_rv_most_pop_group }
+    event_target:asr_wa_rv_most_pop_group = {
+      set_pop_group_flag = asr_wa_sf_release_vassal_pending_species
+    }
+    colony_event = {
+      id = asr_wa_wilderness.3100
+    }
+  }
+  option = {
+    name = asr_wa_wilderness.3001.opt.3
+    trigger = { exists = event_target:asr_wa_rv_least_pop_group }
+    event_target:asr_wa_rv_least_pop_group = {
+      set_pop_group_flag = asr_wa_sf_release_vassal_pending_species
+    }
+    colony_event = {
+      id = asr_wa_wilderness.3100
+    }
+  }
+}
+
+colony_event = {
+  id = asr_wa_wilderness.3100
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    owner? = {
+      is_wilderness_empire = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+    }
+  }
+
+  immediate = {
+    asr_wa_release_vassal_effect = yes
+  }
+}
+
+country_event = {
+  id = asr_wa_wilderness.3101
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    exists = event_target:asr_wa_rv_subject_capital
+    exists = event_target:asr_wa_rv_subject_species
+    exists = event_target:asr_wa_rv_overload
+    exists = event_target:asr_wa_rv_subject
+  }
+
+  immediate = {
+    asr_wa_vassal_initial_effect = yes
+  }
+}

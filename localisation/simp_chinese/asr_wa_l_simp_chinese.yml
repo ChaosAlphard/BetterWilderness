@@ -81,6 +81,8 @@ l_simp_chinese:
   decision_asr_wa_renounce_colony_desc: "切断殖民地与我们的联系"
   decision_asr_wa_demolish_gaiaseeder: "拆除§Y$building_gaiaseeders$§!"
   decision_asr_wa_demolish_gaiaseeder_desc: ""
+  decision_asr_wa_release_vassal: "释放附庸"
+  decision_asr_wa_release_vassal_desc: "将当前星域释放为附庸"
   # Static Modifier
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
   asr_wa_wilderness_world_desc: ""
