@@ -41,5 +41,8 @@ on_planet_class_changed = {
 }
 # 每年触发
 on_yearly_pulse_country = {
-  events = { asr_wa_wilderness.2000 }
+  events = {
+    asr_wa_wilderness.2000
+    asr_wa_wilderness.2100
+  }
 }

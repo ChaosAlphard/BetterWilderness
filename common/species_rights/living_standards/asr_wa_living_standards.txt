@@ -1,0 +1,23 @@
+living_standard_wilderness_asr_wa = {
+  potential = {
+    exists = from
+    from = { is_wilderness_empire = yes }
+    has_citizenship_type = {
+      type = citizenship_assimilation_biomass_asr_wa
+      country = from
+    }
+  }
+
+  allow = {
+    has_trait = trait_wilderness
+    from = { is_wilderness_empire = yes }
+    has_citizenship_type = {
+      type = citizenship_assimilation_biomass_asr_wa
+      country = from
+    }
+  }
+
+  ai_will_do = {
+    factor = 0
+  }
+}

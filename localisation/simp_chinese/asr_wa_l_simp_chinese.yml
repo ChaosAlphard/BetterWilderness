@@ -50,6 +50,13 @@ l_simp_chinese:
   asr_wa_p_purity_adopt_desc: ""
   asr_wa_p_purity_finish: "$tradition_purity$"
   asr_wa_p_purity_finish_desc: ""
+  # 物种权利
+  citizenship_assimilation_biomass_asr_wa: "生物质整合"
+  citizenship_assimilation_biomass_asr_wa_tooltip: "将§H生物质§!整合为帝国主体物种\n每年进行一次整合"
+  citizenship_assimilation_biomass_asr_wa_tooltip_delayed: ""
+  living_standard_wilderness_asr_wa: "生物质整合"
+  living_standard_wilderness_asr_wa_tooltip: "这只是个占位符，你可以无视它"
+  living_standard_wilderness_asr_wa_tooltip_delayed: ""
   # resource with icon
   wa_r_amenities_gestalt: "£amenities_no_happiness£['concept_amenities']"
   wa_r_housing: "£housing£['concept_housing']"

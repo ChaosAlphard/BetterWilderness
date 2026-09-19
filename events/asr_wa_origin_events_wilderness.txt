@@ -161,6 +161,9 @@ carrier_event = {
   }
 }
 
+###################
+#### 物种整合事件 ####
+###################
 
 country_event = {
   id = asr_wa_wilderness.2000
@@ -282,6 +285,84 @@ colony_event = {
         }
       }
 
+    }
+  }
+}
+
+country_event = {
+  id = asr_wa_wilderness.2100
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+    can_perform_genetic_assimilation = yes
+  }
+
+  immediate = {
+    every_owned_colony = {
+      limit = {
+        any_owned_pop_group = {
+          NOT = { is_same_species = root }
+          has_trait = trait_wilderness
+          has_citizenship_type = {
+            type = citizenship_assimilation_biomass_asr_wa
+            country = root.owner
+          }
+        }
+      }
+      colony_event = {
+        id = asr_wa_wilderness.2101
+        days = 2
+      }
+    }
+  }
+}
+
+# See assimilation.610
+colony_event = {
+  id = asr_wa_wilderness.2101
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    owner? = {
+      is_wilderness_empire = yes
+      can_perform_genetic_assimilation = yes
+    }
+    any_owned_pop_group = {
+      NOT = { is_same_species = root.owner }
+      has_trait = trait_wilderness
+      has_citizenship_type = {
+        type = citizenship_assimilation_biomass_asr_wa
+        country = root.owner
+      }
+    }
+  }
+
+  immediate = {
+    every_owned_pop_group = {
+      limit = {
+        NOT = { is_same_species = root.owner }
+        has_trait = trait_wilderness
+        has_citizenship_type = {
+          type = citizenship_assimilation_biomass_asr_wa
+          country = root.owner
+        }
+      }
+      save_event_target_as = asr_wa_assimilation_old_pop_group
+      prev = {
+        create_pop_group = {
+          pop_group = event_target:asr_wa_assimilation_old_pop_group
+          species = root.owner_main_species
+          size = 0
+          effect = {
+            transfer_pop_amount = {
+              source = event_target:asr_wa_assimilation_old_pop_group
+              target = this
+              percentage = 1
+            }
+          }
+        }
+      }
     }
   }
 }

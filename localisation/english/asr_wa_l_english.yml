@@ -50,6 +50,13 @@ l_english:
   asr_wa_p_purity_adopt_desc: ""
   asr_wa_p_purity_finish: "$tradition_purity$"
   asr_wa_p_purity_finish_desc: ""
+  # 物种权利
+  citizenship_assimilation_biomass_asr_wa: "Biomass Assimilation"
+  citizenship_assimilation_biomass_asr_wa_tooltip: "Assimilate §HBiomass§! into §H$FOUNDER_SPECIES$§!\nPerformed once per year"
+  citizenship_assimilation_biomass_asr_wa_tooltip_delayed: ""
+  living_standard_wilderness_asr_wa: "Biomass Assimilation"
+  living_standard_wilderness_asr_wa_tooltip: "This is a placeholder, you can ignore it"
+  living_standard_wilderness_asr_wa_tooltip_delayed: ""
   # resource with icon
   wa_r_amenities_gestalt: "£amenities_no_happiness£['concept_amenities']"
   wa_r_housing: "£housing£['concept_housing']"
