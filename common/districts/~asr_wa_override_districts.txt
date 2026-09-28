@@ -94,13 +94,7 @@ district_photosynthesis_fields = {
   expansion_planner_type = district_generator
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_energy
-  shared_capacity_modifier = district_generator
-  is_uncapped = {
-    is_wilderness_generator_district_uncapped = yes
-  }
-
-  min_for_deposits_on_planet = 3
-  max_for_deposits_on_planet = 15
+  is_uncapped = { always = yes }
 
   zone_slots = {
     slot_energy
@@ -177,13 +171,7 @@ district_hollow_mountains = {
   expansion_planner_type = district_mining
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_minerals
-  shared_capacity_modifier = district_mining
-  is_uncapped = {
-    is_wilderness_mining_district_uncapped = yes
-  }
-
-  min_for_deposits_on_planet = 1
-  max_for_deposits_on_planet = 15
+  is_uncapped = { always = yes }
 
   zone_slots = {
     slot_minerals
@@ -260,13 +248,7 @@ district_orchard_forests = {
   expansion_planner_type = district_farming
   base_buildtime = @wilderness_district_build_short
   overlay_icon = GFX_district_food
-  shared_capacity_modifier = district_farming
-  is_uncapped = {
-    is_wilderness_farming_district_uncapped = yes
-  }
-
-  min_for_deposits_on_planet = 3
-  max_for_deposits_on_planet = 15
+  is_uncapped = { always = yes }
 
   zone_slots = {
     slot_food

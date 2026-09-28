@@ -1,0 +1,29 @@
+citizenship_assimilation_biomass_asr_wa = {
+  # name = citizenship_assimilation
+
+  # This/Root = Species; From = Country
+  potential = {
+    exists = from
+    from = {
+      is_wilderness_empire = yes
+      can_perform_genetic_assimilation = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+    }
+    NOT = { is_same_species = from }
+    is_robotic = no
+  }
+
+  allow = {
+    hidden_trigger = {
+      exists = from
+      from = { is_wilderness_empire = yes }
+    }
+    has_trait = trait_wilderness
+    NOT = { is_same_species = from }
+    is_sapient = yes
+  }
+
+  ai_will_do = {
+    factor = 0
+  }
+}

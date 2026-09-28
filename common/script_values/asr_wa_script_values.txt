@@ -144,27 +144,23 @@ asr_wa_expand_planet_mod = {
   add = 6
 }
 
+# (x/y)^a  x的值接近0时增长更快, x的值接近y时增长更慢, a的值越接近1越接近线性增长
 asr_wa_workforce_from_pops = {
   base = 0
   set = trigger:asr_wa_wilderness_pop_amount
-  divide = value:asr_wa_num_workforce_except_biomass
+  min = 100
+  divide = value:asr_wa_num_workforce_except_uncapped
   min = 0
   max = 1
+  pow = 0.66666666  # 立方根
   round_to = 0.01
+  mult = $MAX$
 }
-
-asr_wa_num_workforce_except_biomass = {
+# 排除掉 生物质, 牲口, 不可接触者 等随人口数增加的岗位 (无上限岗位)
+# 因为荒野会自动填充岗位, 所以人口数量基本上等于无上限岗位数量
+asr_wa_num_workforce_except_uncapped = {
   base = 0
-  complex_trigger_modifier = {
-    trigger = count_owned_workforce
-    parameters = {
-      limit = {
-        NOT = {
-          has_job_category = wilderness_heart_strata
-        }
-      }
-    }
-    mode = set
-  }
+  set = trigger:count_owned_workforce
+  subtract = trigger:pop_amount
   min = 100
 }

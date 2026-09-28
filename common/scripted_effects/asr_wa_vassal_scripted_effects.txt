@@ -1,0 +1,309 @@
+# 释放附庸
+# 1. 标记附庸初始物种、首都以及宗主国
+# 2. 创建帝国
+# 3. 移交星系与殖民地
+# 4. 与宗主建立附属关系
+asr_wa_release_vassal_effect = {
+  sector? = {
+    every_system_within_border = { set_star_flag = asr_wa_sf_release_vassal_pending_system }
+    every_owned_colony = { set_carrier_flag = asr_wa_pf_release_vassal_pending_colony }
+  }
+  save_event_target_as = asr_wa_rv_subject_capital
+  random_owned_pop_group = {
+    limit = { has_pop_group_flag = asr_wa_sf_release_vassal_pending_species }
+    remove_pop_group_flag = asr_wa_sf_release_vassal_pending_species
+    species? = { save_event_target_as = asr_wa_rv_subject_species }
+  }
+  owner? = {
+    save_event_target_as = asr_wa_rv_overload
+  }
+  asr_wa_create_vassal_country = yes
+}
+
+asr_wa_create_vassal_country = {
+  if = {
+    limit = {
+      exists = event_target:asr_wa_rv_subject_capital
+      exists = event_target:asr_wa_rv_subject_species
+      exists = event_target:asr_wa_rv_overload
+    }
+    create_country = {
+      name = random
+      name_list = event_target:asr_wa_rv_overload
+      type = default
+      authority = event_target:asr_wa_rv_overload
+      civics = event_target:asr_wa_rv_overload
+      origin = origin_wilderness  # 需要设置 graphical_culture 为生物舰船组, 否则不能直接设置起源为生体荒野
+      species = event_target:asr_wa_rv_subject_species
+      ethos = event_target:asr_wa_rv_overload
+      graphical_culture = biogenesis_01
+      city_graphical_culture = wilderness_01
+      room = wilderness_room
+      flag = random
+      # released_by_country = event_target:asr_wa_rv_overload    # 会添加正面评价修正 (解放者+200)
+      # released_from_country = event_target:asr_wa_rv_overload  # 会添加负面评价修正 (原压迫者-100)
+      exclude_day_zero_contact = event_target:asr_wa_rv_overload
+      ignore_initial_colony_error = yes
+      nomadic = no
+      remove_invalid_civics = yes
+      effect = {
+        save_event_target_as = asr_wa_rv_subject
+        # 高优先级设置
+        asr_wa_high_priority_setting = yes
+        # 初始化附庸帝国
+        country_event = {
+          id = asr_wa_wilderness.3101
+        }
+      }
+    }
+
+    event_target:asr_wa_rv_subject = {
+      # 触发释放附庸事件
+      fire_on_action = {
+        on_action = on_released_as_vassal
+        scopes = { from = event_target:asr_wa_rv_overload }
+      }
+      # action.229 会重置附庸起源, 需要再次设置
+      set_origin = origin_wilderness
+      refresh_auto_generated_ship_designs = yes
+      refresh_species_rights = yes
+      # 刷新领袖池 (直接创建的帝国领袖池默认为空)
+      refresh_leader_pool = yes
+    }
+  }
+}
+
+asr_wa_high_priority_setting = {
+  # 手动设置生体荒野相关 country_flag
+  set_country_flag = virtual_jobs
+  set_country_flag = uses_biomass
+  set_country_flag = custom_start_screen
+  # 设置舰船组
+  set_graphical_culture = event_target:asr_wa_rv_overload
+  # 建立联络 (配合 exclude_day_zero_contact 使用, 跳过第一次接触流程)
+  establish_communications_no_message = event_target:asr_wa_rv_overload
+  event_target:asr_wa_rv_overload = {
+    every_federation_ally = { establish_communications = event_target:asr_wa_rv_subject }
+  }
+}
+
+asr_wa_vassal_initial_effect = {
+  set_country_flag = benevolent_terms_preference
+  set_ai_personality = benevolent_wilderness
+
+  # 设置殖民地
+  asr_wa_vassal_colony_initial = yes
+
+  # 初始资源
+  add_resource = {
+    energy = 10000
+    minerals = 10000
+    food = 10000
+    trade = 10000
+    alloys = 10000
+    unity = 1000
+    volatile_motes = 100
+    exotic_gases = 100
+    rare_crystals = 100
+  }
+
+  # 设置附属关系
+  asr_wa_choose_subject_type = yes
+
+  # 复制科技和传统
+  copy_techs_from = { target = event_target:asr_wa_rv_overload }
+  copy_traditions_from = { target = event_target:asr_wa_rv_overload }
+  refresh_auto_generated_ship_designs = yes
+
+  # 创建初始民用舰船
+  asr_wa_create_ship_if_not_exist = {
+    SHIP_CLASS = shipclass_constructor
+    DESIGN = constructor
+  }
+  asr_wa_create_ship_if_not_exist = {
+    SHIP_CLASS = shipclass_science_ship
+    DESIGN = science
+    CREATE_LEADER = scientist
+  }
+}
+
+asr_wa_vassal_colony_initial = {
+  # 先移交首都
+  give_planet_and_system_to_rebel = {
+    PLANET = event_target:asr_wa_rv_subject_capital
+    REBEL = event_target:asr_wa_rv_subject
+    OLD_OWNER = event_target:asr_wa_rv_overload
+  }
+  event_target:asr_wa_rv_subject_capital = {
+    remove_carrier_flag = asr_wa_pf_release_vassal_pending_colony
+    solar_system? = { remove_star_flag = asr_wa_sf_release_vassal_pending_system }
+    if = {
+      limit = { NOT = { exists = sector } }
+      create_sector = yes
+    } else = {
+      set_sector_capital = yes
+    }
+    set_capital = yes
+  }
+  event_target:asr_wa_rv_overload = {
+    # 移交殖民地
+    every_owned_colony = {
+      limit = { has_carrier_flag = asr_wa_pf_release_vassal_pending_colony }
+      remove_carrier_flag = asr_wa_pf_release_vassal_pending_colony
+      solar_system? = { remove_star_flag = asr_wa_sf_release_vassal_pending_system }
+      set_timed_carrier_flag = { flag = ignore_ai_building_limitations days = 1 }
+      save_event_target_as = asr_wa_rv_on_going_transfer_colony
+      give_planet_and_system_to_rebel = {
+        PLANET = event_target:asr_wa_rv_on_going_transfer_colony
+        REBEL = event_target:asr_wa_rv_subject
+        OLD_OWNER = event_target:asr_wa_rv_overload
+      }
+    }
+    # 移交星系
+    every_system_within_border = {
+      limit = { has_star_flag = asr_wa_sf_release_vassal_pending_system }
+      remove_star_flag = asr_wa_sf_release_vassal_pending_system
+      starbase? = {
+        if = {
+          limit = { is_owned_by = event_target:asr_wa_rv_overload }
+          set_owner = event_target:asr_wa_rv_subject
+        }
+      }
+    }
+    # 设置初始情报
+    add_intel = {
+      who = event_target:asr_wa_rv_subject
+      amount = 100
+    }
+  }
+  country_event = { id = wilderness.100 }
+}
+
+asr_wa_choose_subject_type = {
+  event_target:asr_wa_rv_overload = {
+    switch = {
+      trigger = has_country_flag
+      asr_wa_rv_release_as_scholarium = {
+        prev = {
+          set_subject_of = {
+            who = event_target:asr_wa_rv_overload
+            preset = preset_scholarium
+            allow_instant_negotiation = yes
+          }
+          ruler? = { change_leader_class = scientist }
+        }
+      }
+      asr_wa_rv_release_as_prospectorium = {
+        prev = {
+          set_subject_of = {
+            who = event_target:asr_wa_rv_overload
+            preset = preset_prospectorium
+            allow_instant_negotiation = yes
+          }
+          ruler? = { change_leader_class = official }
+        }
+      }
+      asr_wa_rv_release_as_bulwark = {
+        prev = {
+          set_subject_of = {
+            who = event_target:asr_wa_rv_overload
+            preset = preset_bulwark
+            allow_instant_negotiation = yes
+          }
+          ruler? = { change_leader_class = commander }
+        }
+      }
+      default = {
+        prev = {
+          set_subject_of = {
+            who = event_target:asr_wa_rv_overload
+            preset = preset_vassal
+            # 允许立即更改协议
+            allow_instant_negotiation = yes
+          }
+        }
+      }
+    }
+    # 清理 flag
+    remove_country_flag = asr_wa_rv_release_as_scholarium
+    remove_country_flag = asr_wa_rv_release_as_prospectorium
+    remove_country_flag = asr_wa_rv_release_as_bulwark
+  }
+
+  ruler? = {
+    switch = {
+      trigger = leader_class
+      scientist = {
+        add_trait = {
+          trait = leader_trait_spark_of_genius
+          show_message = no
+        }
+      }
+      official = {
+        add_trait = {
+          trait = leader_trait_principled
+          show_message = no
+        }
+      }
+      commander = {
+        add_trait = {
+          trait = leader_trait_skirmisher
+          # trait = leader_trait_fleet_organizer
+          show_message = no
+        }
+      }
+      default = {
+        add_trait = {
+          trait = random_common
+          show_message = no
+        }
+      }
+    }
+  }
+  random_agreement = {
+    add_loyalty = 100
+  }
+}
+
+asr_wa_create_ship_if_not_exist = {
+  if = {
+    limit = {
+      NOT = {
+        any_owned_fleet = { is_ship_class = $SHIP_CLASS$ }
+      }
+    }
+    create_fleet = {
+      effect = {
+        set_owner = prev
+        create_ship = {
+          name = random
+          prefix = no
+          suffix = no
+          random_existing_design = $DESIGN$
+        }
+        set_fleet_stance = evasive
+        set_location = prev.capital_scope.star
+        [[CREATE_LEADER]
+          owner? = {
+            create_leader = {
+              class = $CREATE_LEADER$
+              sub_type = survey
+              name = random
+              species = owner_main_species
+              randomize_traits = yes
+            }
+          }
+          set_leader = last_created_leader
+        ]
+      }
+    }
+  }
+}
+
+asr_wa_rv_cleanup_effect = {
+  owner = {
+    remove_country_flag = asr_wa_rv_release_as_scholarium
+    remove_country_flag = asr_wa_rv_release_as_prospectorium
+    remove_country_flag = asr_wa_rv_release_as_bulwark
+  }
+}

@@ -318,7 +318,7 @@ zone_asr_wa_exotic_gases = {
   triggered_planet_modifier = {
     potential = { always = yes }
     planet_farmers_exotic_gases_produces_add = 0.5
-    planet_farmers_food_produces_add = -3
+    planet_farmers_food_produces_add = -1.5
   }
 
   triggered_desc = {
@@ -361,7 +361,7 @@ zone_asr_wa_volatile_motes = {
   triggered_planet_modifier = {
     potential = { always = yes }
     planet_technician_volatile_motes_produces_add = 0.5
-    planet_technician_energy_produces_add = -3
+    planet_technician_energy_produces_add = -1.5
   }
 
   triggered_desc = {
@@ -404,7 +404,7 @@ zone_asr_wa_rare_crystals = {
   triggered_planet_modifier = {
     potential = { always = yes }
     planet_miners_rare_crystals_produces_add = 0.5
-    planet_miners_minerals_produces_add = -2
+    planet_miners_minerals_produces_add = -1
   }
 
   triggered_desc = {
@@ -467,7 +467,7 @@ zone_asr_wa_rare_resources_plant = {
   }
 
   ai_priority = 10
-  # ai_weight_coefficient = 1
+  ai_weight_coefficient = 0.5
 }
 # 异星天然气
 zone_asr_wa_exotic_gases_plant = {
@@ -489,7 +489,7 @@ zone_asr_wa_exotic_gases_plant = {
   }
 
   ai_priority = 5
-  # ai_weight_coefficient = 1
+  ai_weight_coefficient = 0.5
 }
 # 易爆微粒
 zone_asr_wa_volatile_motes_plant = {
@@ -511,7 +511,7 @@ zone_asr_wa_volatile_motes_plant = {
   }
 
   ai_priority = 5
-  # ai_weight_coefficient = 1
+  ai_weight_coefficient = 0.5
 }
 # 稀有水晶
 zone_asr_wa_rare_crystals_plant = {
@@ -533,5 +533,5 @@ zone_asr_wa_rare_crystals_plant = {
   }
 
   ai_priority = 5
-  # ai_weight_coefficient = 1
+  ai_weight_coefficient = 0.5
 }

@@ -220,7 +220,7 @@ zone_asr_wa_rare_resources_plant_wilderness = {
   }
 
   ai_priority = 10
-  ai_weight_coefficient = 0.5
+  ai_weight_coefficient = 0
 }
 # 新增: 异星天然气
 zone_asr_wa_exotic_gases_plant_wilderness = {
