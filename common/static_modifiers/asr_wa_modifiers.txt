@@ -1,7 +1,14 @@
 # 重塑自然
 asr_wa_wilderness_world = {
-  icon = "gfx/interface/icons/planet_modifiers/pm_natural_beauty.dds"
+  icon = "gfx/interface/icons/planet_modifiers/pm_ecosphere_pheromones.dds"
   icon_frame = 1
   planet_max_districts_add = 2
   wilderness_pop_bonus_workforce_mult = 0.2
+}
+
+asr_wa_sm_purity_finish = {
+  icon = "gfx/interface/icons/traditions/tree_icons/tradition_icon_purity.dds"
+  icon_frame = 1
+  leader_initial_skill = 2
+  councilor_skill_add = 2
 }

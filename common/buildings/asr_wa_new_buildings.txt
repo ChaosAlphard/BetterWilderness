@@ -113,119 +113,325 @@ building_asr_wa_sentinel_posts = {
   ai_estimate_without_unemployment = yes
 }
 
+building_asr_wa_archaeo_refinery = {
+  icon = "building_archaeo_refinery"
+  ruined_icon = "building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+  planet_limit = 1
+
+  building_sets = {
+    government
+    industrial
+    foundry
+    factory
+  }
+
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_archaeostudies
+    }
+  }
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_archaeostudies
+    }
+  }
+  destroy_trigger = {
+    owner? = {
+      is_ai = no
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/shared_cost
+      BIOMASS = @b2_biomass
+      FOOD_AND_MINERAL_COST = @wa_b2_mixed
+      FOOD_COST = @wa_b2_foods
+      MINERAL_COST = @wa_b2_minerals
+    }
+    cost = {
+      minor_artifacts = @b4_rare_cost
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      owner? = { is_ai = yes }
+    }
+    planet_metallurgists_exotic_gases_produces_add = 0.1
+    planet_metallurgists_rare_crystals_produces_add = 0.1
+    planet_metallurgists_volatile_motes_produces_add = 0.1
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        has_ascension_perk = ap_archaeoengineers
+      }
+    }
+    planet_metallurgists_exotic_gases_produces_add = 0.05
+    planet_metallurgists_rare_crystals_produces_add = 0.05
+    planet_metallurgists_volatile_motes_produces_add = 0.05
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = no
+      }
+    }
+    planet_metallurgists_minerals_upkeep_add = 1
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = yes
+      }
+    }
+    planet_metallurgists_food_upkeep_add = 1.5
+  }
+}
+
 # 化学消化器
-# building_asr_wa_mote_aggravator = {
-#   base_buildtime = @b1_time
-#   icon = "mote_aggravator"
-#   ruined_icon = "wilderness_building_ruined"
-#   planet_limit = 1
-#
-#   category = resource
-#
-#   building_sets = {
-#     generator
-#   }
-#
-#   potential = {
-#     owner = { is_wilderness_empire = yes }
-#   }
-#
-#   prerequisites = {
-#     "tech_volatile_motes"
-#   }
-#   show_tech_unlock_if = { is_wilderness_empire = yes }
-#
-#   planet_modifier = {
-#     planet_technician_volatile_motes_produces_add = 0.5
-#     planet_technician_energy_produces_add = -3
-#   }
-#
-#   resources = {
-#     category = planet_buildings
-#     cost = {
-#       biomass = @wa_b1_biomass
-#       food = 250
-#     }
-#     upkeep = {
-#       food = @b1_upkeep
-#     }
-#   }
-# }
+building_asr_wa_mote_aggravator = {
+  icon = "building_mote_aggravator"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+  planet_limit = 1
+
+  building_sets = {
+    government
+    industrial
+    foundry
+    factory
+  }
+
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_volatile_motes
+    }
+  }
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_volatile_motes
+    }
+  }
+  destroy_trigger = {
+    owner? = {
+      is_ai = no
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/shared_cost
+      BIOMASS = @b1_biomass
+      FOOD_AND_MINERAL_COST = @wa_b1_mixed
+      FOOD_COST = @wa_b1_foods
+      MINERAL_COST = @wa_b1_minerals
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      owner? = { is_ai = yes }
+    }
+    planet_metallurgists_volatile_motes_produces_add = 0.1
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = no
+      }
+    }
+    planet_metallurgists_minerals_upkeep_add = 0.5
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = yes
+      }
+    }
+    planet_metallurgists_food_upkeep_add = 0.75
+  }
+}
 
 # 异星天然气滤网
-# building_asr_wa_churning_stomach = {
-#   base_buildtime = @b1_time
-#   icon = "churning_stomach"
-#   ruined_icon = "wilderness_building_ruined"
-#   planet_limit = 1
-#
-#   category = resource
-#
-#   building_sets = {
-#     farming
-#   }
-#
-#   potential = {
-#     owner = { is_wilderness_empire = yes }
-#   }
-#
-#   prerequisites = {
-#     "tech_exotic_gases"
-#   }
-#   show_tech_unlock_if = { is_wilderness_empire = yes }
-#
-#   planet_modifier = {
-#     planet_farmers_exotic_gases_produces_add = 0.5
-#     planet_farmers_food_produces_add = -3
-#   }
-#
-#   resources = {
-#     category = planet_buildings
-#     cost = {
-#       biomass = @wa_b1_biomass
-#       food = 250
-#     }
-#     upkeep = {
-#       food = @b1_upkeep
-#     }
-#   }
-# }
+building_asr_wa_churning_stomach = {
+  icon = "building_churning_stomach"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+  planet_limit = 1
+
+  building_sets = {
+    government
+    industrial
+    foundry
+    factory
+  }
+
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_exotic_gases
+    }
+  }
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_exotic_gases
+    }
+  }
+  destroy_trigger = {
+    owner? = {
+      is_ai = no
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/shared_cost
+      BIOMASS = @b1_biomass
+      FOOD_AND_MINERAL_COST = @wa_b1_mixed
+      FOOD_COST = @wa_b1_foods
+      MINERAL_COST = @wa_b1_minerals
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      owner? = { is_ai = yes }
+    }
+    planet_metallurgists_exotic_gases_produces_add = 0.1
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = no
+      }
+    }
+    planet_metallurgists_minerals_upkeep_add = 0.5
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = yes
+      }
+    }
+    planet_metallurgists_food_upkeep_add = 0.75
+  }
+}
 
 # 水晶矿床
-# building_asr_wa_crystal_growth = {
-#   base_buildtime = @b1_time
-#   icon = "crystal_growth"
-#   ruined_icon = "wilderness_building_ruined"
-#   planet_limit = 1
-#
-#   category = resource
-#
-#   building_sets = {
-#     mining
-#   }
-#
-#   potential = {
-#     owner = { is_wilderness_empire = yes }
-#   }
-#
-#   prerequisites = {
-#     "tech_rare_crystals"
-#   }
-#   show_tech_unlock_if = { is_wilderness_empire = yes }
-#
-#   planet_modifier = {
-#     planet_miners_rare_crystals_produces_add = 0.5
-#     planet_miners_minerals_produces_add = -2
-#   }
-#
-#   resources = {
-#     category = planet_buildings
-#     cost = {
-#       biomass = @wa_b1_biomass
-#       food = 250
-#     }
-#     upkeep = {
-#       food = @b1_upkeep
-#     }
-#   }
-# }
+building_asr_wa_crystal_growth = {
+  icon = "building_crystal_growth"
+  ruined_icon = "wilderness_building_ruined"
+  base_buildtime = @buildtime_4
+  category = manufacturing
+  can_build = yes
+  can_demolish = yes
+  planet_limit = 1
+
+  building_sets = {
+    government
+    industrial
+    foundry
+    factory
+  }
+
+  potential = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_rare_crystals
+    }
+  }
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_ai = yes
+      has_technology = tech_rare_crystals
+    }
+  }
+  destroy_trigger = {
+    owner? = {
+      is_ai = no
+    }
+  }
+
+  resources = {
+    category = planet_buildings
+    inline_script = {
+      script = asr_wa/building/shared_cost
+      BIOMASS = @b1_biomass
+      FOOD_AND_MINERAL_COST = @wa_b1_mixed
+      FOOD_COST = @wa_b1_foods
+      MINERAL_COST = @wa_b1_minerals
+    }
+    upkeep = {
+      energy = @b1_upkeep
+    }
+  }
+
+  triggered_planet_modifier = {
+    potential = {
+      owner? = { is_ai = yes }
+    }
+    planet_metallurgists_rare_crystals_produces_add = 0.1
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = no
+      }
+    }
+    planet_metallurgists_minerals_upkeep_add = 0.5
+  }
+  triggered_planet_modifier = {
+    potential = {
+      owner? = {
+        is_ai = yes
+        is_catalytic_empire = yes
+      }
+    }
+    planet_metallurgists_food_upkeep_add = 0.75
+  }
+}

@@ -58,6 +58,28 @@ country_event = {
   }
 }
 
+country_event = {
+  id = asr_wa_wilderness.110
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    is_wilderness_empire = yes
+    has_tradition = tr_purity_finish
+    NOT = { has_modifier = asr_wa_sm_purity_finish }
+  }
+
+  immediate = {
+    if = {
+      limit = { has_modifier = asr_wa_sm_purity_finish }
+      remove_modifier = asr_wa_sm_purity_finish
+    }
+    add_modifier = {
+      modifier = asr_wa_sm_purity_finish
+      days = -1
+    }
+  }
+}
+
 # This = Country From = Species (post modify)
 country_event = {
   id = asr_wa_wilderness.200

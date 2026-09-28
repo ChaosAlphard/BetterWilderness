@@ -4,11 +4,13 @@ l_english:
   building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§! change industrial jobs, research jobs and logistics jobs upkeep from $r_minerals$ to $r_food$"
   building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
   building_asr_wa_sentinel_posts_desc: "$building_sentinel_posts_desc$"
-  building_asr_wa_mote_aggravator: "$building_mote_aggravator$"
+  building_asr_wa_archaeo_refinery: "AI的$building_archaeo_refinery$ (for AI)"
+  building_asr_wa_archaeo_refinery_desc: "$building_archaeo_refinery_desc$"
+  building_asr_wa_mote_aggravator: "$building_mote_aggravator$ (for AI)"
   building_asr_wa_mote_aggravator_desc: "$building_mote_aggravator_desc$"
-  building_asr_wa_churning_stomach: "$building_churning_stomach$"
+  building_asr_wa_churning_stomach: "$building_churning_stomach$ (for AI)"
   building_asr_wa_churning_stomach_desc: "$building_churning_stomach_desc$"
-  building_asr_wa_crystal_growth: "$building_crystal_growth$"
+  building_asr_wa_crystal_growth: "$building_crystal_growth$ (for AI)"
   building_asr_wa_crystal_growth_desc: "$building_crystal_growth_desc$"
   asr_wa_wilderness_advanced_assault_army: "Deadly Horde"
   asr_wa_wilderness_advanced_assault_army_plural: "Deadly Hordes"
@@ -93,6 +95,8 @@ l_english:
   # Static Modifier
   asr_wa_wilderness_world: "Shaped Nature"
   asr_wa_wilderness_world_desc: ""
+  asr_wa_sm_purity_finish: "$ap_engineered_evolution$: $tradition_purity$"
+  asr_wa_sm_purity_finish_desc: ""
   # Scripted Modifiers
   mod_wilderness_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Wilderness Pops"
   # Job

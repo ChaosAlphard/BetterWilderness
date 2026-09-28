@@ -4,11 +4,13 @@ l_simp_chinese:
   building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§!将工业、科研与后勤岗位的$r_minerals$维护费替换为$r_food$维护费"
   building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
   building_asr_wa_sentinel_posts_desc: "$building_sentinel_posts_desc$"
-  building_asr_wa_mote_aggravator: "$building_mote_aggravator$"
+  building_asr_wa_archaeo_refinery: "$building_archaeo_refinery$ (AI专属)"
+  building_asr_wa_archaeo_refinery_desc: "$building_archaeo_refinery_desc$"
+  building_asr_wa_mote_aggravator: "$building_mote_aggravator$ (AI专属)"
   building_asr_wa_mote_aggravator_desc: "$building_mote_aggravator_desc$"
-  building_asr_wa_churning_stomach: "$building_churning_stomach$"
+  building_asr_wa_churning_stomach: "$building_churning_stomach$ (AI专属)"
   building_asr_wa_churning_stomach_desc: "$building_churning_stomach_desc$"
-  building_asr_wa_crystal_growth: "$building_crystal_growth$"
+  building_asr_wa_crystal_growth: "$building_crystal_growth$ (AI专属)"
   building_asr_wa_crystal_growth_desc: "$building_crystal_growth_desc$"
   asr_wa_wilderness_advanced_assault_army: "致命兽群"
   asr_wa_wilderness_advanced_assault_army_plural: "致命兽群"
@@ -93,6 +95,8 @@ l_simp_chinese:
   # Static Modifier
   asr_wa_wilderness_world: "$decision_asr_wa_wilderness_world$"
   asr_wa_wilderness_world_desc: ""
+  asr_wa_sm_purity_finish: "$ap_engineered_evolution$：$tradition_purity$"
+  asr_wa_sm_purity_finish_desc: ""
   # Scripted Modifiers
   mod_wilderness_pop_bonus_workforce_mult: "荒野人口$BONUS_WORKFORCE_FOR$"
   # Job
