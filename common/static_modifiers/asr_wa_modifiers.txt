@@ -1,6 +1,6 @@
 # 重塑自然
 asr_wa_wilderness_world = {
-  icon = "gfx/interface/icons/planet_modifiers/pm_ecosphere_pheromones.dds"
+  icon = "gfx/interface/icons/planet_modifiers/pm_overgrowth.dds"
   icon_frame = 1
   planet_max_districts_add = 2
   wilderness_pop_bonus_workforce_mult = 0.2

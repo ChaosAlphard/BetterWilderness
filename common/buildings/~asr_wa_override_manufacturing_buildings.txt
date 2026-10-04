@@ -53,6 +53,9 @@ building_natural_furnace_1 = { # substitute for 'building_foundry_1'
   inline_script = {
     script = buildings/wilderness_buildings_potential_destroy
   }
+  allow = {
+    has_upgraded_capital = yes
+  }
 
   prerequisites = {
     tech_alloys_1
@@ -106,7 +109,7 @@ building_natural_furnace_2 = { # substitute for 'building_foundry_2'
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -162,7 +165,7 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
+    has_major_upgraded_capital = yes
   }
 
   inline_script = {

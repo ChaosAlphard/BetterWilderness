@@ -76,7 +76,7 @@ l_simp_chinese:
   asr_wa_building_massive_growth_4_tt: "['building:building_massive_growth_2']提供更多$wa_r_job$"
   asr_wa_building_bioelectric_stimulator_4_tt: "['building:building_bioelectric_stimulator_2']提供更多$wa_r_job$"
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2']提供更多$wa_r_job$"
-  asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['starbase_building:ring_energy_hub',$sm_ring_energy_hub$]时提供$r_energy$产出加成"
+  asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['building:building_bioelectric_stimulator_4']时，§Y$miner_type_plural_with_icon$§!获得部分来自§Y$building_bioelectric_stimulator_4$§!的加成"
   # 风暴救援中心
   asr_wa_b_sr_tt: "§Y$default_storm$§!出现时：$TABBED_NEW_LINE$$mod_planet_miners_minerals_produces_add$：§G+1§!$TABBED_NEW_LINE$$mod_planet_farmers_food_produces_add$：§G+1§!$TABBED_NEW_LINE$$mod_planet_technician_energy_produces_add$：§G+1§!"
   # 决议

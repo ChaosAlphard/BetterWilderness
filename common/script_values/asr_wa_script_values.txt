@@ -157,7 +157,7 @@ asr_wa_workforce_from_pops = {
   mult = $MAX$
 }
 # 排除掉 生物质, 牲口, 不可接触者 等随人口数增加的岗位 (无上限岗位)
-# 因为荒野会自动填充岗位, 所以人口数量基本上等于无上限岗位数量
+# 因为荒野会自动填充岗位, 正常岗位上没有人口, 所以人口数量基本上等于无上限岗位数量
 asr_wa_num_workforce_except_uncapped = {
   base = 0
   set = trigger:count_owned_workforce
