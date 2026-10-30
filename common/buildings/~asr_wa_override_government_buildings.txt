@@ -80,9 +80,11 @@ building_cradle_of_rebirth = {
   }
 
   triggered_desc = {
+    text = asr_wa_b_cor_bonus_workforce_tt
+  }
+  triggered_desc = {
     text = asr_wa_b_cor_tt
   }
-
   triggered_desc = {
     text = asr_wa_b_cor_bonus_pop_growth_tt
   }

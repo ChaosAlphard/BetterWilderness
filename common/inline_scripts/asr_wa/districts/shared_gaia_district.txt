@@ -1,11 +1,11 @@
 expansion_planner = yes
 is_uncapped = { always = yes }
 potential = {
-  asr_wa_is_wilderness_advanced_planet = yes
+  asr_wa_planet_is_wilderness_arcology = yes
   owner? = { is_wilderness_empire = yes }
 }
 show_on_uncolonized = {
-  asr_wa_is_wilderness_advanced_planet = yes
+  asr_wa_planet_is_wilderness_arcology = yes
   from? = { is_wilderness_empire = yes }
 }
 inline_script = {

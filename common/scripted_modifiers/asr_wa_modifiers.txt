@@ -4,3 +4,17 @@ wilderness_pop_bonus_workforce_mult = {
   good = yes
   category = colony
 }
+
+base_job_amount_from_wilderness_zone_mult = {
+  icon = mod_job_spawning_drone_add
+  percentage = yes
+  good = yes
+  category = colony
+}
+
+planet_wilderness_districts_base_biomass_cost_mult = {
+  icon = mod_biomass_cost_add
+  percentage = yes
+  good = no
+  category = colony
+}

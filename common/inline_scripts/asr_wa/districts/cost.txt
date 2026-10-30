@@ -13,11 +13,10 @@ resources = {
     biomass = 400
   }
   cost = {
-    trigger = {
-      free_district_slots > 0
-      asr_wa_planet_is_wilderness_world_equivalent = yes
-    }
-    biomass = 800
+    trigger = { free_district_slots > 0 }
+    biomass = 200
+    # 不支持直接使用 mult = modifier:xxxx, 要用 script_value 中转一遍 (4.5版本测试结果)
+    mult = value:asr_wa_wilderness_districts_base_biomass_cost_mult_value
   }
 
   cost = {
@@ -42,7 +41,7 @@ resources = {
 
   cost = {
     trigger = {
-      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
       asr_wa_planet_use_mixed_build_building = yes
     }
     minerals = @wa_district_r_extra_mixed
@@ -50,14 +49,14 @@ resources = {
   }
   cost = {
     trigger = {
-      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
       asr_wa_planet_use_food_build_building = yes
     }
     food = @wa_district_r_extra_foods
   }
   cost = {
     trigger = {
-      asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
       asr_wa_planet_use_mineral_build_building = yes
     }
     minerals = @wa_district_r_extra_minerals
@@ -67,7 +66,7 @@ resources = {
     food = @wa_district_upkeep
   }
   upkeep = {
-    trigger = { asr_wa_planet_is_wilderness_arcology_or_world_equivalent = yes }
+    trigger = { asr_wa_planet_is_wilderness_arcology_equivalent = yes }
     food = @wa_district_extra_upkeep
   }
 }

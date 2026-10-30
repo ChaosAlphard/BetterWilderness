@@ -34,7 +34,7 @@ asr_wa_cor_bonus_build_speed = {
   base = 0
   set = value:asr_wa_num_buildings_and_districts
   modifier = {
-    asr_wa_is_wilderness_advanced_planet = yes
+    asr_wa_planet_is_wilderness_arcology = yes
     mult = 2
   }
 }
@@ -163,4 +163,9 @@ asr_wa_num_workforce_except_uncapped = {
   set = trigger:count_owned_workforce
   subtract = trigger:pop_amount
   min = 100
+}
+
+asr_wa_wilderness_districts_base_biomass_cost_mult_value = {
+  base = 0
+  add = modifier:planet_wilderness_districts_base_biomass_cost_mult
 }

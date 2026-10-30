@@ -64,8 +64,9 @@ l_english:
   wa_r_housing: "£housing£['concept_housing']"
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
-  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring'], ['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity',$tr_purity_finish$] give §G+100§! $mod_job_spawning_drone_add$\n- ['ascension_perk:ap_engineered_evolution'] give §G+20%§! $MOD_POP_ENVIRONMENT_TOLERANCE$, and give §Y$MOD_POP_BONUS_WORKFORCE_MULT$§! scales with planet £pop£§Ypops§!-to-£job£§Yjobs§! ratio, up to §G+30%§!"
-  asr_wa_b_cor_bonus_pop_growth_tt: "- Doesn't give $mod_job_spawning_drone_add$ when free housing less than §Y0§!\n- Give more §Y$job_asr_wa_simulate_spawning_drone$§! jobs when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
+  asr_wa_b_cor_tt: "- £society_research£['technology:tech_gene_tailoring'], ['ascension_perk:ap_engineered_evolution'] and ['tradition_category:tradition_purity',$tr_purity_finish$] give §G+100§! $mod_job_spawning_drone_add$\n- Doesn't give $mod_job_spawning_drone_add$ when free housing less than §Y0§!"
+  asr_wa_b_cor_bonus_workforce_tt: "- ['ascension_perk:ap_engineered_evolution'] give §G+20%§! $MOD_POP_ENVIRONMENT_TOLERANCE$, and give §Y$MOD_POP_BONUS_WORKFORCE_MULT$§! scales with planet £pop£§Ypops§!-to-£job£§Yjobs§! ratio, up to §G+30%§!"
+  asr_wa_b_cor_bonus_pop_growth_tt: "- Give more §Y$job_asr_wa_simulate_spawning_drone$§! jobs when pop less than §Y$@wa_bonus_growth_max_pops|0$§!"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2'] provide more $wa_r_amenities_gestalt$ and $wa_r_housing$"
@@ -83,7 +84,7 @@ l_english:
   decision_asr_wa_wilderness_expand: "$decision_wilderness_expand$ (+4)"
   decision_asr_wa_wilderness_expand_desc: "$decision_wilderness_expand_desc$\nExpensive than normal"
   decision_asr_wa_wilderness_world: "Shaping Nature"
-  decision_asr_wa_wilderness_world_tt: "All £district£['concept_district'] provide more $wa_r_job$\nAll §Y$DEPOSITS_TITLE$§! will be §Rremoved§!, except $RARE_DEPOSITS$"
+  decision_asr_wa_wilderness_world_tt: "All §Y$DEPOSITS_TITLE$§! will be §Rremoved§!, except $RARE_DEPOSITS$"
   decision_asr_wa_wilderness_world_desc: ""
   decision_asr_wa_wilderness_world_message: "$PLANET|H$ has been shaped"
   decision_asr_wa_renounce_colony: "§RRenounce Colony§!"
@@ -99,6 +100,8 @@ l_english:
   asr_wa_sm_purity_finish_desc: ""
   # Scripted Modifiers
   mod_wilderness_pop_bonus_workforce_mult: "$BONUS_WORKFORCE_FOR$ Wilderness Pops"
+  mod_base_job_amount_from_wilderness_zone_mult: "Base Job Amount from Wilderness District Specializations"
+  mod_planet_wilderness_districts_base_biomass_cost_mult: "Wilderness District Base Biomass Cost"
   # Job
   job_asr_wa_simulate_spawning_drone: "Incubator"
   job_asr_wa_simulate_spawning_drone_plural: "Incubators"

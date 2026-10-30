@@ -61,6 +61,7 @@ decision_asr_wa_wilderness_world = {
       is_wilderness_empire = yes
     }
     asr_wa_planet_is_wilderness_arcology = yes
+    NOT = { has_modifier = asr_wa_wilderness_world }
   }
   allow = {
     has_fully_upgraded_capital = yes
@@ -99,7 +100,6 @@ decision_asr_wa_wilderness_world = {
 
   effect = {
     hidden_effect = {
-      set_carrier_flag = asr_wa_pf_wilderness_world
       every_deposit = {
         limit = {
           NOR = {

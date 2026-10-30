@@ -64,12 +64,12 @@ district_craglands = {
   }
   triggered_planet_modifier = {
     potential = {
-      asr_wa_planet_is_wilderness_world_equivalent = yes
       owner? = {
         has_tradition = tr_domination_imperious_architecture
       }
     }
-    planet_defense_armies_add = 3
+    planet_defense_armies_add = 0.5
+    mult = modifier:base_job_amount_from_wilderness_zone_mult
   }
 
   inline_script = {
@@ -97,7 +97,7 @@ district_photosynthesis_fields = {
   }
 
   show_on_uncolonized = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     from? = {
       is_wilderness_empire = yes
@@ -105,7 +105,7 @@ district_photosynthesis_fields = {
   }
 
   potential = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     owner? = {
       is_wilderness_empire = yes
@@ -174,7 +174,7 @@ district_hollow_mountains = {
   }
 
   show_on_uncolonized = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     from? = {
       is_wilderness_empire = yes
@@ -182,7 +182,7 @@ district_hollow_mountains = {
   }
 
   potential = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     owner? = {
       is_wilderness_empire = yes
@@ -251,7 +251,7 @@ district_orchard_forests = {
   }
 
   show_on_uncolonized = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     from? = {
       is_wilderness_empire = yes
@@ -259,7 +259,7 @@ district_orchard_forests = {
   }
 
   potential = {
-    asr_wa_is_wilderness_advanced_planet = no
+    asr_wa_planet_is_wilderness_arcology = no
     uses_district_set = standard
     owner? = {
       is_wilderness_empire = yes

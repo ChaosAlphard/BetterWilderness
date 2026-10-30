@@ -157,7 +157,7 @@ carrier_event = {
   is_triggered_only = yes
   trigger = {
     owner? = { is_wilderness_empire = yes }
-    asr_wa_is_wilderness_advanced_planet = yes
+    asr_wa_planet_is_wilderness_arcology = yes
   }
 
   immediate = {
