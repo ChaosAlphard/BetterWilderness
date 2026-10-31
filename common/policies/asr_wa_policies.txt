@@ -1,6 +1,6 @@
 # 建筑花费
 asr_wa_building_build_cost = {
-  category = asr_wa_policy_cat_wilderness
+  # category = asr_wa_policy_cat_wilderness
   potential = {
     is_wilderness_empire = yes
   }
@@ -38,7 +38,7 @@ asr_wa_building_build_cost = {
 }
 # 掌控自然飞升额外加成
 asr_wa_mastery_of_nature_effect = {
-  category = asr_wa_policy_cat_wilderness
+  # category = asr_wa_policy_cat_wilderness
   potential = {
     is_wilderness_empire = yes
   }
@@ -138,60 +138,9 @@ asr_wa_mastery_of_nature_effect = {
     ai_weight = { weight = 1 }
   }
 }
-# 纯净传统额外加成
-asr_wa_tr_purity_effect = {
-  category = asr_wa_policy_cat_wilderness
-  potential = {
-    is_wilderness_empire = yes
-    has_tradition = tr_purity_adopt
-  }
-
-  option = {
-    name = asr_wa_p_purity_adopt
-
-    potential = {
-      NOT = { has_tradition = tr_purity_finish }
-      has_tradition = tr_purity_adopt
-    }
-
-    valid = {
-      NOT = { has_tradition = tr_purity_finish }
-      has_tradition = tr_purity_adopt
-    }
-
-    modifier = {
-      leader_initial_skill = 2
-    }
-
-    AI_weight = {
-      weight = 10
-    }
-  }
-
-  option = {
-    name = asr_wa_p_purity_finish
-
-    potential = {
-      has_tradition = tr_purity_finish
-    }
-
-    valid = {
-      has_tradition = tr_purity_finish
-    }
-
-    modifier = {
-      leader_initial_skill = 2
-      councilor_skill_add = 2
-    }
-
-    AI_weight = {
-      weight = 10
-    }
-  }
-}
 # 菌根理想优化
 asr_wa_idyllic_bloom_effect = {
-  category = asr_wa_policy_cat_wilderness  # TODO: 需要先注册category. 等4.5正式版出来后再看怎么弄
+  # category = asr_wa_policy_cat_wilderness
   potential = {
     is_wilderness_empire = yes
     is_idyllic_bloom_empire = yes

@@ -121,7 +121,7 @@ building_commensal_clearing_3 = { # substitute for 'building_hive_cluster'
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
+    has_upgraded_capital = yes
   }
 
   convert_to = {
@@ -178,7 +178,7 @@ building_commensal_clearing_4 = { # equivalent to 'building_hive_confluence'
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
+    has_major_upgraded_capital = yes
   }
 
   convert_to = {

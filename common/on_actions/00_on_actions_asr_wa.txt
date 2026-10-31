@@ -1,0 +1,5 @@
+# action.229 会重置附庸起源, 需要再次设置起源, 并且需要尽早设置, 以避免其他mod事件无法判断到正确的起源
+# 文件名使用 00_on_actions_asr_wa 以确保尽可能先于其他mod事件执行
+on_released_as_vassal = {
+  events = { asr_wa_wilderness.3102 }
+}

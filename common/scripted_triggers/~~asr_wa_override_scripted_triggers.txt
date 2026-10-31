@@ -34,3 +34,15 @@ has_purity_imperfection_remediation_tradition = {
     has_genetic_stage_3_tradition = yes
   }
 }
+
+is_wilderness_generator_district_uncapped = {
+  always = yes
+}
+
+is_wilderness_mining_district_uncapped = {
+  always = yes
+}
+
+is_wilderness_farming_district_uncapped = {
+  always = yes
+}

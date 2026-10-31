@@ -61,6 +61,7 @@ decision_asr_wa_wilderness_world = {
       is_wilderness_empire = yes
     }
     asr_wa_planet_is_wilderness_arcology = yes
+    NOT = { has_modifier = asr_wa_wilderness_world }
   }
   allow = {
     has_fully_upgraded_capital = yes
@@ -99,7 +100,6 @@ decision_asr_wa_wilderness_world = {
 
   effect = {
     hidden_effect = {
-      set_carrier_flag = asr_wa_pf_wilderness_world
       every_deposit = {
         limit = {
           NOR = {
@@ -182,6 +182,45 @@ decision_asr_wa_renounce_colony = {
 
   effect = {
     destroy_colony = yes
+  }
+
+  ai_weight = {
+    factor = 0
+  }
+}
+
+decision_asr_wa_release_vassal = {
+  owned_planets_only = yes
+  icon = decision_asr_wa_wilderness_world
+  enactment_time = 0
+
+  potential = {
+    has_overlord_dlc = yes
+    owner? = {
+      is_wilderness_empire = yes
+      NOT = { has_valid_civic = civic_hive_devouring_swarm }
+      is_ai = no
+    }
+    is_capital = no
+    is_sector_capital = yes
+  }
+
+  allow = {
+    owner? = {
+      is_wilderness_empire = yes
+      is_at_war = no
+      is_ai = no
+    }
+    is_capital = no
+    is_sector_capital = yes
+  }
+
+  resources = { category = decisions }
+
+  effect = {
+    colony? = {
+      colony_event = { id = asr_wa_wilderness.3000 }
+    }
   }
 
   ai_weight = {

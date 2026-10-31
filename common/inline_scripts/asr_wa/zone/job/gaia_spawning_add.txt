@@ -1,14 +1,14 @@
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
     owner? = { is_wilderness_empire = yes }
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
   }
-  job_spawning_drone_add = $BASE$
+  job_spawning_drone_add = @[$BASE$ * 2]
 }
 triggered_district_planet_modifier = {
   potential = {
-    asr_wa_planet_is_wilderness_world_equivalent = yes
     owner? = { is_wilderness_empire = yes }
   }
-  job_spawning_drone_add = @[$BASE$ * 2]
+  job_spawning_drone_add = @[$BASE$]
+  mult = modifier:base_job_amount_from_wilderness_zone_mult
 }

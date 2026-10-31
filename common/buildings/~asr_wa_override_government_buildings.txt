@@ -80,9 +80,11 @@ building_cradle_of_rebirth = {
   }
 
   triggered_desc = {
+    text = asr_wa_b_cor_bonus_workforce_tt
+  }
+  triggered_desc = {
     text = asr_wa_b_cor_tt
   }
-
   triggered_desc = {
     text = asr_wa_b_cor_bonus_pop_growth_tt
   }
@@ -106,7 +108,7 @@ building_wilderness_storm_relief = {
     owner? = { is_wilderness_empire = yes }
     OR = {
       owner = { is_ai = no }
-      solar_system = { system_has_storm_repelling_tech = no }
+      solar_system? = { system_has_storm_repelling_tech = no }
     }
   }
   destroy_trigger = {
@@ -159,13 +161,13 @@ building_wilderness_storm_relief = {
   }
   triggered_planet_modifier = {
     potential = {
-      starbase? = { has_starbase_building = storm_repelling_computer }
+      starbase? = { NOT = { has_starbase_building = storm_attraction_computer } }
     }
     storm_repelling_field_modifier = 0.6
   }
   triggered_desc = {
     trigger = {
-      starbase? = { has_starbase_building = storm_repelling_computer }
+      starbase? = { NOT = { has_starbase_building = storm_attraction_computer } }
     }
     text = building_cosmic_storm_advanced_repellent_center_tt
   }

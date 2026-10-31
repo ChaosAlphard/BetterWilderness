@@ -110,7 +110,7 @@ building_tendril_cradle_3 = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
+    has_upgraded_capital = yes
   }
 
   inline_script = {
@@ -158,7 +158,7 @@ building_tendril_cradle_4 = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
+    has_major_upgraded_capital = yes
   }
 
   inline_script = {

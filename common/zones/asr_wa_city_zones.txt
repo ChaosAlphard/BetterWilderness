@@ -32,7 +32,7 @@ zone_asr_wa_spawning_wilderness = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/gaia_spawning_add
-    BASE = 50
+    BASE = @[scaling_district_1_job * 0.25]
   }
 
   ai_priority = 2
@@ -220,7 +220,7 @@ zone_asr_wa_rare_resources_plant_wilderness = {
   }
 
   ai_priority = 10
-  ai_weight_coefficient = 0.5
+  ai_weight_coefficient = 0
 }
 # 新增: 异星天然气
 zone_asr_wa_exotic_gases_plant_wilderness = {

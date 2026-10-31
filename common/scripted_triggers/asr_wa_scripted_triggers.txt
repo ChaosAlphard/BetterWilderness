@@ -12,6 +12,7 @@ asr_wa_planet_use_mineral_build_building = {
       has_policy_flag = asr_wa_p_building_cost_default
     }
     # owner 不存在时, 或者其他特殊情况下的保险
+    NOT = { exists = owner }
     AND = {
       asr_wa_planet_use_mixed_build_building = no
       asr_wa_planet_use_food_build_building = no
@@ -115,47 +116,27 @@ asr_wa_foundry_zone_assist_chemists = {
   }
 }
 
-# 兼容其他Mod, 重写这个方法以让其他星球类型也被视为盖亚星球
+# 重写这个方法以让其他星球类型也被视为盖亚星球
+# 这个方法仅用于判断是否是盖亚星球 (影响菌根理想相关优化)
 asr_wa_is_gaia_planet = {
   is_planet_class = pc_gaia
 }
 
-asr_wa_is_wilderness_advanced_planet = {
+# 重写这个方法以让其他星球类型也被视为盖亚星球
+# 这个方法用于判断是否是高级球 (影响岗位、住房、建造花费等)
+asr_wa_planet_is_wilderness_arcology = {
   is_planet_class = pc_gaia
 }
 
-asr_wa_planet_is_wilderness_arcology = {
-  asr_wa_is_wilderness_advanced_planet = yes
-  NOT = { has_carrier_flag = asr_wa_pf_wilderness_world }
-}
-
-asr_wa_planet_is_wilderness_world = {
-  asr_wa_is_wilderness_advanced_planet = yes
-  has_carrier_flag = asr_wa_pf_wilderness_world
-}
-
+# 可以通过添加 asr_wa_job_from_wilderness_zone 修正来增加区划特化提供的岗位
+# 见 inline_scripts/asr_wa/zone/job/add.txt
 # 判断当前行星是否应该具有和 方舟殖民地 等效的岗位数量
 asr_wa_planet_is_arkship_colony_equivalent = {
   is_planet_class = pc_ark
 }
-# 可以通过设置 asr_wa_var_job_from_zone_base_amount_add 变量来增加区划特化提供的岗位
-# 见 inline_scripts/asr_wa/zone/job/add.txt
-# 兼容其他Mod, 重写这个方法以在其他星球上提供等效盖亚星球的岗位
 # 判断当前行星是否应该具有和 荒野盖亚星球 等效的岗位数量
 asr_wa_planet_is_wilderness_arcology_equivalent = {
-  asr_wa_is_wilderness_advanced_planet = yes
-  NOT = { has_carrier_flag = asr_wa_pf_wilderness_world }
-}
-# 判断当前行星是否应该具有和 荒野重塑自然 等效的岗位数量
-asr_wa_planet_is_wilderness_world_equivalent = {
-  asr_wa_is_wilderness_advanced_planet = yes
-  has_carrier_flag = asr_wa_pf_wilderness_world
-}
-asr_wa_planet_is_wilderness_arcology_or_world_equivalent = {
-  OR = {
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-    asr_wa_planet_is_wilderness_world_equivalent = yes
-  }
+  asr_wa_planet_is_wilderness_arcology = yes
 }
 
 asr_wa_has_any_workforce = {

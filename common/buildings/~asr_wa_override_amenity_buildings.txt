@@ -179,7 +179,7 @@ building_avatar_chamber_3 = { # substitute for 'building_sensorium_2'
 
   inline_script = { script = buildings/wilderness_buildings_potential_destroy }
   allow = {
-    has_major_upgraded_capital = yes
+    has_upgraded_capital = yes
   }
 
   convert_to = {

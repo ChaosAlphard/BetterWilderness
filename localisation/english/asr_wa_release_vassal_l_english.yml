@@ -1,0 +1,15 @@
+﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
+l_english:
+  asr_wa_wilderness.common.option.yes: "Yes"
+  asr_wa_wilderness.common.option.no: "No"
+  asr_wa_wilderness.3000.name: "Release Vassal"
+  asr_wa_wilderness.3000.desc: "Release Current Sector as Vassal\n\n§YChoose a specialist type§!"
+  asr_wa_wilderness.3000.opt.1: "Unspecialist $preset_vassal$"
+  asr_wa_wilderness.3000.opt.2: "$specialist_scholarium$"
+  asr_wa_wilderness.3000.opt.3: "$specialist_prospectorium$"
+  asr_wa_wilderness.3000.opt.4: "$specialist_bulwark$"
+  asr_wa_wilderness.3001.name: "Choose Species"
+  asr_wa_wilderness.3001.desc: "Choose a pop group as vassal's $FOUNDER_SPECIES$\nOptions (if available):\n- The pop group with the §Ymost pops§! of §cour $FOUNDER_SPECIES$§!\n- The pop group with the §Ymost pops§! of a species that is §Pnot our $FOUNDER_SPECIES$§!\n- The pop group with the §Yleast pops§! of a species that is §Pnot our $FOUNDER_SPECIES$§!"
+  asr_wa_wilderness.3001.opt.1: "[event_target:asr_wa_rv_main_species_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_main_species_pop_group.asr_wa_num_pops]§! Pops)"
+  asr_wa_wilderness.3001.opt.2: "[event_target:asr_wa_rv_most_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_most_pop_group.asr_wa_num_pops]§! Pops)"
+  asr_wa_wilderness.3001.opt.3: "[event_target:asr_wa_rv_least_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_least_pop_group.asr_wa_num_pops]§! Pops)"

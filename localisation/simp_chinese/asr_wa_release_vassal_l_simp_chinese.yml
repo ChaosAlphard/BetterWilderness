@@ -1,0 +1,15 @@
+﻿#noinspection ParadoxLocalisationUnresolvedColor,ParadoxLocalisationIncorrectDatabaseObjectExpression,ParadoxLocalisationUnresolvedIcon
+l_simp_chinese:
+  asr_wa_wilderness.common.option.yes: "确定"
+  asr_wa_wilderness.common.option.no: "取消"
+  asr_wa_wilderness.3000.name: "释放附庸"
+  asr_wa_wilderness.3000.desc: "将当前星域释放为附庸\n\n§Y选择一个附庸类型§!"
+  asr_wa_wilderness.3000.opt.1: "未特化类型的$preset_vassal$"
+  asr_wa_wilderness.3000.opt.2: "$specialist_scholarium$"
+  asr_wa_wilderness.3000.opt.3: "$specialist_prospectorium$"
+  asr_wa_wilderness.3000.opt.4: "$specialist_bulwark$"
+  asr_wa_wilderness.3001.name: "选择物种"
+  asr_wa_wilderness.3001.desc: "选择一个人口组作为附庸的$FOUNDER_SPECIES$\n可选项(如果可用):\n- 物种为§c我们$FOUNDER_SPECIES$§!的§Y人口数最多§!的人口组\n- 物种§P不为我们$FOUNDER_SPECIES$§!的§Y人口数最多的§!人口组\n- 物种§P不为我们$FOUNDER_SPECIES$§!的§Y人口数最少的§!人口组"
+  asr_wa_wilderness.3001.opt.1: "[event_target:asr_wa_rv_main_species_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_main_species_pop_group.asr_wa_num_pops]§!人口)"
+  asr_wa_wilderness.3001.opt.2: "[event_target:asr_wa_rv_most_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_most_pop_group.asr_wa_num_pops]§!人口)"
+  asr_wa_wilderness.3001.opt.3: "[event_target:asr_wa_rv_least_pop_group.GetSpeciesName] (§Y[event_target:asr_wa_rv_least_pop_group.asr_wa_num_pops]§!人口)"

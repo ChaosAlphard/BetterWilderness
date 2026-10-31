@@ -1,3 +1,5 @@
+@researcher_jobs_remainder = 20  # 600 - 180*3 = 20
+
 # Research
 building_brain_node_1 = {
   icon = "brain_node_1"
@@ -96,9 +98,9 @@ building_brain_node_2 = {
 
   triggered_planet_modifier = {
     potential = { has_active_building = building_brain_node_4 }
-    job_calculator_physicist_add = @building_static_jobs_3
-    job_calculator_biologist_add = @building_static_jobs_3
-    job_calculator_engineer_add = @building_static_jobs_3
+    job_calculator_physicist_add = @[building_static_jobs_3 + researcher_jobs_remainder]
+    job_calculator_biologist_add = @[building_static_jobs_3 + researcher_jobs_remainder]
+    job_calculator_engineer_add = @[building_static_jobs_3 + researcher_jobs_remainder]
   }
 
   inline_script = {
@@ -130,7 +132,7 @@ building_brain_node_3 = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_major_upgraded_capital = yes
+    has_upgraded_capital = yes
   }
 
   resources = {
@@ -163,7 +165,7 @@ building_brain_node_3 = {
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_very_high_3
+    AMOUNT = @[building_static_jobs_very_high_3 + researcher_jobs_remainder]
   }
 
   inline_script = {
@@ -195,7 +197,7 @@ building_brain_node_4 = {
     script = buildings/wilderness_buildings_potential_destroy
   }
   allow = {
-    has_fully_upgraded_capital = yes
+    has_major_upgraded_capital = yes
   }
 
   resources = {
@@ -233,7 +235,7 @@ building_brain_node_4 = {
 
   inline_script = {
     script = jobs/researchers_add
-    AMOUNT = @building_static_jobs_very_high_3
+    AMOUNT = @[building_static_jobs_very_high_3 + researcher_jobs_remainder]
   }
 
   inline_script = {
