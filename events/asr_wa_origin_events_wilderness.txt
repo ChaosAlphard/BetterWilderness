@@ -579,3 +579,17 @@ country_event = {
     asr_wa_vassal_initial_effect = yes
   }
 }
+
+country_event = {
+  id = asr_wa_wilderness.3102
+  hide_window = yes
+  is_triggered_only = yes
+  trigger = {
+    has_country_flag = asr_wa_rv_pending_set_origin
+  }
+
+  immediate = {
+    set_origin = origin_wilderness
+    remove_country_flag = asr_wa_rv_pending_set_origin
+  }
+}
