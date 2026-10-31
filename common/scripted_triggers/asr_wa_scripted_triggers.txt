@@ -119,13 +119,19 @@ asr_wa_foundry_zone_assist_chemists = {
 # 重写这个方法以让其他星球类型也被视为盖亚星球
 # 这个方法仅用于判断是否是盖亚星球 (影响菌根理想相关优化)
 asr_wa_is_gaia_planet = {
-  is_planet_class = pc_gaia
+  OR = {
+    is_planet_class = pc_gaia
+    pd_is_planet_class_gaia = yes
+  }
 }
 
 # 重写这个方法以让其他星球类型也被视为盖亚星球
 # 这个方法用于判断是否是高级球 (影响岗位、住房、建造花费等)
 asr_wa_planet_is_wilderness_arcology = {
-  is_planet_class = pc_gaia
+  OR = {
+    is_planet_class = pc_gaia
+    pd_is_planet_class_gaia = yes
+  }
 }
 
 # 可以通过添加 asr_wa_job_from_wilderness_zone 修正来增加区划特化提供的岗位
