@@ -58,13 +58,12 @@ asr_wa_create_vassal_country = {
     }
 
     event_target:asr_wa_rv_subject = {
+      set_country_flag = asr_wa_rv_pending_set_origin
       # 触发释放附庸事件
       fire_on_action = {
         on_action = on_released_as_vassal
         scopes = { from = event_target:asr_wa_rv_overload }
       }
-      # action.229 会重置附庸起源, 需要再次设置
-      set_origin = origin_wilderness
       refresh_auto_generated_ship_designs = yes
       refresh_species_rights = yes
       # 刷新领袖池 (直接创建的帝国领袖池默认为空)
@@ -110,6 +109,25 @@ asr_wa_vassal_initial_effect = {
   # 设置附属关系
   asr_wa_choose_subject_type = yes
 
+  # 设置 Bypass
+  event_target:asr_wa_rv_overload = {
+    if = {
+      limit = { has_seen_any_bypass = wormhole }
+      prev = { add_seen_bypass_type = wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = starlit_wormhole }
+      prev = { add_seen_bypass_type = starlit_wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = strange_wormhole }
+      prev = { add_seen_bypass_type = strange_wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = gateway }
+      prev = { add_seen_bypass_type = gateway }
+    }
+  }
   # 复制科技和传统
   copy_techs_from = { target = event_target:asr_wa_rv_overload }
   copy_traditions_from = { target = event_target:asr_wa_rv_overload }
@@ -241,14 +259,14 @@ asr_wa_choose_subject_type = {
       }
       official = {
         add_trait = {
-          trait = leader_trait_principled
+          trait = trait_ruler_charismatic
           show_message = no
         }
       }
       commander = {
         add_trait = {
-          trait = leader_trait_skirmisher
-          # trait = leader_trait_fleet_organizer
+          # trait = leader_trait_skirmisher
+          trait = leader_trait_fleet_organizer
           show_message = no
         }
       }

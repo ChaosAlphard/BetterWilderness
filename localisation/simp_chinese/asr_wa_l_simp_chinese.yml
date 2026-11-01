@@ -4,14 +4,6 @@ l_simp_chinese:
   building_asr_wa_organic_processing_desc: "§Y$building_asr_wa_organic_processing$§!将工业、科研与后勤岗位的$r_minerals$维护费替换为$r_food$维护费"
   building_asr_wa_sentinel_posts: "$building_sentinel_posts$"
   building_asr_wa_sentinel_posts_desc: "$building_sentinel_posts_desc$"
-  building_asr_wa_archaeo_refinery: "$building_archaeo_refinery$ (AI专属)"
-  building_asr_wa_archaeo_refinery_desc: "$building_archaeo_refinery_desc$"
-  building_asr_wa_mote_aggravator: "$building_mote_aggravator$ (AI专属)"
-  building_asr_wa_mote_aggravator_desc: "$building_mote_aggravator_desc$"
-  building_asr_wa_churning_stomach: "$building_churning_stomach$ (AI专属)"
-  building_asr_wa_churning_stomach_desc: "$building_churning_stomach_desc$"
-  building_asr_wa_crystal_growth: "$building_crystal_growth$ (AI专属)"
-  building_asr_wa_crystal_growth_desc: "$building_crystal_growth_desc$"
   asr_wa_wilderness_advanced_assault_army: "致命兽群"
   asr_wa_wilderness_advanced_assault_army_plural: "致命兽群"
   asr_wa_wilderness_advanced_assault_army_desc: "专为星际战争而设计的共生体，借助$tech_glandular_acclimation$技术使其也能适应荒野以外的任何环境\n由于是由荒野意识进行直接控制，所以在设计之初便没有考虑大脑之类的思考器官，并且放弃了生物的自我保护机制转而专注于给敌人造成最大的伤害"
@@ -64,8 +56,9 @@ l_simp_chinese:
   wa_r_housing: "£housing£['concept_housing']"
   wa_r_job: "£job£['concept_jobs']"
   # 建筑
-  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity',$tr_purity_finish$]各提供§G+100§!$mod_job_spawning_drone_add$\n—['ascension_perk:ap_engineered_evolution']提供§G+20%§!$MOD_POP_ENVIRONMENT_TOLERANCE$，并按照行星£pop£§Y人口数§!与£job£§Y岗位数§!比例，最多提供§G+30%§!$MOD_POP_BONUS_WORKFORCE_MULT$"
-  asr_wa_b_cor_bonus_pop_growth_tt: "—若无空余$wa_r_housing$，则不提供$mod_job_spawning_drone_add$\n—人口少于§Y$@wa_bonus_growth_max_pops|0$§!时，按人口数反比提供§Y$job_asr_wa_simulate_spawning_drone$§!岗位，仅计算没有被施行人口控制的荒野人口"
+  asr_wa_b_cor_tt: "—£society_research£['technology:tech_gene_tailoring']、['ascension_perk:ap_engineered_evolution']与['tradition_category:tradition_purity',$tr_purity_finish$]各提供§G+100§!$mod_job_spawning_drone_add$\n—若无空余$wa_r_housing$，则不提供$mod_job_spawning_drone_add$"
+  asr_wa_b_cor_bonus_workforce_tt: "—['ascension_perk:ap_engineered_evolution']提供§G+20%§!$MOD_POP_ENVIRONMENT_TOLERANCE$，并按照行星£pop£§Y人口数§!与£job£§Y岗位数§!比例，最多提供§G+30%§!$MOD_POP_BONUS_WORKFORCE_MULT$"
+  asr_wa_b_cor_bonus_pop_growth_tt: "—人口少于§Y$@wa_bonus_growth_max_pops|0$§!时，按人口数反比提供§Y$job_asr_wa_simulate_spawning_drone$§!岗位，仅计算没有被施行人口控制的荒野人口"
   # T4建筑加成 Tooltip
   # asr_wa_building_avatar_chamber_4_cor: "['building:building_cradle_of_rebirth']产出更多$wa_r_amenities_gestalt$"
   asr_wa_building_avatar_chamber_4_tt: "['building:building_avatar_chamber_2']提供更多$wa_r_amenities_gestalt$与$wa_r_housing$"
@@ -76,14 +69,14 @@ l_simp_chinese:
   asr_wa_building_massive_growth_4_tt: "['building:building_massive_growth_2']提供更多$wa_r_job$"
   asr_wa_building_bioelectric_stimulator_4_tt: "['building:building_bioelectric_stimulator_2']提供更多$wa_r_job$"
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2']提供更多$wa_r_job$"
-  asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['starbase_building:ring_energy_hub',$sm_ring_energy_hub$]时提供$r_energy$产出加成"
+  asr_wa_betharian_tt: "同时建有['building:building_betharian_power_plant']与['building:building_bioelectric_stimulator_4']时，§Y$miner_type_plural_with_icon$§!获得部分来自§Y$building_bioelectric_stimulator_4$§!的加成"
   # 风暴救援中心
   asr_wa_b_sr_tt: "§Y$default_storm$§!出现时：$TABBED_NEW_LINE$$mod_planet_miners_minerals_produces_add$：§G+1§!$TABBED_NEW_LINE$$mod_planet_farmers_food_produces_add$：§G+1§!$TABBED_NEW_LINE$$mod_planet_technician_energy_produces_add$：§G+1§!"
   # 决议
   decision_asr_wa_wilderness_expand: "$decision_wilderness_expand$ (+4)"
   decision_asr_wa_wilderness_expand_desc: "$decision_wilderness_expand_desc$\n§R25%§!的额外生物质花费"
   decision_asr_wa_wilderness_world: "重塑自然"
-  decision_asr_wa_wilderness_world_tt: "所有£district£['concept_district']提供更多$wa_r_job$\n§R移除§!$RARE_DEPOSITS$§Y以外§!的所有§Y$DEPOSITS_TITLE$§!"
+  decision_asr_wa_wilderness_world_tt: "§R移除§!$RARE_DEPOSITS$§Y以外§!的所有§Y$DEPOSITS_TITLE$§!"
   decision_asr_wa_wilderness_world_desc: "我们即是自然，自然即是我们"
   decision_asr_wa_wilderness_world_message: "$PLANET|H$已被重塑"
   decision_asr_wa_renounce_colony: "§R切断根须§!"
@@ -99,6 +92,8 @@ l_simp_chinese:
   asr_wa_sm_purity_finish_desc: ""
   # Scripted Modifiers
   mod_wilderness_pop_bonus_workforce_mult: "荒野人口$BONUS_WORKFORCE_FOR$"
+  mod_base_job_amount_from_wilderness_zone_mult: "荒野区划特化提供的基础岗位数量"
+  mod_planet_wilderness_districts_base_biomass_cost_mult: "荒野区划所需的基础生物质花费"
   # Job
   job_asr_wa_simulate_spawning_drone: "孵化体"
   job_asr_wa_simulate_spawning_drone_plural: "孵化体"

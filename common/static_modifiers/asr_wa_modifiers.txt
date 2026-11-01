@@ -1,9 +1,24 @@
 # 重塑自然
 asr_wa_wilderness_world = {
-  icon = "gfx/interface/icons/planet_modifiers/pm_ecosphere_pheromones.dds"
+  icon = "gfx/interface/icons/planet_modifiers/pm_overgrowth.dds"
   icon_frame = 1
   planet_max_districts_add = 2
   wilderness_pop_bonus_workforce_mult = 0.2
+  asr_wa_job_from_wilderness_zone = 2.0
+}
+
+asr_wa_wilderness_gaia = {
+  icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+  icon_frame = 1
+  pop_environment_tolerance = 0.8
+  asr_wa_job_from_wilderness_zone = 2.0
+}
+
+asr_wa_job_from_wilderness_zone = {
+  icon = "gfx/interface/icons/planet_modifiers/pm_overgrowth.dds"
+  icon_frame = 1
+  base_job_amount_from_wilderness_zone_mult = 1.0
+  planet_wilderness_districts_base_biomass_cost_mult = 1.0
 }
 
 asr_wa_sm_purity_finish = {
