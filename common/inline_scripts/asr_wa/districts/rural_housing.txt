@@ -1,0 +1,30 @@
+# 荒野没有维护子个体, 人口太多AI处理不了会导致舒适度爆炸
+# 所以区划对AI提供更少住房换取舒适度
+triggered_planet_modifier = {
+  potential = {
+    always = yes
+  }
+  planet_housing_add = 200
+}
+triggered_planet_modifier = {
+  potential = {
+    owner? = { has_tradition = tr_prosperity_public_works }
+  }
+  planet_housing_add = 200
+}
+
+triggered_planet_modifier = {
+  potential = {
+    owner? = { is_ai = no }
+  }
+  planet_housing_add = 200
+  mult = modifier:base_job_amount_from_wilderness_zone_mult
+}
+triggered_planet_modifier = {
+  potential = {
+    owner? = { is_ai = yes }
+  }
+  planet_housing_add = 100
+  planet_amenities_no_happiness_add = 100
+  mult = modifier:base_job_amount_from_wilderness_zone_mult
+}

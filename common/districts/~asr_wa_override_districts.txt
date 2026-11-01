@@ -128,14 +128,9 @@ district_photosynthesis_fields = {
 
   planet_modifier = {
     job_technician_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
   }
-
-  triggered_planet_modifier = {
-    potential = {
-      owner? = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
+  inline_script = {
+    script = asr_wa/districts/rural_housing
   }
 
   inline_script = {
@@ -205,14 +200,9 @@ district_hollow_mountains = {
 
   planet_modifier = {
     job_mining_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
   }
-
-  triggered_planet_modifier = {
-    potential = {
-      owner? = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
+  inline_script = {
+    script = asr_wa/districts/rural_housing
   }
 
   inline_script = {
@@ -282,14 +272,9 @@ district_orchard_forests = {
 
   planet_modifier = {
     job_agri_drone_add = @base_rural_district_jobs
-    planet_housing_add = 200
   }
-
-  triggered_planet_modifier = {
-    potential = {
-      owner? = { has_tradition = tr_prosperity_public_works }
-    }
-    planet_housing_add = 200
+  inline_script = {
+    script = asr_wa/districts/rural_housing
   }
 
   inline_script = {
