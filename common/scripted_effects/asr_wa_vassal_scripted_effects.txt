@@ -109,6 +109,25 @@ asr_wa_vassal_initial_effect = {
   # 设置附属关系
   asr_wa_choose_subject_type = yes
 
+  # 设置 Bypass
+  event_target:asr_wa_rv_overload = {
+    if = {
+      limit = { has_seen_any_bypass = wormhole }
+      prev = { add_seen_bypass_type = wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = starlit_wormhole }
+      prev = { add_seen_bypass_type = starlit_wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = strange_wormhole }
+      prev = { add_seen_bypass_type = strange_wormhole }
+    }
+    if = {
+      limit = { has_seen_any_bypass = gateway }
+      prev = { add_seen_bypass_type = gateway }
+    }
+  }
   # 复制科技和传统
   copy_techs_from = { target = event_target:asr_wa_rv_overload }
   copy_traditions_from = { target = event_target:asr_wa_rv_overload }
