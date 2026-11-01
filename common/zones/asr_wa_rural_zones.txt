@@ -37,7 +37,7 @@ zone_asr_wa_spawning = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/gaia_spawning_add
-    BASE = @[doubled_scaling_district_1_job * 0.25]
+    AMOUNT = @[doubled_scaling_district_1_job * 0.25]
   }
 
   ai_priority = 2

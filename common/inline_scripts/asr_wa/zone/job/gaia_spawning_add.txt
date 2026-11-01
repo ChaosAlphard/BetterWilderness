@@ -1,14 +1,5 @@
-triggered_district_planet_modifier = {
-  potential = {
-    owner? = { is_wilderness_empire = yes }
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-  }
-  job_spawning_drone_add = @[$BASE$ * 2]
-}
-triggered_district_planet_modifier = {
-  potential = {
-    owner? = { is_wilderness_empire = yes }
-  }
-  job_spawning_drone_add = @[$BASE$]
-  mult = modifier:base_job_amount_from_wilderness_zone_mult
+inline_script = {
+  script = asr_wa/zone/job/add_conditional_only
+  BASE = $AMOUNT$
+  JOB = spawning_drone
 }

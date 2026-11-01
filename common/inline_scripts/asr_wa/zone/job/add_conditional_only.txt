@@ -1,0 +1,14 @@
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+    asr_wa_planet_is_wilderness_arcology_equivalent = yes
+  }
+  job_$JOB$_add = @[$BASE$ * 2]
+}
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+  }
+  job_$JOB$_add = $BASE$
+  mult = modifier:base_job_amount_from_wilderness_zone_mult
+}

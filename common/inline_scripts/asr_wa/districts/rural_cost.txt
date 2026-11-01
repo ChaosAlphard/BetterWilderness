@@ -5,6 +5,12 @@ resources = {
     biomass = 200
   }
   cost = {
+    trigger = { free_district_slots > 0 }
+    biomass = 200
+    # 不支持直接使用 mult = modifier:xxxx, 要用 script_value 中转一遍 (4.5版本测试结果)
+    mult = value:asr_wa_wilderness_districts_base_biomass_cost_mult_value
+  }
+  cost = {
     trigger = {
       asr_wa_planet_use_mixed_build_building = yes
     }
