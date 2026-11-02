@@ -1,5 +1,7 @@
 # 生物质
 wilderness_heart_strata = {
+  # is_unemployment_job = yes
+  is_civilian_job = yes
   rank = 0
   can_change_category = no
   change_job_threshold = 1.15

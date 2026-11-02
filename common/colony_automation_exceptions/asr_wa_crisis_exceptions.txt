@@ -1,0 +1,149 @@
+automate_asr_wa_wilderness_cradle_of_rebirth = {
+  category = "planet_automation_pop_assembly"
+  emergency = yes
+
+  available = {
+    owner? = { is_wilderness_empire = yes }
+  }
+
+  buildings = {
+    assembly = {
+      building = building_cradle_of_rebirth
+    }
+  }
+}
+
+automate_asr_wa_wilderness_capital_building = {
+  category = "planet_automation_upgrade_buildings"
+  emergency = yes
+
+  available = {
+    owner? = { is_wilderness_empire = yes }
+  }
+
+  buildings = {
+    wilderness_shelter = {
+      building = building_colony_shelter_wilderness
+    }
+    wilderness_capital = {
+      building = building_capital_wilderness
+    }
+  }
+}
+
+automate_asr_wa_wilderness_crime_management = {
+  category = "planet_automation_crime"
+  emergency = yes
+  should_ai_use_job_micro = yes
+
+  available = {
+    owner? = { is_wilderness_empire = yes }
+  }
+
+  buildings = {
+    precinct = {
+      building = building_asr_wa_sentinel_posts
+      available = {
+        planet_crime > 10
+        NOT = { has_forbidden_jobs = patrol_drone }
+      }
+    }
+  }
+
+  job_changes = {
+    job_patrol_drone_add_increase = {
+      available = {
+        has_forbidden_jobs = patrol_drone
+      }
+      job = patrol_drone
+      amount = 100
+    }
+  }
+}
+
+automate_asr_wa_wilderness_amenity_management = {
+  category = "planet_automation_amenities"
+  emergency = yes
+
+  available = {
+    owner? = { is_wilderness_empire = yes }
+    free_amenities < 0
+  }
+
+  buildings = {
+    avatar_chamber = {
+      building = building_avatar_chamber_1
+    }
+  }
+}
+
+automate_asr_wa_wilderness_building_housing = {
+  category = "planet_automation_housing"
+  emergency = yes
+
+  available = {
+    owner? = { is_wilderness_empire = yes }
+    free_housing < 0
+  }
+
+  prio_districts = {
+    district_craglands
+  }
+}
+
+automate_asr_wa_wilderness_crystal_deficit_management = {
+  category = "planet_automation_rare_resources"
+  empire_wide_emergency = yes
+
+  available = {
+    owner? = {
+      is_wilderness_empire = yes
+      has_monthly_income = { resource = rare_crystals value < 0 }
+    }
+    free_building_slots > 0
+  }
+
+  buildings = {
+    crystal_plant = {
+      building = building_crystal_growth
+    }
+  }
+}
+
+automate_asr_wa_wilderness_mote_deficit_management = {
+  category = "planet_automation_rare_resources"
+  empire_wide_emergency = yes
+
+  available = {
+    owner? = {
+      is_wilderness_empire = yes
+      has_monthly_income = { resource = volatile_motes value < 0 }
+    }
+    free_building_slots > 0
+  }
+
+  buildings = {
+    chem_plant = {
+      building = building_mote_aggravator
+    }
+  }
+}
+
+automate_asr_wa_wilderness_gas_deficit_management = {
+  category = "planet_automation_rare_resources"
+  empire_wide_emergency = yes
+
+  available = {
+    owner? = {
+      is_wilderness_empire = yes
+      has_monthly_income = { resource = exotic_gases value < 0 }
+    }
+    free_building_slots > 0
+  }
+
+  buildings = {
+    refinery = {
+      building = building_churning_stomach
+    }
+  }
+}
