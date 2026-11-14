@@ -1,0 +1,7 @@
+triggered_district_planet_modifier = {
+  potential = {
+    owner? = { is_wilderness_empire = yes }
+  }
+  job_$JOB$_add = $AMOUNT$
+  mult = value:asr_wa_job_amount_from_wilderness_zone_mult_value|BASE|$BASE_MULTIPLIER$|
+}

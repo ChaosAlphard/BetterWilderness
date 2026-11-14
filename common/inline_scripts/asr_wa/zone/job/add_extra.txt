@@ -7,37 +7,5 @@ triggered_district_planet_modifier = {
     $PLANET_TRIGGER$
   }
   job_$JOB$_add = @[$AMOUNT$ * $PERCENT$]
-}
-triggered_district_planet_modifier = {
-  potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      $OWNER_TRIGGER$
-    }
-    asr_wa_planet_is_wilderness_arcology_equivalent = yes
-    $PLANET_TRIGGER$
-  }
-  job_$JOB$_add = @[$AMOUNT$ * 2 * $PERCENT$]
-}
-triggered_district_planet_modifier = {
-  potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      $OWNER_TRIGGER$
-    }
-    $PLANET_TRIGGER$
-  }
-  job_$JOB$_add = @[$AMOUNT$ * $PERCENT$]
-  mult = modifier:base_job_amount_from_wilderness_zone_mult
-}
-triggered_district_planet_modifier = {
-  potential = {
-    owner? = {
-      is_wilderness_empire = yes
-      $OWNER_TRIGGER$
-    }
-    asr_wa_planet_is_arkship_colony_equivalent = yes
-    $PLANET_TRIGGER$
-  }
-  job_$JOB$_add = @[$AMOUNT$ * $PERCENT$]
+  mult = value:asr_wa_job_amount_from_wilderness_zone_mult_value
 }
