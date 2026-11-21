@@ -5,7 +5,7 @@
 building_planetary_carapace = { # substitute for 'building_stronghold'
   icon = "planetary_carapace_1"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_2
+  base_buildtime = @wa_build_time_2
   category = army
   can_build = yes
   can_demolish = yes
@@ -49,7 +49,7 @@ building_planetary_carapace = { # substitute for 'building_stronghold'
 building_planetary_carapace_2 = { # substitute for 'building_fortress'
   icon = "planetary_carapace_2"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_3
+  base_buildtime = @wa_build_time_3
   category = army
   can_build = no
   can_demolish = yes
@@ -95,7 +95,7 @@ building_planetary_carapace_2 = { # substitute for 'building_fortress'
 building_ozone_thickener = {
   icon = "ozone_thickener"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_5
+  base_buildtime = @wa_build_time_5
   category = army
   can_build = yes
   can_demolish = yes
@@ -149,12 +149,7 @@ building_ozone_thickener = {
     }
     modifier = {
       add = 5
-      AND = {
-        exists = owner
-        solar_system? = {
-          owner? = { num_cosmic_storms_encountered >= 2 }
-        }
-      }
+      owner? = { num_cosmic_storms_encountered >= 2 }
     }
   }
 

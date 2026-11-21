@@ -1,4 +1,4 @@
 # Override by other mod
-asr_wa_is_hja_installed = {
+irs_hja_is_installed = {
   always = no
 }

@@ -1,0 +1,5 @@
+# override variables
+@b1_biomass = 100
+@b2_biomass = 200
+@b3_biomass = 400
+@b4_biomass = 400

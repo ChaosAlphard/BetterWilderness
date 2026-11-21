@@ -1,17 +1,9 @@
 resources = {
   category = planet_buildings
   inline_script = {
-    script = asr_wa/building/shared_cost
-    BIOMASS = @wa_b4_biomass
-    FOOD_AND_MINERAL_COST = @wa_b3_mixed
-    FOOD_COST = @wa_b3_foods
-    MINERAL_COST = @wa_b3_minerals
-  }
-  cost = {
-    $RARE$ = @b4_rare_cost
-  }
-  upkeep = {
-    $BASE$ = @b4_upkeep
-    $RARE$ = @b4_rare_upkeep
+    script = asr_wa/building/tier_cost_rare
+    TIER = b4
+    UPKEEP_TYPE = $BASE$
+    RARE_TYPE = $RARE$
   }
 }

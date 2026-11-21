@@ -2,7 +2,7 @@
 building_natural_furnace_0 = {
   icon = "natural_furnace_1"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_1
+  base_buildtime = @wa_build_time_2
   category = manufacturing
   can_build = yes
   can_demolish = yes
@@ -40,7 +40,7 @@ building_natural_furnace_0 = {
 building_natural_furnace_1 = { # substitute for 'building_foundry_1'
   icon = "natural_furnace_2"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_2
+  base_buildtime = @wa_build_time_3
   category = manufacturing
   can_build = no
   can_demolish = yes
@@ -94,7 +94,7 @@ building_natural_furnace_1 = { # substitute for 'building_foundry_1'
 building_natural_furnace_2 = { # substitute for 'building_foundry_2'
   icon = "natural_furnace_3"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_3
+  base_buildtime = @wa_build_time_4
   category = manufacturing
   can_build = no
   can_demolish = yes
@@ -150,7 +150,7 @@ building_natural_furnace_2 = { # substitute for 'building_foundry_2'
 building_natural_furnace_3 = { # substitute for 'building_foundry_3'
   icon = "natural_furnace_4"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_4
+  base_buildtime = @wa_build_time_5
   category = manufacturing
   can_build = no
   can_demolish = yes
@@ -212,7 +212,7 @@ building_natural_furnace_3 = { # substitute for 'building_foundry_3'
 building_mote_aggravator = { # substitute for 'building_chemical_plant'
   icon = "mote_aggravator"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_4
+  base_buildtime = @wa_build_time_4
   category = manufacturing
   can_build = yes
   can_demolish = yes
@@ -235,13 +235,9 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    inline_script = {
-      script = asr_wa/building/tier_cost
-      TIER = b1
-      UPKEEP_TYPE = energy
-    }
+  inline_script = {
+    script = asr_wa/building/cost_t1
+    BASE = energy
   }
 
   planet_modifier = {
@@ -271,7 +267,7 @@ building_mote_aggravator = { # substitute for 'building_chemical_plant'
 building_churning_stomach = { # substitute for 'building_refinery'
   icon = "churning_stomach"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_4
+  base_buildtime = @wa_build_time_4
   category = manufacturing
   can_build = yes
   can_demolish = yes
@@ -294,13 +290,9 @@ building_churning_stomach = { # substitute for 'building_refinery'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    inline_script = {
-      script = asr_wa/building/tier_cost
-      TIER = b1
-      UPKEEP_TYPE = energy
-    }
+  inline_script = {
+    script = asr_wa/building/cost_t1
+    BASE = energy
   }
 
   planet_modifier = {
@@ -330,7 +322,7 @@ building_churning_stomach = { # substitute for 'building_refinery'
 building_crystal_growth = { # substitute for 'building_crystal_plant'
   icon = "crystal_growth"
   ruined_icon = "wilderness_building_ruined"
-  base_buildtime = @buildtime_4
+  base_buildtime = @wa_build_time_4
   category = manufacturing
   can_build = yes
   can_demolish = yes
@@ -353,13 +345,9 @@ building_crystal_growth = { # substitute for 'building_crystal_plant'
     is_wilderness_empire = yes
   }
 
-  resources = {
-    category = planet_buildings
-    inline_script = {
-      script = asr_wa/building/tier_cost
-      TIER = b1
-      UPKEEP_TYPE = energy
-    }
+  inline_script = {
+    script = asr_wa/building/cost_t1
+    BASE = energy
   }
 
   planet_modifier = {
