@@ -2,3 +2,7 @@
 irs_hja_is_installed = {
   always = no
 }
+
+pd_is_planet_class_gaia = {
+  always = no
+}
