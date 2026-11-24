@@ -6,7 +6,7 @@ zone_asr_wa_urban = {
   swap_type_weight = 10
 
   zone_sets = { asr_wa_gaia_rural }
-  include = { all }
+  included_buildings = { all }
   excluded_building_sets = {
     generator
     mining
@@ -223,6 +223,7 @@ zone_asr_wa_food = {
     fallen_empire_farming
     hydroponics
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_food_wilderness
   }
@@ -248,6 +249,7 @@ zone_asr_wa_energy = {
     generator
     fallen_empire_generator
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_energy_wilderness
   }
@@ -273,6 +275,7 @@ zone_asr_wa_mineral = {
     mining
     fallen_empire_mining
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_minerals_wilderness
   }

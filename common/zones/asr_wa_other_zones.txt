@@ -9,6 +9,7 @@ zone_food_wilderness = {
     fallen_empire_farming
     hydroponics
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_asr_wa_food
   }
@@ -38,6 +39,7 @@ zone_energy_wilderness = {
     generator
     fallen_empire_generator
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_asr_wa_energy
   }
@@ -67,6 +69,7 @@ zone_minerals_wilderness = {
     mining
     fallen_empire_mining
   }
+  inline_script = { script = asr_wa/zone/shared_rural_triggered_buildings }
   convert_to = {
     zone_asr_wa_mineral
   }

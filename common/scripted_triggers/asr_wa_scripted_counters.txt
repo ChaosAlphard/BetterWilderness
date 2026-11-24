@@ -6,3 +6,14 @@ asr_wa_wilderness_pop_amount = {
     }
   }
 }
+
+asr_wa_owned_workforce_amount_wilderness_heart_strata = {
+  count_owned_workforce = {
+    limit = {
+      OR = {
+        has_job_category = wilderness_heart_strata
+        has_job_category = maintenance_drone
+      }
+    }
+  }
+}

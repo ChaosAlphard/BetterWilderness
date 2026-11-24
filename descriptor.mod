@@ -1,9 +1,9 @@
-version="0.1.5"
+version="0.1.6"
 tags={
 	"Balance"
 	"Gameplay"
 }
-name="生体荒野加强.a7e3e410"
+name="生体荒野加强"
 picture="thumbnail.png"
-supported_version="v4.5.*"
+supported_version="v4.6.*"
 remote_file_id="3589240156"

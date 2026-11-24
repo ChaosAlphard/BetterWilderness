@@ -4,7 +4,7 @@ asr_wa_num_districts = {
     trigger_scope = colony
     trigger = num_districts
     parameters = { type = any }
-    mode = add
+    mode = set
   }
   min = 0
 }
@@ -19,7 +19,7 @@ asr_wa_num_buildings = {
       type = any
       owner_type = normal
     }
-    mode = add
+    mode = set
   }
   min = 0
 }
@@ -144,24 +144,61 @@ asr_wa_expand_planet_mod = {
   add = 6
 }
 
+# x=人口数 y=岗位数 Note: 4.6更新后count_owned_workforce包括岗位效率加成,
+# 导致无法获取实际岗位数, 现在只能生物质的劳动力来取近似值了 (荒野人口基本都在生物质岗位上)
 # (x/y)^a  x的值接近0时增长更快, x的值接近y时增长更慢, a的值越接近1越接近线性增长
+# 开方操作更昂贵, 换成 (1+k)*(x/(x+ky)), a取1.423时曲线较为贴合, 也可以取1.4
+# 人口/岗位比值  f1(a=0.66) f2(k=1.423) f2(k=1.4)
+#        10%       0.215       0.158     0.160
+#        20%       0.342       0.296     0.300
+#        30%       0.448       0.420     0.423
+#        40%       0.542       0.532     0.533
+#        50%       0.630       0.630     0.632
+#        60%       0.711       0.713     0.714
+#        70%       0.788       0.782     0.783
+#        80%       0.862       0.840     0.841
+#        90%       0.933       0.888     0.889
+#       100%       1.000       1.000     1.000
 asr_wa_workforce_from_pops = {
   base = 0
-  set = trigger:asr_wa_wilderness_pop_amount
+  set = trigger:asr_wa_owned_workforce_amount_wilderness_heart_strata
   min = 100
-  divide = value:asr_wa_num_workforce_except_uncapped
+  divide = value:asr_wa_num_workforce_except_uncapped|K|1.4|
+  mult = 2.4  # => 1+k
   min = 0
   max = 1
-  pow = 0.66666666  # 立方根
-  round_to = 0.01
   mult = $MAX$
+  round_to = 0.0001
 }
 # 排除掉 生物质, 牲口, 不可接触者 等随人口数增加的岗位 (无上限岗位)
 # 因为荒野会自动填充岗位, 正常岗位上没有人口, 所以人口数量基本上等于无上限岗位数量
 asr_wa_num_workforce_except_uncapped = {
   base = 0
-  set = trigger:count_owned_workforce
-  subtract = trigger:pop_amount
+  complex_trigger_modifier = {
+    trigger = count_owned_workforce
+    parameters = {
+      limit = {
+        NOR = {
+          has_job_category = wilderness_heart_strata
+          has_job_category = maintenance_drone
+          has_job_category = civilian
+          has_job_category = assimilation
+          has_job_category = deep_sleep
+          has_job_category = slave_unemployment
+          has_job_category = criminal
+          has_job_category = deviant_drone
+          has_job_category = corrupt_drone
+          has_job_category = xeno_ward
+          has_job_category = pre_sapients
+          has_job_category = chip_slave
+          has_job_category = purge
+        }
+      }
+    }
+    mode = set
+  }
+  mult = $K$
+  add = trigger:asr_wa_owned_workforce_amount_wilderness_heart_strata
   min = 100
 }
 
