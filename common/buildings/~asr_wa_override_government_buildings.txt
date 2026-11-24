@@ -6,7 +6,7 @@
 building_cradle_of_rebirth = {
   icon = "seed_cradle_2"
   category = government
-  base_buildtime = @buildtime_3
+  base_buildtime = @wa_build_time_3
   can_build = yes
   can_demolish = yes
   can_be_ruined = yes
@@ -105,7 +105,8 @@ building_wilderness_storm_relief = {
   }
 
   potential = {
-    owner? = { is_wilderness_empire = yes }
+    exists = owner
+    owner = { is_wilderness_empire = yes }
     OR = {
       owner = { is_ai = no }
       solar_system? = { system_has_storm_repelling_tech = no }
@@ -173,15 +174,12 @@ building_wilderness_storm_relief = {
   }
   triggered_planet_modifier = {
     potential = {
-      exists = owner
-      solar_system? = {
-        is_inside_storm = yes
-      }
+      solar_system? = { is_inside_storm = yes }
     }
     modifier = {
       planet_miners_minerals_produces_add = 1
-      planet_farmers_food_produces_add = 1
-      planet_technician_energy_produces_add = 1
+      planet_farmers_food_produces_add = 1.5
+      planet_technician_energy_produces_add = 1.5
     }
   }
   triggered_desc = {
@@ -210,9 +208,7 @@ building_wilderness_storm_relief = {
     weight = 0
     modifier = {
       add = 30
-      AND = {
-        owner? = { num_unique_cosmic_storms_encountered >= 2 }
-      }
+      owner? = { num_unique_cosmic_storms_encountered >= 2 }
     }
   }
 }

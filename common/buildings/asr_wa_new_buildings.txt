@@ -2,7 +2,7 @@
 building_asr_wa_organic_processing = {
   icon = "building_hydroponics_farm"
   category = government
-  base_buildtime = @buildtime_1
+  base_buildtime = @wa_build_time_1
   can_build = yes
   can_demolish = yes
   can_be_ruined = yes
@@ -66,8 +66,8 @@ building_asr_wa_sentinel_posts = {
       OR = {
         owner = { is_ai = no }
         AND = {
+          planet_crime > 10
           NOT = { has_forbidden_jobs = patrol_drone }
-          NOT = { has_available_jobs = patrol_drone }
         }
       }
     }

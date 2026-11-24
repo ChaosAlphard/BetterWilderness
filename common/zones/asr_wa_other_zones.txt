@@ -19,9 +19,10 @@ zone_food_wilderness = {
     AMOUNT = @scaling_district_1_job
   }
   inline_script = {
-    script = asr_wa/zone/job/add_conditional_only
-    BASE = @doubled_scaling_district_1_job
+    script = asr_wa/zone/job/add_conditional
     JOB = agri_drone
+    BASE_MULTIPLIER = 0
+    AMOUNT = @doubled_scaling_district_1_job
   }
 
   ai_priority = 5
@@ -47,9 +48,10 @@ zone_energy_wilderness = {
     AMOUNT = @scaling_district_1_job
   }
   inline_script = {
-    script = asr_wa/zone/job/add_conditional_only
-    BASE = @doubled_scaling_district_1_job
+    script = asr_wa/zone/job/add_conditional
     JOB = technician_drone
+    BASE_MULTIPLIER = 0
+    AMOUNT = @doubled_scaling_district_1_job
   }
 
   ai_priority = 5
@@ -75,9 +77,10 @@ zone_minerals_wilderness = {
     AMOUNT = @scaling_district_1_job
   }
   inline_script = {
-    script = asr_wa/zone/job/add_conditional_only
-    BASE = @doubled_scaling_district_1_job
+    script = asr_wa/zone/job/add_conditional
     JOB = mining_drone
+    BASE_MULTIPLIER = 0
+    AMOUNT = @doubled_scaling_district_1_job
   }
 
   ai_priority = 5

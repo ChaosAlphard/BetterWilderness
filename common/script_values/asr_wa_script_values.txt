@@ -165,7 +165,50 @@ asr_wa_num_workforce_except_uncapped = {
   min = 100
 }
 
+asr_wa_wilderness_zone_job_and_district_cost_multiply = {
+  base = 0
+  modifier = {  # 盖亚球 / 蜂巢球 / 机械球 / 理想城
+    OR = {
+      asr_wa_planet_is_wilderness_arcology_equivalent = yes
+      planet_is_ecu_equivalent = yes
+      has_carrier_flag = colony_is_ecu_equivalent
+    }
+    add = 2
+  }
+  modifier = {  # 环形区段
+    OR = {
+      planet_is_ring_world_equivalent = yes
+      has_carrier_flag = colony_is_ring_world_equivalent
+    }
+    add = 4
+  }
+  modifier = {  # 居住站(太空子民)
+    OR = {
+      planet_is_habitat_equivalent = yes
+      has_carrier_flag = colony_is_habitat_equivalent
+    }
+    owner? = { is_void_dweller_empire = yes }
+    add = 0.5
+  }
+  modifier = {  # 方舟(岗位数量就应该绑定在殖民地类型上, 而不是绑定在政体上)
+    OR = {
+      asr_wa_planet_is_arkship_colony_equivalent = yes
+      has_carrier_flag = colony_is_arkship_equivalent
+    }
+    add = 1
+  }
+}
+asr_wa_job_amount_from_wilderness_zone_mult_value = {
+  base = 0
+  set = $BASE|1$
+  add = value:asr_wa_wilderness_zone_job_and_district_cost_multiply
+  add = modifier:base_job_amount_from_wilderness_zone_mult
+  min = $MIN|0$
+}
 asr_wa_wilderness_districts_base_biomass_cost_mult_value = {
   base = 0
+  set = $BASE|1$
+  add = value:asr_wa_wilderness_zone_job_and_district_cost_multiply
   add = modifier:planet_wilderness_districts_base_biomass_cost_mult
+  min = $MIN|0$
 }

@@ -1,5 +1,6 @@
 inline_script = {
-  script = asr_wa/zone/job/add_conditional_only
-  BASE = $AMOUNT$
+  script = asr_wa/zone/job/add_conditional
   JOB = spawning_drone
+  BASE_MULTIPLIER = 0
+  AMOUNT = $BASE$
 }

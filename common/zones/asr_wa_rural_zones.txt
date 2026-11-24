@@ -16,9 +16,10 @@ zone_asr_wa_urban = {
   }
 
   inline_script = { script = asr_wa/zone/shared_zone }
-  inline_script = {
-    script = asr_wa/zone/job/patrol_add
-    BASE = @doubled_scaling_district_1_job
+  triggered_district_planet_modifier = {
+    potential = { owner? = { is_wilderness_empire = yes } }
+    planet_amenities_no_happiness_add = @[doubled_scaling_district_1_job * 10]
+    mult = value:asr_wa_job_amount_from_wilderness_zone_mult_value
   }
 
   ai_priority = 2
@@ -37,7 +38,7 @@ zone_asr_wa_spawning = {
   inline_script = { script = asr_wa/zone/shared_advanced_zone }
   inline_script = {
     script = asr_wa/zone/job/gaia_spawning_add
-    AMOUNT = @[doubled_scaling_district_1_job * 0.25]
+    BASE = @[doubled_scaling_district_1_job * 0.25]
   }
 
   ai_priority = 2

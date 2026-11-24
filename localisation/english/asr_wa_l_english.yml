@@ -71,7 +71,7 @@ l_english:
   asr_wa_building_churning_tunnels_4_tt: "['building:building_churning_tunnels_2'] provide more $wa_r_job$"
   asr_wa_betharian_tt: "While both ['building:building_betharian_power_plant'] and ['building:building_bioelectric_stimulator_4'] are built, §Y$miner_type_plural_with_icon$§! gain part of the bonus from §Y$building_bioelectric_stimulator_4$§!"
   # 风暴救援中心
-  asr_wa_b_sr_tt: "While a §Y$default_storm$§! is present:$TABBED_NEW_LINE$$mod_planet_miners_minerals_produces_add$: §G+1§! $TABBED_NEW_LINE$$mod_planet_farmers_food_produces_add$: §G+1§! $TABBED_NEW_LINE$$mod_planet_technician_energy_produces_add$: §G+1§!"
+  asr_wa_b_sr_tt: "While a §Y$default_storm$§! is present:$TABBED_NEW_LINE$$mod_planet_miners_minerals_produces_add$: §G+1§! $TABBED_NEW_LINE$$mod_planet_farmers_food_produces_add$: §G+1.5§! $TABBED_NEW_LINE$$mod_planet_technician_energy_produces_add$: §G+1.5§!"
   # 决议
   decision_asr_wa_wilderness_expand: "$decision_wilderness_expand$ (+4)"
   decision_asr_wa_wilderness_expand_desc: "$decision_wilderness_expand_desc$\nExpensive than normal"
