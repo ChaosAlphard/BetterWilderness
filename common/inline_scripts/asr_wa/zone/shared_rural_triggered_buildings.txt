@@ -1,0 +1,4 @@
+triggered_buildings = {
+  trigger = { owner? = { has_active_tenet = tenet_autonomy } }
+  included_building_sets = { research }
+}
